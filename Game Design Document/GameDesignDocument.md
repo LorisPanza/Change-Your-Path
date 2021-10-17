@@ -97,5 +97,5 @@ The objective of the game is to find new pieces of map, solve the map puzzle and
 ### Platform
 * PC - Windows, MacOS
 ### Audience
-The intended audience is primarly for both casual and non casual gamers since the mechanic is very simple even if it requires reasoning and effort to solve the puzzle. The game does not involve violence or other malicious actions and so it can be played by kids.
+The intended audience is primarily for both casual and non casual gamers since the mechanic is very simple even if it requires reasoning and effort to solve the puzzle. The game does not involve violence or other malicious actions and so it can be played by kids.
 
