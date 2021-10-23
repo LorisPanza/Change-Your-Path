@@ -17,6 +17,7 @@ The objective of the game is to find new pieces of map, solve the map puzzle and
 ### Audience
 The intended audience is primarily for both casual and non casual gamers since the mechanic is very simple even if it requires reasoning and effort to solve the puzzle. The game does not involve violence or other malicious actions and so it can be played by kids.
 ### Look and feel
+This game should be able to make light-heart a difficult life situation like the one of Kvothe. This is not a perfect and wonderful world made of cheerful colors, fluttering happy little birds and people who are just waiting to help you. However, this is a world full of hope, curiosity and desire to discover what's beyond what you know. The context in which Kvothe is, most of the time should be calm and serene making the player feel like they have plenty of time to solve the next puzzle. Whoever plays is in control of the situation. They must feel free to explore, think, listen and solve.
 ## Gameplay
 ### Overview
 The gameplay will consist of exploring the world, finding new map pieces, composing the map and moving in new areas.
@@ -25,7 +26,7 @@ The map is divided into square form map pieces.
 At the beginning of the game there will be just one square and the player will be able to move only in that limited world portion. In that area will find another map piece that will be connected to the existing square in order to expand the map. The player will visit the new zone and there will find another map piece and so on and so forth. In the map menu all the map squares are movable and rotatable, even the one with the character inside. When moving and rotating the map, every element inside the square will rotate and move accordingly (NPC, Environmental details, objects).
 Inside the map square the player can find npc and interactable objects. One type of interactable object is the map piece.
 ### Minigames
-Apart from composing in the right way the map, in the game there will be different minigame:
+Apart from composing the map in the right way, there will be different minigames. Some of them will be triggered by an interaction of Kvothe with the environment or the NPCs:
 * Move a specific square of the map in a well-defined position. For example, an NPC could tell you that it’s home is north of the forest: in the map you have many pieces that could compose a forest, so create it and place the map square where the NPC is inside at north of the forest. This will trigger an event.
 * Signs - On one square you find a sign:” At the end of the straight road there is a bridge”. In your existing map there are some map pieces that have a straight road inside, put them in rows from that square and then a new piece with the bridge appears.
 * Labyrinth - Consider two identical map pieces that are connectable: the player has to find how to move from one piece to the other in a specific way. For example, some detail in the piece where you stay tells that the similar piece has to be placed on the right. You put the other identical piece on the right and then you have to find on it other information to understand where the previous will be placed with respect to this one. After guessing the combination between the two squares for a certain number of times, the puzzle is solved.
