@@ -61,6 +61,7 @@ Cancel | Esc
 ### Synopsis
 ### Complete story
 ### Backstory
+Kvothe was born in a small village in the middle of a huge forest but since he was a child he has not been able to observe anything outside his small town: the forest around his village is a labyrinth of vegetation and threats. His parents, in search of the desired freedom, disappeared and never returned, leaving Kvothe alone. Despite this, there is a legend of the country that prophesies: "At the age of 16 a boy will be able to find the path to freedom and truth using his power to shape the world". Kvothe, the boy of the prophecy, is at the entrance of the forest ready to discover the truth about his parents and what exists beyond the forest.
 ### Narrative devices
 ### Subplots
 ## Game Characters
