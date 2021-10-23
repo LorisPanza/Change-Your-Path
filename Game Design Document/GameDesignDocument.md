@@ -44,7 +44,19 @@ More chapters will be implemented.
 ### FlowChart
 ## Controls
 ### Explorer View
+Move | &#8592; | &#8594; | &#8593; | &#8595; 
+--- | --- | --- | --- | ---
+Interact | Space
+Map view | Tab 
+Items | W
 ### Map View
+Move | &#8592; | &#8594; | &#8593; | &#8595; 
+--- | --- | --- | --- | ---
+Pick up/ Put down | Space
+Rotate | A | D
+Explore view | Tab 
+New piece | W
+Cancel | Esc 
 ## Story
 ### Synopsis
 ### Complete story
