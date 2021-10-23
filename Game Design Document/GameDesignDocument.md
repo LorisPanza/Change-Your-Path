@@ -33,6 +33,14 @@ Apart from composing the map in the right way, there will be different minigames
 * The player and NPC - Consider not an open area but specific map pieces composed by two tunnels for example: in one tunnel there is the main character, on the other there is the NPC. Your objective is to create the path for you and your friend in order to exit the tunnels. So there are pieces that will allow only you to move because you can connect only your tunnel for example but not the NPC one.
 * Don’t get caught - An angry character starts to run to catch Kvothe. The only way you have to let him/her stop is opening the map view when Kvothe and the enemy are on two different map pieces and isolate that character on a piece alone. This will prevent the character from continuing and after a period of isolation the anger passes. If Kvothe is caught the minigame restarts. Pay attention to which piece you decide to momentarily sacrifice!
 ### Levels
+Change your path is divided in chapters. Each of them consists of completing a discrete objective.
+
+* Chapter 0: Kvothe is in the place it has always been since he was born. This chapter has a very simple objective: interact with NPCs and explore the village. This chapter is designed to familiarize the player with the controls and to collect all needed information before starting the journey. [Average playing time: 10 minutes]
+* Chapter 1: The forest around Kvothe’s village is a labyrinth of vegetation and threats. The objective of this chapter is to figure out an escape route from the forest. [Average playing time: 20 minutes]
+* Chapter 2: Kvothe is outside the forest.
+
+More chapters will be implemented.
+
 ### FlowChart
 ## Controls
 ### Explorer View
