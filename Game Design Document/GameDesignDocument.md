@@ -63,6 +63,9 @@ Cancel | Esc
 ### Backstory
 Kvothe was born in a small village in the middle of a huge forest but since he was a child he has not been able to observe anything outside his small town: the forest around his village is a labyrinth of vegetation and threats. His parents, in search of the desired freedom, disappeared and never returned, leaving Kvothe alone. Despite this, there is a legend of the country that prophesies: "At the age of 16 a boy will be able to find the path to freedom and truth using his power to shape the world". Kvothe, the boy of the prophecy, is at the entrance of the forest ready to discover the truth about his parents and what exists beyond the forest.
 ### Narrative devices
+Kvothe will meet NPCs who, hoping to get out of the maze, got stuck in the forest. By discussing with them and completing the subquests, the game will explain the background of the story while adding more and more new details. 
+Kvothe, during his journey, will find traces of the passage of his parents as letters: here will be written the reasons of the parents that led them to leave their son in the village and try to face the labyrinth. 
+The environment around kvothe could be a narrative device: the protagonist will be able to examine statues, temples or any other element of the environment that will give him information on the legend of the forest and prophecy.
 ### Subplots
 ## Game Characters
 ### Character Design
