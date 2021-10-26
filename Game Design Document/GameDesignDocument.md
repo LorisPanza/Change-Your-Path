@@ -70,6 +70,12 @@ The environment around kvothe could be a narrative device: the protagonist will 
 ## Game Characters
 ### Character Design
 ### NPCs
+* Mother of Kvothe - Name
+* Father of Kvothe - Name
+* Male lost in the forest - Name
+* Female lost in the forest - Name
+* Old wise man lost in the forest - Name
+
 ### World
 ### Key locations
 ### Weather Condition
