@@ -71,7 +71,8 @@ Kvothe was born in a small village in the middle of a huge forest but since he w
 ### Narrative devices
 Kvothe will meet NPCs who, hoping to get out of the maze, got stuck in the forest. By discussing with them and completing the subquests, the game will explain the background of the story while adding more and more new details. 
 Kvothe, during his journey, will find traces of the passage of his parents as letters: here will be written the reasons of the parents that led them to leave their son in the village and try to face the labyrinth. 
-The environment around kvothe could be a narrative device: the protagonist will be able to examine statues, temples or any other element of the environment that will give him information on the legend of the forest and prophecy.
+The environment around kvothe could be a narrative device: the protagonist will be able to examine elements of the environment that will give him information on the forest.
+
 ### Subplots
 ## Game Characters
 ### Character Design
