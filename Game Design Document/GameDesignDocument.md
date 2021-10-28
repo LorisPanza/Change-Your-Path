@@ -75,6 +75,7 @@ The environment around kvothe could be a narrative device: the protagonist will 
 
 ### Subplots
 ## Game Characters
+![Kvothe](Kvothe.jpeg)
 ### Character Design
 ### NPCs
 * Mother of Kvothe - Name
