@@ -79,7 +79,7 @@ The environment around kvothe could be a narrative device: the protagonist will 
 ### Character Design
 ![Kvothe](Images/Kvothe.jpeg)
 ### NPCs
-### World
+## World
 ### Key locations
 ### Weather Condition
 ### Objects
