@@ -74,16 +74,11 @@ Kvothe, during his journey, will find some letters: a trace of the passage of hi
 The environment around kvothe could be a narrative device: the protagonist will be able to examine elements of the environment that will give him information on the forest.
 
 ### Subplots
+* Exploring the labyrinth, Kvothe bumps into a man intent on fishing near a lake. Both amazed to see a human presence, the two get to know each other. The man called Wilem tells his story: his goal within the company was to create outposts in the forest in order to explore it and gradually find an exit. Each month he organized expeditions to expand the known perimeter. However, 16 years ago his sister was lost  into the forest and since that event he wanders in the labyrinth with the intention of finding her, currently he is lost and can no longer find his camp. (First minigame, take Wilem to his house) Wilem is actually the brother of Denna and so the uncle of Kvothe but Wilem has never seen Kvothe since he was a baby so at the end, they do not recognize each other. Wilem will give information on her sister but only at the end the user will understand the link between the NPCs.
 ## Game Characters
-![Kvothe](Images/Kvothe.jpeg)
 ### Character Design
+![Kvothe](Images/Kvothe.jpeg)
 ### NPCs
-* Mother of Kvothe - Name
-* Father of Kvothe - Name
-* Male lost in the forest - Name
-* Female lost in the forest - Name
-* Old wise man lost in the forest - Name
-
 ### World
 ### Key locations
 ### Weather Condition
