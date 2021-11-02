@@ -81,7 +81,8 @@ The environment around kvothe could be a narrative device: the protagonist will 
 
 ### NPCs
 ## World
-### Key locations
+### Rules
+### Key locations and style
 ### Weather Condition
 ### Objects
 ### Scale
