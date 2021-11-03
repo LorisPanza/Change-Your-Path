@@ -32,13 +32,13 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         
         hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0,
-            new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y*Time.deltaTime*velocity),LayerMask.GetMask("Character", "Obstacle"));
+            new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y*Time.deltaTime*velocity),LayerMask.GetMask("Player", "Obstacle"));
         
         if(hit.collider == null) 
             transform.Translate(0,moveDelta.y*Time.deltaTime*velocity,0);
         
         hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0,
-            new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x*Time.deltaTime*velocity),LayerMask.GetMask("Character", "Obstacle"));
+            new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x*Time.deltaTime*velocity),LayerMask.GetMask("Player", "Obstacle"));
         
         if(hit.collider == null)
             transform.Translate(moveDelta.x*Time.deltaTime*velocity,0,0);
