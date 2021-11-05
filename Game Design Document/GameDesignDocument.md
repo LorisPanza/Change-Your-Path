@@ -100,4 +100,6 @@ See the images.
 ### Characters
 ### Animation
 ### Music and sound effects
+## DeadLines
+* 22 November - Mario,Loris and Andrea implementation of the features
 
