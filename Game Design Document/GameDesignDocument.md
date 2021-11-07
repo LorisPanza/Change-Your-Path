@@ -108,7 +108,7 @@ See the images.
 * When talking to NPCs
 * Interactable object (map pieces on the ground)
 ## DeadLines
-* 22 November - Mario --> PLayer 
+* 22 November - Mario --> Player 
 * 22 November - Loris --> Map
 * 22 November - Andrea --> Game Manager
 * 30 November - Union of the features
