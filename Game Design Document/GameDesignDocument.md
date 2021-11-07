@@ -100,5 +100,5 @@ See the images.
 ### Music and sound effects
 ## DeadLines
 * 22 November - Mario,Loris and Andrea implementation of the main features
-* 30 Nivember - Union of the features
+* 30 November - Union of the features
 
