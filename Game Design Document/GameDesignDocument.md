@@ -80,9 +80,7 @@ The environment around kvothe could be a narrative device: the protagonist will 
 ### NPCs
 * Kvohte
 * Denna
-* ![Denna](images/NPC/Denna.png)
 * Abenthy
-* ![Abenthy](images/NPC/Abenthy02-scientist.png)
 * Wilem
 * Old Man
 * Robot
