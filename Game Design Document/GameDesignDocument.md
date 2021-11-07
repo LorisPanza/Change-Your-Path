@@ -95,9 +95,18 @@ See the images.
 ## Media List
 ### Interface assets
 ### Environments
+* Element of the environment like trees, grass, stones or bushes
 ### Characters
+* Dialogues
 ### Animation
+* Kvothe
+* Myabe one or two animals
+* Simple animation for the NPCS (for example a victory gesture when finishing a quest)
 ### Music and sound effects
+* Background 
+* Steps
+* When talking to NPCs
+* Interactable object (map pieces on the ground)
 ## DeadLines
 * 22 November - Mario,Loris and Andrea implementation of the main features
 * 30 November - Union of the features
