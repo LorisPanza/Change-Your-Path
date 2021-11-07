@@ -87,6 +87,29 @@ See the images.
 
 ## World
 ### Rules
+This chapter must be detailed better.
+
+There is no fixed world. The player builds one.
+He can do it by fitting together different map pieces (we could call them “tiles”) respecting a very simple rule: continue the landscape.
+Each tile has a type on each side.
+
+Types can be: grass, water, snow, ice…. (to decide. The idea is: different types, say 5)
+ 
+The player can fit together only tiles that have the same type on the side on which you are fitting them.For example, you cannot put a grass piece near to a water one:
+
+![nope](images/rules/no_resized.png)
+![yep](images/rules/yes.png)
+
+In addition to that, there could be some paths, for example roads or other pathways.
+If this is the case, the player must take it into account, again, simply continuing the landscape.
+
+![road_no](images/rules/no_road.png)
+![road_yes](images/rules/yes_road.png)
+
+Obviously there will be pieces with different types on different sides.
+We don’t need to consider all the possible combinations because we will build the tiles we need to make the levels. The player can build all he wants, at the end of the story only when he respects the constraints of the levels is important.
+
+
 ### Key locations and style
 ### Weather Condition
 ### Objects
@@ -107,6 +130,20 @@ See the images.
 * Steps
 * When talking to NPCs
 * Interactable object (map pieces on the ground)
+## Technicality (temporary section):
+Object oriented programming helps us. We create a class “Tile” that has 4 attributes (up, left, down, right). Each attribute contains the type of landscape on the corresponding side of the tile. In the case of the last figure is:
+Up = grass
+Left = grass
+Down = grass
+Right = grass
+On each side there can be ONLY ONE TYPE (like Carto). 
+
+The class “Tile” also has methods like “hasRoadLeft”, “hasRoadDown”, etc . A road is always at the center of the side and is of fixed width. 
+(   this will help a lot in checking stuff because it will be a merely visual match. If there is a road, then it will fix.
+ (there could also be different road depending on the type of the actual side type)    )
+
+Each tile we design will have a script in which we simply inherit  “Tile” and set the attributes depending on the pieces we have at hand . 
+
 ## DeadLines
 * 22 November - Mario --> Player 
 * 22 November - Loris --> Map
