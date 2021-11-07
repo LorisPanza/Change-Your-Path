@@ -41,7 +41,6 @@ Change your path is divided in chapters. Each of them consists of completing a d
 
 More chapters will be implemented.
 
-### FlowChart
 ## Controls
 ### Explorer View
 Move | &#8592; | &#8594; | &#8593; | &#8595; 
@@ -65,7 +64,6 @@ Meanwhile, Abenthy is a scientist who has the task of monitoring the evolution o
 The newborn son is left in the care of an elderly woman of the village. Before entering the forest with Denna, Abenthy leaves its compass in Kvothe’s cradle hoping that one day he will find freedom.
 16 years later our story begins.
 
-### Complete story
 ### Backstory
 Kvothe was born in a small village in the middle of a huge forest but since he was a child he has not been able to observe anything outside his small town: the forest around his village is a labyrinth of vegetation and threats. His parents, in search of the desired freedom, disappeared and never returned, leaving Kvothe alone. Despite this, there is a legend of the country that prophesies: "At the age of 16 a boy will be able to find the path to freedom and truth using his power to shape the world". Kvothe, the boy of the prophecy, is at the entrance of the forest ready to discover the truth about his parents and what exists beyond the forest.
 ### Narrative devices
