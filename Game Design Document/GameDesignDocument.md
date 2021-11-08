@@ -98,7 +98,7 @@ Types can be: grass, water, snow, ice…. (to decide. The idea is: different typ
 The player can fit together only tiles that have the same type on the side on which you are fitting them.For example, you cannot put a grass piece near to a water one:
 
 ![nope](images/rules/no1.jpeg)
-![yep](images/rulse/yes1.jpeg)
+![yep](images/rules/yes1.jpeg)
 
 In addition to that, there could be some paths, for example roads or other pathways.
 If this is the case, the player must take it into account, again, simply continuing the landscape.
