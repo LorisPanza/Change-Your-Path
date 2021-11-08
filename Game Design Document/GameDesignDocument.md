@@ -97,14 +97,14 @@ Types can be: grass, water, snow, ice…. (to decide. The idea is: different typ
  
 The player can fit together only tiles that have the same type on the side on which you are fitting them.For example, you cannot put a grass piece near to a water one:
 
-![nope](images/document_images/no1.png)
-![yep](images/document_images/yes1.png)
+![nope](images/document images/no1.jpeg)
+![yep](images/document images/yes1.jpeg)
 
 In addition to that, there could be some paths, for example roads or other pathways.
 If this is the case, the player must take it into account, again, simply continuing the landscape.
 
-![road_no](images/document_images/no.png)
-![road_yes](images/document_images/yes.png)
+![road_no](images/document images/no.jpeg)
+![road_yes](images/document images/yes.jpeg)
 
 Obviously there will be pieces with different types on different sides.
 We don’t need to consider all the possible combinations because we will build the tiles we need to make the levels. The player can build all he wants, at the end of the story only when he respects the constraints of the levels is important.
