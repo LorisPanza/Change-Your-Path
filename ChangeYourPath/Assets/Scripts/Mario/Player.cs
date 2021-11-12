@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
     public int velocity=1;
     private RaycastHit2D hit;
     public Animator animator;
-    
+
+    //added comment
 
     // Start is called before the first frame update
     void Start()
