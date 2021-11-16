@@ -10,9 +10,10 @@ public class MapMovement : MonoBehaviour
     public LayerMask detectedLayer;
     private int offsetMovement=18;
     private int offsetMatching = 18;
-    private Collider2D colliderMovement,colliderMatchingUp,colliderMatchingDown,colliderMatchingRight,colliderMatchingLeft;
+    private Collider2D colliderMovement;
     public Transform movePoint;
     private MapFeatures collideMap,thisMap;
+    private bool isMatching,isMatchingRight,isMatchingLeft,isMatchingDown,isMatchingUp;
     
     
     // Start is called before the first frame update
@@ -29,12 +30,12 @@ public class MapMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N))
         {
           rotateClockwise();
-          checkMatching(movePoint);
+          matchingAllSides(movePoint);
         }
         else if (Input.GetKeyDown(KeyCode.M))
         {
             rotateCounterClockwise();
-            checkMatching(movePoint);
+            matchingAllSides(movePoint);
         }
         
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
@@ -43,27 +44,11 @@ public class MapMovement : MonoBehaviour
             
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
             {
-                //Debug.Log("Muovo orizzontale");
-                colliderMovement = Physics2D.OverlapCircle(
-                    movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f), .2f, detectedLayer);
-                if (!colliderMovement)
-                {
-                    movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f);
-                    checkMatching(movePoint);
-                }
-               
+                checkHorizontalMovement();
             } 
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
             {
-                //Debug.Log("Muovo Verticale");
-                colliderMovement = Physics2D.OverlapCircle(
-                    movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f) , .2f, detectedLayer);
-                if (!colliderMovement)
-                {
-                    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f);
-                    checkMatching(movePoint);
-                }
-                
+                checkVerticalMovement();
             }
             
             
@@ -71,6 +56,217 @@ public class MapMovement : MonoBehaviour
     }
     
 
+    public bool matchingAllSides(Transform movePointCopy)
+    {
+        isMatching = true;
+        isMatchingDown = false;
+        isMatchingRight = false;
+        isMatchingUp = false;
+        isMatchingLeft = false;
+        matchingDown(movePointCopy);
+        matchingLeft(movePointCopy);
+        matchingRight(movePointCopy);
+        matchingUp(movePointCopy);
+
+        return isMatching;
+    }
+
+    public GameObject matchingRight(Transform movePointCopy)
+    {
+        
+        GameObject mapObject;
+        MapFeatures mapFeatures;
+        Collider2D rightCollider = Physics2D.OverlapCircle(
+            movePointCopy.position + new Vector3(offsetMatching, 0f, 0f), .2f, detectedLayer);
+        if (rightCollider)
+        {
+            mapObject= rightCollider.gameObject;
+            mapFeatures= mapObject.GetComponent<MapFeatures>();
+            if (mapObject.name != this.name)
+            {
+                thisMap = this.GetComponent<MapFeatures>();
+                if (mapFeatures.tileMap.getLeft() == thisMap.tileMap.getRight())
+                {
+                    isMatchingRight = true;
+                    Debug.Log("Matching" + thisMap.tileMap.getRight() + "On the right");
+                    return mapObject;
+                    
+                }
+                else
+                {
+                    Debug.Log("No matching type on the right: " + mapFeatures.tileMap.getLeft());
+                    isMatching = false;
+                    return null;
+                }
+            }
+        }
+
+        return null;
+    }
+
+
+    public GameObject matchingLeft(Transform movePointCopy)
+    {
+        //isMatching = true;
+        GameObject mapObject;
+        MapFeatures mapFeatures;
+        Collider2D leftCollider = Physics2D.OverlapCircle(
+            movePointCopy.position + new Vector3(-offsetMatching, 0, 0f), .2f, detectedLayer);
+        if (leftCollider)
+        {
+            mapObject= leftCollider.gameObject;
+            mapFeatures= mapObject.GetComponent<MapFeatures>();
+            if (mapObject.name != this.name)
+            {
+                thisMap = this.GetComponent<MapFeatures>();
+                if (mapFeatures.tileMap.getRight() == thisMap.tileMap.getLeft())
+                {
+                    isMatchingLeft = true;
+                    Debug.Log("Matching" + thisMap.tileMap.getLeft() + "On the left");
+                    return mapObject;
+                }
+                else
+                {
+                    Debug.Log("No matching type on the left:"+mapFeatures.tileMap.getRight());
+                    isMatching = false;
+                    return null;
+                }
+            }
+        }
+
+        return null;
+    }
+    
+    public GameObject matchingUp(Transform movePointCopy)
+    {
+        //isMatching = true;
+        GameObject mapObject;
+        MapFeatures mapFeatures;
+        Collider2D upCollider = Physics2D.OverlapCircle(
+            movePointCopy.position + new Vector3(0f, offsetMatching, 0f), .2f, detectedLayer);
+        if (upCollider)
+        {
+            mapObject= upCollider.gameObject;
+            mapFeatures= mapObject.GetComponent<MapFeatures>();
+            if (mapObject.name != this.name)
+            {
+                thisMap = this.GetComponent<MapFeatures>();
+                if (mapFeatures.tileMap.getDown() == thisMap.tileMap.getUp())
+                {
+                    isMatchingUp = true;
+                    Debug.Log("Matching" + thisMap.tileMap.getUp() + "Up");
+                    return mapObject;
+                }
+                else
+                {
+                    Debug.Log("No matching type on the up:"+mapFeatures.tileMap.getDown());
+                    isMatching = false;
+                    return null;
+                }
+            }
+        }
+        return null;
+    }
+
+    public GameObject matchingDown(Transform movePointCopy)
+    {
+        //isMatching = true;
+        GameObject mapObject;
+        MapFeatures mapFeatures;
+        Collider2D downCollider = Physics2D.OverlapCircle(
+            movePointCopy.position + new Vector3(0f, -offsetMatching, 0f), .2f, detectedLayer);
+        if (downCollider)
+        {
+            mapObject = downCollider.gameObject;
+            mapFeatures = mapObject.GetComponent<MapFeatures>();
+            if (mapObject.name != this.name)
+            {
+                thisMap = this.GetComponent<MapFeatures>();
+                if (mapFeatures.tileMap.getUp() == thisMap.tileMap.getDown())
+                {
+                    isMatchingDown = true;
+                    Debug.Log("Matching" + thisMap.tileMap.getDown() + "Down");
+                    return mapObject;
+                }
+                else
+                {
+                    Debug.Log("No matching type down: "+mapFeatures.tileMap.getUp());
+                    isMatching = false;
+                    return null;
+                }
+            }
+        }
+
+        return null;
+    }
+
+ 
+
+    public void rotateClockwise()
+    {
+        transform.Rotate(0,0,-90);
+        thisMap = this.GetComponent<MapFeatures>();
+        thisMap.tileMap.clockwiseRotation();
+        thisMap.rotateSpriteClockwise();
+    }
+
+    public void rotateCounterClockwise()
+    {
+        transform.Rotate(0,0,90);
+        thisMap = this.GetComponent<MapFeatures>();
+        thisMap.tileMap.counterclockwiseRotation();
+        thisMap.rotateSpriteCounterClockwise();
+    }
+
+
+    public void checkHorizontalMovement()
+    {
+       
+        colliderMovement = Physics2D.OverlapCircle(
+            movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f), .2f, detectedLayer);
+        if (!colliderMovement)
+        {
+            movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f);
+            //checkMatching(movePoint);
+            matchingAllSides(movePoint);
+        }
+    }
+
+    public void checkVerticalMovement()
+    {
+        
+        colliderMovement = Physics2D.OverlapCircle(
+            movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f) , .2f, detectedLayer);
+        if (!colliderMovement)
+        {
+            movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f);
+            //checkMatching(movePoint);
+            matchingAllSides(movePoint);
+        }
+    }
+
+    public bool getIsMatchingRight()
+    {
+        return isMatchingRight;
+    }
+    
+    public bool getIsMatchingUp()
+    {
+        return isMatchingUp;
+    }
+    
+    public bool getIsMatchingLeft()
+    {
+        return isMatchingLeft;
+    }
+    
+    public bool getIsMatchingDown()
+    {
+        return isMatchingDown;
+    }
+    
+    
+    /*
     public bool checkMatching(Transform movePointCopy)
     {
         bool IsMatching = true;
@@ -171,29 +367,17 @@ public class MapMovement : MonoBehaviour
         colliderMatchingDown = null;
         return IsMatching;
     }
-    
-    public double calculateDistance(Vector3 v1, Vector3 v2)
-    {
-        Vector3 difference = new Vector3(v1.x - v2.x, v1.y - v2.y,0);
-        double distance = Math.Sqrt(Math.Pow(difference.x, 2f) + Math.Pow(difference.y, 2f));
-        return distance;
-    }
-
-    public void rotateClockwise()
-    {
-        transform.Rotate(0,0,-90);
-        thisMap = this.GetComponent<MapFeatures>();
-        thisMap.tileMap.clockwiseRotation();
-    }
-
-    public void rotateCounterClockwise()
-    {
-        transform.Rotate(0,0,90);
-        thisMap = this.GetComponent<MapFeatures>();
-        thisMap.tileMap.counterclockwiseRotation();
-    }
+    */
     
     
-    
+    /*
+ public double calculateDistance(Vector3 v1, Vector3 v2)
+ {
+     Vector3 difference = new Vector3(v1.x - v2.x, v1.y - v2.y,0);
+     double distance = Math.Sqrt(Math.Pow(difference.x, 2f) + Math.Pow(difference.y, 2f));
+     return distance;
+ }
+ 
+ */
 }
 

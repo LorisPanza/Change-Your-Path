@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Level0
   m_EditorClassIdentifier: 
   up: Water
-  right: Road
-  down: Grass
+  right: Rock
+  down: Rock
   left: Grass

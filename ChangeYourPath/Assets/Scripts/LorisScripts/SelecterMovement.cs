@@ -5,12 +5,11 @@ using UnityEngine;
 public class SelecterMovement : MonoBehaviour
 {
     public float moveSpeed = 100f;
-    public LayerMask detectedLayer;
+    public LayerMask detectedLayerMap;
+    public LayerMask detectedLayerPlayer;
     private int offsetMovement=18;
-
-    private bool choosen = false;
-    //private int offsetMatching = 18;
-    private Collider2D mapCollider,colliderMovement; //colliderMatchingUp,colliderMatchingDown,colliderMatchingRight,colliderMatchingLeft;
+    private bool choosen = false,isChild=false;
+    private Collider2D chosenMapCollider=null,movementCollider=null,playerCollider=null; //colliderMatchingUp,colliderMatchingDown,colliderMatchingRight,colliderMatchingLeft;
     public Transform movePoint;
     //private MapFeatures collideMap,thisMap;
     // Start is called before the first frame update
@@ -24,26 +23,46 @@ public class SelecterMovement : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Space) && choosen == false) 
+        if (Input.GetKeyDown(KeyCode.Space) && choosen == false)
         {
-            mapCollider = Physics2D.OverlapCircle(movePoint.position, .2f, detectedLayer);
-            if (mapCollider)
+            chosenMapCollider = enableSelectionMapCollider();
+            if (chosenMapCollider)
             {
-                mapCollider.gameObject.GetComponent<MapMovement>().enabled = true;
+                GameObject go = chosenMapCollider.gameObject;
+                go.GetComponent<MapMovement>().enabled = true;
+                go.GetComponent<MapFeatures>().enabled = true;
                 choosen = true;
+                
+                playerCollider = checkPlayer();
+                if (playerCollider)
+                {
+                    go.GetComponent<MapFeatures>().player = playerCollider.gameObject;
+                    playerCollider.gameObject.transform.SetParent(go.transform);
+                    isChild = true;
+                }
             }
+            
         }
         else if (Input.GetKeyDown(KeyCode.Space) && choosen == true)
         {
-            if (mapCollider.gameObject.GetComponent<MapMovement>().checkMatching(mapCollider.gameObject.GetComponent<MapMovement>().movePoint))
+            
+            if (disableSelectionMapCondition())
             {
-                mapCollider.gameObject.GetComponent<MapMovement>().enabled = false;
+                chosenMapCollider.gameObject.GetComponent<MapMovement>().enabled = false;
+                chosenMapCollider.gameObject.GetComponent<MapFeatures>().enabled = false;
+            
                 choosen = false;
+                
+                if (isChild == true)
+                {
+                    playerCollider.gameObject.transform.SetParent(null);
+                }
             }
             else
             {
                 Debug.Log("Non puoi metterlo");
             }
+           
             
         }
         
@@ -67,10 +86,10 @@ public class SelecterMovement : MonoBehaviour
             {
                 if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
                 {
-                    //Debug.Log("Muovo orizzontale");
-                    colliderMovement = Physics2D.OverlapCircle(
-                        movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f), .2f, detectedLayer);
-                    if (!colliderMovement)
+                    
+                    movementCollider = Physics2D.OverlapCircle(
+                        movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f), .2f, detectedLayerMap);
+                    if (!movementCollider)
                     {
                         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f);
                        
@@ -79,10 +98,10 @@ public class SelecterMovement : MonoBehaviour
                 } 
                 else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
                 {
-                    //Debug.Log("Muovo Verticale");
-                    colliderMovement = Physics2D.OverlapCircle(
-                        movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f) , .2f, detectedLayer);
-                    if (!colliderMovement)
+                    
+                    movementCollider = Physics2D.OverlapCircle(
+                        movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f) , .2f, detectedLayerMap);
+                    if (!movementCollider)
                     {
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f);
                        
@@ -93,4 +112,54 @@ public class SelecterMovement : MonoBehaviour
             
         }
     }
+
+
+    public Collider2D enableSelectionMapCollider()
+    {
+        Collider2D mapColliderCopy = Physics2D.OverlapCircle(movePoint.position, .2f, detectedLayerMap);
+        return mapColliderCopy;
+    }
+
+    public bool disableSelectionMapCondition()
+    {
+        GameObject detectedMap;
+        MapMovement chosenMapMov = chosenMapCollider.gameObject.GetComponent<MapMovement>();
+        if (chosenMapMov.matchingAllSides(chosenMapMov.movePoint))
+        {
+            if (chosenMapMov.getIsMatchingLeft())
+            {
+                GameObject leftDetectedMap=chosenMapMov.matchingLeft(chosenMapMov.movePoint);
+                if (leftDetectedMap != null)
+                { 
+                    disableLeftBoundaryColliders(leftDetectedMap);
+                }
+                
+            }
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+        
+
+    }
+
+    public Collider2D checkPlayer()
+    {
+        return Physics2D.OverlapBox(movePoint.position, new Vector2(offsetMovement, offsetMovement), 0, detectedLayerPlayer);
+    
+    }
+    
+    public void disableLeftBoundaryColliders(GameObject leftMap)
+    {
+        GameObject thisMap=chosenMapCollider.gameObject;
+        GameObject leftBoundary = thisMap.transform.Find("LeftBoundary").gameObject;
+        //GameObject rightBoundary = leftMap.transform.Find(("RightBoundary")).gameObject;
+        leftBoundary.SetActive(false);
+        //rightBoundary.SetActive(false);
+    }
 }
+
+

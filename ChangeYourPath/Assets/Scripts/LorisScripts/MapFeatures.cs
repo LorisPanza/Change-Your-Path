@@ -5,17 +5,43 @@ using UnityEngine;
 public class MapFeatures : MonoBehaviour
 {
     public Map tileMap;
+    public List<GameObject> enviromentalElements;
+    public GameObject player;
+   
 
+
+    public void rotateSpriteClockwise()
+    {
+        SpriteRenderer sprite;
+        for (int i = 0; i < enviromentalElements.Count; i++)
+        {
+            sprite = enviromentalElements[i].GetComponent<SpriteRenderer>();
+            sprite.transform.Rotate(0,0,90);
+         
+        }
+
+        if (player != null)
+        {
+            sprite = player.GetComponent<SpriteRenderer>();
+            sprite.transform.Rotate(0,0,90);
+        }
+    }
     
-    // Start is called before the first frame update
-    void Start()
+    public void rotateSpriteCounterClockwise()
     {
-        
+        SpriteRenderer sprite;
+        for (int i = 0; i < enviromentalElements.Count; i++)
+        {   
+            sprite = enviromentalElements[i].GetComponent<SpriteRenderer>();
+            sprite.transform.Rotate(0,0,- 90);
+           
+        }
+        if (player != null)
+        {
+            sprite = player.GetComponent<SpriteRenderer>();
+            sprite.transform.Rotate(0,0,-90);
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+    
 }
