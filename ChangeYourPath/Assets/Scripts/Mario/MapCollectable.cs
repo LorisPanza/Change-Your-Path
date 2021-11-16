@@ -4,40 +4,28 @@ using UnityEngine;
 
 public class MapCollectable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private IEnumerator waitForKey;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
-    }
-    private void OnEnable()
-    {
-        SimpleEventManager.StartListening("NewPiece", NewPieceFound);
-    }
-
-    private void OnDisable()
-    {
-        SimpleEventManager.StopListening("NewPiece", NewPieceFound);
-        StopAllCoroutines();
+        waitForKey = Collectable();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            SimpleEventManager.TriggerEvent("NewPiece");
+            StartCoroutine(waitForKey);
         }
     }
-
-    private void NewPieceFound()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        StartCoroutine(Collectable());
+        if (other.CompareTag("Player"))
+        {
 
+            StopCoroutine(waitForKey);
+            Debug.Log("Exited");
+        }
     }
 
     IEnumerator Collectable()
