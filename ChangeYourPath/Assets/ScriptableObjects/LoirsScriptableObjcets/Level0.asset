@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3414d1756bbfc45afba9caf7ed45005f, type: 3}
   m_Name: Level0
   m_EditorClassIdentifier: 
-  up: Water
-  right: Rock
-  down: Rock
+  up: Grass
+  right: Grass
+  down: Grass
   left: Grass

@@ -869,8 +869,8 @@ MonoBehaviour:
   moveSpeed: 100
   detectedLayerMap:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 128
   detectedLayerPlayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 8
   movePoint: {fileID: 1999376542322602515}

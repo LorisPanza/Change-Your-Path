@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraManager : MonoBehaviour
+public class MapCameraManager : MonoBehaviour
 {
     public Transform focus;
     public float smoothTime = 1;
