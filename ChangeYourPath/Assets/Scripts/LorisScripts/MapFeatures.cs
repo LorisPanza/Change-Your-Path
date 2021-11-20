@@ -5,7 +5,7 @@ using UnityEngine;
 public class MapFeatures : MonoBehaviour
 {
     public Map tileMap;
-    public List<GameObject> enviromentalElements;
+    public List<GameObject> enviromentalElements=null;
     public GameObject player;
    
 
@@ -22,6 +22,7 @@ public class MapFeatures : MonoBehaviour
 
         if (player != null)
         {
+            Debug.Log("Ruoto orario il player");
             sprite = player.GetComponent<SpriteRenderer>();
             sprite.transform.Rotate(0,0,90);
         }
