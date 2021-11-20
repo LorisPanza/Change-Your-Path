@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2405346112023733536}
   - component: {fileID: 2405346112023733551}
   - component: {fileID: 2405346112023733540}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Kvothe
   m_TagString: Player
   m_Icon: {fileID: 0}
