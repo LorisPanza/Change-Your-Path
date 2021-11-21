@@ -28,8 +28,9 @@ public class MapFeatures : MonoBehaviour
         int offset = offsetMovement;
         bool placed = false;
 
-        Transform selecterTransform = FindObjectOfType<SelecterMovement>().getTransform();
-        Transform checkHere = FindObjectOfType<SelecterMovement>().getTransform();
+        Transform checkHere = FindObjectOfType<SelecterMovement>().movePoint;
+        Vector3 selecterPosition = new Vector3(checkHere.position.x,
+            checkHere.position.y, checkHere.position.z);
 
         if (checkAround(checkHere))
         {
@@ -43,12 +44,8 @@ public class MapFeatures : MonoBehaviour
         {
             for (int ii = i; ii <= -i; ii++)
             {
-
-                //check (position.x + ii*offset , position.y+j*offset)
-                //check (position.x + ii*offset , position.y+(-j)*offset)
-
-                checkHere.position = new Vector3(selecterTransform.position.x + ii * offset,
-                selecterTransform.position.y + j * offset, selecterTransform.position.z);
+                checkHere.position = new Vector3(selecterPosition.x + ii * offset,
+                selecterPosition.y + j * offset, selecterPosition.z);
 
                 if (checkAround(checkHere))
                 {
@@ -56,24 +53,23 @@ public class MapFeatures : MonoBehaviour
                     break;
                 }
 
-                checkHere.position = new Vector3(selecterTransform.position.x + ii * offset,
-                selecterTransform.position.y - j * offset, selecterTransform.position.z);
+                checkHere.position = new Vector3(selecterPosition.x + ii * offset,
+                selecterPosition.y - j * offset, selecterPosition.z);
 
                 if (checkAround(checkHere))
                 {
                     placed = true;
                     break;
                 }
+
             }
 
             if (!placed)
             {
                 for (int jj = j - 1; jj >= -j + 1; jj--)
                 {
-                    //check (position.x + i*offset , position.y*jj*offset)
-                    //check (position.x + (-i)*offset , position.y*jj*offset)
-                    checkHere.position = new Vector3(selecterTransform.position.x + i * offset,
-                            selecterTransform.position.y + jj * offset, selecterTransform.position.z);
+                    checkHere.position = new Vector3(selecterPosition.x + i * offset,
+                            selecterPosition.y + jj * offset, selecterPosition.z);
 
                     if (checkAround(checkHere))
                     {
@@ -82,8 +78,8 @@ public class MapFeatures : MonoBehaviour
 
                     }
 
-                    checkHere.position = new Vector3(selecterTransform.position.x - i * offset,
-                    selecterTransform.position.y + jj * offset, selecterTransform.position.z);
+                    checkHere.position = new Vector3(selecterPosition.x - i * offset,
+                    selecterPosition.y + jj * offset, selecterPosition.z);
 
                     if (checkAround(checkHere))
                     {
