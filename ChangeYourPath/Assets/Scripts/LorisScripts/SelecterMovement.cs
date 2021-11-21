@@ -31,7 +31,7 @@ public class SelecterMovement : MonoBehaviour
                 
                 GameObject go = chosenMapCollider.gameObject;
                 go.GetComponent<MapMovement>().enabled = true;
-                go.GetComponent<MapFeatures>().enabled = true;
+                //go.GetComponent<MapFeatures>().enabled = true;
                 choosen = true;
                 
                 playerCollider = checkPlayer();
@@ -52,7 +52,7 @@ public class SelecterMovement : MonoBehaviour
             if (disableSelectionMapCondition())
             {
                 chosenMapCollider.gameObject.GetComponent<MapMovement>().enabled = false;
-                chosenMapCollider.gameObject.GetComponent<MapFeatures>().enabled = false;
+                //chosenMapCollider.gameObject.GetComponent<MapFeatures>().enabled = false;
             
                 choosen = false;
                 

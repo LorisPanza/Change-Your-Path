@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         playerCam.SetActive(true);
         player.enabled=true;
         selecter.SetActive(false);
-        Debug.Log("PlayerMode");
+        
     }
     
     public void activateMapMode()
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad (gameObject);
  
         Debug.developerConsoleVisible = true;
-        Debug.Log ("Starting");
+        
         
         activatePlayerMode();
 

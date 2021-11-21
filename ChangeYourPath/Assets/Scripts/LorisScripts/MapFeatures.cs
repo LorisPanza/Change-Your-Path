@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,8 @@ public class MapFeatures : MonoBehaviour
     public Map tileMap;
     public List<GameObject> enviromentalElements=null;
     public GameObject player;
-   
 
+    
 
     public void rotateSpriteClockwise()
     {
