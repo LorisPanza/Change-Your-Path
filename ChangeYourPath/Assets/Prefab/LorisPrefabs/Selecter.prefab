@@ -42,9 +42,9 @@ GameObject:
   - component: {fileID: 1999376543292193118}
   - component: {fileID: 1999376543292193089}
   - component: {fileID: 1999376543292193119}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Selecter
-  m_TagString: Untagged
+  m_TagString: Selecter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

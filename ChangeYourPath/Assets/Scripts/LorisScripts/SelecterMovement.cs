@@ -292,6 +292,11 @@ public class SelecterMovement : MonoBehaviour
     
         }
     }
+
+    public Transform getTransform()
+    {
+        return movePoint;
+    }
 }
 
 

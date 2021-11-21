@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MapCollectable : MonoBehaviour
 {
-    public MapFeatures newMapPiece;
+    public GameObject newMapPiece;
 
     private IEnumerator waitForKey;
 
@@ -39,6 +39,9 @@ public class MapCollectable : MonoBehaviour
         }
 
         print("New piece collected");
+        MapFeatures mf=newMapPiece.GetComponent<MapFeatures>();
+        mf.placeNewMap();
+        newMapPiece.SetActive(true);
         gameObject.SetActive(false);
         yield return null;
 

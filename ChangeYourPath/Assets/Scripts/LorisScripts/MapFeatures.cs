@@ -5,10 +5,38 @@ using UnityEngine;
 
 public class MapFeatures : MonoBehaviour
 {
+    private LayerMask detectedLayerMap = 7;
     public Map tileMap;
     public List<GameObject> enviromentalElements=null;
     public GameObject player;
+    private int offsetMovement=18;
+    //private SelecterMovement selecterMovement = null;
 
+
+    private bool checkAround(Transform position)
+    {
+        if (!Physics2D.OverlapCircle(position.position, .2f, detectedLayerMap))
+        {
+            return this.GetComponent<MapMovement>().matchingAllSides(position);
+        }
+
+        return false;
+    }
+    public void placeNewMap()
+    {
+        int i = offsetMovement;
+        
+        Transform selecterTransform = FindObjectOfType<SelecterMovement>().getTransform();
+        
+        
+        while (!checkAround(selecterTransform))
+        {
+            selecterTransform.position.Set(selecterTransform.position.x +i,
+                selecterTransform.position.y,selecterTransform.position.z);
+
+            this.transform.position = selecterTransform.position;
+        }
+    }
     
 
     public void rotateSpriteClockwise()
