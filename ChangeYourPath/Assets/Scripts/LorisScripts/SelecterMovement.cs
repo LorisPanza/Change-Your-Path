@@ -292,6 +292,11 @@ public class SelecterMovement : MonoBehaviour
     
         }
     }
+
+    public bool getChoosen()
+    {
+        return choosen;
+    }
 }
 
 

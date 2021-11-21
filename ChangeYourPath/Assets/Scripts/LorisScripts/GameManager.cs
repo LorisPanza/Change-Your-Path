@@ -74,7 +74,11 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                activatePlayerMode();
+                if (!selecter.GetComponent<SelecterMovement>().getChoosen())
+                {
+                    activatePlayerMode();
+                }
+                
             }
         }
         
