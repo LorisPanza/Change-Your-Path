@@ -34,8 +34,9 @@ public class MapFeatures : MonoBehaviour
             selecterTransform.position.Set(selecterTransform.position.x +i,
                 selecterTransform.position.y,selecterTransform.position.z);
 
-            this.transform.position = selecterTransform.position;
+            
         }
+        this.transform.position = selecterTransform.position;
     }
     
 

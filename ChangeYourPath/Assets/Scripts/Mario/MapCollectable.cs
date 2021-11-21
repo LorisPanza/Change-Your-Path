@@ -6,7 +6,9 @@ public class MapCollectable : MonoBehaviour
 {
     public GameObject newMapPiece;
 
+    private MapFeatures mf;
     private IEnumerator waitForKey;
+
 
     private void Start()
     {
@@ -39,11 +41,17 @@ public class MapCollectable : MonoBehaviour
         }
 
         print("New piece collected");
-        MapFeatures mf=newMapPiece.GetComponent<MapFeatures>();
-        mf.placeNewMap();
-        newMapPiece.SetActive(true);
+        mf = newMapPiece.GetComponent<MapFeatures>();
+        SimpleEventManager.StartListening("PlaceNewMap", Place);
         gameObject.SetActive(false);
         yield return null;
 
+    }
+ 
+    private void Place()
+    {
+        mf.placeNewMap();
+        SimpleEventManager.StopListening("PlaceNewMap", Place);
+        newMapPiece.SetActive(true);
     }
 }

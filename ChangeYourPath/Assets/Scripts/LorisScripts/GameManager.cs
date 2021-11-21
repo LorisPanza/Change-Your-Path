@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
             if (playerMode)
             {
                 activateMapMode();
+                SimpleEventManager.TriggerEvent("PlaceNewMap");
             }
             else
             {
