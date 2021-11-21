@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2279679872560731195
+--- !u!1 &253949955189680926
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5031502795589817382}
-  - component: {fileID: 8522767620376954817}
+  - component: {fileID: 253949955189680920}
+  - component: {fileID: 253949955189680921}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -17,33 +17,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5031502795589817382
+--- !u!4 &253949955189680920
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2279679872560731195}
+  m_GameObject: {fileID: 253949955189680926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.082212806, y: 7.4114165, z: -15.784259}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8522767620376954817
+--- !u!114 &253949955189680921
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2279679872560731195}
+  m_GameObject: {fileID: 253949955189680926}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47fc027ab3c4e4f04a48730fd17dd46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapCam: {fileID: 1717642774933981367, guid: b77b5fe2e9c6b478a9b92fbe46d8e3f1, type: 3}
-  playerCam: {fileID: 8988946237625951591, guid: bd1f0e42eb0ae43fc94d3f9638aad267, type: 3}
-  player: {fileID: 2405346112023733539, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
-  selecter: {fileID: 1999376543292193091, guid: 99dbd9067d7e84b5e8cad316042260dc, type: 3}
+  mapCam: {fileID: 0}
+  playerCam: {fileID: 0}
+  player: {fileID: 0}
+  selecter: {fileID: 0}

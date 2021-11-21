@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     public GameObject mapCam;
     public GameObject playerCam;
     public Player player;
     public GameObject selecter;
+    private bool playerMode;
 
     public enum GameState
     {
@@ -18,15 +20,17 @@ public class GameManager : MonoBehaviour
 
     public void activatePlayerMode()
     {
+        playerMode = true;
         mapCam.SetActive(false);
         playerCam.SetActive(true);
         player.enabled=true;
         selecter.SetActive(false);
-        
+        Debug.Log("PlayerMode");
     }
     
     public void activateMapMode()
     {
+        playerMode = false;
         mapCam.SetActive(true);
         playerCam.SetActive(false);
         player.enabled=false;
@@ -37,7 +41,18 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy (gameObject);
+ 
+        DontDestroyOnLoad (gameObject);
+ 
+        Debug.developerConsoleVisible = true;
+        Debug.Log ("Starting");
+        
         activatePlayerMode();
+
     }
 
 
@@ -52,11 +67,15 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            activateMapMode();
+            if (playerMode)
+            {
+                activateMapMode();
+            }
+            else
+            {
+                activatePlayerMode();
+            }
         }
-        else
-        {
-            activateMapMode();
-        }
+        
     }
 }
