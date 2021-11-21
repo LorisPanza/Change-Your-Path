@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MapCollectable : MonoBehaviour
 {
+    public MapFeatures newMapPiece;
+
     private IEnumerator waitForKey;
 
     private void Start()
