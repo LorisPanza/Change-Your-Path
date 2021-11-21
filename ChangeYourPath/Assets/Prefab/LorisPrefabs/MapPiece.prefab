@@ -281,7 +281,7 @@ MonoBehaviour:
   detectedLayerMap:
     serializedVersion: 2
     m_Bits: 128
-  tileMap: {fileID: 11400000, guid: 5defa16525a6b412a99a557466757ddb, type: 2}
+  tileMap: {fileID: 0}
   enviromentalElements: []
   player: {fileID: 0}
 --- !u!1 &7585825836461350540

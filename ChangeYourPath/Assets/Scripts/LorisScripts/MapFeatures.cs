@@ -129,5 +129,32 @@ public class MapFeatures : MonoBehaviour
         }
     }
 
+    public void rotateBoundaryClockwise()
+    {
+        GameObject rightBoundary = this.transform.Find("RightBoundary").gameObject;
+        GameObject leftBoundary = this.transform.Find("LeftBoundary").gameObject;
+        GameObject upBoundary = this.transform.Find("UpBoundary").gameObject;
+        GameObject downBoundary = this.transform.Find("DownBoundary").gameObject;
+        
+        rightBoundary.transform.Rotate(0, 0, 90);
+        leftBoundary.transform.Rotate(0, 0, 90);
+        upBoundary.transform.Rotate(0, 0, 90);
+        downBoundary.transform.Rotate(0, 0, 90);
+    }
+    
+    public void rotateBoundaryCounterClockwise()
+    {
+        GameObject rightBoundary = this.transform.Find("RightBoundary").gameObject;
+        GameObject leftBoundary = this.transform.Find("LeftBoundary").gameObject;
+        GameObject upBoundary = this.transform.Find("UpBoundary").gameObject;
+        GameObject downBoundary = this.transform.Find("DownBoundary").gameObject;
+        
+        rightBoundary.transform.Rotate(0, 0, -90);
+        leftBoundary.transform.Rotate(0, 0, -90);
+        upBoundary.transform.Rotate(0, 0, -90);
+        downBoundary.transform.Rotate(0, 0, -90);
+    }
+    
+    
 
 }

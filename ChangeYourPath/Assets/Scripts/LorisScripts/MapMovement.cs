@@ -208,6 +208,7 @@ public class MapMovement : MonoBehaviour
         thisMap = this.GetComponent<MapFeatures>();
         thisMap.tileMap.clockwiseRotation();
         thisMap.rotateSpriteClockwise();
+        thisMap.rotateBoundaryClockwise();
     }
 
     public void rotateCounterClockwise()
@@ -216,6 +217,7 @@ public class MapMovement : MonoBehaviour
         thisMap = this.GetComponent<MapFeatures>();
         thisMap.tileMap.counterclockwiseRotation();
         thisMap.rotateSpriteCounterClockwise();
+        thisMap.rotateBoundaryCounterClockwise();
     }
 
 
