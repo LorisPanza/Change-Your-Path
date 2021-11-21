@@ -278,6 +278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9785cc3576964b2a824d77732df50f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedLayerMap:
+    serializedVersion: 2
+    m_Bits: 128
   tileMap: {fileID: 11400000, guid: 5defa16525a6b412a99a557466757ddb, type: 2}
   enviromentalElements: []
   player: {fileID: 0}

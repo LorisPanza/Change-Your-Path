@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class MapFeatures : MonoBehaviour
 {
-    private LayerMask detectedLayerMap = 7;
+    public LayerMask detectedLayerMap;
     public Map tileMap;
-    public List<GameObject> enviromentalElements=null;
+    public List<GameObject> enviromentalElements = null;
     public GameObject player;
-    private int offsetMovement=18;
+    private int offsetMovement = 18;
     //private SelecterMovement selecterMovement = null;
 
 
@@ -22,23 +22,82 @@ public class MapFeatures : MonoBehaviour
 
         return false;
     }
+
     public void placeNewMap()
     {
-        int i = offsetMovement;
-        
-        Transform selecterTransform = FindObjectOfType<SelecterMovement>().getTransform();
-        
-        
-        while (!checkAround(selecterTransform))
-        {
-            selecterTransform.position.Set(selecterTransform.position.x +i,
-                selecterTransform.position.y,selecterTransform.position.z);
+        int offset = offsetMovement;
+        bool placed = false;
 
-            
+        Transform selecterTransform = FindObjectOfType<SelecterMovement>().getTransform();
+        Transform checkHere = FindObjectOfType<SelecterMovement>().getTransform();
+
+        if (checkAround(checkHere))
+        {
+            placed = true;
         }
-        this.transform.position = selecterTransform.position;
+        int levelGrid = 1;
+        int i = -levelGrid;
+        int j = levelGrid;
+
+        while (!placed)
+        {
+            for (int ii = i; ii <= -i; ii++)
+            {
+
+                //check (position.x + ii*offset , position.y+j*offset)
+                //check (position.x + ii*offset , position.y+(-j)*offset)
+
+                checkHere.position = new Vector3(selecterTransform.position.x + ii * offset,
+                selecterTransform.position.y + j * offset, selecterTransform.position.z);
+
+                if (checkAround(checkHere))
+                {
+                    placed = true;
+                    break;
+                }
+
+                checkHere.position = new Vector3(selecterTransform.position.x + ii * offset,
+                selecterTransform.position.y - j * offset, selecterTransform.position.z);
+
+                if (checkAround(checkHere))
+                {
+                    placed = true;
+                    break;
+                }
+            }
+
+            if (!placed)
+            {
+                for (int jj = j - 1; jj >= -j + 1; jj--)
+                {
+                    //check (position.x + i*offset , position.y*jj*offset)
+                    //check (position.x + (-i)*offset , position.y*jj*offset)
+                    checkHere.position = new Vector3(selecterTransform.position.x + i * offset,
+                            selecterTransform.position.y + jj * offset, selecterTransform.position.z);
+
+                    if (checkAround(checkHere))
+                    {
+                        placed = true;
+                        break;
+
+                    }
+
+                    checkHere.position = new Vector3(selecterTransform.position.x - i * offset,
+                    selecterTransform.position.y + jj * offset, selecterTransform.position.z);
+
+                    if (checkAround(checkHere))
+                    {
+                        placed = true;
+                        break;
+                    }
+                }
+            }
+            levelGrid += 1;
+        }
+        if (placed) this.transform.position = checkHere.position;
     }
-    
+
+
 
     public void rotateSpriteClockwise()
     {
@@ -46,33 +105,33 @@ public class MapFeatures : MonoBehaviour
         for (int i = 0; i < enviromentalElements.Count; i++)
         {
             sprite = enviromentalElements[i].GetComponent<SpriteRenderer>();
-            sprite.transform.Rotate(0,0,90);
-         
+            sprite.transform.Rotate(0, 0, 90);
+
         }
 
         if (player != null)
         {
             Debug.Log("Ruoto orario il player");
             sprite = player.GetComponent<SpriteRenderer>();
-            sprite.transform.Rotate(0,0,90);
+            sprite.transform.Rotate(0, 0, 90);
         }
     }
-    
+
     public void rotateSpriteCounterClockwise()
     {
         SpriteRenderer sprite;
         for (int i = 0; i < enviromentalElements.Count; i++)
-        {   
+        {
             sprite = enviromentalElements[i].GetComponent<SpriteRenderer>();
-            sprite.transform.Rotate(0,0,- 90);
-           
+            sprite.transform.Rotate(0, 0, -90);
+
         }
         if (player != null)
         {
             sprite = player.GetComponent<SpriteRenderer>();
-            sprite.transform.Rotate(0,0,-90);
+            sprite.transform.Rotate(0, 0, -90);
         }
     }
-    
-    
+
+
 }
