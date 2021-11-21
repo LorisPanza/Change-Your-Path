@@ -17,7 +17,16 @@ public class MapFeatures : MonoBehaviour
     {
         if (!Physics2D.OverlapCircle(position.position, .2f, detectedLayerMap))
         {
-            return this.GetComponent<MapMovement>().matchingAllSides(position);
+            MapMovement mv = this.GetComponent<MapMovement>();
+            if (mv.matchingAllSides(position) & !mv.getIsMatchingDown() & !mv.getIsMatchingLeft() &
+                !mv.getIsMatchingRight() & !mv.getIsMatchingUp())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         return false;
