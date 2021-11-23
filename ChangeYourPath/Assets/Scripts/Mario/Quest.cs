@@ -7,8 +7,10 @@ public class Quest
 {
     public bool isActive;
 
-    public string title;
-    public string description;
+    private bool one;
+    private bool two;
+    private bool three;
+    private bool four;
 
     //attributes useful to keep the status of the quest
 
@@ -18,7 +20,88 @@ public class Quest
     {
         isActive = false;
     }
+
+    public void checkQuestCondition(MapMovement mapMovement, string s)
+    {
+        int match = 0;
+        if (mapMovement.getIsMatchingDown() & mapMovement.GetComponent<MapFeatures>().tileMap.getDown() == "Forest")
+            match++;
+        if (mapMovement.getIsMatchingLeft() & mapMovement.GetComponent<MapFeatures>().tileMap.getLeft() == "Forest")
+            match++;
+        if (mapMovement.getIsMatchingRight() & mapMovement.GetComponent<MapFeatures>().tileMap.getRight() == "Forest")
+            match++;
+        if (mapMovement.getIsMatchingUp() & mapMovement.GetComponent<MapFeatures>().tileMap.getUp() == "Forest")
+            match++;
+
+        if (s == "MapForestQuest1")
+        {
+
+            if (match >= 2)
+            {
+                one = true;
+                Debug.Log("MISIION COMPLETE 1");
+            }
+            else
+            {
+                one = false;
+            }
+
+        }
+
+        if (s == "MapForestQuest2")
+        {
+
+            if (match >= 2)
+            {
+                two = true;
+                Debug.Log("MISIION COMPLETE 2");
+            }
+            else
+            {
+                two = false;
+            }
+
+        }
+
+        if (s == "MapForestQuest3")
+        {
+
+            if (match >= 2)
+            {
+                three = true;
+                Debug.Log("MISIION COMPLETE 3");
+            }
+            else
+            {
+                three = false;
+            }
+
+        }
+
+        if (s == "MapForestQuest4")
+        {
+
+            if (match >= 2)
+            {
+                four = true;
+                Debug.Log("MISIION COMPLETE 4");
+            }
+            else
+            {
+                four = false;
+            }
+
+        }
+
+        if (one & two & three & four) Debug.Log("MISIION COMPLETE");
+    }
+
+
+
+
 }
+
+
 
 
 // inside map there should be something like this:

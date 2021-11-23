@@ -28,12 +28,12 @@ public class SelecterMovement : MonoBehaviour
             chosenMapCollider = Physics2D.OverlapCircle(movePoint.position, .2f, detectedLayerMap);
             if (chosenMapCollider)
             {
-                
+
                 GameObject go = chosenMapCollider.gameObject;
                 go.GetComponent<MapMovement>().enabled = true;
                 //go.GetComponent<MapFeatures>().enabled = true;
                 choosen = true;
-                
+
                 playerCollider = checkPlayer();
                 if (playerCollider)
                 {
@@ -41,30 +41,35 @@ public class SelecterMovement : MonoBehaviour
                     playerCollider.gameObject.transform.SetParent(go.transform);
                     isChild = true;
                 }
-                
+                else
+                {
+                    isChild = false;
+                }
+
                 enableSelectionMapCondition();
             }
-            
+
         }
         else if (Input.GetKeyDown(KeyCode.Space) && choosen == true)
         {
-            
+
             if (disableSelectionMapCondition())
             {
                 chosenMapCollider.gameObject.GetComponent<MapMovement>().enabled = false;
                 //chosenMapCollider.gameObject.GetComponent<MapFeatures>().enabled = false;
-            
+
                 choosen = false;
-                
+
                 if (isChild == true)
                 {
                     playerCollider.gameObject.transform.SetParent(null);
                 }
-            }
-            else
-            {
-                Debug.Log("Non puoi metterlo");
-            }
+                SimpleEventManager.TriggerEvent("NorthForest");
+            } 
+        else
+        {
+            Debug.Log("Non puoi metterlo");
+        }
            
             
         }
