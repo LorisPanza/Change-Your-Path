@@ -7927,9 +7927,17 @@ PrefabInstance:
       propertyPath: enviromentalElements.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7585825836349891719, guid: 18ecba0e8ccea453f93948445a43535d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585825836349891719, guid: 18ecba0e8ccea453f93948445a43535d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 781973799
+      objectReference: {fileID: 0}
     - target: {fileID: 7585825836349891723, guid: 18ecba0e8ccea453f93948445a43535d, type: 3}
       propertyPath: m_Name
-      value: MapPiece0
+      value: MapPiece0 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7585825836715067017, guid: 18ecba0e8ccea453f93948445a43535d, type: 3}
       propertyPath: m_RootOrder

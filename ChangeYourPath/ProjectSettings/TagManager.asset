@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Terrain
+    uniqueID: 781973799
+    locked: 0
+  - name: Player
+    uniqueID: 381879105
+    locked: 0
+  - name: Collision
+    uniqueID: 4182300719
+    locked: 0
