@@ -50,4 +50,8 @@ public class Player : MonoBehaviour
     {
         
     }
+    public Vector3 GetMoveDelta()
+    {
+        return moveDelta;
+    }
 }
