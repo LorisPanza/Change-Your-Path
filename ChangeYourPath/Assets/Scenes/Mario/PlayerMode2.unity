@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba89442eeae2440a9c20a78e8093965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newMapPiece: {fileID: 0}
 --- !u!1001 &225355364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1262,6 +1263,10 @@ PrefabInstance:
     - target: {fileID: 8988946237625951591, guid: bd1f0e42eb0ae43fc94d3f9638aad267, type: 3}
       propertyPath: m_Name
       value: PlayerView
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988946237625951591, guid: bd1f0e42eb0ae43fc94d3f9638aad267, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8988946237625951643, guid: bd1f0e42eb0ae43fc94d3f9638aad267, type: 3}
       propertyPath: m_RootOrder
