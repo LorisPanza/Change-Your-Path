@@ -24,26 +24,26 @@ public class Quest
     public void checkQuestCondition(MapMovement mapMovement, string s)
     {
         mapMovement.matchingAllSides(mapMovement.movePoint);
-        Debug.Log("Hello"+s);
+        //Debug.Log("Hello"+s);
         int match = 0;
         if (mapMovement.getIsMatchingDown() & mapMovement.GetComponent<MapFeatures>().tileMap.getDown() == "Forest")
         {
-            Debug.Log("Missione sotto completa pezzo: "+s);
+            //Debug.Log("Missione sotto completa pezzo: "+s);
             match++;
         }
             
         if (mapMovement.getIsMatchingLeft() & mapMovement.GetComponent<MapFeatures>().tileMap.getLeft() == "Forest")
         {
-            Debug.Log("Missione sinistra completa pezzo: "+s);
+            //Debug.Log("Missione sinistra completa pezzo: "+s);
             match++;
         }
         if (mapMovement.getIsMatchingRight() & mapMovement.GetComponent<MapFeatures>().tileMap.getRight() == "Forest"){
-            Debug.Log("Missione destra completa pezzo: "+s);
+            //Debug.Log("Missione destra completa pezzo: "+s);
             match++;
         } 
         if (mapMovement.getIsMatchingUp() & mapMovement.GetComponent<MapFeatures>().tileMap.getUp() == "Forest")
         {
-            Debug.Log("Missione sopra completa pezzo: "+s);
+            //Debug.Log("Missione sopra completa pezzo: "+s);
             match++;
         }
 
@@ -107,7 +107,14 @@ public class Quest
 
         }
 
-        if (one & two & three & four) Debug.Log("MISIION COMPLETE");
+        if (one & two & three & four)
+        {
+            if (true)
+            {
+                Debug.Log("MISIION COMPLETE");    
+            }
+            
+        }
     }
 
 
