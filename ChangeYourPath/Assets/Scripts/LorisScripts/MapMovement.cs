@@ -88,13 +88,13 @@ public class MapMovement : MonoBehaviour
                 if (mapFeatures.tileMap.getLeft() == thisMap.tileMap.getRight())
                 {
                     isMatchingRight = true;
-                    Debug.Log("Matching" + thisMap.tileMap.getRight() + "On the right");
+                    //Debug.Log("Matching" + thisMap.tileMap.getRight() + "On the right");
                     return mapObject;
                     
                 }
                 else
                 {
-                    Debug.Log("No matching type on the right: " + mapFeatures.tileMap.getLeft());
+                    //Debug.Log("No matching type on the right: " + mapFeatures.tileMap.getLeft());
                     isMatching = false;
                     return null;
                 }
@@ -122,12 +122,12 @@ public class MapMovement : MonoBehaviour
                 if (mapFeatures.tileMap.getRight() == thisMap.tileMap.getLeft())
                 {
                     isMatchingLeft = true;
-                    Debug.Log("Matching" + thisMap.tileMap.getLeft() + "On the left");
+                    //Debug.Log("Matching" + thisMap.tileMap.getLeft() + "On the left");
                     return mapObject;
                 }
                 else
                 {
-                    Debug.Log("No matching type on the left:"+mapFeatures.tileMap.getRight());
+                    //Debug.Log("No matching type on the left:"+mapFeatures.tileMap.getRight());
                     isMatching = false;
                     return null;
                 }
@@ -154,12 +154,12 @@ public class MapMovement : MonoBehaviour
                 if (mapFeatures.tileMap.getDown() == thisMap.tileMap.getUp())
                 {
                     isMatchingUp = true;
-                    Debug.Log("Matching" + thisMap.tileMap.getUp() + "Up");
+                    //Debug.Log("Matching" + thisMap.tileMap.getUp() + "Up");
                     return mapObject;
                 }
                 else
                 {
-                    Debug.Log("No matching type on the up:"+mapFeatures.tileMap.getDown());
+                    //Debug.Log("No matching type on the up:"+mapFeatures.tileMap.getDown());
                     isMatching = false;
                     return null;
                 }
@@ -185,12 +185,12 @@ public class MapMovement : MonoBehaviour
                 if (mapFeatures.tileMap.getUp() == thisMap.tileMap.getDown())
                 {
                     isMatchingDown = true;
-                    Debug.Log("Matching" + thisMap.tileMap.getDown() + "Down");
+                    //Debug.Log("Matching" + thisMap.tileMap.getDown() + "Down");
                     return mapObject;
                 }
                 else
                 {
-                    Debug.Log("No matching type down: "+mapFeatures.tileMap.getUp());
+                    //Debug.Log("No matching type down: "+mapFeatures.tileMap.getUp());
                     isMatching = false;
                     return null;
                 }

@@ -68,7 +68,7 @@ public class SelecterMovement : MonoBehaviour
             } 
         else
         {
-            Debug.Log("Non puoi metterlo");
+            //Debug.Log("Non puoi metterlo");
         }
            
             
@@ -125,7 +125,7 @@ public class SelecterMovement : MonoBehaviour
     public void enableSelectionMapCondition()
     {
         MapMovement chosenMapMov = chosenMapCollider.gameObject.GetComponent<MapMovement>();
-        Debug.Log("Premuto spazio e controllo attorno");
+        //Debug.Log("Premuto spazio e controllo attorno");
         chosenMapMov.matchingAllSides(chosenMapMov.movePoint);
         
         if (chosenMapMov.getIsMatchingLeft())
@@ -140,7 +140,7 @@ public class SelecterMovement : MonoBehaviour
 
         if (chosenMapMov.getIsMatchingRight())
         {
-            Debug.Log("a destra ho qualcosa");
+            //Debug.Log("a destra ho qualcosa");
             GameObject rightDetectedMap = chosenMapMov.matchingRight(chosenMapMov.movePoint);
             if (rightDetectedMap!=null)
             {

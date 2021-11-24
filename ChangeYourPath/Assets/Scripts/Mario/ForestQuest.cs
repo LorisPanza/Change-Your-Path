@@ -17,6 +17,7 @@ public class ForestQuest : MonoBehaviour
     {
         if (npc.quest.isActive)
         {
+            Debug.Log(this.name);
             npc.quest.checkQuestCondition(GetComponent<MapMovement>(),this.name);
         }
     }
