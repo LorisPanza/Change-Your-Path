@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Selecter
+  - MapPiece
   layers:
   - Default
   - TransparentFX
