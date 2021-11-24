@@ -16979,8 +16979,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7602399437264333976, guid: bc4d6ac802b254e26a7f10d045577457, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2985bcb5f013e4115baf077548af0d5e, type: 3}
+    - target: {fileID: 7602399437264333976, guid: bc4d6ac802b254e26a7f10d045577457, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602399437264333976, guid: bc4d6ac802b254e26a7f10d045577457, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602399437264333976, guid: bc4d6ac802b254e26a7f10d045577457, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 781973799
       objectReference: {fileID: 0}
     - target: {fileID: 7602399437264333978, guid: bc4d6ac802b254e26a7f10d045577457, type: 3}
       propertyPath: m_Name
@@ -41161,6 +41173,7 @@ MonoBehaviour:
   isQuestGiver: 1
   quest:
     isActive: 0
+    isComplete: 0
     goal:
       goalType: 0
     whereNpcIs: {fileID: 902247775}
