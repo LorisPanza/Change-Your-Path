@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 7585825836349891716}
   m_Layer: 7
   m_Name: MapPiece
-  m_TagString: Untagged
+  m_TagString: MapPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
