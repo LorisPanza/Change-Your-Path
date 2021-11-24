@@ -23,6 +23,8 @@ public class Quest
 
     public void checkQuestCondition(MapMovement mapMovement, string s)
     {
+        mapMovement.matchingAllSides(mapMovement.movePoint);
+        Debug.Log("Hello"+s);
         int match = 0;
         if (mapMovement.getIsMatchingDown() & mapMovement.GetComponent<MapFeatures>().tileMap.getDown() == "Forest")
         {

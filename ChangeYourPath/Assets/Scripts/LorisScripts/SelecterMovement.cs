@@ -22,10 +22,11 @@ public class SelecterMovement : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
-
+       
         if (Input.GetKeyDown(KeyCode.Space) && choosen == false)
         {
             chosenMapCollider = Physics2D.OverlapCircle(movePoint.position, .2f, detectedLayerMap);
+            //GameObject go = chosenMapCollider.gameObject;
             if (chosenMapCollider)
             {
 
@@ -41,10 +42,7 @@ public class SelecterMovement : MonoBehaviour
                     playerCollider.gameObject.transform.SetParent(go.transform);
                     isChild = true;
                 }
-                else
-                {
-                    isChild = false;
-                }
+               
 
                 enableSelectionMapCondition();
             }
@@ -52,7 +50,7 @@ public class SelecterMovement : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space) && choosen == true)
         {
-
+            GameObject go = chosenMapCollider.gameObject;
             if (disableSelectionMapCondition())
             {
                 chosenMapCollider.gameObject.GetComponent<MapMovement>().enabled = false;
@@ -62,7 +60,9 @@ public class SelecterMovement : MonoBehaviour
 
                 if (isChild == true)
                 {
+                    go.GetComponent<MapFeatures>().player = null;
                     playerCollider.gameObject.transform.SetParent(null);
+                    isChild = false;
                 }
                 SimpleEventManager.TriggerEvent("NorthForest");
             } 
