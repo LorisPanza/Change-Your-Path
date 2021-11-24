@@ -17,8 +17,9 @@ public class ForestQuest : MonoBehaviour
     {
         if (npc.quest.isActive)
         {
-            //Debug.Log(this.name);
             npc.quest.checkQuestCondition(this.GetComponent<MapMovement>(),this.name);
         }
+        if (npc.quest.isComplete)
+            SimpleEventManager.StopListening("NorthForest", CheckIsActive);
     }
 }

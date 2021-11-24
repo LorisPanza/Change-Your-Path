@@ -1059,6 +1059,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &902247775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7585825836349891723, guid: 18ecba0e8ccea453f93948445a43535d, type: 3}
+  m_PrefabInstance: {fileID: 1179279912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &903016998
 GameObject:
   m_ObjectHideFlags: 0
@@ -41158,6 +41163,7 @@ MonoBehaviour:
     isActive: 0
     goal:
       goalType: 0
+    whereNpcIs: {fileID: 902247775}
   player: {fileID: 0}
   dialogue:
     name: Orphan
