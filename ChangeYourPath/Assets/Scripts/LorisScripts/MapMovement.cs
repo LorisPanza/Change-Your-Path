@@ -210,8 +210,8 @@ public class MapMovement : MonoBehaviour
         thisMap.rotateSpriteClockwise();
         thisMap.rotateBoundaryClockwise();
 
-        //AdjustTreesClockwise();
-        //RotateTreesClockwise();
+        AdjustTreesClockwise();
+        RotateTreesClockwise();
     }
 
     public void rotateCounterClockwise()
@@ -274,11 +274,13 @@ public class MapMovement : MonoBehaviour
 
     private void RotateTreesClockwise()
     {
-        if (this.transform.Find("Forest_0_degree").gameObject.activeSelf == true)
+        if (this.transform.Find("Forest0").gameObject.activeSelf == true)
         {
             print("zero");
-            this.transform.Find("Forest_0_degree").gameObject.SetActive(false);
+            this.transform.Find("Forest0").gameObject.SetActive(false);
+            print(this.transform.Find("Forest0").gameObject.activeSelf);
             this.GetComponent<TreeRotation>().forest90.SetActive(true);
+            print(this.GetComponent<TreeRotation>().forest90.activeSelf);
         }
 
         if (this.transform.Find("Forest_90_degree").gameObject.activeSelf == true)
@@ -301,7 +303,7 @@ public class MapMovement : MonoBehaviour
 
     private void AdjustTreesClockwise()
     {
-        this.transform.Find("Forest_0_degree").gameObject.transform.Rotate(0,0,90);
+        this.transform.Find("Forest0").gameObject.transform.Rotate(0,0,90);
         this.transform.Find("Forest_90_degree").gameObject.transform.Rotate(0, 0, 90);
         this.transform.Find("Forest_180_degree").gameObject.transform.Rotate(0, 0, 90);
         this.transform.Find("Forest_270_degree").gameObject.transform.Rotate(0, 0, 90);
