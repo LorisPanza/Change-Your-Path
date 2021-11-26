@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Forest1
   m_EditorClassIdentifier: 
   up: Grass
-  right: Grass
+  right: Forest
   down: Forest
-  left: Forest
+  left: Grass
