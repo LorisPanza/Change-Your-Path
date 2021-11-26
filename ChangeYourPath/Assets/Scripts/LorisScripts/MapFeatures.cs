@@ -109,6 +109,7 @@ public class MapFeatures : MonoBehaviour
         SpriteRenderer sprite;
         for (int i = 0; i < enviromentalElements.Count; i++)
         {
+
             sprite = enviromentalElements[i].GetComponent<SpriteRenderer>();
             sprite.transform.Rotate(0, 0, 90);
 

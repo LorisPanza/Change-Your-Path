@@ -209,6 +209,9 @@ public class MapMovement : MonoBehaviour
         thisMap.tileMap.clockwiseRotation();
         thisMap.rotateSpriteClockwise();
         thisMap.rotateBoundaryClockwise();
+
+        //AdjustTreesClockwise();
+        //RotateTreesClockwise();
     }
 
     public void rotateCounterClockwise()
@@ -218,6 +221,8 @@ public class MapMovement : MonoBehaviour
         thisMap.tileMap.counterclockwiseRotation();
         thisMap.rotateSpriteCounterClockwise();
         thisMap.rotateBoundaryCounterClockwise();
+
+        AdjustTreesCounterClockwise();
     }
 
 
@@ -267,9 +272,51 @@ public class MapMovement : MonoBehaviour
         return isMatchingDown;
     }
 
-    
-    
-    
+    private void RotateTreesClockwise()
+    {
+        if (this.transform.Find("Forest_0_degree").gameObject.activeSelf == true)
+        {
+            print("zero");
+            this.transform.Find("Forest_0_degree").gameObject.SetActive(false);
+            this.GetComponent<TreeRotation>().forest90.SetActive(true);
+        }
+
+        if (this.transform.Find("Forest_90_degree").gameObject.activeSelf == true)
+        {
+            this.transform.Find("Forest_90_degree").gameObject.SetActive(false);
+            this.GetComponent<TreeRotation>().forest180.SetActive(true);
+        }
+        if (this.transform.Find("Forest_180_degree").gameObject.activeSelf == true)
+        {
+            this.transform.Find("Forest_180_degree").gameObject.SetActive(false);
+            this.GetComponent<TreeRotation>().forest270.SetActive(true);
+        }
+        if (this.transform.Find("Forest_270_degree").gameObject.activeSelf == true)
+        {
+            this.transform.Find("Forest_270_degree").gameObject.SetActive(false);
+            this.GetComponent<TreeRotation>().forest0.SetActive(true);
+        }
+
+    }
+
+    private void AdjustTreesClockwise()
+    {
+        this.transform.Find("Forest_0_degree").gameObject.transform.Rotate(0,0,90);
+        this.transform.Find("Forest_90_degree").gameObject.transform.Rotate(0, 0, 90);
+        this.transform.Find("Forest_180_degree").gameObject.transform.Rotate(0, 0, 90);
+        this.transform.Find("Forest_270_degree").gameObject.transform.Rotate(0, 0, 90);
+    }
+
+    private void AdjustTreesCounterClockwise()
+    {
+        this.transform.Find("Forest_0_degree").gameObject.transform.Rotate(0, 0, -90);
+        this.transform.Find("Forest_90_degree").gameObject.transform.Rotate(0, 0, -90);
+        this.transform.Find("Forest_180_degree").gameObject.transform.Rotate(0, 0, -90);
+        this.transform.Find("Forest_270_degree").gameObject.transform.Rotate(0, 0, -90);
+    }
+
+
+
     /*
     public bool checkMatching(Transform movePointCopy)
     {
@@ -372,8 +419,8 @@ public class MapMovement : MonoBehaviour
         return IsMatching;
     }
     */
-    
-    
+
+
     /*
  public double calculateDistance(Vector3 v1, Vector3 v2)
  {
