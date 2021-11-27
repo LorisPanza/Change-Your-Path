@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,10 +17,11 @@ public class TreeRotation : MonoBehaviour
         forest180.SetActive(false);
         forest270.SetActive(false);
 
-        if (this.transform.rotation.z == 0) forest0.SetActive(true);
-        if (this.transform.rotation.z == 90) forest90.SetActive(true);
-        if (this.transform.rotation.z == 180) forest180.SetActive(true);
-        if (this.transform.rotation.z == -90) forest270.SetActive(true);
+        //Debug.Log(name + ":  " + transform.rotation.z);
+        if (transform.rotation.eulerAngles.z == 0) forest0.SetActive(true);
+        else if (transform.rotation.eulerAngles.z == 90)forest90.SetActive(true);
+        else if (transform.rotation.eulerAngles.z == 180) forest180.SetActive(true);
+        else if (transform.rotation.eulerAngles.z == -90) forest270.SetActive(true);
 
     }
 }

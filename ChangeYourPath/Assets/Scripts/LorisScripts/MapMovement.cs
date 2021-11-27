@@ -223,6 +223,7 @@ public class MapMovement : MonoBehaviour
         thisMap.rotateBoundaryCounterClockwise();
 
         AdjustTreesCounterClockwise();
+        RotateTreesCounterClockwise();
     }
 
 
@@ -274,47 +275,68 @@ public class MapMovement : MonoBehaviour
 
     private void RotateTreesClockwise()
     {
-        if (this.transform.Find("Forest0").gameObject.activeSelf == true)
+        if (GetComponent<TreeRotation>().forest0.activeSelf == true)
         {
-            print("zero");
-            this.transform.Find("Forest0").gameObject.SetActive(false);
-            print(this.transform.Find("Forest0").gameObject.activeSelf);
-            this.GetComponent<TreeRotation>().forest90.SetActive(true);
-            print(this.GetComponent<TreeRotation>().forest90.activeSelf);
+            GetComponent<TreeRotation>().forest0.SetActive(false);
+            GetComponent<TreeRotation>().forest90.SetActive(true);
         }
-
-        if (this.transform.Find("Forest_90_degree").gameObject.activeSelf == true)
+        else if (GetComponent<TreeRotation>().forest90.activeSelf == true)
         {
-            this.transform.Find("Forest_90_degree").gameObject.SetActive(false);
-            this.GetComponent<TreeRotation>().forest180.SetActive(true);
+            GetComponent<TreeRotation>().forest90.SetActive(false);
+            GetComponent<TreeRotation>().forest180.SetActive(true);
         }
-        if (this.transform.Find("Forest_180_degree").gameObject.activeSelf == true)
+        else if (GetComponent<TreeRotation>().forest180.activeSelf == true)
         {
-            this.transform.Find("Forest_180_degree").gameObject.SetActive(false);
-            this.GetComponent<TreeRotation>().forest270.SetActive(true);
+            GetComponent<TreeRotation>().forest180.SetActive(false);
+            GetComponent<TreeRotation>().forest270.SetActive(true);
         }
-        if (this.transform.Find("Forest_270_degree").gameObject.activeSelf == true)
+        else if (GetComponent<TreeRotation>().forest270.activeSelf == true)
         {
-            this.transform.Find("Forest_270_degree").gameObject.SetActive(false);
-            this.GetComponent<TreeRotation>().forest0.SetActive(true);
+            GetComponent<TreeRotation>().forest270.SetActive(false);
+            GetComponent<TreeRotation>().forest0.SetActive(true);
         }
 
     }
 
+    private void RotateTreesCounterClockwise()
+    {
+        if (GetComponent<TreeRotation>().forest0.activeSelf == true)
+        {
+            GetComponent<TreeRotation>().forest0.SetActive(false);
+            GetComponent<TreeRotation>().forest270.SetActive(true);
+        }
+        else if (GetComponent<TreeRotation>().forest270.activeSelf == true)
+        {
+            GetComponent<TreeRotation>().forest270.SetActive(false);
+            GetComponent<TreeRotation>().forest180.SetActive(true);
+        }
+        else if (GetComponent<TreeRotation>().forest180.activeSelf == true)
+        {
+            GetComponent<TreeRotation>().forest180.SetActive(false);
+            GetComponent<TreeRotation>().forest90.SetActive(true);
+        }
+        else if (GetComponent<TreeRotation>().forest90.activeSelf == true)
+        {
+            GetComponent<TreeRotation>().forest90.SetActive(false);
+            GetComponent<TreeRotation>().forest0.SetActive(true);
+        }
+    }
+
+
     private void AdjustTreesClockwise()
     {
-        this.transform.Find("Forest0").gameObject.transform.Rotate(0,0,90);
-        this.transform.Find("Forest_90_degree").gameObject.transform.Rotate(0, 0, 90);
-        this.transform.Find("Forest_180_degree").gameObject.transform.Rotate(0, 0, 90);
-        this.transform.Find("Forest_270_degree").gameObject.transform.Rotate(0, 0, 90);
+        GetComponent<TreeRotation>().forest0.transform.Rotate(0,0,90);
+        GetComponent<TreeRotation>().forest90.transform.Rotate(0, 0, 90);
+        GetComponent<TreeRotation>().forest180.transform.Rotate(0, 0, 90);
+        GetComponent<TreeRotation>().forest270.transform.Rotate(0, 0, 90);
     }
 
     private void AdjustTreesCounterClockwise()
     {
-        this.transform.Find("Forest_0_degree").gameObject.transform.Rotate(0, 0, -90);
-        this.transform.Find("Forest_90_degree").gameObject.transform.Rotate(0, 0, -90);
-        this.transform.Find("Forest_180_degree").gameObject.transform.Rotate(0, 0, -90);
-        this.transform.Find("Forest_270_degree").gameObject.transform.Rotate(0, 0, -90);
+        GetComponent<TreeRotation>().forest0.transform.Rotate(0, 0, -90);
+        GetComponent<TreeRotation>().forest90.transform.Rotate(0, 0, -90);
+        GetComponent<TreeRotation>().forest180.transform.Rotate(0, 0, -90);
+        GetComponent<TreeRotation>().forest270.transform.Rotate(0, 0, -90);
     }
 
 
