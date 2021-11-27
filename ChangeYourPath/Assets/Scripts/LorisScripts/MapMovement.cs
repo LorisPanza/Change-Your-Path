@@ -325,7 +325,7 @@ public class MapMovement : MonoBehaviour
 
     private void AdjustTreesClockwise()
     {
-        GetComponent<TreeRotation>().forest0.transform.Rotate(0,0,90);
+        GetComponent<TreeRotation>().forest0.transform.Rotate(0, 0, 90);
         GetComponent<TreeRotation>().forest90.transform.Rotate(0, 0, 90);
         GetComponent<TreeRotation>().forest180.transform.Rotate(0, 0, 90);
         GetComponent<TreeRotation>().forest270.transform.Rotate(0, 0, 90);

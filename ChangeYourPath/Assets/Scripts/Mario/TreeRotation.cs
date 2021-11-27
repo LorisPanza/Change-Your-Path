@@ -18,10 +18,55 @@ public class TreeRotation : MonoBehaviour
         forest270.SetActive(false);
 
         //Debug.Log(name + ":  " + transform.rotation.z);
-        if (transform.rotation.eulerAngles.z == 0) forest0.SetActive(true);
-        else if (transform.rotation.eulerAngles.z == 90)forest90.SetActive(true);
-        else if (transform.rotation.eulerAngles.z == 180) forest180.SetActive(true);
-        else if (transform.rotation.eulerAngles.z == -90) forest270.SetActive(true);
+        if (transform.rotation.eulerAngles.z == 0)
+        {
+            forest0.SetActive(true);
+            InitTrees0();
+        }
+        else if (transform.rotation.eulerAngles.z == 90)
+        {
+            forest90.SetActive(true);
+            InitTrees90();
+        }
+        else if (transform.rotation.eulerAngles.z == 180)
+        {
+            forest180.SetActive(true);
+            InitTrees180();
+        }
+        else if (transform.rotation.eulerAngles.z == 270)
+        {
+            forest270.SetActive(true);
+            InitTrees270();
+        }
+        Debug.Log(name + ":  " + transform.rotation.eulerAngles.z);
+    }
 
+    private void InitTrees0()
+    {
+        forest0.transform.rotation = Quaternion.Euler(0, 0, 0);
+        forest90.transform.rotation = Quaternion.Euler(0, 0, -90);
+        forest180.transform.rotation = Quaternion.Euler(0, 0, 180);
+        forest270.transform.rotation = Quaternion.Euler(0, 0, 90);
+    }
+    private void InitTrees90()
+    {
+        forest90.transform.rotation = Quaternion.Euler(0, 0, -90);
+        forest180.transform.rotation = Quaternion.Euler(0, 0, 180);
+        forest270.transform.rotation = Quaternion.Euler(0, 0, 90);
+        forest0.transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+    private void InitTrees180()
+    {
+        forest180.transform.rotation = Quaternion.Euler(0, 0, 180);
+        forest270.transform.rotation = Quaternion.Euler(0, 0, 90);
+        forest0.transform.rotation = Quaternion.Euler(0, 0, 0);
+        forest90.transform.rotation = Quaternion.Euler(0, 0, -90);
+    }
+    private void InitTrees270()
+    {
+        forest270.transform.rotation = Quaternion.Euler(0, 0, 90);
+        forest0.transform.rotation = Quaternion.Euler(0, 0, 0);
+        forest90.transform.rotation = Quaternion.Euler(0, 0, -90);
+        forest180.transform.rotation = Quaternion.Euler(0, 0, 180);
     }
 }
