@@ -8,6 +8,7 @@ public class MapCollectable : MonoBehaviour
 
     private MapFeatures mf;
     private IEnumerator waitForKey;
+    public AudioManager audioManager;
 
 
     private void Start()
@@ -44,6 +45,7 @@ public class MapCollectable : MonoBehaviour
         mf = newMapPiece.GetComponent<MapFeatures>();
         SimpleEventManager.StartListening("PlaceNewMap", Place);
         gameObject.SetActive(false);
+        audioManager.Play("mapChoice");
         yield return null;
 
     }

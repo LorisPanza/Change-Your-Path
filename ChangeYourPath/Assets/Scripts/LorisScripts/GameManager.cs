@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public Player player;
     public GameObject selecter;
     private bool playerMode;
+    public MainMenu menu;
+    public AudioManager audioManager;
 
     public enum GameState
     {
@@ -25,7 +27,7 @@ public class GameManager : MonoBehaviour
         playerCam.SetActive(true);
         player.enabled=true;
         selecter.SetActive(false);
-        
+        menu.enabled = true;
     }
     
     public void activateMapMode()
@@ -35,7 +37,7 @@ public class GameManager : MonoBehaviour
         playerCam.SetActive(false);
         player.enabled=false;
         selecter.SetActive(true);
-        
+        menu.enabled = false;
     }
 
 
@@ -69,6 +71,7 @@ public class GameManager : MonoBehaviour
         {
             if (playerMode)
             {
+                audioManager.Play("openMap");
                 activateMapMode();
                 SimpleEventManager.TriggerEvent("PlaceNewMap");
             }
@@ -76,6 +79,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!selecter.GetComponent<SelecterMovement>().getChoosen())
                 {
+                    audioManager.Play("closeMap");
                     activatePlayerMode();
                 }
                 

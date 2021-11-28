@@ -11,6 +11,7 @@ public class SelecterMovement : MonoBehaviour
     private bool choosen = false,isChild=false;
     private Collider2D chosenMapCollider=null,movementCollider=null,playerCollider=null; //colliderMatchingUp,colliderMatchingDown,colliderMatchingRight,colliderMatchingLeft;
     public Transform movePoint;
+    public AudioManager audioManager;
     //private MapFeatures collideMap,thisMap;
     // Start is called before the first frame update
     void Start()
@@ -42,8 +43,7 @@ public class SelecterMovement : MonoBehaviour
                     playerCollider.gameObject.transform.SetParent(go.transform);
                     isChild = true;
                 }
-               
-
+                audioManager.Play("mapSelection");
                 enableSelectionMapCondition();
             }
 
@@ -53,6 +53,7 @@ public class SelecterMovement : MonoBehaviour
             GameObject go = chosenMapCollider.gameObject;
             if (disableSelectionMapCondition())
             {
+                audioManager.Play("mapChoice");
                 chosenMapCollider.gameObject.GetComponent<MapMovement>().enabled = false;
                 //chosenMapCollider.gameObject.GetComponent<MapFeatures>().enabled = false;
 
@@ -68,6 +69,7 @@ public class SelecterMovement : MonoBehaviour
             } 
         else
         {
+            audioManager.Play("mapDenied");
             //Debug.Log("Non puoi metterlo");
         }
            

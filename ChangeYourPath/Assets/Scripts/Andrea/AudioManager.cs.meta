@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: aa6de9a26ade1a049b4a2c17e18fa36c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - masterLevel: {instanceID: 0}
+  - musicLevel: {instanceID: 0}
+  - controlLevel: {instanceID: 0}
+  - ambientLevel: {instanceID: 0}
+  - brightnessLevel: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
