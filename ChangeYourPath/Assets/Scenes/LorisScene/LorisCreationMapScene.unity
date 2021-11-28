@@ -48444,7 +48444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4526883167923920959, guid: 2245908a33e6b4051a95e0f4c0c60c81, type: 3}
       propertyPath: m_ColliderPaths.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526883168520741189, guid: 2245908a33e6b4051a95e0f4c0c60c81, type: 3}
       propertyPath: m_Name
@@ -48452,7 +48452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4526883168520741189, guid: 2245908a33e6b4051a95e0f4c0c60c81, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2245908a33e6b4051a95e0f4c0c60c81, type: 3}
