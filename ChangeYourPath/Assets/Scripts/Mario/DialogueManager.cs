@@ -54,6 +54,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End of conversation");
         HideBox();
         dialogueEnded = true;
+        SimpleEventManager.TriggerEvent("StartQuest");
     }
 
     public bool DialogueEnded()

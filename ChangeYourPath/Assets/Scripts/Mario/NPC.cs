@@ -18,6 +18,20 @@ public class NPC : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             talk = StartCoroutine(Talk());
+            Debug.Log(name);
+            SimpleEventManager.StartListening("StartQuest", StartQuest);
+        }
+    }
+
+    void StartQuest()
+    {
+        if (isQuestGiver)
+        {
+            if (FindObjectOfType<DialogueManager>().DialogueEnded())
+            {
+                quest.isActive = true;
+                SimpleEventManager.StopListening("StartQuest", StartQuest);
+            }
         }
     }
 
@@ -29,14 +43,6 @@ public class NPC : MonoBehaviour
             started = false;
             FindObjectOfType<DialogueManager>().HideBox();
 
-            if (isQuestGiver)
-            {
-                if (FindObjectOfType<DialogueManager>().DialogueEnded())
-                {
-                    quest.isActive = true;
-                    //player.quest = quest;
-                }
-            }
         }
     }
 
