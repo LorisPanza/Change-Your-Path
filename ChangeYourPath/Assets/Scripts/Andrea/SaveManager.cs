@@ -79,7 +79,7 @@ public class SaveManager : MonoBehaviour
             } else if (item.rotation == 180) {
                 mapMov.rotateCounterClockwise();
                 mapMov.rotateCounterClockwise();
-            } else if (item.rotation == -90) {
+            } else if (item.rotation == -90 || item.rotation == 270) {
                 mapMov.rotateClockwise();
             }
             //piece.transform.rotation = Quaternion.Euler(0, 0, item.rotation);

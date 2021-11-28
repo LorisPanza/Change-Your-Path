@@ -24,8 +24,6 @@ public class GameManager : MonoBehaviour
     {
         playerMode = true;
         mapCam.SetActive(false);
-        //CameraManager cm=playerCam.GetComponent<CameraManager>();
-        //cm.enabled = true;
         playerCam.SetActive(true);
         player.enabled=true;
         selecter.SetActive(false);
@@ -36,9 +34,7 @@ public class GameManager : MonoBehaviour
     {
         playerMode = false;
         mapCam.SetActive(true);
-        //CameraManager cm=playerCam.GetComponent<CameraManager>();
         playerCam.SetActive(false);
-        //cm.enabled = false;
         player.enabled=false;
         selecter.SetActive(true);
         menu.enabled = false;
