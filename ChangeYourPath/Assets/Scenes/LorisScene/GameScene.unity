@@ -4720,7 +4720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -503.73, y: -295.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &970521953
@@ -5795,6 +5795,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2234165941513674349, guid: 8aac7d61ed95c457d9ff2804766c45ff, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 938604305}
     - target: {fileID: 6401629642078377212, guid: 8aac7d61ed95c457d9ff2804766c45ff, type: 3}
       propertyPath: tileMap
       value: 
