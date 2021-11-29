@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
 
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (!menu.enabled && Input.GetKeyDown(KeyCode.Return))
             {
                 tutorial.SetActive(true);
                 miniTutorial.SetActive(false);
