@@ -3360,6 +3360,12 @@ MonoBehaviour:
     pitch: 2
     loop: 0
     source: {fileID: 0}
+  - name: Voice
+    clip: {fileID: 8300000, guid: 9b4609ce2d6944c2c9a6711bf3f67e44, type: 3}
+    volume: 1
+    pitch: 2
+    loop: 1
+    source: {fileID: 0}
 --- !u!4 &938604306
 Transform:
   m_ObjectHideFlags: 0
@@ -7562,6 +7568,7 @@ MonoBehaviour:
   nameText: {fileID: 714225496}
   dialogueText: {fileID: 208510228}
   canvas: {fileID: 1011465988}
+  audioManager: {fileID: 938604305}
 --- !u!4 &2069876090
 Transform:
   m_ObjectHideFlags: 0
@@ -7642,6 +7649,50 @@ PrefabInstance:
     - target: {fileID: 2307249760892291724, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
+      propertyPath: tutorial.name
+      value: Kvothe
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
+      propertyPath: spaceTutorial.name
+      value: Kvothe
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
+      propertyPath: tutorial.sentences.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
+      propertyPath: tutorial.sentences.Array.data[0]
+      value: Hi...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
+      propertyPath: tutorial.sentences.Array.data[1]
+      value: Move with arrows...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
+      propertyPath: tutorial.sentences.Array.data[2]
+      value: press space to collect new map pieces..
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
+      propertyPath: tutorial.sentences.Array.data[3]
+      value: press tab to open the menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
+      propertyPath: spaceTutorial.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
+      propertyPath: spaceTutorial.sentences.Array.data[0]
+      value: Press space.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
+      propertyPath: spaceTutorial.sentences.Array.data[1]
+      value: Press space to continue.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
+      propertyPath: spaceTutorial.sentences.Array.data[2]
+      value: Press space also to collect and interact.
       objectReference: {fileID: 0}
     - target: {fileID: 2307249760987389017, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
       propertyPath: m_Name

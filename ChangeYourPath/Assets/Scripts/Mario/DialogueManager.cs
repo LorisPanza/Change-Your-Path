@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public GameObject canvas;
+    public AudioManager audioManager;
 
 
     private bool dialogueEnded = false;
@@ -32,6 +33,8 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
+        AudioSource voiceSrc = audioManager.GetSound("Voice").source;
+        voiceSrc.Play();
 
         DisplayNextSentence();
     }
@@ -55,6 +58,8 @@ public class DialogueManager : MonoBehaviour
         HideBox();
         dialogueEnded = true;
         SimpleEventManager.TriggerEvent("StartQuest");
+        AudioSource voiceSrc = audioManager.GetSound("Voice").source;
+        voiceSrc.Stop();
     }
 
     public bool DialogueEnded()
