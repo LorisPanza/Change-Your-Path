@@ -16,8 +16,8 @@ public class MainMenu : MonoBehaviour
 
     void Update() 
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

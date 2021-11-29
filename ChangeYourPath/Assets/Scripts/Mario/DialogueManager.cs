@@ -33,8 +33,11 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-        AudioSource voiceSrc = audioManager.GetSound("Voice").source;
-        voiceSrc.Play();
+        if (dialogue.name.IndexOf("Tutorial") == -1)
+        {
+            AudioSource voiceSrc = audioManager.GetSound("Voice").source;
+            voiceSrc.Play();
+        }
 
         DisplayNextSentence();
     }
@@ -58,6 +61,7 @@ public class DialogueManager : MonoBehaviour
         HideBox();
         dialogueEnded = true;
         SimpleEventManager.TriggerEvent("StartQuest");
+
         AudioSource voiceSrc = audioManager.GetSound("Voice").source;
         voiceSrc.Stop();
     }

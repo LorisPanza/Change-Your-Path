@@ -10,15 +10,21 @@ public class SaveManager : MonoBehaviour
     public Image controller;
     public AudioManager audioManager;
     public GameObject kvothe;
-    public SavedMap[] mapPieces;
+    private SavedMap[] mapPieces;
+    public List<GameObject> chapter1;
 
-    void Start() {
-        if (PlayerPrefs.HasKey("Master volume")) {
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("Master volume"))
+        {
             LoadSettings();
-            if (PlayerPrefs.HasKey("KvotheX")) {
+            if (PlayerPrefs.HasKey("KvotheX"))
+            {
                 LoadGame();
             }
-        } else {
+        }
+        else
+        {
             audioManager.SetDefault();
         }
     }
@@ -26,11 +32,11 @@ public class SaveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void LoadSettings()
-    {   
+    {
         float master = PlayerPrefs.GetFloat("Master volume");
         AudioListener.volume = master;
         audioManager.masterLevel.value = master;
@@ -38,7 +44,7 @@ public class SaveManager : MonoBehaviour
         float music = PlayerPrefs.GetFloat("Music volume");
         audioManager.SetMusicVolume(music);
         audioManager.musicLevel.value = music;
-        
+
         float control = PlayerPrefs.GetFloat("Control volume");
         audioManager.SetControlVolume(control);
         audioManager.controlLevel.value = control;
@@ -57,7 +63,8 @@ public class SaveManager : MonoBehaviour
         audioManager.brightnessLevel.value = brightness;
     }
 
-    public void LoadGame() {
+    public void LoadGame()
+    {
         float KvotheX = PlayerPrefs.GetFloat("KvotheX");
         float KvotheY = PlayerPrefs.GetFloat("KvotheY");
         kvothe.transform.position = new Vector3(KvotheX, KvotheY, 0);
@@ -70,22 +77,34 @@ public class SaveManager : MonoBehaviour
         }
         foreach (SavedMap item in map)
         {
-            GameObject piece = GameObject.Find(item.title);
+            string title = item.title;
+            GameObject piece = null;
+            foreach (GameObject go in chapter1)
+            {
+                if (go.name == title) piece = go;
+                else Debug.Log("CONTROLLA I NOMI DEI PEZZI!!!");
+
+            }
             piece.SetActive(true);
             piece.transform.position = new Vector3(item.mapPositionX, item.mapPositionY, 0);
             MapMovement mapMov = piece.GetComponent<MapMovement>();
-            if (item.rotation == 90) {
+            if (item.rotation == 90)
+            {
                 mapMov.rotateCounterClockwise();
-            } else if (item.rotation == 180) {
+            }
+            else if (item.rotation == 180)
+            {
                 mapMov.rotateCounterClockwise();
                 mapMov.rotateCounterClockwise();
-            } else if (item.rotation == -90 || item.rotation == 270) {
+            }
+            else if (item.rotation == -90 || item.rotation == 270)
+            {
                 mapMov.rotateClockwise();
             }
             //piece.transform.rotation = Quaternion.Euler(0, 0, item.rotation);
         }
     }
- 
+
     //Saves the player data
     public void SaveSettings()
     {
@@ -94,7 +113,7 @@ public class SaveManager : MonoBehaviour
 
         float music = audioManager.musicLevel.value;
         PlayerPrefs.SetFloat("Music volume", music);
- 
+
         float control = audioManager.controlLevel.value;
         PlayerPrefs.SetFloat("Control volume", control);
 
@@ -103,12 +122,13 @@ public class SaveManager : MonoBehaviour
 
         float brightness = audioManager.brightnessLevel.value;
         PlayerPrefs.SetFloat("Brightness", brightness);
-        
+
         PlayerPrefs.Save();
         Debug.Log("SAVED");
     }
 
-    public void SaveGame() {
+    public void SaveGame()
+    {
         Vector3 Kvotheposition = kvothe.transform.position;
         PlayerPrefs.SetFloat("KvotheX", Kvotheposition.x);
         PlayerPrefs.SetFloat("KvotheY", Kvotheposition.y);
@@ -119,7 +139,8 @@ public class SaveManager : MonoBehaviour
         mapPieces = new SavedMap[numPieces];
         maps = GameObject.FindGameObjectsWithTag("MapPiece");
 
-        for (int i=0; i<numPieces; i++) {
+        for (int i = 0; i < numPieces; i++)
+        {
             SavedMap sm = new SavedMap();
             sm.title = maps[i].name;
             sm.mapPositionX = maps[i].transform.position.x;
@@ -132,7 +153,8 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.SetString("Map state", mapToJson);
     }
 
-    public void Save() {
+    public void Save()
+    {
         SaveSettings();
         SaveGame();
     }
