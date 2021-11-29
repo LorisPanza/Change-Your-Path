@@ -82,7 +82,6 @@ public class SaveManager : MonoBehaviour
             foreach (GameObject go in chapter1)
             {
                 if (go.name == title) piece = go;
-                else Debug.Log("CONTROLLA I NOMI DEI PEZZI!!!");
 
             }
             piece.SetActive(true);

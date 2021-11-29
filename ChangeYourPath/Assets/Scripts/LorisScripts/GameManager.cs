@@ -92,23 +92,31 @@ public class GameManager : MonoBehaviour
                 activatePlayerMode();
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Tab))
+        else
         {
-            if (mode == 1)
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
-                audioManager.Play("openMap");
-                activateMapMode();
-                SimpleEventManager.TriggerEvent("PlaceNewMap");
-            }
-            else if (mode == 2)
-            {
-                if (!selecter.GetComponent<SelecterMovement>().getChoosen())
+                if (mode == 1)
                 {
-                    audioManager.Play("closeMap");
-                    activatePlayerMode();
+                    audioManager.Play("openMap");
+                    activateMapMode();
+                    SimpleEventManager.TriggerEvent("PlaceNewMap");
                 }
+                else if (mode == 2)
+                {
+                    if (!selecter.GetComponent<SelecterMovement>().getChoosen())
+                    {
+                        audioManager.Play("closeMap");
+                        activatePlayerMode();
+                    }
 
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                tutorial.SetActive(true);
+                miniTutorial.SetActive(false);
+                activateTutorialMode();
             }
         }
 
