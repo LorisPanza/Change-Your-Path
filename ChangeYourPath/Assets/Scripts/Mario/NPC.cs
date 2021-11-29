@@ -8,6 +8,7 @@ public class NPC : MonoBehaviour
     public Quest quest;
     public Player player;
     //public Map map; reference to the map piece involved in the quest
+    public GameObject whoAreYouCanvas;
 
     public Dialogue dialogue;
     private Coroutine talk;
@@ -18,6 +19,7 @@ public class NPC : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             talk = StartCoroutine(Talk());
+            whoAreYouCanvas.SetActive(true);
             Debug.Log(name);
             SimpleEventManager.StartListening("StartQuest", StartQuest);
         }
@@ -39,6 +41,7 @@ public class NPC : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            whoAreYouCanvas.SetActive(false);
             StopCoroutine(talk);
             started = false;
             FindObjectOfType<DialogueManager>().HideBox();
@@ -59,6 +62,7 @@ public class NPC : MonoBehaviour
             {
                 if (!started)
                 {
+                    whoAreYouCanvas.SetActive(false);
                     TriggerDialogue();
                     started = true;
                 }

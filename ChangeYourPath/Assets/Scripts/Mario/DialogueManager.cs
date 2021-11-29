@@ -21,7 +21,8 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void StartDialogue(Dialogue dialogue) {
+    public void StartDialogue(Dialogue dialogue)
+    {
         Debug.Log("Starting conversation with " + dialogue.name);
         dialogueEnded = false;
 
@@ -33,11 +34,9 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-        if (dialogue.name.IndexOf("Tutorial") == -1)
-        {
-            AudioSource voiceSrc = audioManager.GetSound("Voice").source;
-            voiceSrc.Play();
-        }
+        AudioSource voiceSrc = audioManager.GetSound("Voice").source;
+        voiceSrc.Play();
+
 
         DisplayNextSentence();
     }

@@ -8,7 +8,6 @@ public class Tree : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Entered");
             collision.gameObject.transform.parent.gameObject.GetComponent<SpriteRenderer>().sortingOrder =
                 this.GetComponent<SpriteRenderer>().sortingOrder - 1;
         }
