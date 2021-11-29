@@ -112,12 +112,12 @@ public class GameManager : MonoBehaviour
 
                 }
             }
-            if (!menu.enabled && Input.GetKeyDown(KeyCode.Return))
-            {
-                tutorial.SetActive(true);
-                miniTutorial.SetActive(false);
-                activateTutorialMode();
-            }
+            //if (!menu.enabled && Input.GetKeyDown(KeyCode.Return))
+            //{
+            //    tutorial.SetActive(true);
+            //    miniTutorial.SetActive(false);
+            //    activateTutorialMode();
+            //}
         }
 
     }
