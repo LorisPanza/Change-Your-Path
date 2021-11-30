@@ -54,23 +54,41 @@ public class PlaceForest : MonoBehaviour
         mf2 = forest2.GetComponent<MapFeatures>();
         mf3 = forest3.GetComponent<MapFeatures>();
         mf4 = forest4.GetComponent<MapFeatures>();
-        SimpleEventManager.StartListening("PlaceNewMap", Place);
+        SimpleEventManager.StartListening("PlaceNewMap", Place1);
+        SimpleEventManager.StartListening("PlaceNewMap", Place2);
+        SimpleEventManager.StartListening("PlaceNewMap", Place3);
+        SimpleEventManager.StartListening("PlaceNewMap", Place4);
 
         gameObject.SetActive(false);
         audioManager.Play("mapChoice");
         yield return null;
     }
 
-    private void Place()
+    private void Place1()
     {
         mf1.placeNewMap();
-        mf2.placeNewMap();
-        mf3.placeNewMap();
-        mf4.placeNewMap();
-        SimpleEventManager.StopListening("PlaceNewMap", Place);
+        SimpleEventManager.StopListening("PlaceNewMap", Place1);
         forest1.SetActive(true);
+    }
+
+    private void Place2()
+    {
+        mf2.placeNewMap();
+        SimpleEventManager.StopListening("PlaceNewMap", Place2);
         forest2.SetActive(true);
+    }
+
+    private void Place3()
+    {
+        mf3.placeNewMap();
+        SimpleEventManager.StopListening("PlaceNewMap", Place3);
         forest3.SetActive(true);
+    }
+
+    private void Place4()
+    {
+        mf4.placeNewMap();
+        SimpleEventManager.StopListening("PlaceNewMap", Place4);
         forest4.SetActive(true);
     }
 }
