@@ -35,22 +35,22 @@ public class Quest
         int match = 0;
         if (mapMovement.getIsMatchingDown() & mapMovement.GetComponent<MapFeatures>().tileMap.getDown() == "Forest")
         {
-            Debug.Log("Missione sotto completa pezzo: "+s);
+            //Debug.Log("Missione sotto completa pezzo: "+s);
             match++;
         }
             
         if (mapMovement.getIsMatchingLeft() & mapMovement.GetComponent<MapFeatures>().tileMap.getLeft() == "Forest")
         {
-            Debug.Log("Missione sinistra completa pezzo: "+s);
+            //Debug.Log("Missione sinistra completa pezzo: "+s);
             match++;
         }
         if (mapMovement.getIsMatchingRight() & mapMovement.GetComponent<MapFeatures>().tileMap.getRight() == "Forest"){
-            Debug.Log("Missione destra completa pezzo: "+s);
+            //Debug.Log("Missione destra completa pezzo: "+s);
             match++;
         } 
         if (mapMovement.getIsMatchingUp() & mapMovement.GetComponent<MapFeatures>().tileMap.getUp() == "Forest")
         {
-            Debug.Log("Missione sopra completa pezzo: "+s);
+            //Debug.Log("Missione sopra completa pezzo: "+s);
             match++;
         }
 
@@ -60,7 +60,6 @@ public class Quest
             if (match >= 2)
             {
                 one = true;
-                Debug.Log("piece 6 match");
             }
             else
             {
@@ -75,7 +74,6 @@ public class Quest
             if (match >= 2)
             {
                 two = true;
-                Debug.Log("piece 7 match");
             }
             else
             {
@@ -90,7 +88,6 @@ public class Quest
             if (match >= 2)
             {
                 three = true;
-                Debug.Log("piece 8 match");
             }
             else
             {
@@ -105,7 +102,6 @@ public class Quest
             if (match >= 2)
             {
                 four = true;
-                Debug.Log("piece 9 match");
             }
             else
             {
@@ -116,7 +112,7 @@ public class Quest
 
         if (one && two && three && four)
         {
-            Debug.Log("FOresta costruita");
+            //Debug.Log("FOresta costruita");
             Vector3 from = whereNpcIs.transform.position;
             Vector3 dest1 = GameObject.Find("MapPiece 6").transform.position;
             Vector3 dest2 = GameObject.Find("MapPiece 7").transform.position;

@@ -95,9 +95,9 @@ public class AudioManager : MonoBehaviour
         s[5] = GetSound("mapSelection");
         s[6] = GetSound("mapChoice");
         s[7] = GetSound("mapDenied");
-        for (var i=0; i<6; i++) {
+        for (var i=0; i<s.Length; i++) {
             if (s[i] == null) {
-                Debug.LogWarning("Sound: Controls not found!");
+                Debug.LogWarning("Sound: Control #" + i +" not found!");
                 return;
             }
             s[i].source.volume = vol;
@@ -105,13 +105,19 @@ public class AudioManager : MonoBehaviour
     }
 
     public void SetAmbientVolume (float vol)
-    {   
-        Sound s = GetSound("Walk");
-        if (s == null) {
-            Debug.LogWarning("Sound: Walk not found!");
-            return;
+    {
+        Sound[] s = new Sound[2];
+        s[0] = GetSound("Walk");
+        s[1] = GetSound("Voice");
+        for (var i = 0; i < s.Length; i++)
+        {
+            if (s[i] == null)
+            {
+                Debug.LogWarning("Sound: Ambient #" + i + " not found!");
+                return;
+            }
+            s[i].source.volume = vol;
         }
-        s.source.volume = vol;
     }
 
     public void SetDefault ()

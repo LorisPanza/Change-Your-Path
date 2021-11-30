@@ -12,6 +12,7 @@ public class SelecterMovement : MonoBehaviour
     private Collider2D chosenMapCollider=null,movementCollider=null,playerCollider=null; //colliderMatchingUp,colliderMatchingDown,colliderMatchingRight,colliderMatchingLeft;
     public Transform movePoint;
     public AudioManager audioManager;
+    public NPC wilem;
     //private MapFeatures collideMap,thisMap;
     // Start is called before the first frame update
     void Start()
@@ -65,7 +66,7 @@ public class SelecterMovement : MonoBehaviour
                     playerCollider.gameObject.transform.SetParent(null);
                     isChild = false;
                 }
-                SimpleEventManager.TriggerEvent("NorthForest");
+                if (!wilem.quest.isComplete) SimpleEventManager.TriggerEvent("NorthForest");
             } 
         else
         {

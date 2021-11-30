@@ -1780,6 +1780,9 @@ MonoBehaviour:
   - {fileID: 1003801315}
   - {fileID: 106591328}
   - {fileID: 1446953376}
+  npc: {fileID: 1538361606}
+  endPrototypeCanvas: {fileID: 1199421481}
+  houseForest: {fileID: 630501419}
   mapCollectable:
   - {fileID: 1282401997}
   - {fileID: 993733379}
@@ -7364,6 +7367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Selecter
       objectReference: {fileID: 0}
+    - target: {fileID: 1999376543292193119, guid: 99dbd9067d7e84b5e8cad316042260dc, type: 3}
+      propertyPath: wilem
+      value: 
+      objectReference: {fileID: 1538361606}
     - target: {fileID: 1999376543292193119, guid: 99dbd9067d7e84b5e8cad316042260dc, type: 3}
       propertyPath: audioManager
       value: 
@@ -13979,7 +13986,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUIT
+  m_text: MAIN MENU
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -14837,8 +14844,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.9899445, y: -190}
-  m_SizeDelta: {x: 247.4659, y: 89.9967}
+  m_AnchoredPosition: {x: -0.000015259, y: -190}
+  m_SizeDelta: {x: 441.6888, y: 90}
   m_Pivot: {x: 0.5, y: 0.5000001}
 --- !u!4 &1555444532 stripped
 Transform:
@@ -16524,7 +16531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: COMMANDS VOLUME
+  m_text: CONTROL VOLUME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}

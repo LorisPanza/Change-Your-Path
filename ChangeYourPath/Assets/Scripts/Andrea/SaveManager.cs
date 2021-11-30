@@ -13,6 +13,9 @@ public class SaveManager : MonoBehaviour
     public GameObject kvothe;
     private SavedMap[] mapPieces;
     public List<GameObject> chapter1;
+    public NPC npc;
+    public GameObject endPrototypeCanvas;
+    public GameObject houseForest;
 
     public List<GameObject> mapCollectable;
 
@@ -189,6 +192,13 @@ public class SaveManager : MonoBehaviour
                 coll.SetActive(false);
             }
         }
+
+        if (PlayerPrefs.HasKey("ForestQuest"))
+        {
+            npc.quest.isComplete = true;
+            houseForest.SetActive(true);
+            endPrototypeCanvas.SetActive(true);
+        }
     }
 
     //Saves the player data
@@ -249,6 +259,7 @@ public class SaveManager : MonoBehaviour
             PlayerPrefs.SetString("activeCollectable", mapCollectableSave[0].name);
             Debug.Log(mapCollectableSave[0].name);
         }
+        if(npc.quest.isComplete) PlayerPrefs.SetString("ForestQuest", "Complete");
     }
 
     public void Save()

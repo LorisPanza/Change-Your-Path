@@ -8,8 +8,8 @@ public class MainMenu : MonoBehaviour
 {
     public Player kvothe;
     public SelecterMovement selecter;
-    public GameObject pauseMenu, settingsMenu, quitMenu;
-    public GameObject menuFirstButton, settingsFirstButton, settingsClosedButton, quitFirstButton, quitClosedButton;
+    public GameObject pauseMenu, settingsMenu, quitMenu, newGameMenu;
+    public GameObject menuFirstButton, newFirstButton, newClosedButton, settingsFirstButton, settingsClosedButton, quitFirstButton, quitClosedButton;
     public SaveManager saveManager;
 
     public static bool gameIsPaused = false;
@@ -18,15 +18,21 @@ public class MainMenu : MonoBehaviour
     {
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
-
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (SceneManager.GetActiveScene().name != "MainMenu")
         {
-            if (gameIsPaused) {
-                Resume();
-            } else {
-                Pause();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (gameIsPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
         }
+        
     }
 
     void Pause() {
@@ -53,6 +59,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void NewGame()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void ResumeGame() {
         Resume();
     }
@@ -61,6 +73,29 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    public void openNew()
+    {
+        newGameMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //set a new selected object
+        EventSystem.current.SetSelectedGameObject(newFirstButton);
+
+    }
+
+    public void closeNew()
+    {
+        newGameMenu.SetActive(false);
+        pauseMenu.SetActive(true);
+
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //set a new selected object
+        EventSystem.current.SetSelectedGameObject(newClosedButton);
     }
 
     public void openSettings ()
