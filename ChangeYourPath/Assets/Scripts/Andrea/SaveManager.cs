@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
@@ -15,19 +16,33 @@ public class SaveManager : MonoBehaviour
 
     void Start()
     {
-        InitPieces();
-        if (PlayerPrefs.HasKey("Master volume"))
+        if (SceneManager.GetActiveScene().name != "MainMenu")
         {
-            LoadSettings();
-            if (PlayerPrefs.HasKey("KvotheX"))
+            InitPieces();
+            if (PlayerPrefs.HasKey("Master volume"))
             {
-                
-                LoadGame();
+                LoadSettings();
+                if (PlayerPrefs.HasKey("KvotheX"))
+                {
+                    LoadGame();
+                }
             }
+            else
+            {
+                audioManager.SetDefault();
+            }
+
         }
         else
         {
-            audioManager.SetDefault();
+            if (PlayerPrefs.HasKey("Master volume"))
+            {
+                LoadSettings();
+            }
+            else
+            {
+                audioManager.SetDefault();
+            }
         }
     }
 

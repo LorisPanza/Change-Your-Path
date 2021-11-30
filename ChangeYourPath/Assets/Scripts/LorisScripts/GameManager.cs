@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public AudioManager audioManager;
     public GameObject tutorial;
     public GameObject miniTutorial;
+    public GameObject canvasMenu;
 
     // mode = 0: Tutorial, 1: PlayerMode, 2: MapMode
     private int mode = 0;
@@ -50,8 +51,8 @@ public class GameManager : MonoBehaviour
         tutorial.SetActive(true);
         miniTutorial.SetActive(false);
         mode = 0;
-        mapCam.SetActive(false);
-        playerCam.SetActive(true);
+        //mapCam.SetActive(false);
+        //playerCam.SetActive(true);
         player.enabled = false;
         selecter.SetActive(false);
         menu.enabled = false;
@@ -60,18 +61,16 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else if (instance != this)
-            Destroy(gameObject);
+        //if (instance == null)
+        //    instance = this;
+        //else if (instance != this)
+        //    Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
-        Debug.developerConsoleVisible = true;
+        //Debug.developerConsoleVisible = true;
 
-        activateTutorialMode();
-        Debug.Log("MOde: " + mode);
-        //activatePlayerMode();
+        //activateTutorialMode();
 
     }
 
@@ -79,7 +78,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
 
+        //DontDestroyOnLoad(gameObject);
+
+        Debug.developerConsoleVisible = true;
+
+        mapCam.SetActive(false);
+        playerCam.SetActive(true);
+        activateTutorialMode();
     }
 
     // Update is called once per frame
@@ -87,11 +97,12 @@ public class GameManager : MonoBehaviour
     {
         if (mode == 0)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.T))
             {
                 tutorial.SetActive(false);
                 miniTutorial.SetActive(true);
                 activatePlayerMode();
+                menu.enabled = true;
             }
         }
         else
@@ -114,12 +125,16 @@ public class GameManager : MonoBehaviour
 
                 }
             }
-            //if (!menu.enabled && Input.GetKeyDown(KeyCode.Return))
-            //{
-            //    tutorial.SetActive(true);
-            //    miniTutorial.SetActive(false);
-            //    activateTutorialMode();
-            //}
+            bool menuActive = menu.transform.Find("MainMenu").gameObject.activeSelf;
+            bool settingsActive = menu.transform.Find("SettingsMenu").gameObject.activeSelf;
+            bool quitActive = menu.transform.Find("QuitMenu").gameObject.activeSelf;
+            if ( !menuActive && !settingsActive && !quitActive && Input.GetKeyDown(KeyCode.T))
+            {
+                Debug.Log(" Menu: " + menuActive + "   quit:  " + quitActive + "  settings:  " + settingsActive);
+                tutorial.SetActive(true);
+                miniTutorial.SetActive(false);
+                activateTutorialMode();
+            }
         }
 
     }
