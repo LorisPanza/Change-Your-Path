@@ -17,28 +17,55 @@ public class TreeRotation : MonoBehaviour
         forest180.SetActive(false);
         forest270.SetActive(false);
 
-        //Debug.Log(name + ":  " + transform.rotation.z);
-        if (transform.rotation.eulerAngles.z == 0)
+        if (this.name == "MapPiece 6" || this.name == "MapPiece 8")
         {
-            forest0.SetActive(true);
-            InitTrees0();
+            //Debug.Log(name + ":  " + transform.rotation.z);
+            if (transform.rotation.eulerAngles.z == 0)
+            {
+                forest0.SetActive(true);
+                InitTrees0();
+            }
+            else if (transform.rotation.eulerAngles.z == 90)
+            {
+                forest90.SetActive(true);
+                InitTrees90();
+            }
+            else if (transform.rotation.eulerAngles.z == 180)
+            {
+                forest180.SetActive(true);
+                InitTrees180();
+            }
+            else if (transform.rotation.eulerAngles.z == 270)
+            {
+                forest270.SetActive(true);
+                InitTrees270();
+            }
+            //Debug.Log(name + ":  " + transform.rotation.eulerAngles.z);
         }
-        else if (transform.rotation.eulerAngles.z == 90)
+        else if (this.name == "MapPiece 7")
         {
-            forest90.SetActive(true);
-            InitTrees90();
+            if (transform.rotation.eulerAngles.z == 0)
+            {
+                forest270.SetActive(true);
+                InitTrees0();
+            }
+            else if (transform.rotation.eulerAngles.z == 90)
+            {
+                forest180.SetActive(true);
+                InitTrees90();
+            }
+            else if (transform.rotation.eulerAngles.z == 180)
+            {
+                forest90.SetActive(true);
+                InitTrees180();
+            }
+            else if (transform.rotation.eulerAngles.z == 270)
+            {
+                forest0.SetActive(true);
+                InitTrees270();
+            }
         }
-        else if (transform.rotation.eulerAngles.z == 180)
-        {
-            forest180.SetActive(true);
-            InitTrees180();
-        }
-        else if (transform.rotation.eulerAngles.z == 270)
-        {
-            forest270.SetActive(true);
-            InitTrees270();
-        }
-        Debug.Log(name + ":  " + transform.rotation.eulerAngles.z);
+        
     }
 
     private void InitTrees0()
