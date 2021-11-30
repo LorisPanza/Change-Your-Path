@@ -14,6 +14,8 @@ public class SaveManager : MonoBehaviour
     private SavedMap[] mapPieces;
     public List<GameObject> chapter1;
 
+    public List<GameObject> mapCollectable;
+
     void Start()
     {
         if (SceneManager.GetActiveScene().name != "MainMenu")
@@ -141,6 +143,10 @@ public class SaveManager : MonoBehaviour
             }
             piece.SetActive(true);
             piece.transform.position = new Vector3(item.mapPositionX, item.mapPositionY, 0);
+            piece.transform.Find("UpBoundary").gameObject.SetActive(item.upBoundary);
+            piece.transform.Find("DownBoundary").gameObject.SetActive(item.downBoundary);
+            piece.transform.Find("LeftBoundary").gameObject.SetActive(item.leftBoundary);
+            piece.transform.Find("RightBoundary").gameObject.SetActive(item.rightBoundary);
             MapMovement mapMov = piece.GetComponent<MapMovement>();
             if (item.rotation == 90)
             {
@@ -156,6 +162,32 @@ public class SaveManager : MonoBehaviour
                 mapMov.rotateClockwise();
             }
             //piece.transform.rotation = Quaternion.Euler(0, 0, item.rotation);
+        }
+
+        if (PlayerPrefs.HasKey("activeCollectable"))
+        {
+            foreach (GameObject coll in mapCollectable)
+            {
+                Debug.Log(coll.name);
+                if (coll.name == PlayerPrefs.GetString("activeCollectable"))
+                {
+                    coll.SetActive(true);
+                }
+                else
+                {
+                    if (coll.transform.parent.gameObject.activeSelf)
+                    {
+                        coll.SetActive(false);
+                    }
+                }
+            }
+        }
+        else
+        {
+            foreach (GameObject coll in mapCollectable)
+            {
+                coll.SetActive(false);
+            }
         }
     }
 
@@ -200,11 +232,23 @@ public class SaveManager : MonoBehaviour
             sm.mapPositionX = maps[i].transform.position.x;
             sm.mapPositionY = maps[i].transform.position.y;
             sm.rotation = maps[i].transform.rotation.eulerAngles.z;
+            sm.upBoundary = maps[i].transform.Find("UpBoundary").gameObject.activeSelf;
+            sm.downBoundary = maps[i].transform.Find("DownBoundary").gameObject.activeSelf;
+            sm.leftBoundary = maps[i].transform.Find("LeftBoundary").gameObject.activeSelf;
+            sm.rightBoundary = maps[i].transform.Find("RightBoundary").gameObject.activeSelf;
             mapPieces[i] = sm;
         }
 
         string mapToJson = JsonHelper.ToJson(mapPieces, true);
         PlayerPrefs.SetString("Map state", mapToJson);
+
+        GameObject[] mapCollectableSave = GameObject.FindGameObjectsWithTag("MapCollectable");
+
+        if (mapCollectableSave.Length != 0)
+        {
+            PlayerPrefs.SetString("activeCollectable", mapCollectableSave[0].name);
+            Debug.Log(mapCollectableSave[0].name);
+        }
     }
 
     public void Save()

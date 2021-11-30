@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
             bool quitActive = menu.transform.Find("QuitMenu").gameObject.activeSelf;
             if ( !menuActive && !settingsActive && !quitActive && Input.GetKeyDown(KeyCode.T))
             {
-                Debug.Log(" Menu: " + menuActive + "   quit:  " + quitActive + "  settings:  " + settingsActive);
+                //Debug.Log(" Menu: " + menuActive + "   quit:  " + quitActive + "  settings:  " + settingsActive);
                 tutorial.SetActive(true);
                 miniTutorial.SetActive(false);
                 activateTutorialMode();

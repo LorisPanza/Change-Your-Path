@@ -9,10 +9,12 @@ public class NPC : MonoBehaviour
     public Player player;
     //public Map map; reference to the map piece involved in the quest
     public GameObject whoAreYouCanvas;
+    public GameObject collectablemap;
 
     public Dialogue dialogue;
     private Coroutine talk;
     private bool started = false;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,6 +34,7 @@ public class NPC : MonoBehaviour
             if (FindObjectOfType<DialogueManager>().DialogueEnded())
             {
                 quest.isActive = true;
+                if (GameObject.Find("MapPiece 6") == null) collectablemap.SetActive(true);
                 SimpleEventManager.StopListening("StartQuest", StartQuest);
             }
         }

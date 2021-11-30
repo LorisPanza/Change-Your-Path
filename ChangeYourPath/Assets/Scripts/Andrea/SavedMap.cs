@@ -9,6 +9,10 @@ public class SavedMap
     public float mapPositionX;
     public float mapPositionY;
     public float rotation;
+    public bool upBoundary;
+    public bool downBoundary;
+    public bool leftBoundary;
+    public bool rightBoundary;
 
     public override string ToString()
     {

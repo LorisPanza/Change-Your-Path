@@ -99,7 +99,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void SaveAndQuit () {
-        saveManager.SaveSettings();
+        saveManager.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
