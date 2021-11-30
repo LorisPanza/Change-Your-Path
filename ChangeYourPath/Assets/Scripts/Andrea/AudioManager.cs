@@ -33,19 +33,26 @@ public class AudioManager : MonoBehaviour
 
 
     void Update () {
-        velocity = kvothe.GetMoveDelta();
-        AudioSource walkSrc = GetSound("Walk").source;
-        if ( (velocity.x != 0 || velocity.y != 0) && kvothe.velocity != 0 ) {
-            isMoving = true;
-        } else {
-            isMoving = false;
+        if (kvothe != null){
+            velocity = kvothe.GetMoveDelta();
+            AudioSource walkSrc = GetSound("Walk").source;
+            if ((velocity.x != 0 || velocity.y != 0) && kvothe.velocity != 0)
+            {
+                isMoving = true;
+            }
+            else
+            {
+                isMoving = false;
+            }
+            if (isMoving)
+            {
+                if (!walkSrc.isPlaying)
+                    walkSrc.Play();
+            }
+            else
+                walkSrc.Stop();
         }
-        if (isMoving) {
-			if (!walkSrc.isPlaying)
-			walkSrc.Play ();
-		}
-		else
-			walkSrc.Stop ();
+        
     }
 
     public Sound GetSound(string name) {
