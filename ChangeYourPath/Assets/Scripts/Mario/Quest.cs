@@ -17,11 +17,15 @@ public class Quest
 
     public QuestGoal goal;
     public GameObject whereNpcIs;
+    public GameObject hiddenHouse;
+    public GameObject endPrototype;
 
     public void Complete()
     {
         isActive = false;
         isComplete = true;
+        hiddenHouse.SetActive(true);
+        endPrototype.SetActive(true);
     }
 
     public void checkQuestCondition(MapMovement mapMovement, string s)

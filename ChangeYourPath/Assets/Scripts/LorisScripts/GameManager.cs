@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
         Debug.developerConsoleVisible = true;
 
         activateTutorialMode();
+        Debug.Log("MOde: " + mode);
         //activatePlayerMode();
 
     }

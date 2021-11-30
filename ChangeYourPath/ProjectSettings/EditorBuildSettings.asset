@@ -11,7 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LorisScene/GameScene.unity
     guid: ded5c98c3fb01415fbd981af4e171f19
-  - enabled: 0
-    path: Assets/Scenes/Mario/PlayerMode2.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

@@ -28,7 +28,7 @@ public class TreeRotation : MonoBehaviour
             }
             else if (transform.rotation.eulerAngles.z == 90)
             {
-                forest90.SetActive(true);
+                forest270.SetActive(true);
                 InitTrees90();
             }
             else if (transform.rotation.eulerAngles.z == 180)
@@ -38,7 +38,7 @@ public class TreeRotation : MonoBehaviour
             }
             else if (transform.rotation.eulerAngles.z == 270)
             {
-                forest270.SetActive(true);
+                forest90.SetActive(true);
                 InitTrees270();
             }
             //Debug.Log(name + ":  " + transform.rotation.eulerAngles.z);
@@ -75,7 +75,7 @@ public class TreeRotation : MonoBehaviour
             }
             else if (transform.rotation.eulerAngles.z == 90)
             {
-                forest270.SetActive(true);
+                forest90.SetActive(true);
                 InitTrees90();
             }
             else if (transform.rotation.eulerAngles.z == 180)
@@ -85,7 +85,7 @@ public class TreeRotation : MonoBehaviour
             }
             else if (transform.rotation.eulerAngles.z == 270)
             {
-                forest90.SetActive(true);
+                forest270.SetActive(true);
                 InitTrees270();
             }
         }

@@ -236,7 +236,6 @@ public class MapMovement : MonoBehaviour
         }
     }
 
-
     public void checkHorizontalMovement()
     {
 

@@ -21,6 +21,7 @@ public class SaveManager : MonoBehaviour
             LoadSettings();
             if (PlayerPrefs.HasKey("KvotheX"))
             {
+                
                 LoadGame();
             }
         }
