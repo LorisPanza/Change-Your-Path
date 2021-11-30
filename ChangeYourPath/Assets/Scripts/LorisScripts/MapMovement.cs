@@ -213,7 +213,7 @@ public class MapMovement : MonoBehaviour
         thisMap.rotateSpriteClockwise();
         thisMap.rotateBoundaryClockwise();
 
-        if (name == "MapForestQuest1" || name == "MapForestQuest2" || name == "MapForestQuest3" || name == "MapForestQuest4" )
+        if (name == "MapPiece 6" || name == "MapPiece 8" || name == "MapPiece 7" || name == "MapPiece 9")
         {
             AdjustTreesClockwise();
             RotateTreesClockwise();
@@ -229,7 +229,7 @@ public class MapMovement : MonoBehaviour
         thisMap.rotateSpriteCounterClockwise();
         thisMap.rotateBoundaryCounterClockwise();
 
-        if (name == "MapForestQuest1" || name == "MapForestQuest2" || name == "MapForestQuest3" || name == "MapForestQuest4")
+        if (name == "MapPiece 6" || name == "MapPiece 8" || name == "MapPiece 7" || name == "MapPiece 9")
         {
             AdjustTreesCounterClockwise();
             RotateTreesCounterClockwise();

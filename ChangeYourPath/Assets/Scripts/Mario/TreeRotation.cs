@@ -19,6 +19,7 @@ public class TreeRotation : MonoBehaviour
 
         if (this.name == "MapPiece 6" || this.name == "MapPiece 8")
         {
+            Debug.Log("Setting tree 6 and 8...");
             //Debug.Log(name + ":  " + transform.rotation.z);
             if (transform.rotation.eulerAngles.z == 0)
             {
@@ -65,7 +66,30 @@ public class TreeRotation : MonoBehaviour
                 InitTrees270();
             }
         }
-        
+        else if (this.name == "MapPiece 9")
+        {
+            if (transform.rotation.eulerAngles.z == 0)
+            {
+                forest180.SetActive(true);
+                InitTrees0();
+            }
+            else if (transform.rotation.eulerAngles.z == 90)
+            {
+                forest270.SetActive(true);
+                InitTrees90();
+            }
+            else if (transform.rotation.eulerAngles.z == 180)
+            {
+                forest0.SetActive(true);
+                InitTrees180();
+            }
+            else if (transform.rotation.eulerAngles.z == 270)
+            {
+                forest90.SetActive(true);
+                InitTrees270();
+            }
+        }
+
     }
 
     private void InitTrees0()

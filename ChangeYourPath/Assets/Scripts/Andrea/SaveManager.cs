@@ -15,6 +15,7 @@ public class SaveManager : MonoBehaviour
 
     void Start()
     {
+        InitPieces();
         if (PlayerPrefs.HasKey("Master volume"))
         {
             LoadSettings();
@@ -29,10 +30,48 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void InitPieces()
     {
+        chapter1[0].GetComponent<MapFeatures>().tileMap.up = "Water";
+        chapter1[0].GetComponent<MapFeatures>().tileMap.right = "Water";
+        chapter1[0].GetComponent<MapFeatures>().tileMap.left = "Water";
+        chapter1[0].GetComponent<MapFeatures>().tileMap.down = "Snow";
 
+        chapter1[1].GetComponent<MapFeatures>().tileMap.up = "Snow";
+        chapter1[1].GetComponent<MapFeatures>().tileMap.right = "Water";
+        chapter1[1].GetComponent<MapFeatures>().tileMap.left = "Water";
+        chapter1[1].GetComponent<MapFeatures>().tileMap.down = "Snow";
+
+        chapter1[2].GetComponent<MapFeatures>().tileMap.up = "Water";
+        chapter1[2].GetComponent<MapFeatures>().tileMap.right = "Water";
+        chapter1[2].GetComponent<MapFeatures>().tileMap.left = "Water";
+        chapter1[2].GetComponent<MapFeatures>().tileMap.down = "Snow";
+
+        chapter1[3].GetComponent<MapFeatures>().tileMap.up = "Snow";
+        chapter1[3].GetComponent<MapFeatures>().tileMap.right = "Snow";
+        chapter1[3].GetComponent<MapFeatures>().tileMap.left = "Snow";
+        chapter1[3].GetComponent<MapFeatures>().tileMap.down = "Snow";
+
+        //Forest 6
+        chapter1[4].GetComponent<MapFeatures>().tileMap.up = "Water";
+        chapter1[4].GetComponent<MapFeatures>().tileMap.right = "Forest";
+        chapter1[4].GetComponent<MapFeatures>().tileMap.left = "Snow";
+        chapter1[4].GetComponent<MapFeatures>().tileMap.down = "Forest";
+        //Forest 7
+        chapter1[5].GetComponent<MapFeatures>().tileMap.up = "Forest";
+        chapter1[5].GetComponent<MapFeatures>().tileMap.right = "Forest";
+        chapter1[5].GetComponent<MapFeatures>().tileMap.left = "Snow";
+        chapter1[5].GetComponent<MapFeatures>().tileMap.down = "Snow";
+        //Forest 8
+        chapter1[6].GetComponent<MapFeatures>().tileMap.up = "Snow";
+        chapter1[6].GetComponent<MapFeatures>().tileMap.right = "Forest";
+        chapter1[6].GetComponent<MapFeatures>().tileMap.left = "Snow";
+        chapter1[6].GetComponent<MapFeatures>().tileMap.down = "Forest";
+        //forest 9
+        chapter1[7].GetComponent<MapFeatures>().tileMap.up = "Forest";
+        chapter1[7].GetComponent<MapFeatures>().tileMap.right = "Snow";
+        chapter1[7].GetComponent<MapFeatures>().tileMap.left = "Forest";
+        chapter1[7].GetComponent<MapFeatures>().tileMap.down = "Snow";
     }
 
     public void LoadSettings()
