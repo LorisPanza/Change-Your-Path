@@ -48,8 +48,9 @@ public class MapFeatures : MonoBehaviour
         int levelGrid = 1;
         int i = -levelGrid;
         int j = levelGrid;
+        int maxCicle = 30;
 
-        while (!placed)
+        while (!placed && maxCicle-- > 0)
         {
             for (int ii = i; ii <= -i; ii++)
             {
@@ -100,6 +101,13 @@ public class MapFeatures : MonoBehaviour
             levelGrid += 1;
         }
         if (placed) this.transform.position = checkHere.position;
+        else
+        {
+            Debug.Log("Unable to place the tile with the complex method");
+            this.transform.position = new Vector3(checkHere.position.x + 36,
+            checkHere.position.y + 36, checkHere.position.z);
+            placed = true;
+        }
     }
 
 
