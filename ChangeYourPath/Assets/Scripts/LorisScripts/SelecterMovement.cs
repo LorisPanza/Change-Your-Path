@@ -13,6 +13,7 @@ public class SelecterMovement : MonoBehaviour
     public Transform movePoint;
     public AudioManager audioManager;
     public NPC wilem;
+    public GameObject grabCanvas;
     //private MapFeatures collideMap,thisMap;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class SelecterMovement : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.Space) && choosen == false)
         {
+            if (grabCanvas.activeSelf == true) grabCanvas.SetActive(false);
             chosenMapCollider = Physics2D.OverlapCircle(movePoint.position, .2f, detectedLayerMap);
             //GameObject go = chosenMapCollider.gameObject;
             if (chosenMapCollider)

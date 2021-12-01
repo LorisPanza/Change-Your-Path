@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject tutorial;
     public GameObject miniTutorial;
     public GameObject canvasMenu;
+    public GameObject canvasPressTab;
+    public GameObject GrabCanvas;
 
     // mode = 0: Tutorial, 1: PlayerMode, 2: MapMode
     private int mode = 0;
@@ -114,6 +116,11 @@ public class GameManager : MonoBehaviour
                     audioManager.Play("openMap");
                     activateMapMode();
                     SimpleEventManager.TriggerEvent("PlaceNewMap");
+                    if (canvasPressTab.activeSelf == true)
+                    {
+                        canvasPressTab.SetActive(false);
+                        GrabCanvas.SetActive(true);
+                    }
                 }
                 else if (mode == 2)
                 {
