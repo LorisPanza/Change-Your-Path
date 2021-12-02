@@ -19,7 +19,7 @@ TagManager:
   - Map
   - Selecter
   - Boundary
-  - 
+  - Background Image
   - 
   - 
   - 
@@ -42,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background Image
+    uniqueID: 1002011985
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

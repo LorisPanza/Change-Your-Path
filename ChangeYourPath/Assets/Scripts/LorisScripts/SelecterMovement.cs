@@ -39,6 +39,8 @@ public class SelecterMovement : MonoBehaviour
                 //go.GetComponent<MapFeatures>().enabled = true;
                 choosen = true;
 
+                //this.GetComponent<Renderer>().material.color = Color.black;
+
                 playerCollider = checkPlayer();
                 if (playerCollider)
                 {
@@ -61,6 +63,8 @@ public class SelecterMovement : MonoBehaviour
                 //chosenMapCollider.gameObject.GetComponent<MapFeatures>().enabled = false;
 
                 choosen = false;
+
+                //this.GetComponent<Renderer>().material.color = Color.white;
 
                 if (isChild == true)
                 {
