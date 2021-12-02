@@ -19,7 +19,6 @@ public class TreeRotation : MonoBehaviour
 
         if (this.name == "MapPiece 6" || this.name == "MapPiece 8")
         {
-            Debug.Log("Setting tree 6 and 8...");
             //Debug.Log(name + ":  " + transform.rotation.z);
             if (transform.rotation.eulerAngles.z == 0)
             {

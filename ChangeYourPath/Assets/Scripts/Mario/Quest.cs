@@ -124,7 +124,7 @@ public class Quest
                 ExistVerticalPathDown(from, dest3) ||
                 ExistVerticalPathDown(from, dest4))
             {
-                Debug.Log("MISIION COMPLETE");
+                Debug.Log("MISSION COMPLETE");
                 Complete();
 
             }

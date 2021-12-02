@@ -125,7 +125,7 @@ public class MapFeatures : MonoBehaviour
 
         if (player != null)
         {
-            Debug.Log("Ruoto orario il player");
+            //Debug.Log("Ruoto orario il player");
             sprite = player.GetComponent<SpriteRenderer>();
             sprite.transform.Rotate(0, 0, 90);
         }

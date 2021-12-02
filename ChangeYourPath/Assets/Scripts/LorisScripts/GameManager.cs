@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     {
         mode = 2;
         mapCam.SetActive(true);
-        Debug.Log(mapCam.activeSelf);
+        //Debug.Log(mapCam.activeSelf);
         playerCam.SetActive(false);
         player.enabled = false;
         selecter.SetActive(true);

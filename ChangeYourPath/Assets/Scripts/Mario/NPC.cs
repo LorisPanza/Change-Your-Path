@@ -22,7 +22,7 @@ public class NPC : MonoBehaviour
         {
             talk = StartCoroutine(Talk());
             whoAreYouCanvas.SetActive(true);
-            Debug.Log(name);
+            //Debug.Log(name);
             SimpleEventManager.StartListening("StartQuest", StartQuest);
         }
     }

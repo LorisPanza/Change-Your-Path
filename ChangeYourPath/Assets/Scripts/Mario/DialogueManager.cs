@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("Starting conversation with " + dialogue.name);
+        //Debug.Log("Starting conversation with " + dialogue.name);
         dialogueEnded = false;
 
         PopOutBox();
@@ -56,7 +56,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        Debug.Log("End of conversation");
+        //Debug.Log("End of conversation");
         HideBox();
         dialogueEnded = true;
         SimpleEventManager.TriggerEvent("StartQuest");

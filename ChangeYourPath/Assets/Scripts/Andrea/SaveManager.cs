@@ -131,10 +131,10 @@ public class SaveManager : MonoBehaviour
 
         string mapState = PlayerPrefs.GetString("Map state");
         SavedMap[] map = JsonHelper.FromJson<SavedMap>(mapState);
-        foreach (SavedMap item in map)
-        {
-            Debug.Log(item.ToString());
-        }
+        //foreach (SavedMap item in map)
+        //{
+        //    Debug.Log(item.ToString());
+        //}
         foreach (SavedMap item in map)
         {
             string title = item.title;
@@ -171,7 +171,7 @@ public class SaveManager : MonoBehaviour
         {
             foreach (GameObject coll in mapCollectable)
             {
-                Debug.Log(coll.name);
+                //Log(coll.name);
                 if (coll.name == PlayerPrefs.GetString("activeCollectable"))
                 {
                     coll.SetActive(true);
@@ -257,7 +257,7 @@ public class SaveManager : MonoBehaviour
         if (mapCollectableSave.Length != 0)
         {
             PlayerPrefs.SetString("activeCollectable", mapCollectableSave[0].name);
-            Debug.Log(mapCollectableSave[0].name);
+            //Debug.Log(mapCollectableSave[0].name);
         }
         if(npc.quest.isComplete) PlayerPrefs.SetString("ForestQuest", "Complete");
     }
