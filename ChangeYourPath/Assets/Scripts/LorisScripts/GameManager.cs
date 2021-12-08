@@ -17,10 +17,12 @@ public class GameManager : MonoBehaviour
     public GameObject canvasMenu;
     public GameObject canvasPressTab;
     public GameObject GrabCanvas;
+    private int previous_state;
 
     // mode = 0: Tutorial, 1: PlayerMode, 2: MapMode
-    private int mode = 0;
+    private int mode = 1;
 
+ 
     public enum GameState
     {
         PlayerMode,
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
     {
         tutorial.SetActive(true);
         miniTutorial.SetActive(false);
+        previous_state = mode;
         mode = 0;
         //mapCam.SetActive(false);
         //playerCam.SetActive(true);
@@ -80,6 +83,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        previous_state = 1;
+        Debug.Log(previous_state);
         if (instance == null)
             instance = this;
         else if (instance != this)
@@ -101,9 +106,19 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
+                //Debug.Log("Mode0");
                 tutorial.SetActive(false);
                 miniTutorial.SetActive(true);
-                activatePlayerMode();
+                if (previous_state == 1)
+                {
+                    //Debug.Log("Sono entrato");
+                    activatePlayerMode();
+                }
+                else if(previous_state == 2)
+                {
+                    activateMapMode();
+                }
+
                 menu.enabled = true;
             }
         }
