@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     public void activatePlayerMode()
     {
+        previous_state = 1;
         mode = 1;
         mapCam.SetActive(false);
         playerCam.SetActive(true);
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void activateMapMode()
     {
+        previous_state = 2;
         mode = 2;
         mapCam.SetActive(true);
         //Debug.Log(mapCam.activeSelf);
@@ -55,7 +57,7 @@ public class GameManager : MonoBehaviour
     {
         tutorial.SetActive(true);
         miniTutorial.SetActive(false);
-        previous_state = mode;
+        //previous_state = mode;
         mode = 0;
         //mapCam.SetActive(false);
         //playerCam.SetActive(true);
