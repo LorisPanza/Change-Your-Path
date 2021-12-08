@@ -311,6 +311,22 @@ public class SelecterMovement : MonoBehaviour
     {
         return choosen;
     }
+
+    public void disactiveChoosenMap()
+    {
+        if (chosenMapCollider != null)
+        {
+            chosenMapCollider.gameObject.GetComponent<MapMovement>().enabled=false;
+        }
+    }
+    
+    public void activeChoosenMap()
+    {
+        if (chosenMapCollider != null)
+        {
+            chosenMapCollider.gameObject.GetComponent<MapMovement>().enabled=true;
+        }
+    }
 }
 
 

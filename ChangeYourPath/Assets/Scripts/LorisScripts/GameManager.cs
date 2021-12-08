@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
         playerCam.SetActive(false);
         player.enabled = false;
         selecter.SetActive(true);
+        selecter.GetComponent<SelecterMovement>().activeChoosenMap();
         menu.enabled = false;
     }
 
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour
         //mapCam.SetActive(false);
         //playerCam.SetActive(true);
         player.enabled = false;
+        selecter.GetComponent<SelecterMovement>().disactiveChoosenMap();
         selecter.SetActive(false);
         menu.enabled = false;
     }
