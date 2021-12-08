@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         previous_state = 1;
-        Debug.Log(previous_state);
+        //Debug.Log(previous_state);
         if (instance == null)
             instance = this;
         else if (instance != this)
