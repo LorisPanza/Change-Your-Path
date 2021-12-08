@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject canvasMenu;
     public GameObject canvasPressTab;
     public GameObject GrabCanvas;
-    private int previous_state;
+    
 
     // mode = 0: Tutorial, 1: PlayerMode, 2: MapMode
     private int mode = 1;
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public void activatePlayerMode()
     {
-        previous_state = 1;
+       
         mode = 1;
         mapCam.SetActive(false);
         playerCam.SetActive(true);
@@ -42,14 +42,14 @@ public class GameManager : MonoBehaviour
 
     public void activateMapMode()
     {
-        previous_state = 2;
+        
         mode = 2;
         mapCam.SetActive(true);
         //Debug.Log(mapCam.activeSelf);
         playerCam.SetActive(false);
         player.enabled = false;
         selecter.SetActive(true);
-        selecter.GetComponent<SelecterMovement>().activeChoosenMap();
+        //selecter.GetComponent<SelecterMovement>().activeChoosenMap();
         menu.enabled = false;
     }
 
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         //mapCam.SetActive(false);
         //playerCam.SetActive(true);
         player.enabled = false;
-        selecter.GetComponent<SelecterMovement>().disactiveChoosenMap();
+        //selecter.GetComponent<SelecterMovement>().disactiveChoosenMap();
         selecter.SetActive(false);
         menu.enabled = false;
     }
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        previous_state = 1;
+        
         //Debug.Log(previous_state);
         if (instance == null)
             instance = this;
@@ -113,17 +113,10 @@ public class GameManager : MonoBehaviour
                 //Debug.Log("Mode0");
                 tutorial.SetActive(false);
                 miniTutorial.SetActive(true);
-                if (previous_state == 1)
-                {
-                    //Debug.Log("Sono entrato");
-                    activatePlayerMode();
-                }
-                else if(previous_state == 2)
-                {
-                    activateMapMode();
-                }
-
-                menu.enabled = true;
+                //Debug.Log("Sono entrato");
+                activatePlayerMode();
+              
+               
             }
         }
         else
