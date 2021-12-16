@@ -53,7 +53,7 @@ Items | W
 Move | &#8592; | &#8594; | &#8593; | &#8595; 
 --- | --- | --- | --- | ---
 Pick up/ Put down | Space
-Rotate | A | D
+Rotate | N | M
 Explore view | Tab 
 New piece | W
 Cancel | Esc 
