@@ -20,13 +20,13 @@ public class MapMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movePoint.parent = null;
+        //movePoint.parent = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.N))
         {
@@ -40,22 +40,24 @@ public class MapMovement : MonoBehaviour
             rotateCounterClockwise();
             matchingAllSides(movePoint);
         }
-
+/*
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
-        {
+        //{
 
 
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
             {
-                checkHorizontalMovement();
+                //checkHorizontalMovement();
             }
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
             {
-                checkVerticalMovement();
+                //checkVerticalMovement();
             }
 
 
         }
+        
+        */
     }
 
 
@@ -236,6 +238,7 @@ public class MapMovement : MonoBehaviour
         }
     }
 
+    /*
     public void checkHorizontalMovement()
     {
 
@@ -264,6 +267,9 @@ public class MapMovement : MonoBehaviour
         }
     }
 
+*/
+    
+    
     public bool getIsMatchingRight()
     {
         return isMatchingRight;
@@ -456,14 +462,6 @@ public class MapMovement : MonoBehaviour
     */
 
 
-    /*
- public double calculateDistance(Vector3 v1, Vector3 v2)
- {
-     Vector3 difference = new Vector3(v1.x - v2.x, v1.y - v2.y,0);
-     double distance = Math.Sqrt(Math.Pow(difference.x, 2f) + Math.Pow(difference.y, 2f));
-     return distance;
- }
- 
- */
+    
 }
 

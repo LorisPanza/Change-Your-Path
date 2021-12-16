@@ -1,21 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MapCameraManager : MonoBehaviour
 {
-    public Transform focus;
-    public float smoothTime = 1;
+    public Transform target;
+    private float smoothTime = 0.125f;
 
-    Vector3 offset;
+    public Vector3 offset;
+
+    private void FixedUpdate()
+    {
+        Vector3 desiredPosition = target.position + offset;
+        Vector3 smoothedPosition= Vector3.Lerp(transform.position,desiredPosition,smoothTime);
+        transform.position= smoothedPosition;
+        //transform.LookAt(target);
+    }
 
     void Awake()
     {
-        offset = focus.position - transform.position;
+       
     }
 
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, focus.position - offset, Time.deltaTime * smoothTime);
+        //transform.position = Vector3.Lerp(transform.position, focus.position - offset, Time.deltaTime * smoothTime);
     }
 }

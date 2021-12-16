@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,27 +15,31 @@ public class SelecterMovement : MonoBehaviour
     public AudioManager audioManager;
     public NPC wilem;
     public GameObject grabCanvas;
-    //private MapFeatures collideMap,thisMap;
-    // Start is called before the first frame update
+    private GameObject grid;
+    
+    
     void Start()
     {
         movePoint.parent = null;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
-       
-        if (Input.GetKeyDown(KeyCode.Space) && choosen == false)
+
+        if (Input.GetKeyDown(KeyCode.Space) && choosen == false) 
         {
             if (grabCanvas.activeSelf == true) grabCanvas.SetActive(false);
             chosenMapCollider = Physics2D.OverlapCircle(movePoint.position, .2f, detectedLayerMap);
-            //GameObject go = chosenMapCollider.gameObject;
+            
             if (chosenMapCollider)
             {
 
                 GameObject go = chosenMapCollider.gameObject;
+
+                 grid = go.transform.parent.gameObject;
+                go.transform.SetParent(this.transform);
                 go.GetComponent<MapMovement>().enabled = true;
                 //go.GetComponent<MapFeatures>().enabled = true;
                 choosen = true;
@@ -56,10 +61,11 @@ public class SelecterMovement : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Space) && choosen == true)
         {
             GameObject go = chosenMapCollider.gameObject;
-            if (disableSelectionMapCondition())
+            if (disableSelectionMapCondition() && go.transform.position.x%offsetMovement==0 && go.transform.position.y%offsetMovement==0)
             {
                 audioManager.Play("mapChoice");
-                chosenMapCollider.gameObject.GetComponent<MapMovement>().enabled = false;
+                go.transform.SetParent(grid.transform);
+                go.GetComponent<MapMovement>().enabled = false;
                 //chosenMapCollider.gameObject.GetComponent<MapFeatures>().enabled = false;
 
                 choosen = false;
@@ -74,11 +80,11 @@ public class SelecterMovement : MonoBehaviour
                 }
                 if (!wilem.quest.isComplete) SimpleEventManager.TriggerEvent("NorthForest");
             } 
-        else
-        {
-            audioManager.Play("mapDenied");
-            //Debug.Log("Non puoi metterlo");
-        }
+            else
+            {
+                audioManager.Play("mapDenied");
+            
+            }
            
             
         }
@@ -86,6 +92,7 @@ public class SelecterMovement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
         {
+            
             if (!choosen)
             {
                 if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
@@ -111,6 +118,7 @@ public class SelecterMovement : MonoBehaviour
                         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f);
                        
                     }
+                    audioManager.Play("mapMovement");
                
                 } 
                 else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
@@ -123,9 +131,11 @@ public class SelecterMovement : MonoBehaviour
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f);
                        
                     }
+                    audioManager.Play("mapMovement");
                 
                 }
             }
+
             
         }
     }
@@ -134,7 +144,7 @@ public class SelecterMovement : MonoBehaviour
     public void enableSelectionMapCondition()
     {
         MapMovement chosenMapMov = chosenMapCollider.gameObject.GetComponent<MapMovement>();
-        //Debug.Log("Premuto spazio e controllo attorno");
+        
         chosenMapMov.matchingAllSides(chosenMapMov.movePoint);
         
         if (chosenMapMov.getIsMatchingLeft())
@@ -149,7 +159,7 @@ public class SelecterMovement : MonoBehaviour
 
         if (chosenMapMov.getIsMatchingRight())
         {
-            //Debug.Log("a destra ho qualcosa");
+            
             GameObject rightDetectedMap = chosenMapMov.matchingRight(chosenMapMov.movePoint);
             if (rightDetectedMap!=null)
             {
