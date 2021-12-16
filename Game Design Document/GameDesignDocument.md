@@ -35,9 +35,10 @@ Apart from composing the map in the right way, there will be different minigames
 ### Levels
 Change your path is divided in chapters. Each of them consists of completing a discrete objective. A way to change from one level to another can be making Kvothe fall outside the bounds of the map and bring him into a new area.
 
-* Chapter 0: Kvothe is already in the forest. This chapter has a very simple objective: learning how the mechanics work. This chapter is designed to familiarize the player with the controls and to collect all needed information before starting the real journey. [Average playing time: 10 minutes]
-* Chapter 1: The forest around Kvothe’s village is a labyrinth of vegetation and threats. The objective of this chapter is to figure out an escape route from the forest.During that chapter the game will introduce NPCS and the relative subquests that will allow Kvothe to proced along his journey. [Average playing time: 20 minutes]
-* Chapter 2: Kvothe is outside the forest.
+* Chapter 0: In that chapter Kvothe is inside a snowy environment. This first part of the gameplay will be an introduction about how to use the commands, understand the sounds and visuals and solve the first simple puzzles. In that chapter we insert the first minigame followed by the “Sign” minigame. There Kvothe will meet Wilem that will trigger the first minigame and also introduces elements of the story.
+
+* Chapter 1: 
+* Chapter 2: 
 
 More chapters will be implemented.
 
