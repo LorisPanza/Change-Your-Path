@@ -130,5 +130,13 @@ We don’t need to consider all the possible combinations because we will build 
 * Interactable object (map pieces on the ground)
 
 
+## Fixing Bug
+* Map movement
+* Player animation
+* Tutorial panel
+* Player outside the map
+* Mouse disappearing
+
+
 
 
