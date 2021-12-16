@@ -131,11 +131,13 @@ We don’t need to consider all the possible combinations because we will build 
 
 
 ## Fixing Bug
-* Map movement
+* Map movement - SOLVED
 * Player animation
 * Tutorial panel
 * Player outside the map
 * Mouse disappearing
+* Comprenetation of the sprites (Kvothe with NPC and bushes)
+* Better camera management
 
 
 
