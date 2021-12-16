@@ -112,42 +112,23 @@ We don’t need to consider all the possible combinations because we will build 
 
 
 ### Key locations and style
-### Weather Condition
-### Objects
-### Scale
-### Society/Culture
+
 ## Media List
 ### Interface assets
 ### Environments
-* Element of the environment like trees, grass, stones or bushes
+* Tiles enviroment ( snow, sea, lake, grass, forest)
 ### Characters
 * Dialogues
 ### Animation
 * Kvothe
-* Myabe one or two animals
-* Simple animation for the NPCS (for example a victory gesture when finishing a quest)
+* Enviromental elements
+* Simple animation for the NPCS 
 ### Music and sound effects
 * Background 
 * Steps
 * When talking to NPCs
 * Interactable object (map pieces on the ground)
-## Technicality (temporary section):
-Object oriented programming helps us. We create a class “Tile” that has 4 attributes (up, left, down, right). Each attribute contains the type of landscape on the corresponding side of the tile. In the case of the last figure is:
-Up = grass
-Left = grass
-Down = grass
-Right = grass
-On each side there can be ONLY ONE TYPE (like Carto). 
 
-The class “Tile” also has methods like “hasRoadLeft”, “hasRoadDown”, etc . A road is always at the center of the side and is of fixed width. 
-(   this will help a lot in checking stuff because it will be a merely visual match. If there is a road, then it will fix.
- (there could also be different road depending on the type of the actual side type)    )
 
-Each tile we design will have a script in which we simply inherit  “Tile” and set the attributes depending on the pieces we have at hand . 
 
-## DeadLines
-* 22 November - Mario --> Player 
-* 22 November - Loris --> Map
-* 22 November - Andrea --> Game Manager
-* 30 November - Union of the features
 
