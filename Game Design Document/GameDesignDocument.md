@@ -138,7 +138,7 @@ We don’t need to consider all the possible combinations because we will build 
 * Mouse disappearing
 * Comprenetation of the sprites (Kvothe with NPC and bushes)
 * Better camera management
-* The rotation may put Kvothe in strange position
+* When you walk with kvothe and open the Menu, kvothe is still moving
 
 
 
