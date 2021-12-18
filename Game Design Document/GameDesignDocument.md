@@ -134,7 +134,7 @@ We don’t need to consider all the possible combinations because we will build 
 * Map movement - SOLVED
 * Kvothe animation adjustment (XUYAN)
 * Tutorial (MARIO)
-* Player outside the map (LORIS)
+* Player outside the map (LORIS) (Partially Solved)
 * Mouse disappearing (ANDREA)
 * Comprenetation of the sprites (Kvothe with NPC and bushes) (Loris)  
 * When you walk with kvothe and open the Menu, kvothe is still moving (mario)
