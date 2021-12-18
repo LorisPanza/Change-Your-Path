@@ -132,20 +132,20 @@ We don’t need to consider all the possible combinations because we will build 
 
 ## Fixing Bug
 * Map movement - SOLVED
-* Kvothe animation adjustment 
+* Kvothe animation adjustment (XUYAN)
 * Tutorial (MARIO)
-* Player outside the map
+* Player outside the map (LORIS)
 * Mouse disappearing (ANDREA)
-* Comprenetation of the sprites (Kvothe with NPC and bushes)
+* Comprenetation of the sprites (Kvothe with NPC and bushes) 
 * When you walk with kvothe and open the Menu, kvothe is still moving
 * Stop the conversation sound when Kvothe walk away the NPC (not only when the dialogue ends) (ANDREA)
 
 
 ## To do
-* NPC animation
-* Better Camer Movement
+* NPC and enivromental animation (XUYAN -> MARIO)
+* Better Camer Movement 
 * Introduction of MaxiCollider
-* Chaneg "New Game" and "Play"
+* Chaneg "New Game" and "Play" 
 * Different colors for the selecter: normal mode, grab mode
 * Highligths non matchable sides
 
