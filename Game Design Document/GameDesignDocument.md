@@ -136,18 +136,23 @@ We don’t need to consider all the possible combinations because we will build 
 * Tutorial (MARIO)
 * Player outside the map (LORIS)
 * Mouse disappearing (ANDREA)
-* Comprenetation of the sprites (Kvothe with NPC and bushes) 
-* When you walk with kvothe and open the Menu, kvothe is still moving
+* Comprenetation of the sprites (Kvothe with NPC and bushes) (Loris)  
+* When you walk with kvothe and open the Menu, kvothe is still moving (mario)
 * Stop the conversation sound when Kvothe walk away the NPC (not only when the dialogue ends) (ANDREA)
 
 
 ## To do
 * NPC and enivromental animation (XUYAN -> MARIO)
-* Better Camer Movement 
-* Introduction of MaxiCollider
-* Chaneg "New Game" and "Play" 
-* Different colors for the selecter: normal mode, grab mode
-* Highligths non matchable sides
+* Better Camer Movement and Introduction of MaxiCollider (loris)
+* Chaneg "New Game" and "Play" (andrea)
+* Different colors for the selecter: normal mode, grab mode (loris)
+* Highligths non matchable sides (loris)
+
+deadline 20
+
+
+
+
 
 
 
