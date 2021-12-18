@@ -10,7 +10,7 @@ public class MapFeatures : MonoBehaviour
     public List<GameObject> enviromentalElements = null;
     public GameObject player;
     private int offsetMovement = 18;
-    //private SelecterMovement selecterMovement = null;
+   
 
 
     private bool checkAround(Transform position)
@@ -125,7 +125,7 @@ public class MapFeatures : MonoBehaviour
 
         if (player != null)
         {
-            //Debug.Log("Ruoto orario il player");
+            
             sprite = player.GetComponent<SpriteRenderer>();
             sprite.transform.Rotate(0, 0, 90);
         }

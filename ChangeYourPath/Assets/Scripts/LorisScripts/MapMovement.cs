@@ -15,6 +15,7 @@ public class MapMovement : MonoBehaviour
     private MapFeatures collideMap, thisMap;
     private bool isMatching, isMatchingRight, isMatchingLeft, isMatchingDown, isMatchingUp;
     public AudioManager audioManager;
+    private GameObject player=null;
 
 
     // Start is called before the first frame update
@@ -112,7 +113,7 @@ public class MapMovement : MonoBehaviour
 
     public GameObject matchingLeft(Transform movePointCopy)
     {
-        //isMatching = true;
+        
         GameObject mapObject;
         MapFeatures mapFeatures;
         Collider2D leftCollider = Physics2D.OverlapCircle(
@@ -144,7 +145,7 @@ public class MapMovement : MonoBehaviour
 
     public GameObject matchingUp(Transform movePointCopy)
     {
-        //isMatching = true;
+        
         GameObject mapObject;
         MapFeatures mapFeatures;
         Collider2D upCollider = Physics2D.OverlapCircle(
@@ -209,6 +210,11 @@ public class MapMovement : MonoBehaviour
 
     public void rotateClockwise()
     {
+        if (player != null)
+        {
+            checkPositionPlayer(player);
+            //player.transform.Rotate(0,0,-80);
+        }
         transform.Rotate(0, 0, -90);
         thisMap = this.GetComponent<MapFeatures>();
         thisMap.tileMap.clockwiseRotation();
@@ -225,6 +231,10 @@ public class MapMovement : MonoBehaviour
 
     public void rotateCounterClockwise()
     {
+        if (player != null)
+        {
+            checkPositionPlayer(player);
+        }
         transform.Rotate(0, 0, 90);
         thisMap = this.GetComponent<MapFeatures>();
         thisMap.tileMap.counterclockwiseRotation();
@@ -461,6 +471,50 @@ public class MapMovement : MonoBehaviour
     }
     */
 
+    public void setPlayerInside(GameObject p)
+    {
+        player = p;
+    }
+
+    public void checkPositionPlayer(GameObject p)
+    {
+        float offset = 0.05f;
+        float mapx = this.transform.position.x;
+        float mapy = this.transform.position.y;
+        float px = p.transform.position.x;
+        float py = p.transform.position.y;
+        float pz = p.transform.position.z;
+
+        float horizontalLimDx = mapx + 7.5f;
+        float horizontalLimSx = mapx - 7.5f;
+        float verticalLimUp = mapy + 7.5f;
+        float verticalLimDw = mapy - 7.5f;
+
+        if (px > horizontalLimDx)
+        {
+            //Debug.Log("px: "+px+"-hd"+horizontalLimDx);
+            p.transform.position = new Vector3(horizontalLimDx-offset,p.transform.position.y,pz);
+        }
+        else if (px < horizontalLimSx)
+        {
+            //Debug.Log("px: "+px+"-hs"+horizontalLimSx);
+            p.transform.position = new Vector3(horizontalLimSx+offset,p.transform.position.y,pz);
+        }
+
+        if (py > verticalLimUp)
+        {
+            //Debug.Log("py: "+py+"-vu"+verticalLimUp);
+            p.transform.position = new Vector3(p.transform.position.x, verticalLimUp - offset, pz);
+        }
+        else if(py< verticalLimDw)
+        {
+            //Debug.Log("py: "+py+"-vd"+verticalLimDw);
+            p.transform.position = new Vector3(p.transform.position.x, verticalLimDw + offset, pz);
+        }
+
+
+
+    }
 
     
 }

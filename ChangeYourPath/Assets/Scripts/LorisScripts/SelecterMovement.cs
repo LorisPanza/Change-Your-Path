@@ -51,6 +51,7 @@ public class SelecterMovement : MonoBehaviour
                 {
                     go.GetComponent<MapFeatures>().player = playerCollider.gameObject;
                     playerCollider.gameObject.transform.SetParent(go.transform);
+                    go.GetComponent<MapMovement>().setPlayerInside(playerCollider.gameObject);
                     isChild = true;
                 }
                 audioManager.Play("mapSelection");
@@ -76,6 +77,7 @@ public class SelecterMovement : MonoBehaviour
                 {
                     go.GetComponent<MapFeatures>().player = null;
                     playerCollider.gameObject.transform.SetParent(null);
+                    go.GetComponent<MapMovement>().setPlayerInside(null);
                     isChild = false;
                 }
                 if (!wilem.quest.isComplete) SimpleEventManager.TriggerEvent("NorthForest");
