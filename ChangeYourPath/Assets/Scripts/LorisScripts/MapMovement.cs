@@ -478,7 +478,7 @@ public class MapMovement : MonoBehaviour
 
     public void checkPositionPlayer(GameObject p)
     {
-        float offset = 0.05f;
+        float offset = 0.005f;
         float mapx = this.transform.position.x;
         float mapy = this.transform.position.y;
         float px = p.transform.position.x;
