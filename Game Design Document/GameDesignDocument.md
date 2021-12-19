@@ -131,23 +131,23 @@ We don’t need to consider all the possible combinations because we will build 
 
 
 ## Fixing Bug
-* Map movement - SOLVED
-* Kvothe animation adjustment (XUYAN)
-* Tutorial (MARIO)
-* Player outside the map (LORIS) (Partially Solved)
-* Mouse disappearing (ANDREA)
-* Comprenetation of the sprites (Kvothe with NPC and bushes) (Loris)  
-* When you walk with kvothe and open the Menu, kvothe is still moving (mario)
-* Stop the conversation sound when Kvothe walk away the NPC (not only when the dialogue ends) (ANDREA)
+* Map movement LORIS --> SOLVED
+* Kvothe animation adjustment XUYAN
+* Tutorial MARIO
+* Player outside the map LORIS --> Partially Solved
+* Mouse disappearing ANDREA
+* Comprenetation of the sprites (Kvothe with NPC and bushes) LORIS 
+* When you walk with kvothe and open the Menu, kvothe is still moving MARIO
+* Stop the conversation sound when Kvothe walk away the NPC (not only when the dialogue ends) ANDREA
 * Fix Map Piece3 Colliders
 
 
 ## To do
 * NPC and enivromental animation (XUYAN -> MARIO)
-* Better Camer Movement and Introduction of MaxiCollider (loris)
-* Chaneg "New Game" and "Play" (andrea)
-* Different colors for the selecter: normal mode, grab mode (loris)
-* Highligths non matchable sides (loris)
+* Better Camer Movement and Introduction of MaxiCollider LORIS
+* Chaneg "New Game" and "Play" ANDREA
+* Different colors for the selecter: normal mode, grab mode LORIS
+* Highligths non matchable sides LORIS
 
 deadline 20
 
