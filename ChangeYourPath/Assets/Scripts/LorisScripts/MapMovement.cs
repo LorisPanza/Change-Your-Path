@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class MapMovement : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class MapMovement : MonoBehaviour
     private bool isMatching, isMatchingRight, isMatchingLeft, isMatchingDown, isMatchingUp;
     public AudioManager audioManager;
     private GameObject player=null;
+    
 
 
     // Start is called before the first frame update
@@ -213,9 +216,15 @@ public class MapMovement : MonoBehaviour
         if (player != null)
         {
             checkPositionPlayer(player);
-            //player.transform.Rotate(0,0,-80);
+            
         }
+
         transform.Rotate(0, 0, -90);
+        if (player != null)
+        {
+            tileReposition(this.GetComponent<Tilemap>(), player.transform.position);
+        }
+        
         thisMap = this.GetComponent<MapFeatures>();
         thisMap.tileMap.clockwiseRotation();
         thisMap.rotateSpriteClockwise();
@@ -236,6 +245,11 @@ public class MapMovement : MonoBehaviour
             checkPositionPlayer(player);
         }
         transform.Rotate(0, 0, 90);
+        if (player != null)
+        {
+            //tileReposition(this.GetComponent<Tilemap>(), player.transform.position);
+        }
+       
         thisMap = this.GetComponent<MapFeatures>();
         thisMap.tileMap.counterclockwiseRotation();
         thisMap.rotateSpriteCounterClockwise();
@@ -514,6 +528,20 @@ public class MapMovement : MonoBehaviour
 
 
 
+    }
+
+    public void tileReposition(Tilemap tileMap, Vector3 pos)
+    {
+        Vector3 npos = new Vector3(pos.x, (pos.y - 1f), pos.z);
+        Vector3Int tilePos = tileMap.WorldToCell(npos);
+        Tile tile = tileMap.GetTile<Tile>(tilePos);
+
+        Debug.Log(tile.name);
+        if (tile.name == "map piece ocean" || tile.name=="map piece snow ocean")
+        {
+            Debug.Log("Sono sul mare");
+            player.transform.position = tileMap.transform.position;
+        }
     }
 
     

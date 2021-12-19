@@ -38,7 +38,7 @@ public class SelecterMovement : MonoBehaviour
 
                 GameObject go = chosenMapCollider.gameObject;
 
-                 grid = go.transform.parent.gameObject;
+                grid = go.transform.parent.gameObject;
                 go.transform.SetParent(this.transform);
                 go.GetComponent<MapMovement>().enabled = true;
                 //go.GetComponent<MapFeatures>().enabled = true;
