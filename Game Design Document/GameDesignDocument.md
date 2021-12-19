@@ -139,6 +139,7 @@ We don’t need to consider all the possible combinations because we will build 
 * Comprenetation of the sprites (Kvothe with NPC and bushes) (Loris)  
 * When you walk with kvothe and open the Menu, kvothe is still moving (mario)
 * Stop the conversation sound when Kvothe walk away the NPC (not only when the dialogue ends) (ANDREA)
+* Fix Map Piece3 Colliders
 
 
 ## To do
