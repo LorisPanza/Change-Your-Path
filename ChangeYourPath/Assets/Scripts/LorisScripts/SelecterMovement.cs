@@ -28,7 +28,8 @@ public class SelecterMovement : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Space) && choosen == false) 
+        if (Input.GetKeyDown(KeyCode.Space) && choosen == false && this.transform.position.x%offsetMovement==0 
+           && this.transform.position.y%offsetMovement==0) 
         {
             if (grabCanvas.activeSelf == true) grabCanvas.SetActive(false);
             chosenMapCollider = Physics2D.OverlapCircle(movePoint.position, .2f, detectedLayerMap);
@@ -90,6 +91,7 @@ public class SelecterMovement : MonoBehaviour
            
             
         }
+       
         
 
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
