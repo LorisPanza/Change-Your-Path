@@ -133,7 +133,7 @@ We don’t need to consider all the possible combinations because we will build 
 ## Fixing Bug
 * Map movement LORIS --> SOLVED
 * Kvothe animation adjustment XUYAN
-* Tutorial MARIO
+* Tutorial MARIO --> SOLVED
 * Player outside the map LORIS --> Partially SOLVED
 * Mouse disappearing ANDREA
 * Comprenetation of the sprites (Kvothe with NPC and bushes) LORIS --> SOLVED
