@@ -134,9 +134,9 @@ We don’t need to consider all the possible combinations because we will build 
 * Map movement LORIS --> SOLVED
 * Kvothe animation adjustment XUYAN
 * Tutorial MARIO
-* Player outside the map LORIS --> Partially Solved
+* Player outside the map LORIS --> Partially SOLVED
 * Mouse disappearing ANDREA
-* Comprenetation of the sprites (Kvothe with NPC and bushes) LORIS 
+* Comprenetation of the sprites (Kvothe with NPC and bushes) LORIS --> SOLVED
 * When you walk with kvothe and open the Menu, kvothe is still moving MARIO
 * Stop the conversation sound when Kvothe walk away the NPC (not only when the dialogue ends) ANDREA
 * Fix Map Piece3 Colliders
