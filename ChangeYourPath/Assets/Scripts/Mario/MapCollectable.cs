@@ -6,7 +6,6 @@ public class MapCollectable : MonoBehaviour
 {
     public GameObject newMapPiece;
     public AudioManager audioManager;
-    public GameObject canvasNewPiece;
 
     private MapFeatures mf;
     private IEnumerator waitForKey;
@@ -21,7 +20,6 @@ public class MapCollectable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            canvasNewPiece.SetActive(true);
             StartCoroutine(waitForKey);
         }
     }
@@ -30,7 +28,6 @@ public class MapCollectable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            canvasNewPiece.SetActive(false);
             StopCoroutine(waitForKey);
         }
     }

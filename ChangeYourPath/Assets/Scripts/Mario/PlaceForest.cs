@@ -10,7 +10,6 @@ public class PlaceForest : MonoBehaviour
     public GameObject forest4;
 
     public AudioManager audioManager;
-    public GameObject canvasNewPiece;
 
     private MapFeatures mf1;
     private MapFeatures mf2;
@@ -28,7 +27,6 @@ public class PlaceForest : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            canvasNewPiece.SetActive(true);
             StartCoroutine(waitForKey);
         }
     }
@@ -37,7 +35,6 @@ public class PlaceForest : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            canvasNewPiece.SetActive(false);
             StopCoroutine(waitForKey);
         }
     }

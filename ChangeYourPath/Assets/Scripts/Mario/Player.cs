@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     private RaycastHit2D hit;
     public Animator animator;
     public GameObject movePoint;
-    public Dialogue spaceTutorial;
     public GameObject tutorial;
 
     //added comment

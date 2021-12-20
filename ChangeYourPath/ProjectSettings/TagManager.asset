@@ -8,6 +8,7 @@ TagManager:
   - MapPiece
   - Tutorial
   - MapCollectable
+  - NPC
   layers:
   - Default
   - TransparentFX

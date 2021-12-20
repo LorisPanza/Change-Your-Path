@@ -15,7 +15,6 @@ public class SelecterMovement : MonoBehaviour
     public Transform movePoint;
     public AudioManager audioManager;
     public NPC wilem;
-    public GameObject grabCanvas;
     private GameObject grid;
     private float sideLength=8f;
     private bool errorFlag = false;
@@ -34,7 +33,6 @@ public class SelecterMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && choosen == false && this.transform.position.x%offsetMovement==0 
            && this.transform.position.y%offsetMovement==0) 
         {
-            if (grabCanvas.activeSelf == true) grabCanvas.SetActive(false);
             chosenMapCollider = Physics2D.OverlapCircle(movePoint.position, .2f, detectedLayerMap);
             
             
