@@ -35,7 +35,7 @@ Apart from composing the map in the right way, there will be different minigames
 ### Levels
 Change your path is divided in chapters. Each of them consists of completing a discrete objective. A way to change from one level to another can be making Kvothe fall outside the bounds of the map and bring him into a new area.
 
-* Chapter 0: In that chapter Kvothe is inside a snowy environment. This first part of the gameplay will be an introduction about how to use the commands, understand the sounds and visuals and solve the first simple puzzles. In that chapter we insert the first minigame followed by the “Sign” minigame. There Kvothe will meet Wilem that will trigger the first minigame and also introduces elements of the story.
+* Chapter 0: In that chapter Kvothe is inside a snowy environment. This first part of the gameplay will be an introduction about how to use the commands, understand the sounds and visuals and solve the first simple puzzles. There Kvothe will meet Wilem that will trigger the first minigame and also introduces elements of the story. After being rewarded by a new piece of Map, Kvothe continues his exploration solving a little ambiental puzzle composed by 4 pieces and a circula river. After that part, Kvothe arrives at the last tilemap of the snow world, there will be an entrance to a green forest and the change of scene.
 
 * Chapter 1: 
 * Chapter 2: 
