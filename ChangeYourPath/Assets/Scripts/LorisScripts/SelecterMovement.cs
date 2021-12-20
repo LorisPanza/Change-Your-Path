@@ -149,7 +149,7 @@ public class SelecterMovement : MonoBehaviour
                     {
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f);
                        
-                    }
+                    }   
                     
                     if (errorFlag)
                     {
