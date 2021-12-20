@@ -146,8 +146,8 @@ We don’t need to consider all the possible combinations because we will build 
 * NPC and enivromental animation (XUYAN -> MARIO)
 * Better Camer Movement and Introduction of MaxiCollider LORIS --> SOLVED
 * Chaneg "New Game" and "Play" ANDREA
-* Different colors for the selecter: normal mode, grab mode LORIS
-* Highligths non matchable sides LORIS
+* Different colors for the selecter: normal mode, grab mode LORIS --> SOLVED
+* Highligths non matchable sides LORIS -->SOLVED
 
 deadline 20
 
