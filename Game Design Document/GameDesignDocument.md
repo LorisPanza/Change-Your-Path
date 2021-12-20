@@ -137,7 +137,7 @@ We don’t need to consider all the possible combinations because we will build 
 * Player outside the map LORIS --> Partially SOLVED
 * Mouse disappearing ANDREA
 * Comprenetation of the sprites (Kvothe with NPC and bushes) LORIS --> SOLVED
-* When you walk with kvothe and open the Menu, kvothe is still moving MARIO
+* When you walk with kvothe and open the Menu, kvothe is still moving MARIO --> SOLVED
 * Stop the conversation sound when Kvothe walk away the NPC (not only when the dialogue ends) ANDREA
 * Fix Map Piece3 Colliders
 
@@ -148,6 +148,7 @@ We don’t need to consider all the possible combinations because we will build 
 * Chaneg "New Game" and "Play" ANDREA
 * Different colors for the selecter: normal mode, grab mode LORIS --> SOLVED
 * Highligths non matchable sides LORIS -->SOLVED
+* Save and restore the "index" variable of Tutorial Manager.
 
 deadline 20
 
