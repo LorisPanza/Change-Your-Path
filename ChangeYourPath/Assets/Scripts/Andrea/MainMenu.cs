@@ -36,6 +36,9 @@ public class MainMenu : MonoBehaviour
     }
 
     void Pause() {
+        
+        kvothe.GetComponent<Animator>().enabled = false;
+        
         kvothe.enabled = false;
         selecter.enabled = false;
         pauseMenu.SetActive(true);
@@ -45,6 +48,8 @@ public class MainMenu : MonoBehaviour
     }
 
     public void Resume() {
+        kvothe.GetComponent<Animator>().enabled = true;
+        
         kvothe.enabled = true;
         selecter.enabled = true;
         pauseMenu.SetActive(false);

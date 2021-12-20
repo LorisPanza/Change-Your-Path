@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class SelecterMovement : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class SelecterMovement : MonoBehaviour
     public NPC wilem;
     public GameObject grabCanvas;
     private GameObject grid;
+    private float sideLength=8f;
+    private bool errorFlag = false;
     
     
     void Start()
@@ -34,6 +37,9 @@ public class SelecterMovement : MonoBehaviour
             if (grabCanvas.activeSelf == true) grabCanvas.SetActive(false);
             chosenMapCollider = Physics2D.OverlapCircle(movePoint.position, .2f, detectedLayerMap);
             
+            
+            
+            
             if (chosenMapCollider)
             {
 
@@ -45,7 +51,7 @@ public class SelecterMovement : MonoBehaviour
                 //go.GetComponent<MapFeatures>().enabled = true;
                 choosen = true;
 
-                this.GetComponent<Renderer>().material.color = Color.magenta;
+                //this.GetComponent<Renderer>().material.color = Color.magenta;
 
                 playerCollider = checkPlayer();
                 if (playerCollider)
@@ -55,6 +61,7 @@ public class SelecterMovement : MonoBehaviour
                     go.GetComponent<MapMovement>().setPlayerInside(playerCollider.gameObject);
                     isChild = true;
                 }
+                GrabColorSelecter(new Vector3(0,0,0),Color.yellow, this.GetComponent<Tilemap>());
                 audioManager.Play("mapSelection");
                 enableSelectionMapCondition();
             }
@@ -65,7 +72,9 @@ public class SelecterMovement : MonoBehaviour
             GameObject go = chosenMapCollider.gameObject;
             if (disableSelectionMapCondition() && go.transform.position.x%offsetMovement==0 && go.transform.position.y%offsetMovement==0)
             {
+                
                 audioManager.Play("mapChoice");
+                GrabColorSelecter(new Vector3(0,0,0),Color.white, this.GetComponent<Tilemap>());
                 go.transform.SetParent(grid.transform);
                 go.GetComponent<MapMovement>().enabled = false;
                 //chosenMapCollider.gameObject.GetComponent<MapFeatures>().enabled = false;
@@ -112,6 +121,7 @@ public class SelecterMovement : MonoBehaviour
             }
             if (choosen)
             {
+                
                 if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
                 {
                     
@@ -122,6 +132,13 @@ public class SelecterMovement : MonoBehaviour
                         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f);
                        
                     }
+                    
+                    if (errorFlag)
+                    {
+                        GrabColorSelecter(new Vector3(0,0,0),Color.yellow, this.GetComponent<Tilemap>());
+                        errorFlag = false;
+                    }
+                
                     audioManager.Play("mapMovement");
                
                 } 
@@ -134,6 +151,12 @@ public class SelecterMovement : MonoBehaviour
                     {
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f);
                        
+                    }
+                    
+                    if (errorFlag)
+                    {
+                        GrabColorSelecter(new Vector3(0,0,0),Color.yellow, this.GetComponent<Tilemap>());
+                        errorFlag = false;
                     }
                     audioManager.Play("mapMovement");
                 
@@ -160,6 +183,7 @@ public class SelecterMovement : MonoBehaviour
             }
                 
         }
+        
 
         if (chosenMapMov.getIsMatchingRight())
         {
@@ -204,6 +228,7 @@ public class SelecterMovement : MonoBehaviour
                 }
                 
             }
+            
 
             if (chosenMapMov.getIsMatchingRight())
             {
@@ -213,6 +238,7 @@ public class SelecterMovement : MonoBehaviour
                     modifyRightBoundaryColliders(rightDetectedMap,false);
                 }
             }
+            
 
             if (chosenMapMov.getIsMatchingUp())
             {
@@ -223,6 +249,7 @@ public class SelecterMovement : MonoBehaviour
                 }
             }
             
+            
             if (chosenMapMov.getIsMatchingDown())
             {
                 GameObject downDetectedMap = chosenMapMov.matchingDown(chosenMapMov.movePoint);
@@ -231,10 +258,31 @@ public class SelecterMovement : MonoBehaviour
                     modifyDownBoundaryColliders(downDetectedMap,false);
                 }
             }
+          
             return true;
         }
         else
         {
+            errorFlag = true;
+            if (!chosenMapMov.getIsMatchingRight() && !chosenMapMov.isVoidRight())
+            {
+                ErrorColorSelecter(new Vector3(0,0,0),Color.red,this.GetComponent<Tilemap>(),"Right");
+            }
+            
+            if (!chosenMapMov.getIsMatchingLeft() && !chosenMapMov.isVoidLeft())
+            {
+                ErrorColorSelecter(new Vector3(0,0,0),Color.red,this.GetComponent<Tilemap>(),"Left");
+            }
+            
+            if (!chosenMapMov.getIsMatchingUp() && !chosenMapMov.isVoidUp())
+            {
+                ErrorColorSelecter(new Vector3(0,0,0),Color.red,this.GetComponent<Tilemap>(),"Up");
+            }
+            
+            if (!chosenMapMov.getIsMatchingDown() && !chosenMapMov.isVoidDown())
+            {
+                ErrorColorSelecter(new Vector3(0,0,0),Color.red,this.GetComponent<Tilemap>(),"Down");
+            }
             return false;
         }
 
@@ -340,6 +388,66 @@ public class SelecterMovement : MonoBehaviour
         {
             chosenMapCollider.gameObject.GetComponent<MapMovement>().enabled=true;
         }
+    }
+    
+    
+    
+    public void GrabColorSelecter(Vector3 origin, Color c,Tilemap tilemap)
+    {
+
+        int rightX = (int)(origin.x + sideLength);
+        int leftX = (int)(origin.x - sideLength)-1;
+        int upY = (int) (origin.y + sideLength);
+        int downY = (int) (origin.y - sideLength)-1;
+        
+
+
+        for (int i = leftX; i <= rightX;  i++)
+        {
+            tilemap.SetColor(new Vector3Int(i,upY,(int)origin.z),c);
+            tilemap.SetColor(new Vector3Int(i,downY,(int)origin.z),c);
+        }
+        for (int i = downY; i <= upY;  i++)
+        {
+            tilemap.SetColor(new Vector3Int(rightX,i,(int)origin.z),c);
+            tilemap.SetColor(new Vector3Int(leftX,i,(int)origin.z),c);
+        }
+    }
+    
+    public void ErrorColorSelecter(Vector3 origin, Color c,Tilemap tilemap,String side)
+    {
+
+        int rightX = (int)(origin.x + sideLength);
+        int leftX = (int)(origin.x - sideLength)-1;
+        int upY = (int) (origin.y + sideLength);
+        int downY = (int) (origin.y - sideLength)-1;
+
+        if (side == "Right")
+        {
+            for (int i = downY; i <= upY;  i++)
+                tilemap.SetColor(new Vector3Int(rightX,i,(int)origin.z),c);
+        }
+        
+        if (side == "Left")
+        {
+            for (int i = downY; i <= upY;  i++)
+                tilemap.SetColor(new Vector3Int(leftX,i,(int)origin.z),c);
+        }
+
+        if (side == "Up")
+        {
+            for (int i = leftX; i <= rightX;  i++)
+                tilemap.SetColor(new Vector3Int(i,upY,(int)origin.z),c);
+                
+        }
+
+        if (side == "Down")
+        {
+            for (int i = leftX; i <= rightX;  i++)
+                tilemap.SetColor(new Vector3Int(i,downY,(int)origin.z),c);
+        }
+
+        
     }
 }
 

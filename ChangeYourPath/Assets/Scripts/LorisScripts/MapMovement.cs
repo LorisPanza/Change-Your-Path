@@ -15,7 +15,7 @@ public class MapMovement : MonoBehaviour
     private Collider2D colliderMovement;
     public Transform movePoint;
     private MapFeatures collideMap, thisMap;
-    private bool isMatching, isMatchingRight, isMatchingLeft, isMatchingDown, isMatchingUp;
+    private bool isMatching, isMatchingRight, isMatchingLeft, isMatchingDown, isMatchingUp,rightVoid,leftVoid,upVoid,downVoid;
     public AudioManager audioManager;
     private GameObject player=null;
     
@@ -72,6 +72,10 @@ public class MapMovement : MonoBehaviour
         isMatchingRight = false;
         isMatchingUp = false;
         isMatchingLeft = false;
+        rightVoid = false;
+        leftVoid = false;
+        upVoid = false;
+        downVoid = false;
         matchingDown(movePointCopy);
         matchingLeft(movePointCopy);
         matchingRight(movePointCopy);
@@ -109,6 +113,10 @@ public class MapMovement : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            rightVoid = true;
+        }
 
         return null;
     }
@@ -142,6 +150,10 @@ public class MapMovement : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            leftVoid = true;
+        }
 
         return null;
     }
@@ -174,6 +186,10 @@ public class MapMovement : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            upVoid = true;
+        }
         return null;
     }
 
@@ -204,6 +220,10 @@ public class MapMovement : MonoBehaviour
                     return null;
                 }
             }
+        }
+        else
+        {
+            downVoid = true;
         }
 
         return null;
@@ -544,6 +564,22 @@ public class MapMovement : MonoBehaviour
         }
     }
 
+    public bool isVoidRight()
+    {
+        return rightVoid;
+    }
+    public bool isVoidLeft()
+    {
+        return leftVoid;
+    }
+    public bool isVoidUp()
+    {
+        return upVoid;
+    }
+    public bool isVoidDown()
+    {
+        return downVoid;
+    }
     
 }
 

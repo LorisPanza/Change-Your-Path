@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public GameObject movePoint;
     public Dialogue spaceTutorial;
+    public GameObject tutorial;
 
     //added comment
 
@@ -18,6 +19,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         boxCollider = movePoint.GetComponent<BoxCollider2D>();
+        tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetComponent<CanvasRenderer>().SetColor(Color.grey);
+        tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(10).GetComponent<CanvasRenderer>().SetColor(Color.grey);
     }
 
     private void FixedUpdate()
@@ -55,5 +58,38 @@ public class Player : MonoBehaviour
     public Vector3 GetMoveDelta()
     {
         return moveDelta;
+    }
+    
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("NPC") || other.CompareTag("MapCollectable"))
+        {
+            // can interact
+            tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetComponent<CanvasRenderer>().SetColor(Color.white);
+            tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(10).GetComponent<CanvasRenderer>().SetColor(Color.white);
+
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("NPC") || other.CompareTag("MapCollectable"))
+        {
+            //can interact
+            tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetComponent<CanvasRenderer>().SetColor(Color.white);
+            tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(10).GetComponent<CanvasRenderer>().SetColor(Color.white);
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("NPC") || other.CompareTag("MapCollectable"))
+        {
+            // grey out space
+            tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetComponent<CanvasRenderer>().SetColor(Color.grey);
+            tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(10).GetComponent<CanvasRenderer>().SetColor(Color.grey);
+        }
     }
 }
