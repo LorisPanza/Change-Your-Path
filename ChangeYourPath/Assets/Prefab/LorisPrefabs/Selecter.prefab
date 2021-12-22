@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1999376542322602514
+--- !u!1 &7904234770492527037
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1999376542322602515}
+  - component: {fileID: 7904234770492527036}
   m_Layer: 6
   m_Name: MovePoint
   m_TagString: Untagged
@@ -16,21 +16,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1999376542322602515
+--- !u!4 &7904234770492527036
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999376542322602514}
+  m_GameObject: {fileID: 7904234770492527037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1999376543292193088}
+  m_Father: {fileID: 7904234770866993909}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1999376543292193091
+--- !u!1 &7904234770866993910
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,10 +38,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1999376543292193088}
-  - component: {fileID: 1999376543292193118}
-  - component: {fileID: 1999376543292193089}
-  - component: {fileID: 1999376543292193119}
+  - component: {fileID: 7904234770866993909}
+  - component: {fileID: 7904234770866993914}
+  - component: {fileID: 7904234770866993915}
+  - component: {fileID: 7904234770866993908}
   m_Layer: 8
   m_Name: Selecter
   m_TagString: Selecter
@@ -49,28 +49,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1999376543292193088
+--- !u!4 &7904234770866993909
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999376543292193091}
+  m_GameObject: {fileID: 7904234770866993910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1999376542322602515}
+  - {fileID: 7904234770492527036}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1839735485 &1999376543292193118
+--- !u!1839735485 &7904234770866993914
 Tilemap:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999376543292193091}
+  m_GameObject: {fileID: 7904234770866993910}
   m_Enabled: 1
   m_Tiles:
   - first: {x: -9, y: -9, z: 0}
@@ -810,13 +810,13 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!483693784 &1999376543292193089
+--- !u!483693784 &7904234770866993915
 TilemapRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999376543292193091}
+  m_GameObject: {fileID: 7904234770866993910}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -858,13 +858,13 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &1999376543292193119
+--- !u!114 &7904234770866993908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999376543292193091}
+  m_GameObject: {fileID: 7904234770866993910}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e026862dd1f541959cba5739e6c5842, type: 3}
@@ -877,7 +877,9 @@ MonoBehaviour:
   detectedLayerPlayer:
     serializedVersion: 2
     m_Bits: 8
-  movePoint: {fileID: 1999376542322602515}
+  detectedLayerLimit:
+    serializedVersion: 2
+    m_Bits: 2048
+  movePoint: {fileID: 7904234770492527036}
   audioManager: {fileID: 0}
   wilem: {fileID: 0}
-  grabCanvas: {fileID: 0}

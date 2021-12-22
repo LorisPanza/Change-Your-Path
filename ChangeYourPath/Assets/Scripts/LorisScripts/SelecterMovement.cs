@@ -6,12 +6,14 @@ using UnityEngine.Tilemaps;
 
 public class SelecterMovement : MonoBehaviour
 {
+    //public LayerMask[] obstacles;
     public float moveSpeed = 100f;
     public LayerMask detectedLayerMap;
     public LayerMask detectedLayerPlayer;
+    public LayerMask detectedLayerLimit;
     private int offsetMovement=18;
     private bool choosen = false,isChild=false;
-    private Collider2D chosenMapCollider=null,movementCollider=null,playerCollider=null; //colliderMatchingUp,colliderMatchingDown,colliderMatchingRight,colliderMatchingLeft;
+    private Collider2D chosenMapCollider=null,movementCollider=null,playerCollider=null,limitCollider=null; //colliderMatchingUp,colliderMatchingDown,colliderMatchingRight,colliderMatchingLeft;
     public Transform movePoint;
     public AudioManager audioManager;
     public NPC wilem;
@@ -111,15 +113,30 @@ public class SelecterMovement : MonoBehaviour
             
             if (!choosen)
             {
+
                 if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
                 {
-                    movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f);
-
+                    
+                    movementCollider = Physics2D.OverlapCircle(
+                        movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f), .2f,detectedLayerLimit);
+                    
+                    if (!movementCollider)
+                    {
+                        movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f);
+                        
+                    }
+                    
                 }
-
                 else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
                 {
-                    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f);
+                    movementCollider = Physics2D.OverlapCircle(
+                        movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f) , .2f, detectedLayerLimit);
+                    
+                    if (!movementCollider)
+                    {
+                        movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f);
+                    }
+                    
                 }
             }
             if (choosen)
@@ -129,8 +146,12 @@ public class SelecterMovement : MonoBehaviour
                 {
                     
                     movementCollider = Physics2D.OverlapCircle(
-                        movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f), .2f, detectedLayerMap);
-                    if (!movementCollider)
+                        movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f), .2f,detectedLayerMap);
+                    
+                    limitCollider = Physics2D.OverlapCircle(
+                        movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f), .2f,detectedLayerLimit);
+                    
+                    if (!movementCollider && !limitCollider)
                     {
                         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * offsetMovement, 0f, 0f);
                        
@@ -150,7 +171,10 @@ public class SelecterMovement : MonoBehaviour
                     
                     movementCollider = Physics2D.OverlapCircle(
                         movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f) , .2f, detectedLayerMap);
-                    if (!movementCollider)
+                    limitCollider = Physics2D.OverlapCircle(
+                        movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f) , .2f, detectedLayerLimit);
+                    
+                    if (!movementCollider && !limitCollider)
                     {
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * offsetMovement, 0f);
                        
