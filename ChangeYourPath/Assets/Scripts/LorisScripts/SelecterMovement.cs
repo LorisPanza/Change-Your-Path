@@ -98,6 +98,11 @@ public class SelecterMovement : MonoBehaviour
            
             
         }
+        
+        if((Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.M)) && choosen==true && errorFlag==true)
+        {
+            GrabColorSelecter(new Vector3(0,0,0),Color.white,this.GetComponent<Tilemap>());
+        }
        
         
 

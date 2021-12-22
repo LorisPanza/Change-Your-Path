@@ -556,10 +556,10 @@ public class MapMovement : MonoBehaviour
         Vector3Int tilePos = tileMap.WorldToCell(npos);
         Tile tile = tileMap.GetTile<Tile>(tilePos);
 
-        Debug.Log(tile.name);
+        //Debug.Log(tile.name);
         if (tile.name == "map piece ocean" || tile.name=="map piece snow ocean")
         {
-            Debug.Log("Sono sul mare");
+            //Debug.Log("Sono sul mare");
             player.transform.position = tileMap.transform.position;
         }
     }
