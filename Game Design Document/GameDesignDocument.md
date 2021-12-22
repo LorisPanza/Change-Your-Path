@@ -117,7 +117,12 @@ We don’t need to consider all the possible combinations because we will build 
 ## Media List
 ### Interface assets
 ### Environments
-* Tiles enviroment ( snow, sea, lake, grass, forest)
+#### Tiles
+* Grass
+* Forest grass
+* Water/Grass
+* Forest/Grass
+* Path/Grass
 ### Characters
 * Dialogues
 ### Animation
