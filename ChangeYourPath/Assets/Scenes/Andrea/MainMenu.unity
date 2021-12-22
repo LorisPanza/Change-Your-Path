@@ -1024,6 +1024,7 @@ MonoBehaviour:
   quitMenu: {fileID: 0}
   newGameMenu: {fileID: 53457670}
   menuFirstButton: {fileID: 1633018369}
+  menuSecondButton: {fileID: 1375498217}
   newFirstButton: {fileID: 1279670856}
   newClosedButton: {fileID: 1375498217}
   settingsFirstButton: {fileID: 1664243846}
@@ -5149,8 +5150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -393.2487, y: 129.08687}
-  m_SizeDelta: {x: 379.5795, y: 119.9268}
+  m_AnchoredPosition: {x: -338.02, y: 115}
+  m_SizeDelta: {x: 496.031, y: 96.815}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633018371
 MonoBehaviour:
@@ -5772,7 +5773,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY
+  m_text: CONTINUE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -5799,8 +5800,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 120
-  m_fontSizeBase: 120
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

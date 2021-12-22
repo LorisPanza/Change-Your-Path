@@ -9,15 +9,21 @@ public class MainMenu : MonoBehaviour
     public Player kvothe;
     public SelecterMovement selecter;
     public GameObject pauseMenu, settingsMenu, quitMenu, newGameMenu;
-    public GameObject menuFirstButton, newFirstButton, newClosedButton, settingsFirstButton, settingsClosedButton, quitFirstButton, quitClosedButton;
+    public GameObject menuFirstButton, menuSecondButton, newFirstButton, newClosedButton, settingsFirstButton, settingsClosedButton, quitFirstButton, quitClosedButton;
     public SaveManager saveManager;
 
     public static bool gameIsPaused = false;
+
+    private GameObject selected;
 
     void Update() 
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        if (selected != EventSystem.current.currentSelectedGameObject && EventSystem.current.currentSelectedGameObject != null) {
+            selected = EventSystem.current.currentSelectedGameObject;
+        }
+
         if (SceneManager.GetActiveScene().name != "MainMenu")
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -31,8 +37,36 @@ public class MainMenu : MonoBehaviour
                     Pause();
                 }
             }
+
+            if (gameIsPaused)
+            {
+                if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) {
+                    EventSystem.current.SetSelectedGameObject(selected);
+                }
+                    
+            }
+        } else {
+            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) {
+                EventSystem.current.SetSelectedGameObject(selected);
+            }
         }
-        
+
+    }
+
+    void Start() {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            if (!PlayerPrefs.HasKey("KvotheX"))
+            {
+                menuFirstButton.SetActive(false);
+                EventSystem.current.SetSelectedGameObject(menuSecondButton);
+                selected = menuSecondButton;
+            } else {
+                selected = menuFirstButton;
+            }
+        }
     }
 
     void Pause() {
@@ -44,6 +78,7 @@ public class MainMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         settingsMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(menuFirstButton);
+        selected = menuFirstButton;
         gameIsPaused = true;
     }
 

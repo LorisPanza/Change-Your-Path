@@ -14,6 +14,7 @@ public class NPC : MonoBehaviour
     public Dialogue dialogue;
     private Coroutine talk;
     private bool started = false;
+    public AudioManager audioManager;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,6 +50,8 @@ public class NPC : MonoBehaviour
             started = false;
             FindObjectOfType<DialogueManager>().HideBox();
 
+            AudioSource voiceSrc = audioManager.GetSound("Voice").source;
+            voiceSrc.Stop();
         }
     }
 
