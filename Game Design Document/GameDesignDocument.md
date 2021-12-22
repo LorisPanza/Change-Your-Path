@@ -160,7 +160,8 @@ We don’t need to consider all the possible combinations because we will build 
 deadline 20
 
 
-
+## Sprites we need:
+* Little blue collectable map animation 
 
 
 
