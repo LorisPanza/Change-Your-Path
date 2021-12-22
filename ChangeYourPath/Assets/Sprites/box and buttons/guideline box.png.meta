@@ -1,0 +1,1476 @@
+fileFormatVersion: 2
+guid: 638bfc6fe4af34dad8a1f7e3347bab3d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4866137918863527054
+    second: guideline box_0
+  - first:
+      213: -217196733960208362
+    second: guideline box_1
+  - first:
+      213: 2660393572814419772
+    second: guideline box_2
+  - first:
+      213: -5103343011769701759
+    second: guideline box_3
+  - first:
+      213: -3320767214310349512
+    second: guideline box_4
+  - first:
+      213: -3047916416124057742
+    second: guideline box_5
+  - first:
+      213: -7693287732080142381
+    second: guideline box_6
+  - first:
+      213: 8446906326164841056
+    second: guideline box_7
+  - first:
+      213: -814045131780353534
+    second: guideline box_8
+  - first:
+      213: -4400878840070833429
+    second: guideline box_9
+  - first:
+      213: -701858324914105510
+    second: guideline box_10
+  - first:
+      213: 1072116783857054445
+    second: guideline box_11
+  - first:
+      213: 2785822039117244315
+    second: guideline box_12
+  - first:
+      213: 8668189355898119760
+    second: guideline box_13
+  - first:
+      213: 9015719182133397937
+    second: guideline box_14
+  - first:
+      213: 5271458918210566762
+    second: guideline box_15
+  - first:
+      213: -4118891434095047478
+    second: guideline box_16
+  - first:
+      213: -2666007765032349954
+    second: guideline box_17
+  - first:
+      213: -5228468750866264177
+    second: guideline box_18
+  - first:
+      213: 382408306560351876
+    second: guideline box_19
+  - first:
+      213: -3719129152702634323
+    second: guideline box_20
+  - first:
+      213: 8110708307627878285
+    second: guideline box_21
+  - first:
+      213: -1774600351779591981
+    second: guideline box_22
+  - first:
+      213: -2982433921725726344
+    second: guideline box_23
+  - first:
+      213: 3689326250102567787
+    second: guideline box_24
+  - first:
+      213: 2208357890851794051
+    second: guideline box_25
+  - first:
+      213: 3544884770563558382
+    second: guideline box_26
+  - first:
+      213: -6133183679966326818
+    second: guideline box_27
+  - first:
+      213: -5118740131039348066
+    second: guideline box_28
+  - first:
+      213: -5101792054429835526
+    second: guideline box_29
+  - first:
+      213: -1407143584049677599
+    second: guideline box_30
+  - first:
+      213: 2711734921530027446
+    second: guideline box_31
+  - first:
+      213: 7586019729283101761
+    second: guideline box_32
+  - first:
+      213: -9145371847537641296
+    second: guideline box_33
+  - first:
+      213: 4152828129481979241
+    second: guideline box_34
+  - first:
+      213: 111588801856435576
+    second: guideline box_35
+  - first:
+      213: 4339227875779179242
+    second: guideline box_36
+  - first:
+      213: 2675069919647927969
+    second: guideline box_37
+  - first:
+      213: 3539567731570175552
+    second: guideline box_38
+  - first:
+      213: -7365537817076381257
+    second: guideline box_39
+  - first:
+      213: 8626708803481679029
+    second: guideline box_40
+  - first:
+      213: 7165795770090727182
+    second: guideline box_41
+  - first:
+      213: 6105362690203598259
+    second: guideline box_42
+  - first:
+      213: 8313797467460772782
+    second: guideline box_43
+  - first:
+      213: -2337745388755831090
+    second: guideline box_44
+  - first:
+      213: -5354004338441962020
+    second: guideline box_45
+  - first:
+      213: 2337175914476176850
+    second: guideline box_46
+  - first:
+      213: -3212185794688541067
+    second: guideline box_47
+  - first:
+      213: -5787780602140539276
+    second: guideline box_48
+  - first:
+      213: 621360666593268595
+    second: guideline box_49
+  - first:
+      213: 1014943371572035708
+    second: guideline box_50
+  - first:
+      213: 772542412776449821
+    second: guideline box_51
+  - first:
+      213: 1999587370911904135
+    second: guideline box_52
+  - first:
+      213: 3073770734767854449
+    second: guideline box_53
+  - first:
+      213: 5446745625378253404
+    second: guideline box_54
+  - first:
+      213: -6183064008462701325
+    second: guideline box_55
+  - first:
+      213: -2480242187659042877
+    second: guideline box_56
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: guideline box_0
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1195
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273b41e3851087cb0800000000000000
+      internalID: -4866137918863527054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_1
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1202
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6104de1a8bc5cfcf0800000000000000
+      internalID: -217196733960208362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_2
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 829
+        width: 1380
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37f55eebdd9be420800000000000000
+      internalID: 2660393572814419772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_3
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 1138
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18aae78c1984d29b0800000000000000
+      internalID: -5103343011769701759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_4
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1163
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835a44110d34ae1d0800000000000000
+      internalID: -3320767214310349512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_5
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1118
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27708d70b20a3b5d0800000000000000
+      internalID: -3047916416124057742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_6
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 1141
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d71e768193fb3590800000000000000
+      internalID: -7693287732080142381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_7
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 1134
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0622e0ecc80793570800000000000000
+      internalID: 8446906326164841056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_8
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1112
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2029811044ee3b4f0800000000000000
+      internalID: -814045131780353534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_9
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1103
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea7b060300fce2c0800000000000000
+      internalID: -4400878840070833429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_10
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1082
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5318d4729f7246f0800000000000000
+      internalID: -701858324914105510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_11
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1086
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2b88bd88ce0ee00800000000000000
+      internalID: 1072116783857054445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_12
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 1084
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97a909726a39a620800000000000000
+      internalID: 2785822039117244315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_13
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 1091
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 056212c0b489b4870800000000000000
+      internalID: 8668189355898119760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_14
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1070
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b98cbd24d44e1d70800000000000000
+      internalID: 9015719182133397937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_15
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1076
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a710ce4fbf72940800000000000000
+      internalID: 5271458918210566762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_16
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1054
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc8d524012c6d6c0800000000000000
+      internalID: -4118891434095047478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_17
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1067
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe40d41010700bd0800000000000000
+      internalID: -2666007765032349954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_18
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1053
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8fc2696f5fb077b0800000000000000
+      internalID: -5228468750866264177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_19
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1064
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e30b724569e4500800000000000000
+      internalID: 382408306560351876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_20
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 1059
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da62c5b8dbff26cc0800000000000000
+      internalID: -3719129152702634323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_21
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1053
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8728f0cb360f8070800000000000000
+      internalID: 8110708307627878285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_22
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1051
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8e4edd16a5f57e0800000000000000
+      internalID: -1774600351779591981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_23
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1043
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 871867956244c96d0800000000000000
+      internalID: -2982433921725726344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_24
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1045
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6333e57dae133330800000000000000
+      internalID: 3689326250102567787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_25
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1039
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ce6252dc9a5ae10800000000000000
+      internalID: 2208357890851794051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_26
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1029
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb022fcae5f13130800000000000000
+      internalID: 3544884770563558382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_27
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1036
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf426520fd82eaa0800000000000000
+      internalID: -6133183679966326818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_28
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1032
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9afcd798f496f8b0800000000000000
+      internalID: -5118740131039348066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_29
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1029
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe9ccd282bc239b0800000000000000
+      internalID: -5101792054429835526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_30
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1023
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eabfbc9d52d87ce0800000000000000
+      internalID: -1407143584049677599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_31
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1023
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bda1d23b8402a520800000000000000
+      internalID: 2711734921530027446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_32
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1015
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144360750c4f64960800000000000000
+      internalID: 7586019729283101761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_33
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 985
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b839a842cc151180800000000000000
+      internalID: -9145371847537641296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_34
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1003
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965f50f5e2fc1a930800000000000000
+      internalID: 4152828129481979241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_35
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 958
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875709f8c617c8100800000000000000
+      internalID: 111588801856435576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_36
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 975
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae27a4743c8083c30800000000000000
+      internalID: 4339227875779179242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_37
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 965
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae82f53be1cf1520800000000000000
+      internalID: 2675069919647927969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_38
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 964
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04eeca239121f1130800000000000000
+      internalID: 3539567731570175552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_39
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 887
+        width: 27
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9c471316a58c990800000000000000
+      internalID: -7365537817076381257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_40
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 949
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b4b24453f938b770800000000000000
+      internalID: 8626708803481679029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_41
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 954
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0721417945027360800000000000000
+      internalID: 7165795770090727182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_42
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 935
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd3286e40b9ab450800000000000000
+      internalID: 6105362690203598259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_43
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 929
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3aa8e8fba806370800000000000000
+      internalID: 8313797467460772782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_44
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 919
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec6b6ef64f8ae8fd0800000000000000
+      internalID: -2337745388755831090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_45
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 898
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd3441cb61c2b5b0800000000000000
+      internalID: -5354004338441962020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_46
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 893
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d583ff7c115f6020800000000000000
+      internalID: 2337175914476176850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_47
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 891
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e9803e9060c63d0800000000000000
+      internalID: -3212185794688541067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_48
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 882
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4764483153cadafa0800000000000000
+      internalID: -5787780602140539276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_49
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 887
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37311b1fb348f9800800000000000000
+      internalID: 621360666593268595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_50
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 843
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7040b97e9dc51e00800000000000000
+      internalID: 1014943371572035708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_51
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 861
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17a6773b3f98ba00800000000000000
+      internalID: 772542412776449821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_52
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 849
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781bf8c9e16ffbb10800000000000000
+      internalID: 1999587370911904135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_53
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 843
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17354de923a38aa20800000000000000
+      internalID: 3073770734767854449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_54
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 830
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a6596c94ab69b40800000000000000
+      internalID: 5446745625378253404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_55
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 831
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fce3182b08513aa0800000000000000
+      internalID: -6183064008462701325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guideline box_56
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 831
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf15a70fd8649dd0800000000000000
+      internalID: -2480242187659042877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
