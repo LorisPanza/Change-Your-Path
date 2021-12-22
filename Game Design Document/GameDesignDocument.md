@@ -156,6 +156,7 @@ We don’t need to consider all the possible combinations because we will build 
 * Different colors for the selecter: normal mode, grab mode LORIS --> SOLVED
 * Highligths non matchable sides LORIS -->SOLVED
 * Save and restore the "index" variable of Tutorial Manager.
+* Disable tutorial manager script if index > 8 when load -> MARIO;
 
 deadline 20
 
