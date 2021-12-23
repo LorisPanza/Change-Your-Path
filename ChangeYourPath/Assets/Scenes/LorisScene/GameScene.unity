@@ -6942,7 +6942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4526883167923920959, guid: 2245908a33e6b4051a95e0f4c0c60c81, type: 3}
       propertyPath: m_ColliderPaths.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4526883168520741186, guid: 2245908a33e6b4051a95e0f4c0c60c81, type: 3}
       propertyPath: audioManager
@@ -6962,7 +6962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4526883168520741189, guid: 2245908a33e6b4051a95e0f4c0c60c81, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7449244317084589419, guid: 2245908a33e6b4051a95e0f4c0c60c81, type: 3}
       propertyPath: m_LocalPosition.x
