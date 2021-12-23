@@ -26,7 +26,7 @@ public class TutorialManager : MonoBehaviour
         if (index == 0)
         {
             //Movement with arrows
-            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+            if (GameObject.Find("Kvothe").transform.position.x != 0 || GameObject.Find("Kvothe").transform.position.y != 0)
             {
                 index++;
             }
@@ -41,7 +41,7 @@ public class TutorialManager : MonoBehaviour
         } else if(index == 2)
         {
             //Press TAB to open map mode
-            if (GameObject.Find("MapPiece 2"))
+            if (Input.GetKeyDown(KeyCode.Tab) )
             {
                 Debug.Log("MapPiece 2");
                 index++;

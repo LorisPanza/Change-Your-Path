@@ -205,7 +205,8 @@ public class SaveManager : MonoBehaviour
         }
 
         int index=PlayerPrefs.GetInt("Index");
-        tm.GetComponent<TutorialManager>().setIndex(index);
+        if (index < 8) tm.GetComponent<TutorialManager>().setIndex(index);
+        else tm.GetComponent<TutorialManager>().enabled = false;
     }
 
     //Saves the player data
