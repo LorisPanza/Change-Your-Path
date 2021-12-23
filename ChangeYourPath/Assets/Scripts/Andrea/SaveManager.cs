@@ -127,7 +127,9 @@ public class SaveManager : MonoBehaviour
     {
         float KvotheX = PlayerPrefs.GetFloat("KvotheX");
         float KvotheY = PlayerPrefs.GetFloat("KvotheY");
-        kvothe.transform.position = new Vector3(KvotheX, KvotheY, 0);
+        kvothe.transform.position = new Vector3(KvotheX, KvotheY,0);
+       
+        Debug.Log("kvothe position: "+ KvotheX+" - "+KvotheY);
 
         string mapState = PlayerPrefs.GetString("Map state");
         SavedMap[] map = JsonHelper.FromJson<SavedMap>(mapState);

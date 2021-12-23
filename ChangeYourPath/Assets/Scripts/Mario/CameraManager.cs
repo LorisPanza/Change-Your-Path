@@ -11,7 +11,10 @@ public class CameraManager : MonoBehaviour
 
     void Awake()
     {
+        transform.position = new Vector3(focus.position.x, focus.position.y, transform.position.z);
         offset = focus.position - transform.position;
+        Debug.Log("target pos: "+focus.position.x+" - "+focus.position.y);
+        
     }
 
     void Update()
