@@ -16,6 +16,7 @@ public class SaveManager : MonoBehaviour
     public NPC npc;
     public GameObject endPrototypeCanvas;
     public GameObject houseForest;
+    public GameObject tm;
 
     public List<GameObject> mapCollectable;
 
@@ -129,7 +130,7 @@ public class SaveManager : MonoBehaviour
         float KvotheY = PlayerPrefs.GetFloat("KvotheY");
         kvothe.transform.position = new Vector3(KvotheX, KvotheY,0);
        
-        Debug.Log("kvothe position: "+ KvotheX+" - "+KvotheY);
+       // Debug.Log("kvothe position: "+ KvotheX+" - "+KvotheY);
 
         string mapState = PlayerPrefs.GetString("Map state");
         SavedMap[] map = JsonHelper.FromJson<SavedMap>(mapState);
@@ -167,6 +168,7 @@ public class SaveManager : MonoBehaviour
                 mapMov.rotateClockwise();
             }
             //piece.transform.rotation = Quaternion.Euler(0, 0, item.rotation);
+            
         }
 
         if (PlayerPrefs.HasKey("activeCollectable"))
@@ -201,6 +203,9 @@ public class SaveManager : MonoBehaviour
             houseForest.SetActive(true);
             endPrototypeCanvas.SetActive(true);
         }
+
+        int index=PlayerPrefs.GetInt("Index");
+        tm.GetComponent<TutorialManager>().setIndex(index);
     }
 
     //Saves the player data
@@ -222,7 +227,7 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.SetFloat("Brightness", brightness);
 
         PlayerPrefs.Save();
-        Debug.Log("SAVED");
+       // Debug.Log("SAVED");
     }
 
     public void SaveGame()
@@ -237,6 +242,7 @@ public class SaveManager : MonoBehaviour
         mapPieces = new SavedMap[numPieces];
         maps = GameObject.FindGameObjectsWithTag("MapPiece");
 
+        PlayerPrefs.SetInt("Index",tm.GetComponent<TutorialManager>().getIndex());
         for (int i = 0; i < numPieces; i++)
         {
             SavedMap sm = new SavedMap();

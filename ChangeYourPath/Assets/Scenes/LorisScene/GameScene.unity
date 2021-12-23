@@ -2262,6 +2262,7 @@ MonoBehaviour:
   npc: {fileID: 1538361606}
   endPrototypeCanvas: {fileID: 1199421481}
   houseForest: {fileID: 630501419}
+  tm: {fileID: 560873318}
   mapCollectable:
   - {fileID: 1282401997}
   - {fileID: 924856851}

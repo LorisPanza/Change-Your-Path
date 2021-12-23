@@ -42,6 +42,7 @@ public class MapCollectable : MonoBehaviour
 
         mf = newMapPiece.GetComponent<MapFeatures>();
         SimpleEventManager.StartListening("PlaceNewMap", Place);
+        SimpleEventManager.TriggerEvent("PlaceNewMap");
   
         gameObject.SetActive(false);
         audioManager.Play("mapChoice");

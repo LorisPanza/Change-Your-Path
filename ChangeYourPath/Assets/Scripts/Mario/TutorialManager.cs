@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class TutorialManager : MonoBehaviour
 {
     public GameObject[] tutorialCanvasOrdered;
-    public GameObject secondMap;
+    //public GameObject secondMap;
     private int index;
 
 
@@ -41,9 +41,9 @@ public class TutorialManager : MonoBehaviour
         } else if(index == 2)
         {
             //Press TAB to open map mode
-            if (GameObject.Find(secondMap.name))
+            if (GameObject.Find("MapPiece 2"))
             {
-                Debug.Log(secondMap.name);
+                Debug.Log("MapPiece 2");
                 index++;
             }
         } else if(index == 3)
@@ -87,5 +87,15 @@ public class TutorialManager : MonoBehaviour
                 index++;
             }
         }
+    }
+
+    public int getIndex()
+    {
+        return index;
+    }
+    
+    public void setIndex(int value)
+    {
+        index=value;
     }
 }

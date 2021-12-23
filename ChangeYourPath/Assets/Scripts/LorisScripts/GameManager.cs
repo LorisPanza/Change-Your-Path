@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject miniTutorial;
     public GameObject canvasMenu;
     public GameObject tutorial;
+    public GameObject lastSelecterPosition;
 
 
     // mode = 1: PlayerMode, 2: MapMode
@@ -36,6 +37,8 @@ public class GameManager : MonoBehaviour
         mapCam.SetActive(false);
         playerCam.SetActive(true);
         player.enabled = true;
+        lastSelecterPosition.transform.position = new Vector3(selecter.transform.position.x,
+            selecter.transform.position.y, selecter.transform.position.z);
         selecter.SetActive(false);
         menu.enabled = true;
 
@@ -104,7 +107,7 @@ public class GameManager : MonoBehaviour
             {
                 audioManager.Play("openMap");
                 activateMapMode();
-                SimpleEventManager.TriggerEvent("PlaceNewMap"); 
+                //SimpleEventManager.TriggerEvent("PlaceNewMap"); 
             }
             else if (mode == 2)
             {

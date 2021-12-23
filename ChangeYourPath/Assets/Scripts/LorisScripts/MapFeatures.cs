@@ -37,7 +37,9 @@ public class MapFeatures : MonoBehaviour
         int offset = offsetMovement;
         bool placed = false;
 
-        Transform checkHere = FindObjectOfType<SelecterMovement>().movePoint;
+        //Transform checkHere = FindObjectOfType<SelecterMovement>().movePoint;
+        Transform checkHere = GameObject.Find("LastSelecterPosition").transform;
+        //Transform checkHere; = new Vector3(0,0,0);
         Vector3 selecterPosition = new Vector3(checkHere.position.x,
             checkHere.position.y, checkHere.position.z);
 
