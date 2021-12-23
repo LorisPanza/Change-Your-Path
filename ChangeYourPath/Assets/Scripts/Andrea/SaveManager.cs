@@ -243,7 +243,9 @@ public class SaveManager : MonoBehaviour
         mapPieces = new SavedMap[numPieces];
         maps = GameObject.FindGameObjectsWithTag("MapPiece");
 
-        PlayerPrefs.SetInt("Index",tm.GetComponent<TutorialManager>().getIndex());
+        if (tm.GetComponent<TutorialManager>().enabled) { PlayerPrefs.SetInt("Index", tm.GetComponent<TutorialManager>().getIndex()); }
+        else { PlayerPrefs.SetInt("Index", 8); }
+
         for (int i = 0; i < numPieces; i++)
         {
             SavedMap sm = new SavedMap();
