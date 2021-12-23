@@ -2993,20 +2993,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!114 &398417799610715401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7783997939771095655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba89442eeae2440a9c20a78e8093965, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newMapPiece: {fileID: 0}
-  audioManager: {fileID: 0}
 --- !u!1 &398417799682293622
 GameObject:
   m_ObjectHideFlags: 0
@@ -3450,7 +3436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &398417800049291771
 Transform:
   m_ObjectHideFlags: 0
@@ -6912,6 +6898,7 @@ MonoBehaviour:
   - {fileID: 398417798701570735}
   - {fileID: 398417800310062799}
   - {fileID: 398417799923396011}
+  - {fileID: 7783997939771095655}
   player: {fileID: 0}
 --- !u!1 &398417800130817525
 GameObject:
@@ -9618,6 +9605,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7747765, y: 11.288334}
   m_EdgeRadius: 0
+--- !u!114 &398417799610715401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7783997939771095655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba89442eeae2440a9c20a78e8093965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMapPiece: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1001 &398417799957485309
 PrefabInstance:
   m_ObjectHideFlags: 0
