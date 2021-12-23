@@ -163,6 +163,11 @@ deadline 20
 
 ## Sprites we need:
 * Little blue collectable map animation 
+* Grass
+* Forest grass
+* Water/Grass
+* Forest/Grass
+* Path/Grass
 
 
 
