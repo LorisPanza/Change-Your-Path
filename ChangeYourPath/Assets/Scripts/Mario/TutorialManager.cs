@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class TutorialManager : MonoBehaviour
 {
     public GameObject[] tutorialCanvasOrdered;
+    public GameObject secondMap;
     private int index;
 
 
@@ -39,8 +41,9 @@ public class TutorialManager : MonoBehaviour
         } else if(index == 2)
         {
             //Press TAB to open map mode
-            if (GameObject.Find("MapPiece 2"))
+            if (GameObject.Find(secondMap.name))
             {
+                Debug.Log(secondMap.name);
                 index++;
             }
         } else if(index == 3)

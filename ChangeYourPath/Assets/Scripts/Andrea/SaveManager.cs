@@ -58,10 +58,10 @@ public class SaveManager : MonoBehaviour
         chapter1[0].GetComponent<MapFeatures>().tileMap.left = "Water";
         chapter1[0].GetComponent<MapFeatures>().tileMap.down = "Snow";
 
-        chapter1[1].GetComponent<MapFeatures>().tileMap.up = "Snow";
-        chapter1[1].GetComponent<MapFeatures>().tileMap.right = "Water";
-        chapter1[1].GetComponent<MapFeatures>().tileMap.left = "Water";
-        chapter1[1].GetComponent<MapFeatures>().tileMap.down = "Snow";
+        chapter1[1].GetComponent<MapFeatures>().tileMap.up = "Water";
+        chapter1[1].GetComponent<MapFeatures>().tileMap.right = "Snow";
+        chapter1[1].GetComponent<MapFeatures>().tileMap.left = "Snow";
+        chapter1[1].GetComponent<MapFeatures>().tileMap.down = "Water";
 
         chapter1[2].GetComponent<MapFeatures>().tileMap.up = "Water";
         chapter1[2].GetComponent<MapFeatures>().tileMap.right = "Water";
