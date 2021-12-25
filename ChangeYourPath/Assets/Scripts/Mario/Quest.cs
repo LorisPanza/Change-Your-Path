@@ -6,7 +6,7 @@ using UnityEngine;
 public class Quest
 {
     public bool isActive;
-    public bool isComplete = false;
+    public bool isComplete;
 
     private bool one;
     private bool two;
@@ -27,7 +27,7 @@ public class Quest
         isComplete = true;
         audioManager.Play("QuestCompleted");
         hiddenHouse.SetActive(true);
-        endPrototype.SetActive(true);
+        //endPrototype.SetActive(true);
     }
 
     public void checkQuestCondition(MapMovement mapMovement, string s)

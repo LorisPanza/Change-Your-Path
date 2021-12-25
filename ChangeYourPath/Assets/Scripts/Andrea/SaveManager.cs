@@ -199,9 +199,17 @@ public class SaveManager : MonoBehaviour
 
         if (PlayerPrefs.HasKey("ForestQuest"))
         {
-            npc.quest.isComplete = true;
-            houseForest.SetActive(true);
-            endPrototypeCanvas.SetActive(true);
+            npc.quest.Complete();
+            //npc.quest.isComplete = true;
+            //houseForest.SetActive(true);
+            //endPrototypeCanvas.SetActive(true);
+            //Debug.Log("La quest è completa");
+        }
+        if (PlayerPrefs.HasKey("isActiveForest"))
+        {
+            npc.quest.isComplete = false;
+            npc.quest.isActive = true;
+            
         }
 
         int index=PlayerPrefs.GetInt("Index");
@@ -271,6 +279,7 @@ public class SaveManager : MonoBehaviour
             //Debug.Log(mapCollectableSave[0].name);
         }
         if(npc.quest.isComplete) PlayerPrefs.SetString("ForestQuest", "Complete");
+        if(npc.quest.isActive && !npc.quest.isComplete) PlayerPrefs.SetString("isActiveForest","True");
     }
 
     public void Save()

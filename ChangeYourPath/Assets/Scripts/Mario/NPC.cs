@@ -52,9 +52,9 @@ public class NPC : MonoBehaviour
             FindObjectOfType<DialogueManager>().HideBox();
 
             
-            AudioSource background = audioManager.GetSound("DialogueBackground").source;
-            background.Stop();
-            audioManager.Play("Background");
+            //AudioSource background = audioManager.GetSound("DialogueBackground").source;
+            //background.Stop();
+            //audioManager.Play("Background");
             AudioSource voiceSrc = audioManager.GetSound("Voice").source;
             voiceSrc.Stop();
         }
@@ -76,6 +76,7 @@ public class NPC : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                Debug.Log("Quest: "+quest.isComplete);
                 if (!started)
                 {
                     //whoAreYouCanvas.SetActive(false);

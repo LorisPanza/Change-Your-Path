@@ -66,7 +66,7 @@ public class DialogueManager : MonoBehaviour
         dialogueEnded = true;
         SimpleEventManager.TriggerEvent("StartQuest");
         
-        AudioSource background = audioManager.GetSound("Background").source;
+        AudioSource background = audioManager.GetSound("DialogueBackground").source;
         background.Stop();
         audioManager.Play("Background");
 
