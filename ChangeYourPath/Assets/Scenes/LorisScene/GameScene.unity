@@ -2106,7 +2106,7 @@ MonoBehaviour:
     m_AlignByGeometry: 1
     m_RichText: 0
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
 --- !u!222 &208510229
@@ -2131,10 +2131,10 @@ RectTransform:
   m_Father: {fileID: 806377673}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -14.259997}
-  m_SizeDelta: {x: 0, y: 58.52}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 1.4712982, y: -74.0284}
+  m_SizeDelta: {x: -79.4533, y: 97.0568}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &214640291
 GameObject:
@@ -5151,7 +5151,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.0000076294, y: -142}
-  m_SizeDelta: {x: 356.9699, y: 64.1503}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559560386
 MonoBehaviour:
@@ -6848,7 +6848,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.0000047684, y: -133}
-  m_SizeDelta: {x: 456.9551, y: 87.04}
+  m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &806377674
 MonoBehaviour:
@@ -10566,13 +10566,20 @@ MonoBehaviour:
   dialogue:
     name: Wilem
     sentences:
-    - Hi, I'm Wilem.
-    - I lost my self in this fu**ing labyrinth.
-    - Could you help me?
-    - My house is near to a big circular forest.
-    - Have you seen some trees around?
-    - If I were north of the forest I could figure out the way back home.
-    - Take me north!
+    - Hi, who are you? It's very strange to meet with people there.
+    - 'I guess you come from the village.
+
+      It''s the only living place in that
+      damned forest...'
+    - "Well, I'm Wilem. I was born in the village too and I decided to explore the
+      secret behind \nthis forest since my sister disappeared ..."
+    - "Dear Denna... She  run away into the forest 15 years ago leaving his son alone.
+      \nSince that moment, I've never seen him anymore."
+    - During my exploration, I've constructed many outposts in order to reach the
+      deeper zone of the labyrinth
+    - Now, I'm lost here but I've built a shleter at north of a big forest.
+    - Please, take me at north of a big forest and I will find the way towards my
+      home!
   audioManager: {fileID: 938604305}
 --- !u!58 &1538361607
 CircleCollider2D:
