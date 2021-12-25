@@ -34,6 +34,11 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
+
+        AudioSource background = audioManager.GetSound("Background").source;
+        background.Stop();
+        
+        audioManager.Play("DialogueBackground");
         AudioSource voiceSrc = audioManager.GetSound("Voice").source;
         voiceSrc.Play();
 
@@ -60,6 +65,10 @@ public class DialogueManager : MonoBehaviour
         HideBox();
         dialogueEnded = true;
         SimpleEventManager.TriggerEvent("StartQuest");
+        
+        AudioSource background = audioManager.GetSound("Background").source;
+        background.Stop();
+        audioManager.Play("Background");
 
         AudioSource voiceSrc = audioManager.GetSound("Voice").source;
         voiceSrc.Stop();

@@ -19,11 +19,13 @@ public class Quest
     public GameObject whereNpcIs;
     public GameObject hiddenHouse;
     public GameObject endPrototype;
-
+    public AudioManager audioManager;
+    
     public void Complete()
     {
         isActive = false;
         isComplete = true;
+        audioManager.Play("QuestCompleted");
         hiddenHouse.SetActive(true);
         endPrototype.SetActive(true);
     }

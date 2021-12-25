@@ -16,7 +16,8 @@ public class SelecterMovement : MonoBehaviour
     private Collider2D chosenMapCollider=null,movementCollider=null,playerCollider=null,limitCollider=null; //colliderMatchingUp,colliderMatchingDown,colliderMatchingRight,colliderMatchingLeft;
     public Transform movePoint;
     public AudioManager audioManager;
-    public NPC wilem;
+    //public NPC wilem;
+    public QuestManager questManager;
     private GameObject grid;
     private float sideLength=8f;
     private bool errorFlag = false;
@@ -90,7 +91,8 @@ public class SelecterMovement : MonoBehaviour
                     go.GetComponent<MapMovement>().setPlayerInside(null);
                     isChild = false;
                 }
-                if (!wilem.quest.isComplete) SimpleEventManager.TriggerEvent("NorthForest");
+                //if (!wilem.quest.isComplete) SimpleEventManager.TriggerEvent("NorthForest");
+                questManager.checkActiveQuests();
             } 
             else
             {
