@@ -44,7 +44,7 @@ public class MapMovement : MonoBehaviour
             rotateCounterClockwise();
             matchingAllSides(movePoint);
         }
-/*
+        /*
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
         //{
 
@@ -62,6 +62,8 @@ public class MapMovement : MonoBehaviour
         }
         
         */
+
+        
     }
 
 
