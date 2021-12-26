@@ -94,6 +94,26 @@ public class SaveManager : MonoBehaviour
         chapter1[7].GetComponent<MapFeatures>().tileMap.right = "Snow";
         chapter1[7].GetComponent<MapFeatures>().tileMap.left = "Forest";
         chapter1[7].GetComponent<MapFeatures>().tileMap.down = "Snow";
+        
+        //map10
+        chapter1[8].GetComponent<MapFeatures>().tileMap.up = "River";
+        chapter1[8].GetComponent<MapFeatures>().tileMap.right = "River";
+        chapter1[8].GetComponent<MapFeatures>().tileMap.left = "Snow";
+        chapter1[8].GetComponent<MapFeatures>().tileMap.down = "Snow";
+        
+        //map11
+        chapter1[9].GetComponent<MapFeatures>().tileMap.up = "Snow";
+        chapter1[9].GetComponent<MapFeatures>().tileMap.right = "Snow";
+        chapter1[9].GetComponent<MapFeatures>().tileMap.left = "River";
+        chapter1[9].GetComponent<MapFeatures>().tileMap.down = "River";
+        
+        //map12
+        chapter1[10].GetComponent<MapFeatures>().tileMap.up = "River";
+        chapter1[10].GetComponent<MapFeatures>().tileMap.right = "River";
+        chapter1[10].GetComponent<MapFeatures>().tileMap.left = "Snow";
+        chapter1[10].GetComponent<MapFeatures>().tileMap.down = "Snow";
+        
+        
     }
 
     public void LoadSettings()
@@ -178,6 +198,8 @@ public class SaveManager : MonoBehaviour
                 //Log(coll.name);
                 if (coll.name == PlayerPrefs.GetString("activeCollectable"))
                 {
+                    
+                    Debug.Log(coll.name);
                     coll.SetActive(true);
                 }
                 else
@@ -197,20 +219,7 @@ public class SaveManager : MonoBehaviour
             }
         }
 
-        if (PlayerPrefs.HasKey("ForestQuest"))
-        {
-            npc.quest.Complete();
-            //npc.quest.isComplete = true;
-            //houseForest.SetActive(true);
-            //endPrototypeCanvas.SetActive(true);
-            //Debug.Log("La quest è completa");
-        }
-        if (PlayerPrefs.HasKey("isActiveForest"))
-        {
-            npc.quest.isComplete = false;
-            npc.quest.isActive = true;
-            
-        }
+        loadForestQuest();
 
         int index=PlayerPrefs.GetInt("Index");
         if (index < 8) tm.GetComponent<TutorialManager>().setIndex(index);
@@ -241,6 +250,7 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
+        PlayerPrefs.DeleteAll();
         Vector3 Kvotheposition = kvothe.transform.position;
         PlayerPrefs.SetFloat("KvotheX", Kvotheposition.x);
         PlayerPrefs.SetFloat("KvotheY", Kvotheposition.y);
@@ -273,18 +283,74 @@ public class SaveManager : MonoBehaviour
 
         GameObject[] mapCollectableSave = GameObject.FindGameObjectsWithTag("MapCollectable");
 
+        foreach (GameObject go in mapCollectableSave)
+        {
+            Debug.Log(go.name);
+        }
+
         if (mapCollectableSave.Length != 0)
         {
             PlayerPrefs.SetString("activeCollectable", mapCollectableSave[0].name);
+            
             //Debug.Log(mapCollectableSave[0].name);
         }
-        if(npc.quest.isComplete) PlayerPrefs.SetString("ForestQuest", "Complete");
-        if(npc.quest.isActive && !npc.quest.isComplete) PlayerPrefs.SetString("isActiveForest","True");
+        
+        saveForestQuest();
     }
 
     public void Save()
     {
         SaveSettings();
         SaveGame();
+    }
+
+    public void saveForestQuest()
+    {
+        if (npc.quest.isComplete)
+        {
+            Debug.Log("Salvo la quest completa");
+            PlayerPrefs.SetString("ForestQuestCompleted", "Completed");
+            PlayerPrefs.SetString("isActiveForest", "False");
+        }
+        else
+        {
+            if (npc.quest.isActive)
+            {
+                Debug.Log("La quest è attiva ma non completa");
+                PlayerPrefs.SetString("isActiveForest", "True");
+            }
+            else
+            {
+                PlayerPrefs.SetString("isActiveForest", "False");
+            }
+        }
+        
+
+        
+        
+    }
+
+    public void loadForestQuest()
+    {
+        if (PlayerPrefs.HasKey("ForestQuestCompleted") && PlayerPrefs.GetString("isActiveForest")=="False")
+        {
+            Debug.Log("Carico quest completa");
+                //npc.quest.Complete();
+                npc.quest.isActive = false;
+                npc.quest.isComplete = true;
+                houseForest.SetActive(true);
+                
+                //endPrototypeCanvas.SetActive(true);
+                //Debug.Log("La quest è completa");
+        }
+           
+        
+        if (PlayerPrefs.GetString("isActiveForest")=="True")
+        {
+            Debug.Log("Carico quest attiva ma non completa");
+            npc.quest.isComplete = false;
+            npc.quest.isActive = true;
+            
+        }
     }
 }

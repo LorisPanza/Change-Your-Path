@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 [System.Serializable]
 public class Quest
 {
     public bool isActive;
     public bool isComplete;
+    public MapCollectable mapPiece10;
 
     private bool one;
     private bool two;
@@ -23,10 +25,12 @@ public class Quest
     
     public void Complete()
     {
+        Debug.Log("MISSION COMPLETE");
         isActive = false;
         isComplete = true;
         audioManager.Play("QuestCompleted");
         hiddenHouse.SetActive(true);
+        mapPiece10.gameObject.SetActive(true);
         //endPrototype.SetActive(true);
     }
 
@@ -126,7 +130,7 @@ public class Quest
                 ExistVerticalPathDown(from, dest3) ||
                 ExistVerticalPathDown(from, dest4))
             {
-                Debug.Log("MISSION COMPLETE");
+               
                 Complete();
 
             }

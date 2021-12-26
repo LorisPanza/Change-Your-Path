@@ -35,9 +35,17 @@ public class NPC : MonoBehaviour
         {
             if (FindObjectOfType<DialogueManager>().DialogueEnded())
             {
-                quest.isActive = true;
-                if (GameObject.Find("MapPiece 6") == null) collectablemap.SetActive(true);
-                SimpleEventManager.StopListening("StartQuest", StartQuest);
+                if (quest.isActive == false)
+                {
+                    quest.isActive = true;
+                    if (GameObject.Find("MapPiece 6") == null) collectablemap.SetActive(true);
+                    SimpleEventManager.StopListening("StartQuest", StartQuest);
+                }
+                else
+                {
+                    SimpleEventManager.StopListening("StartQuest", StartQuest);
+                }
+               
             }
         }
     }
@@ -76,7 +84,7 @@ public class NPC : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("Quest: "+quest.isComplete);
+                //Debug.Log("Quest: "+quest.isComplete);
                 if (!started)
                 {
                     //whoAreYouCanvas.SetActive(false);

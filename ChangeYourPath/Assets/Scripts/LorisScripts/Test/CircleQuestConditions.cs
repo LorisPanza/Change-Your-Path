@@ -26,7 +26,7 @@ public class CircleQuestConditions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find("MapPiece13") != null && flag==false)
+        if (GameObject.Find("MapPiece13") != null && !isComplete && flag==false)
         {
             Debug.Log("Pezzo 13 trovato");
             SimpleEventManager.TriggerEvent("Map13IsPositioned");

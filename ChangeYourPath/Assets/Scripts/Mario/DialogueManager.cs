@@ -64,6 +64,7 @@ public class DialogueManager : MonoBehaviour
         //Debug.Log("End of conversation");
         HideBox();
         dialogueEnded = true;
+        //Quest di Wilem
         SimpleEventManager.TriggerEvent("StartQuest");
         
         AudioSource background = audioManager.GetSound("DialogueBackground").source;

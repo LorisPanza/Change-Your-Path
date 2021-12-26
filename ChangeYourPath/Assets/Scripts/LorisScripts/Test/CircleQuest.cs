@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class CircleQuest : MonoBehaviour
 {
-    public CircleQuestConditions state;
+    private CircleQuestConditions state;
     // Start is called before the first frame update
     void Start()
     {
         SimpleEventManager.StartListening("CircleQuest", CheckIsActive);  //lo ascolta dal selecter solo se la quest è attiva.
+        state = this.GetComponent<CircleQuestConditions>();
     }
 
     // Update is called once per frame

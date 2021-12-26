@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class ForestQuest : MonoBehaviour
 {
     public NPC npc;
+    //public Tilemap mapPiece10;
 
 
     
