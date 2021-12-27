@@ -113,6 +113,12 @@ public class SaveManager : MonoBehaviour
         chapter1[10].GetComponent<MapFeatures>().tileMap.left = "Snow";
         chapter1[10].GetComponent<MapFeatures>().tileMap.down = "Snow";
         
+        //map13
+        chapter1[11].GetComponent<MapFeatures>().tileMap.up = "Snow";
+        chapter1[11].GetComponent<MapFeatures>().tileMap.right = "River";
+        chapter1[11].GetComponent<MapFeatures>().tileMap.left = "Snow";
+        chapter1[11].GetComponent<MapFeatures>().tileMap.down = "River";
+        
         
     }
 
@@ -250,7 +256,7 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
-        PlayerPrefs.DeleteAll();
+        
         Vector3 Kvotheposition = kvothe.transform.position;
         PlayerPrefs.SetFloat("KvotheX", Kvotheposition.x);
         PlayerPrefs.SetFloat("KvotheY", Kvotheposition.y);
@@ -300,6 +306,7 @@ public class SaveManager : MonoBehaviour
 
     public void Save()
     {
+        PlayerPrefs.DeleteAll();
         SaveSettings();
         SaveGame();
     }

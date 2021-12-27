@@ -6,6 +6,9 @@ using UnityEngine;
 public class CircleQuest : MonoBehaviour
 {
     private CircleQuestConditions state;
+    public GameObject oldMan;
+
+    public AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,13 +28,20 @@ public class CircleQuest : MonoBehaviour
         {
             if (state.checkCondition())
             {
-                Debug.Log("Disattivo la quest");
-                SimpleEventManager.StopListening("CircleQuest",CheckIsActive);
-                state.setIsActive(false);
+                //Debug.Log("Disattivo la quest");
+                //SimpleEventManager.StopListening("CircleQuest",CheckIsActive);
+                
+                audioManager.Play("QuestCompleted");
+                oldMan.SetActive(true);
+                
+                
+                //state.setIsActive(false);
                 
             }
             else
             {
+                
+                oldMan.SetActive(false);
                 //Debug.Log("Mission failed: continuo ad ascoltare il selecter");
             }
         }

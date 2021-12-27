@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class MapMovement : MonoBehaviour
 {
@@ -233,23 +234,23 @@ public class MapMovement : MonoBehaviour
 
     public void rotateClockwise()
     {
-        if (player != null)
-        {
-            checkPositionPlayer(player);
-            
-        }
-
-        transform.Rotate(0, 0, -90);
-        if (player != null)
-        {
-            tileReposition(this.GetComponent<Tilemap>(), player.transform.position);
-        }
-        
         thisMap = this.GetComponent<MapFeatures>();
         thisMap.tileMap.clockwiseRotation();
         thisMap.rotateSpriteClockwise();
         thisMap.rotateBoundaryClockwise();
-
+        if (player != null)
+        {
+            checkPositionPlayer(player);
+            //Vector3 newPos=managePlayerRotation(player.transform.position,GetComponent<Tilemap>());
+            transform.Rotate(0, 0, -90);
+            //player.transform.position = newPos;
+            tileReposition(this.GetComponent<Tilemap>(), player.transform.position);
+        }
+        else
+        {
+            transform.Rotate(0, 0, -90);
+        }
+        
         if (name == "MapPiece 6" || name == "MapPiece 8" || name == "MapPiece 7" || name == "MapPiece 9")
         {
             AdjustTreesClockwise();
@@ -260,20 +261,25 @@ public class MapMovement : MonoBehaviour
 
     public void rotateCounterClockwise()
     {
-        if (player != null)
-        {
-            checkPositionPlayer(player);
-        }
-        transform.Rotate(0, 0, 90);
-        if (player != null)
-        {
-            //tileReposition(this.GetComponent<Tilemap>(), player.transform.position);
-        }
-       
         thisMap = this.GetComponent<MapFeatures>();
         thisMap.tileMap.counterclockwiseRotation();
         thisMap.rotateSpriteCounterClockwise();
         thisMap.rotateBoundaryCounterClockwise();
+        if (player != null)
+        {
+            checkPositionPlayer(player);
+            //Vector3 newPos=managePlayerRotation(player.transform.position,GetComponent<Tilemap>());
+            transform.Rotate(0, 0, 90);
+            //player.transform.position = newPos;
+            tileReposition(this.GetComponent<Tilemap>(), player.transform.position);
+        }
+        else
+        {
+            transform.Rotate(0, 0, 90);
+
+        }
+
+        
 
         if (name == "MapPiece 6" || name == "MapPiece 8" || name == "MapPiece 7" || name == "MapPiece 9")
         {
@@ -515,9 +521,12 @@ public class MapMovement : MonoBehaviour
         float offset = 0.005f;
         float mapx = this.transform.position.x;
         float mapy = this.transform.position.y;
+        float mapz = this.transform.position.z;
         float px = p.transform.position.x;
         float py = p.transform.position.y;
         float pz = p.transform.position.z;
+        //Debug.Log("X: "+px+"Y: "+py+"Z: "+pz);
+        //Debug.Log("X: "+mapx+"Y: "+mapy+"Z: "+mapz);
 
         float horizontalLimDx = mapx + 7.5f;
         float horizontalLimSx = mapx - 7.5f;
@@ -553,14 +562,22 @@ public class MapMovement : MonoBehaviour
     public void tileReposition(Tilemap tileMap, Vector3 pos)
     {
         Vector3 npos = new Vector3(pos.x, (pos.y - 1f), pos.z);
+        //Debug.Log("X: "+pos.x+"Y: "+pos.y+"Z: "+pos.z);
         Vector3Int tilePos = tileMap.WorldToCell(npos);
         Tile tile = tileMap.GetTile<Tile>(tilePos);
 
         //Debug.Log(tile.name);
         if (tile.name == "map piece ocean" || tile.name=="map piece snow ocean")
         {
-            //Debug.Log("Sono sul mare");
-            player.transform.position = tileMap.transform.position;
+            if (tileMap.name == "MapPiece10" || tileMap.name == "MapPiece11" || tileMap.name == "MapPiece12" ||
+                tileMap.name == "MapPiece13")
+            {
+                movePlayerRiver(GetComponent<Tilemap>(),player);
+            }
+            else
+            {
+                player.transform.position = tileMap.transform.position;
+            }
         }
     }
 
@@ -580,6 +597,119 @@ public class MapMovement : MonoBehaviour
     {
         return downVoid;
     }
+
+    public Vector3 managePlayerRotation(Vector3 playerPos,Tilemap map)
+    {
+        //Vector3 playerPos = p.transform.position;
+        Vector3 mapPos = map.transform.position;
+        Vector3 newPos=new Vector3(playerPos.x,playerPos.y,playerPos.z);
+        float diffx = playerPos.x - mapPos.x;
+        float diffy = playerPos.y - mapPos.y;
+        
+        //Debug.Log("X: "+playerPos.x+"Y: "+playerPos.y+"Z: "+playerPos.z);
+        //Debug.Log("DifferenzaX: "+diffx+"DifferenzaY: "+diffy);
+
+        if (diffx > 0 && diffy > 0)
+        {
+            Debug.Log("partenza in alto a destra");
+            newPos = new Vector3(playerPos.x,mapPos.y-diffy,playerPos.z);
+        }
+        if (diffx > 0 && diffy < 0)
+        {
+            Debug.Log("partenza in basso a destra");
+            newPos = new Vector3(mapPos.x-diffx,playerPos.y,playerPos.z);
+        }
+        if (diffx < 0 && diffy < 0)
+        {
+            Debug.Log("partenza in basso a sinistra");
+            newPos = new Vector3(playerPos.x,mapPos.y-diffy,playerPos.z);
+        }
+        if (diffx < 0 && diffy > 0)
+        {
+            Debug.Log("partenza in alto a sinistra");
+            newPos = new Vector3(mapPos.x-diffx,playerPos.y,playerPos.z);
+        }
+
+        Debug.Log("newPosx: "+newPos.x+"newPosy: "+newPos.y);
+        return newPos;
+        //p.transform.position = newPos;
+
+
+
+
+    }
+
+    public void movePlayerRiver(Tilemap tilemap,GameObject p)
+    {
+        float off = 6f;
+        MapFeatures mapFeatures = tilemap.GetComponent<MapFeatures>();
+        Vector3 pos = p.transform.position;
+        Vector3 map = mapFeatures.transform.position;
+        float diffx = pos.x - map.x;
+        float diffy = pos.y - map.y;
+        //Debug.Log("X: "+pos.x+"Y: "+pos.y);
+        if (tilemap.name == "MapPiece10" || tilemap.name == "MapPiece11" || tilemap.name == "MapPiece12" ||
+            tilemap.name == "MapPiece13")
+        {
+            if (mapFeatures.tileMap.getRight() == "River" && mapFeatures.tileMap.getUp() == "River")
+            {
+                Debug.Log("River in alto e destra");
+                if (!(diffx > 0 && diffy>0))
+                {
+                    Debug.Log("Non sto nel centro");
+                    p.transform.position = new Vector3(map.x - off, map.y - off, pos.z);
+                }
+                else
+                {
+                    Debug.Log("Sto nel centro");
+                    p.transform.position = new Vector3(map.x + off, map.y + off, pos.z);
+                }
+            }
+            else if (mapFeatures.tileMap.getRight() == "River" && mapFeatures.tileMap.getDown() == "River")
+            {
+                Debug.Log("River in basso e destra");
+                if (!(diffx>0 && diffy <0))
+                {
+                    Debug.Log("Non sto nel centro");
+                    p.transform.position = new Vector3(map.x - off, map.y + off, pos.z);
+                }
+                else
+                {
+                    Debug.Log("Sto nel centro");
+                    p.transform.position = new Vector3(map.x + off, map.y - off, pos.z);
+                }
+            } 
+            else if (mapFeatures.tileMap.getDown() == "River" && mapFeatures.tileMap.getLeft() == "River")
+            {
+                Debug.Log("River in basso e sinistra");
+                if (!(diffx<0 && diffy<0))
+                {
+                    Debug.Log("Non sto nel centro");
+                    p.transform.position = new Vector3(map.x + off, map.y + off, pos.z);
+                }
+                else
+                {
+                    Debug.Log("Sto nel centro");
+                    p.transform.position = new Vector3(map.x - off, map.y - off, pos.z);
+                }
+            }
+            else if (mapFeatures.tileMap.getUp() == "River" && mapFeatures.tileMap.getLeft() == "River")
+            {
+                if (!(diffx<0 && diffy>0))
+                {
+                    Debug.Log("Non sto nel centro");
+                    p.transform.position = new Vector3(map.x + off, map.y - off, pos.z);
+                }
+                else
+                {
+                    Debug.Log("Sto nel centro");
+                    p.transform.position = new Vector3(map.x - off, map.y + off, pos.z);
+                }
+            }
+        }
+        
+    }
+   
     
 }
 

@@ -13,7 +13,7 @@ public class MapCollectable : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Passo dallo start");
+        //Debug.Log("Passo dallo start");
         waitForKey = Collectable();
     }
 
