@@ -37,9 +37,9 @@ public class Labyrinth : MonoBehaviour
             if (isOn(this.gameObject)) //Kvothe is on this map piece
             {
                 //shows left arrow on piece 1
-                left(this.transform.GetChild(6));
+                left(this.transform.GetChild(0));
                 //shows left arrow on piece 2
-                left(secondPiece.transform.GetChild(5));
+                left(secondPiece.transform.GetChild(0));
 
                 index++;
                 playLabMusic();
@@ -67,9 +67,9 @@ public class Labyrinth : MonoBehaviour
             else if (crossedLeft(this.gameObject) && isToLeft(this.gameObject, secondPiece))
             {
                 //shows left arrow on piece 1
-                left(this.transform.GetChild(6));
+                left(this.transform.GetChild(0));
                 //shows left arrow on piece 2
-                left(secondPiece.transform.GetChild(5));
+                left(secondPiece.transform.GetChild(0));
 
                 //kvothe crossed left on the second piece
                 index++;
@@ -100,9 +100,9 @@ public class Labyrinth : MonoBehaviour
             else if (crossedLeft(secondPiece) && isToLeft(secondPiece, this.gameObject))
             {
                 //shows left arrow on piece 1
-                down(this.transform.GetChild(6));
+                down(this.transform.GetChild(0));
                 //shows left arrow on piece 2
-                left(secondPiece.transform.GetChild(5));
+                left(secondPiece.transform.GetChild(0));
 
                 //kvothe crossed left on the first piece
                 index++;
@@ -132,9 +132,9 @@ public class Labyrinth : MonoBehaviour
             else if (crossedDown(this.gameObject) && isDown(this.gameObject, secondPiece))
             {
                 //shows left arrow on piece 1
-                down(this.transform.GetChild(6));
+                down(this.transform.GetChild(0));
                 //shows left arrow on piece 2
-                down(secondPiece.transform.GetChild(5));
+                down(secondPiece.transform.GetChild(0));
 
                 //kvothe crossed down on the second piece
                 index++;
@@ -165,9 +165,9 @@ public class Labyrinth : MonoBehaviour
             else if (crossedDown(secondPiece) && isDown(secondPiece, this.gameObject))
             {
                 //shows left arrow on piece 1
-                up(this.transform.GetChild(6));
+                up(this.transform.GetChild(0));
                 //shows left arrow on piece 2
-                down(secondPiece.transform.GetChild(5));
+                down(secondPiece.transform.GetChild(0));
 
                 //kvothe crossed down on the first piece
                 index++;
@@ -198,9 +198,9 @@ public class Labyrinth : MonoBehaviour
             else if (crossedUp(this.gameObject) && isUp(this.gameObject, secondPiece))
             {
                 //do not show anymore arrows on piece 1
-                this.transform.GetChild(6).gameObject.SetActive(false);
+                this.transform.GetChild(0).gameObject.SetActive(false);
                 //do not show anymore arrows on piece 2
-                secondPiece.transform.GetChild(5).gameObject.SetActive(false);
+                secondPiece.transform.GetChild(0).gameObject.SetActive(false);
                 //kvothe crossed up on the second piece
                 index++;
                 status(index);
@@ -314,9 +314,9 @@ public class Labyrinth : MonoBehaviour
     private void resetArrows()
     {
         //shows left arrow on piece 1
-        left(this.transform.GetChild(6));
+        left(this.transform.GetChild(0));
         //shows left arrow on piece 2
-        left(secondPiece.transform.GetChild(5));
+        left(secondPiece.transform.GetChild(0));
     }
 
     private void status(int status)
