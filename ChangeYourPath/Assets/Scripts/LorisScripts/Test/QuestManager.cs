@@ -6,7 +6,8 @@ public class QuestManager : MonoBehaviour
 {
 
     public NPC wilem;
-    public GameObject suggestion;
+    //public GameObject suggestion;
+    public ActivateSuggestion activateSuggestion;
     
 
     public CircleQuestConditions cqq;
@@ -38,15 +39,27 @@ public class QuestManager : MonoBehaviour
 
     public void activateSuggestions()
     {
+        /*
         if (!wilem.quest.isComplete && wilem.quest.isActive)
         {
-            suggestion.SetActive(true);
+            //suggestion.SetActive(true);
+            Debug.Log("Attivo i suggerimenti");
+            activateSuggestion.activateWilemSuggestion();
         }
+        */
     }
     
     public void deactivateSuggestions()
     {
-        suggestion.SetActive(false);
+        /*
+        //suggestion.SetActive(false);
+        if (!wilem.quest.isComplete)
+        {
+            Debug.Log("Disattivo i suggerimenti");
+            activateSuggestion.disactivateWilemSuggestion();
+        }
+        */
+        
     }
     
     

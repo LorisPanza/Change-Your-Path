@@ -8,7 +8,7 @@ public class NPC : MonoBehaviour
     public Quest quest;
     public Player player;
     //public Map map; reference to the map piece involved in the quest
-    public GameObject whoAreYouCanvas;
+    //public GameObject whoAreYouCanvas;
     public GameObject collectablemap;
 
     public Dialogue dialogue1;
