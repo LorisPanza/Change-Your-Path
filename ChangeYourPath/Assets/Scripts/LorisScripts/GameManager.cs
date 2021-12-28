@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject canvasMenu;
     public GameObject tutorial;
     public GameObject lastSelecterPosition;
+    public QuestManager questManager;
 
 
     // mode = 1: PlayerMode, 2: MapMode
@@ -41,6 +42,8 @@ public class GameManager : MonoBehaviour
             selecter.transform.position.y, selecter.transform.position.z);
         selecter.SetActive(false);
         menu.enabled = true;
+        
+        questManager.deactivateSuggestions();
 
         // grey out rotate, n , m
         tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetComponent<CanvasRenderer>().SetColor(Color.grey);
@@ -69,6 +72,7 @@ public class GameManager : MonoBehaviour
         //selecter.GetComponent<SelecterMovement>().activeChoosenMap();
         menu.enabled = false;
 
+        questManager.activateSuggestions();
         // grey out tab
         tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(4).GetComponent<CanvasRenderer>().SetColor(Color.grey);
         tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(6).GetComponent<CanvasRenderer>().SetColor(Color.grey);

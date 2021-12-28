@@ -6,6 +6,7 @@ public class QuestManager : MonoBehaviour
 {
 
     public NPC wilem;
+    public GameObject suggestion;
     
 
     public CircleQuestConditions cqq;
@@ -34,4 +35,19 @@ public class QuestManager : MonoBehaviour
             SimpleEventManager.TriggerEvent("CircleQuest");
         }
     }
+
+    public void activateSuggestions()
+    {
+        if (!wilem.quest.isComplete && wilem.quest.isActive)
+        {
+            suggestion.SetActive(true);
+        }
+    }
+    
+    public void deactivateSuggestions()
+    {
+        suggestion.SetActive(false);
+    }
+    
+    
 }
