@@ -6,13 +6,19 @@ using UnityEngine;
 public class ActivateSuggestion : MonoBehaviour
 {                           
     // Assign in inspector
-    public GameObject canvas;
+    public GameObject wilemCanvas;
+    public GameObject elderCanvas;
     private bool isShowing;
-    public bool flag = false;
+    public bool wilemFlag = false;
+    public bool elderFlag = false;
  
     void Update() {
-        if (Input.GetKeyDown(KeyCode.H) && flag) {
-            canvas.gameObject.SetActive(isShowing);
+        if (Input.GetKeyDown(KeyCode.H) && wilemFlag) {
+            wilemCanvas.gameObject.SetActive(isShowing);
+            isShowing = !isShowing;
+        }
+        if (Input.GetKeyDown(KeyCode.H) && elderFlag) {
+            wilemCanvas.gameObject.SetActive(isShowing);
             isShowing = !isShowing;
         }
     }
@@ -24,17 +30,32 @@ public class ActivateSuggestion : MonoBehaviour
 
     public void activateWilemSuggestion()
     {
-        canvas.SetActive(true);
-        flag = true;
+        wilemCanvas.SetActive(true);
+        wilemFlag = true;
     }
 
     public void disactivateWilemSuggestion()
     {
-        if (flag == true)
+        if (wilemFlag == true)
         { 
-            canvas.SetActive(false); 
-            flag = false; 
+            wilemCanvas.SetActive(false); 
+            wilemFlag = false; 
         }
         
+    }
+    
+    public void activateElderSuggestion()
+    {
+        elderCanvas.SetActive(true);
+        elderFlag = true;
+    }
+    
+    public void disactivateElderSuggestion()
+    {
+        if (elderFlag == true)
+        {
+            elderCanvas.SetActive(false);
+            elderFlag = true;
+        };
     }
 }

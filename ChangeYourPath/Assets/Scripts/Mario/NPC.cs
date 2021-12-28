@@ -60,9 +60,9 @@ public class NPC : MonoBehaviour
             FindObjectOfType<DialogueManager>().HideBox();
 
             
-            //AudioSource background = audioManager.GetSound("DialogueBackground").source;
-            //background.Stop();
-            //audioManager.Play("Background");
+            AudioSource background = audioManager.GetSound("DialogueBackground").source;
+            background.Stop();
+            audioManager.Play("Background");
             AudioSource voiceSrc = audioManager.GetSound("Voice").source;
             voiceSrc.Stop();
         }

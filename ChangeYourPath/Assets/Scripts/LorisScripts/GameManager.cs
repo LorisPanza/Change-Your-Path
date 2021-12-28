@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         selecter.SetActive(false);
         menu.enabled = true;
         
-        //questManager.deactivateSuggestions();
+        questManager.deactivateSuggestions();
 
         // grey out rotate, n , m
         tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetComponent<CanvasRenderer>().SetColor(Color.grey);
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         //selecter.GetComponent<SelecterMovement>().activeChoosenMap();
         menu.enabled = false;
 
-        //questManager.activateSuggestions();
+        questManager.activateSuggestions();
         // grey out tab
         tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(4).GetComponent<CanvasRenderer>().SetColor(Color.grey);
         tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(6).GetComponent<CanvasRenderer>().SetColor(Color.grey);

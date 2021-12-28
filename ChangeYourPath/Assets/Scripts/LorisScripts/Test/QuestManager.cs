@@ -39,27 +39,28 @@ public class QuestManager : MonoBehaviour
 
     public void activateSuggestions()
     {
-        /*
+
         if (!wilem.quest.isComplete && wilem.quest.isActive)
         {
             //suggestion.SetActive(true);
-            Debug.Log("Attivo i suggerimenti");
+            //Debug.Log("Attivo i suggerimenti");
             activateSuggestion.activateWilemSuggestion();
         }
-        */
+
+        if (!cqq.getIscompleted() && cqq.getIsactive())
+        {
+            activateSuggestion.activateElderSuggestion();
+        }
+
     }
     
     public void deactivateSuggestions()
     {
-        /*
         //suggestion.SetActive(false);
-        if (!wilem.quest.isComplete)
-        {
-            Debug.Log("Disattivo i suggerimenti");
-            activateSuggestion.disactivateWilemSuggestion();
-        }
-        */
-        
+        //Debug.Log("Disattivo i suggerimenti");
+        activateSuggestion.disactivateWilemSuggestion();
+        activateSuggestion.disactivateElderSuggestion();
+
     }
     
     

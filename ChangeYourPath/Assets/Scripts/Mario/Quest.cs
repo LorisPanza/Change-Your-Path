@@ -28,7 +28,10 @@ public class Quest
         Debug.Log("MISSION COMPLETE");
         isActive = false;
         isComplete = true;
+        AudioSource background = audioManager.GetSound("Background").source;
+        background.Stop();
         audioManager.Play("QuestCompleted");
+        audioManager.Play("Background");
         hiddenHouse.SetActive(true);
         mapPiece10.gameObject.SetActive(true);
         //endPrototype.SetActive(true);
