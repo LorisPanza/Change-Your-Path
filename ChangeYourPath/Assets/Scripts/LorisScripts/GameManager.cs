@@ -13,8 +13,6 @@ public class GameManager : MonoBehaviour
     public GameObject selecter;
     public MainMenu menu;
     public AudioManager audioManager;
-    public GameObject miniTutorial;
-    public GameObject canvasMenu;
     public GameObject tutorial;
     public GameObject lastSelecterPosition;
     public QuestManager questManager;

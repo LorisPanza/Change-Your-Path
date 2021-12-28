@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuestManager : MonoBehaviour
 {
@@ -25,33 +26,39 @@ public class QuestManager : MonoBehaviour
 
     public void checkActiveQuests()
     {
-        if (!wilem.quest.isComplete)
+        if(SceneManager.GetActiveScene().name == "GameScene")
         {
-            SimpleEventManager.TriggerEvent("NorthForest");
-        }
+            if (!wilem.quest.isComplete)
+            {
+                SimpleEventManager.TriggerEvent("NorthForest");
+            }
 
-        if (cqq.getIsactive())
-        {
-            //Debug.Log("Ho posizionato e controllo");
-            SimpleEventManager.TriggerEvent("CircleQuest");
+            if (cqq.getIsactive())
+            {
+                //Debug.Log("Ho posizionato e controllo");
+                SimpleEventManager.TriggerEvent("CircleQuest");
+            }
         }
+        
     }
 
     public void activateSuggestions()
     {
-
-        if (!wilem.quest.isComplete && wilem.quest.isActive)
+        if(SceneManager.GetActiveScene().name == "GameScene")
         {
-            //suggestion.SetActive(true);
-            //Debug.Log("Attivo i suggerimenti");
-            activateSuggestion.activateWilemSuggestion();
-        }
+            if (!wilem.quest.isComplete && wilem.quest.isActive)
+            {
+                //suggestion.SetActive(true);
+                //Debug.Log("Attivo i suggerimenti");
+                activateSuggestion.activateWilemSuggestion();
+            }
 
-        if (!cqq.getIscompleted() && cqq.getIsactive())
-        {
-            activateSuggestion.activateElderSuggestion();
+            if (!cqq.getIscompleted() && cqq.getIsactive())
+            {
+                activateSuggestion.activateElderSuggestion();
+            }
         }
-
+        
     }
     
     public void deactivateSuggestions()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -9,7 +10,13 @@ public class TutorialManager : MonoBehaviour
     //public GameObject secondMap;
     private int index;
 
-
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "SpringScene")
+        {
+            index = 8;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
