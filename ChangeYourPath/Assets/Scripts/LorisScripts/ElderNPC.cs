@@ -77,6 +77,8 @@ public class ElderNPC : MonoBehaviour
     
     public void TriggerDialogue1()
     {
+        Debug.Log("Triggero fine quest");
+        SimpleEventManager.TriggerEvent("EndElderQuest");
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue1);
     }
 }

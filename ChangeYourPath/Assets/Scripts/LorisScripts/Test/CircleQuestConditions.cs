@@ -16,7 +16,7 @@ public class CircleQuestConditions : MonoBehaviour
     public MapMovement[] tilemaps;
     
 
-    private bool isComplete = false;
+    private bool isComplete= false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +28,7 @@ public class CircleQuestConditions : MonoBehaviour
     {
         if (GameObject.Find("MapPiece13") != null && !isComplete && flag==false)
         {
-            Debug.Log("Pezzo 13 trovato");
+            //Debug.Log("Pezzo 13 trovato");
             SimpleEventManager.TriggerEvent("Map13IsPositioned");
             flag = true;
         }
@@ -45,9 +45,15 @@ public class CircleQuestConditions : MonoBehaviour
     {
         return isActive;
     }
+    
+    public bool getIscompleted()
+    {
+        return isComplete;
+    }
 
     public bool checkCondition()
     {
+        
         int check;
         satisfied = 0;
         foreach(MapMovement map in tilemaps)
@@ -97,5 +103,9 @@ public class CircleQuestConditions : MonoBehaviour
     public void setIsActive(bool s)
     {
         isActive = s;
+    }
+    public void setIsComplete(bool s)
+    {
+        isComplete = s;
     }
 }

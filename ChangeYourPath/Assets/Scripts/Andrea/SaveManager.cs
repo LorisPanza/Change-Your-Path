@@ -16,7 +16,9 @@ public class SaveManager : MonoBehaviour
     public NPC npc;
     public GameObject endPrototypeCanvas;
     public GameObject houseForest;
+    public GameObject elderNPC;
     public GameObject tm;
+    public CircleQuestConditions cqq;
 
     public List<GameObject> mapCollectable;
 
@@ -226,6 +228,7 @@ public class SaveManager : MonoBehaviour
         }
 
         loadForestQuest();
+        loadElderQuest();
 
         int index=PlayerPrefs.GetInt("Index");
         if (index < 8) tm.GetComponent<TutorialManager>().setIndex(index);
@@ -302,6 +305,7 @@ public class SaveManager : MonoBehaviour
         }
         
         saveForestQuest();
+        saveElderQuest();
     }
 
     public void Save()
@@ -315,7 +319,7 @@ public class SaveManager : MonoBehaviour
     {
         if (npc.quest.isComplete)
         {
-            Debug.Log("Salvo la quest completa");
+            //Debug.Log("Salvo la quest completa");
             PlayerPrefs.SetString("ForestQuestCompleted", "Completed");
             PlayerPrefs.SetString("isActiveForest", "False");
         }
@@ -323,7 +327,7 @@ public class SaveManager : MonoBehaviour
         {
             if (npc.quest.isActive)
             {
-                Debug.Log("La quest è attiva ma non completa");
+                //Debug.Log("La quest è attiva ma non completa");
                 PlayerPrefs.SetString("isActiveForest", "True");
             }
             else
@@ -341,7 +345,7 @@ public class SaveManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("ForestQuestCompleted") && PlayerPrefs.GetString("isActiveForest")=="False")
         {
-            Debug.Log("Carico quest completa");
+            //Debug.Log("Carico quest completa");
                 //npc.quest.Complete();
                 npc.quest.isActive = false;
                 npc.quest.isComplete = true;
@@ -354,10 +358,68 @@ public class SaveManager : MonoBehaviour
         
         if (PlayerPrefs.GetString("isActiveForest")=="True")
         {
-            Debug.Log("Carico quest attiva ma non completa");
+            //Debug.Log("Carico quest attiva ma non completa");
             npc.quest.isComplete = false;
             npc.quest.isActive = true;
             
+        }
+    }
+
+    public void saveElderQuest()
+    {
+        if (cqq.getIscompleted() == true)
+        {
+            //Debug.Log("La quest elder è completa --> SALVO");
+            PlayerPrefs.SetString("ElderQuestCompleted", "Completed");
+            PlayerPrefs.SetString("isActiveElder", "False");
+        }
+        else
+        {
+            if (cqq.getIsactive()==true)
+            {
+                //Debug.Log("La quest elder è attiva ma non completa");
+                PlayerPrefs.SetString("isActiveElder", "True");
+                if (cqq.checkCondition())
+                {
+                    //Debug.Log("La condizione è salvata");
+                    PlayerPrefs.SetString("checkCondition","True");
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetString("isActiveElder", "False");
+            }
+        }
+    }
+    
+    public void loadElderQuest()
+    {
+        if (PlayerPrefs.HasKey("ElderQuestCompleted") && PlayerPrefs.GetString("isActiveElder")=="False")
+        {
+            //Debug.Log("Carico quest elder completa");
+            //npc.quest.Complete();
+            cqq.setIsActive(false);
+            cqq.setIsComplete(true);
+            elderNPC.SetActive(true);
+
+            //endPrototypeCanvas.SetActive(true);
+            //Debug.Log("La quest è completa");
+        }
+        
+        if (PlayerPrefs.GetString("isActiveElder")=="True")
+        {
+            //Debug.Log("Carico quest elder attiva ma non completa");
+            
+            cqq.setIsComplete(false);
+            cqq.setIsActive(true);
+            if (PlayerPrefs.HasKey("checkCondition"))
+            {
+                //Debug.Log("carico la condizione");
+                elderNPC.SetActive(true);
+            }
+            
+            
+
         }
     }
 }

@@ -30,7 +30,7 @@ public class QuestManager : MonoBehaviour
 
         if (cqq.getIsactive())
         {
-            Debug.Log("Ho posizionato e controllo");
+            //Debug.Log("Ho posizionato e controllo");
             SimpleEventManager.TriggerEvent("CircleQuest");
         }
     }

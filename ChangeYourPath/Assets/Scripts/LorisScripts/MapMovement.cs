@@ -653,43 +653,43 @@ public class MapMovement : MonoBehaviour
         {
             if (mapFeatures.tileMap.getRight() == "River" && mapFeatures.tileMap.getUp() == "River")
             {
-                Debug.Log("River in alto e destra");
+                //Debug.Log("River in alto e destra");
                 if (!(diffx > 0 && diffy>0))
                 {
-                    Debug.Log("Non sto nel centro");
+                    //Debug.Log("Non sto nel centro");
                     p.transform.position = new Vector3(map.x - off, map.y - off, pos.z);
                 }
                 else
                 {
-                    Debug.Log("Sto nel centro");
+                    //Debug.Log("Sto nel centro");
                     p.transform.position = new Vector3(map.x + off, map.y + off, pos.z);
                 }
             }
             else if (mapFeatures.tileMap.getRight() == "River" && mapFeatures.tileMap.getDown() == "River")
             {
-                Debug.Log("River in basso e destra");
+                //Debug.Log("River in basso e destra");
                 if (!(diffx>0 && diffy <0))
                 {
-                    Debug.Log("Non sto nel centro");
+                    //Debug.Log("Non sto nel centro");
                     p.transform.position = new Vector3(map.x - off, map.y + off, pos.z);
                 }
                 else
                 {
-                    Debug.Log("Sto nel centro");
+                    //Debug.Log("Sto nel centro");
                     p.transform.position = new Vector3(map.x + off, map.y - off, pos.z);
                 }
             } 
             else if (mapFeatures.tileMap.getDown() == "River" && mapFeatures.tileMap.getLeft() == "River")
             {
-                Debug.Log("River in basso e sinistra");
+                //Debug.Log("River in basso e sinistra");
                 if (!(diffx<0 && diffy<0))
                 {
-                    Debug.Log("Non sto nel centro");
+                    //Debug.Log("Non sto nel centro");
                     p.transform.position = new Vector3(map.x + off, map.y + off, pos.z);
                 }
                 else
                 {
-                    Debug.Log("Sto nel centro");
+                    //Debug.Log("Sto nel centro");
                     p.transform.position = new Vector3(map.x - off, map.y - off, pos.z);
                 }
             }
@@ -697,12 +697,12 @@ public class MapMovement : MonoBehaviour
             {
                 if (!(diffx<0 && diffy>0))
                 {
-                    Debug.Log("Non sto nel centro");
+                    //Debug.Log("Non sto nel centro");
                     p.transform.position = new Vector3(map.x + off, map.y - off, pos.z);
                 }
                 else
                 {
-                    Debug.Log("Sto nel centro");
+                    //Debug.Log("Sto nel centro");
                     p.transform.position = new Vector3(map.x - off, map.y + off, pos.z);
                 }
             }

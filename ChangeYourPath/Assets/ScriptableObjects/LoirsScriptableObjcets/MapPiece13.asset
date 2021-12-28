@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3414d1756bbfc45afba9caf7ed45005f, type: 3}
   m_Name: MapPiece13
   m_EditorClassIdentifier: 
-  up: Snow
-  right: River
-  down: River
-  left: Snow
+  up: River
+  right: Snow
+  down: Snow
+  left: River
