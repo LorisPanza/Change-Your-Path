@@ -18,7 +18,7 @@ public class ActivateSuggestion : MonoBehaviour
             isShowing = !isShowing;
         }
         if (Input.GetKeyDown(KeyCode.H) && elderFlag) {
-            wilemCanvas.gameObject.SetActive(isShowing);
+            elderCanvas.gameObject.SetActive(isShowing);
             isShowing = !isShowing;
         }
     }
@@ -30,6 +30,7 @@ public class ActivateSuggestion : MonoBehaviour
 
     public void activateWilemSuggestion()
     {
+        Debug.Log("Finita quest di Elder, chiudo il suggester");
         wilemCanvas.SetActive(true);
         wilemFlag = true;
     }
@@ -38,6 +39,7 @@ public class ActivateSuggestion : MonoBehaviour
     {
         if (wilemFlag == true)
         { 
+            Debug.Log("Finita quest di Wilem, chiudo il suggester");
             wilemCanvas.SetActive(false); 
             wilemFlag = false; 
         }

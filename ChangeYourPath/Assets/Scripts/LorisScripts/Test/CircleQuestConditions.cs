@@ -37,7 +37,7 @@ public class CircleQuestConditions : MonoBehaviour
     public void activateQuest()
     {
         isActive = true;
-        Debug.Log("Quest Attivata");
+        //Debug.Log("Quest Attivata");
         SimpleEventManager.StopListening("Map13IsPositioned",activateQuest);
     }
 
@@ -62,35 +62,35 @@ public class CircleQuestConditions : MonoBehaviour
             check = 0;
             if(map.getIsMatchingDown() && map.GetComponent<MapFeatures>().tileMap.getDown()=="River")
             {
-                Debug.Log(map.name+"down river");
+                //Debug.Log(map.name+"down river");
                 check++;
             }
             if(map.getIsMatchingUp() && map.GetComponent<MapFeatures>().tileMap.getUp()=="River")
             {
-                Debug.Log(map.name+"up river");
+                //Debug.Log(map.name+"up river");
                 check++;
             }
             if(map.getIsMatchingRight() && map.GetComponent<MapFeatures>().tileMap.getRight()=="River")
             {
-                Debug.Log(map.name+"destra river");
+                //Debug.Log(map.name+"destra river");
                 check++;
             }
             if(map.getIsMatchingLeft() && map.GetComponent<MapFeatures>().tileMap.getLeft()=="River")
             {
-                Debug.Log(map.name+"sinistra river");
+                //Debug.Log(map.name+"sinistra river");
                 check++;
             }
 
             if (check == 2)
             {
-                Debug.Log("Due lati corretti");
+                //Debug.Log("Due lati corretti");
                 satisfied++;
             }
         }
 
         if (satisfied == 4)
         {
-            Debug.Log("Mission complete");
+            //Debug.Log("Mission complete");
             return true;
         }
         else

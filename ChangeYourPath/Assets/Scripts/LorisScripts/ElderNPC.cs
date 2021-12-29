@@ -10,6 +10,8 @@ public class ElderNPC : MonoBehaviour
     private Coroutine talk;
     private bool started = false;
     public AudioManager audioManager;
+
+    //public GameObject mapCollectable13;
     // Start is called before the first frame update
     void Start()
     {

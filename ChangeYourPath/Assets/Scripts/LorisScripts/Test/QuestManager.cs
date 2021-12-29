@@ -49,12 +49,13 @@ public class QuestManager : MonoBehaviour
             if (!wilem.quest.isComplete && wilem.quest.isActive)
             {
                 //suggestion.SetActive(true);
-                //Debug.Log("Attivo i suggerimenti");
+                Debug.Log("Attivo i suggerimenti per Wilem");
                 activateSuggestion.activateWilemSuggestion();
             }
 
             if (!cqq.getIscompleted() && cqq.getIsactive())
             {
+                Debug.Log("Attivo i suggerimenti per Elder");
                 activateSuggestion.activateElderSuggestion();
             }
         }

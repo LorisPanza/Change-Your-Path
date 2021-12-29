@@ -8,6 +8,7 @@ public class CircleQuest : MonoBehaviour
 {
     private CircleQuestConditions state;
     public GameObject oldMan;
+    public GameObject mapCollectable13;
 
     public AudioManager audioManager;
     // Start is called before the first frame update
@@ -65,6 +66,8 @@ public class CircleQuest : MonoBehaviour
         SimpleEventManager.StopListening("CircleQuest",CheckIsActive);
         SimpleEventManager.StopListening("EndElderQuest",endQuest);
         Debug.Log("Missione terminata vecchio");
+        mapCollectable13.SetActive(true);
+        
         state.setIsActive(false);
         state.setIsComplete(true);
     }
