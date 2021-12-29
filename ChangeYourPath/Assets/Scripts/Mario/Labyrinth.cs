@@ -382,4 +382,14 @@ public class Labyrinth : MonoBehaviour
         labSrc.Stop();
         bgrSrc.Play();
     }
+
+    public int getIndex()
+    {
+        return index;
+    }
+
+    public void setIndex(int value)
+    {
+        index = value;
+    }
 }

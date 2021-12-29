@@ -20,6 +20,7 @@ public class SaveManager2 : MonoBehaviour
     public GameObject tm;
     //public CircleQuestConditions cqq;
 
+    public GameObject firstLabPiece;
     public List<GameObject> mapCollectable;
 
     void Start()
@@ -210,6 +211,9 @@ public class SaveManager2 : MonoBehaviour
 
         if (tm.GetComponent<TutorialManager>().enabled) { PlayerPrefs.SetInt("Index", tm.GetComponent<TutorialManager>().getIndex()); }
         else { PlayerPrefs.SetInt("Index", 8); }
+
+        //if (firstLabPiece.GetComponent<Labyrinth>().enabled) { PlayerPrefs.SetInt("LabIndex", firstLabPiece.GetComponent<Labyrinth>().getIndex()); }
+        //else { PlayerPrefs.SetInt("LabIndex", 8); }
 
         for (int i = 0; i < numPieces; i++)
         {
