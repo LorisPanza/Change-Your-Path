@@ -435,6 +435,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 10, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 15
+      m_TileSpriteIndex: 15
+      m_TileMatrixIndex: 1
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -2, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -527,7 +537,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: aa59822f09b8b4892907f419c8799392, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: b9be74779b3d84c498ed3b30f9e4591c, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 2cfbf3527ef3c402ba339a12b0ec2221, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 9986f08192f8f43ac8bba6235afed8f0, type: 2}
@@ -602,7 +612,7 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 5fe316ddbed354c799698ac2f4e89c50, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 14ae01eae764b457a95fd974d581502e, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: feae4ff81484942529ec2f5db0b01f07, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: de7442c70da99416298e38391ca3ad7c, type: 3}
@@ -665,7 +675,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data:
       e00: 0.000000059604645
       e01: -0.99999994
@@ -719,8 +729,26 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
+  - m_RefCount: 0
+    m_Data:
+      e00: 0.98768836
+      e01: -0.15643446
+      e02: 0
+      e03: 0
+      e10: 0.15643446
+      e11: 0.98768836
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_TileColorArray:
-  - m_RefCount: 41
+  - m_RefCount: 42
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
