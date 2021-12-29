@@ -80,22 +80,32 @@ The environment around kvothe could be a narrative device: the protagonist will 
 ![Kvothe](images/protagonist/figure%20settling-Kvothe.png)*Kvothe: The Protagonist of this game who was born in a small village in the middle of a huge forest but has not been able to observe anything outside his small town.
 ### Dialogues
 ### NPCs
+![Abenthy01](https://user-images.githubusercontent.com/92667823/147675874-73853829-a682-4063-9e39-e92048d3f3d7.png)
+![Abenthy02-scientist](https://user-images.githubusercontent.com/92667823/147675876-cc48cb7f-ca15-48ff-a001-d59ce5e024aa.png)
 *Abenthy: A scientist who has the task of monitoring the evolution of the community but falls in love with Denna and had a baby with Diana called Kvothe.
 
+![Denna](https://user-images.githubusercontent.com/92667823/147675887-3f19f95a-d4e9-4963-b19b-8a89d7303985.png)
 *Denna: A villager, meanwhile the mother of Kvothe and Abenthy’s wife. 16 years ago she disappeared in the forest with Abenthy.
 
+![wilem](https://user-images.githubusercontent.com/92667823/147675901-fb6d0f9c-d1cb-48cf-ab40-d277cc5f1eae.png)
 *Wilem: A villager, Denna’s younger brother, his goal within the company was to create outposts in the forest in order to explore it and gradually find an exit. However, 16 years ago his sister was lost into the forest and since that event he wanders in the labyrinth with the intention of finding her.
 
+![old man](https://user-images.githubusercontent.com/92667823/147675905-c532c14b-3955-4125-bb39-4558368ab5a6.png)
 *Old man: Mysterious character living in the forest.
 
+![old woman](https://user-images.githubusercontent.com/92667823/147675918-a64bb04c-bd7a-421e-9a52-11b890513665.png)
 *Old woman: A very kind villager. She has been raising Kvothe.
 
+![robot](https://user-images.githubusercontent.com/92667823/147675930-7ad2d773-3756-4b55-a962-ef61f14460a8.png)
 *Robot: The monitors deployed by scientists in the forest which are mainly used to prevent villagers from entering the forest and restrict villagers’ actions.
 
+![orphan03](https://user-images.githubusercontent.com/92667823/147675940-c1828295-3b76-4e1b-a157-9facb1373358.png)
 *Stella: A 8 years-old girl who is a orphan and living in the village.
 
+![orphan01](https://user-images.githubusercontent.com/92667823/147675945-668a3b92-26cf-42e2-a768-998d550444a0.png)
 *Neil: A 10 years-old black boy who is a orphan and living in the village.
 
+![orphan02](https://user-images.githubusercontent.com/92667823/147675958-1cd8bcc9-c665-4d38-812b-a7fb99395c18.png)
 *Ivan: A 10 years-old boy who is a orphan and living in the village.
 
 ## World
