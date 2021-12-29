@@ -77,15 +77,26 @@ The environment around kvothe could be a narrative device: the protagonist will 
 * Exploring the labyrinth, Kvothe bumps into a man intent on fishing near a lake. Both amazed to see a human presence, the two get to know each other. The man called Wilem tells his story: his goal within the company was to create outposts in the forest in order to explore it and gradually find an exit. Each month he organized expeditions to expand the known perimeter. However, 16 years ago his sister was lost  into the forest and since that event he wanders in the labyrinth with the intention of finding her, currently he is lost and can no longer find his camp. (First minigame, take Wilem to his house) Wilem is actually the brother of Denna and so the uncle of Kvothe but Wilem has never seen Kvothe since he was a baby so at the end, they do not recognize each other. Wilem will give information on her sister but only at the end the user will understand the link between the NPCs.
 ## Game Characters
 ### Character Design
-![Kvothe](images/protagonist/figure%20settling-Kvothe.png)
+![Kvothe](images/protagonist/figure%20settling-Kvothe.png)*Kvothe: The Protagonist of this game who was born in a small village in the middle of a huge forest but has not been able to observe anything outside his small town.
 ### Dialogues
 ### NPCs
-* Kvohte
-* Denna
-* Abenthy
-* Wilem
-* Old Man
-* Robot
+*Abenthy: A scientist who has the task of monitoring the evolution of the community but falls in love with Denna and had a baby with Diana called Kvothe.
+
+*Denna: A villager, meanwhile the mother of Kvothe and Abenthy’s wife. 16 years ago she disappeared in the forest with Abenthy.
+
+*Wilem: A villager, Denna’s younger brother, his goal within the company was to create outposts in the forest in order to explore it and gradually find an exit. However, 16 years ago his sister was lost into the forest and since that event he wanders in the labyrinth with the intention of finding her.
+
+*Old man: Mysterious character living in the forest.
+
+*Old woman: A very kind villager. She has been raising Kvothe.
+
+*Robot: The monitors deployed by scientists in the forest which are mainly used to prevent villagers from entering the forest and restrict villagers’ actions.
+
+*Stella: A 8 years-old girl who is a orphan and living in the village.
+
+*Neil: A 10 years-old black boy who is a orphan and living in the village.
+
+*Ivan: A 10 years-old boy who is a orphan and living in the village.
 
 ## World
 ### Rules
