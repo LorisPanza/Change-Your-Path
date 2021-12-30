@@ -18,7 +18,7 @@ public class MapMovement : MonoBehaviour
     private MapFeatures collideMap, thisMap;
     private bool isMatching, isMatchingRight, isMatchingLeft, isMatchingDown, isMatchingUp,rightVoid,leftVoid,upVoid,downVoid;
     public AudioManager audioManager;
-    private GameObject player=null;
+    private GameObject player=null, robot = null;
     
 
 
@@ -511,9 +511,12 @@ public class MapMovement : MonoBehaviour
     }
     */
 
-    public void setPlayerInside(GameObject p)
+    public void setPlayerInside(GameObject p, String character)
     {
-        player = p;
+        if (character == "Player")
+            player = p;
+        else if (character == "Robot")
+            robot = p;
     }
 
     public void checkPositionPlayer(GameObject p)

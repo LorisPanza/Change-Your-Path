@@ -13,6 +13,9 @@ public class SaveManager2 : MonoBehaviour
     public GameObject kvothe;
     private SavedMap[] mapPieces;
     public List<GameObject> chapter2;
+    public Robot robot;
+    public GameObject saveCanvas;
+
     //public NPC npc;
     //public GameObject endPrototypeCanvas;
     //public GameObject houseForest;
@@ -181,6 +184,12 @@ public class SaveManager2 : MonoBehaviour
         int labIndex = PlayerPrefs.GetInt("LabIndex");
         if (labIndex < 7) firstLabPiece.GetComponent<Labyrinth>().setIndex(index);
         else firstLabPiece.GetComponent<Labyrinth>().enabled = false;
+
+        if (PlayerPrefs.HasKey("RobotQuest"))
+        {
+            robot.robotQuest.isComplete = true;
+            robot.gameObject.SetActive(false);
+        }
     }
 
     //Saves the player data
@@ -255,6 +264,11 @@ public class SaveManager2 : MonoBehaviour
             //Debug.Log(mapCollectableSave[0].name);
         }
 
+        if(robot.robotQuest.isComplete) {
+            PlayerPrefs.SetString("RobotQuest", "Complete");
+            robot.gameObject.SetActive(false);
+        }
+
     }
 
     public void Save()
@@ -262,6 +276,15 @@ public class SaveManager2 : MonoBehaviour
         PlayerPrefs.DeleteAll();
         SaveSettings();
         SaveGame();
+
+        StartCoroutine(SaveDisappear());
+    }
+
+    IEnumerator SaveDisappear()  //  <-  its a standalone method
+    {
+        saveCanvas.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        saveCanvas.SetActive(false);
     }
 
     //public void saveForestQuest()

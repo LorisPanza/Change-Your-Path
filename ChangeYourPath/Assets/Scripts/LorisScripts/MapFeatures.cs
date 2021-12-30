@@ -9,6 +9,7 @@ public class MapFeatures : MonoBehaviour
     public Map tileMap;
     public List<GameObject> enviromentalElements = null;
     public GameObject player;
+    public GameObject robot;
     private int offsetMovement = 18;
    
 
@@ -125,12 +126,14 @@ public class MapFeatures : MonoBehaviour
 
         }
 
-        if (player != null)
+        /*if (player != null)
         {
             
             sprite = player.GetComponent<SpriteRenderer>();
             sprite.transform.Rotate(0, 0, 90);
-        }
+        }*/
+        RotateCharacter(player, 90);
+        RotateCharacter(robot, 90);
     }
 
     public void rotateSpriteCounterClockwise()
@@ -142,10 +145,21 @@ public class MapFeatures : MonoBehaviour
             sprite.transform.Rotate(0, 0, -90);
 
         }
-        if (player != null)
+        /*if (player != null)
         {
             sprite = player.GetComponent<SpriteRenderer>();
             sprite.transform.Rotate(0, 0, -90);
+        }*/
+        RotateCharacter(player, -90);
+        RotateCharacter(robot, -90);
+    }
+
+    public void RotateCharacter(GameObject character, int rotation) {
+        SpriteRenderer sprite;
+        if (character != null)
+        {
+            sprite = character.GetComponent<SpriteRenderer>();
+            sprite.transform.Rotate(0, 0, rotation);
         }
     }
 

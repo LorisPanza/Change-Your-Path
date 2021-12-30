@@ -3,20 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class SelecterMovement : MonoBehaviour
 {
     //public LayerMask[] obstacles;
     public float moveSpeed = 100f;
     public LayerMask detectedLayerMap;
-    public LayerMask detectedLayerPlayer;
+    public LayerMask detectedLayerPlayer, detectedLayerRobot;
     public LayerMask detectedLayerLimit;
     private int offsetMovement=18;
-    private bool choosen = false,isChild=false;
-    private Collider2D chosenMapCollider=null,movementCollider=null,playerCollider=null,limitCollider=null; //colliderMatchingUp,colliderMatchingDown,colliderMatchingRight,colliderMatchingLeft;
+    private bool choosen = false,isChild=false, isChildRobot = false;
+    private Collider2D chosenMapCollider=null,movementCollider=null,playerCollider=null,limitCollider=null, robotCollider=null; //colliderMatchingUp,colliderMatchingDown,colliderMatchingRight,colliderMatchingLeft;
     public Transform movePoint;
     public AudioManager audioManager;
     //public NPC wilem;
+    public Robot robot;
+    public Player kvothe;
     public QuestManager questManager;
     private GameObject grid;
     private float sideLength=8f;
@@ -55,13 +58,19 @@ public class SelecterMovement : MonoBehaviour
                 //this.GetComponent<Renderer>().material.color = Color.magenta;
 
                 playerCollider = checkPlayer();
-                if (playerCollider)
+                characterCollider(playerCollider, go, isChild, "Player");
+                if (SceneManager.GetActiveScene().name == "SpringScene") {
+                    robotCollider = checkRobot();
+                    characterCollider(robotCollider, go, isChildRobot, "Robot");
+                }
+                
+                /*if (playerCollider)
                 {
                     go.GetComponent<MapFeatures>().player = playerCollider.gameObject;
                     playerCollider.gameObject.transform.SetParent(go.transform);
                     go.GetComponent<MapMovement>().setPlayerInside(playerCollider.gameObject);
                     isChild = true;
-                }
+                }*/
                 GrabColorSelecter(new Vector3(0,0,0),Color.yellow, this.GetComponent<Tilemap>());
                 audioManager.Play("mapSelection");
                 enableSelectionMapCondition();
@@ -84,13 +93,35 @@ public class SelecterMovement : MonoBehaviour
 
                 this.GetComponent<Renderer>().material.color = Color.white;
 
-                if (isChild == true)
+                /*if (isChild == true)
                 {
                     go.GetComponent<MapFeatures>().player = null;
                     playerCollider.gameObject.transform.SetParent(null);
                     go.GetComponent<MapMovement>().setPlayerInside(null);
                     isChild = false;
+                }*/
+
+                if (SceneManager.GetActiveScene().name == "SpringScene") {
+                    Vector2 centerRobot = findCenter(robot.transform.position);
+                    Vector2 centerKvothe = findCenter(kvothe.transform.position);
+                    
+                    Collider2D right = Physics2D.OverlapCircle(new Vector2(centerRobot.x + 18, centerRobot.y), 1f, detectedLayerMap);
+                    Collider2D left = Physics2D.OverlapCircle(new Vector2(centerRobot.x - 18, centerRobot.y), 1f, detectedLayerMap);
+                    Collider2D top = Physics2D.OverlapCircle(new Vector2(centerRobot.x, centerRobot.y + 18), 1f, detectedLayerMap);
+                    Collider2D bottom = Physics2D.OverlapCircle(new Vector2(centerRobot.x, centerRobot.y - 18), 1f, detectedLayerMap);
+
+                    if (robot.robotQuest.isActive) {
+                        if (centerRobot != centerKvothe && right == null && left == null && top == null && bottom == null) {
+                            robot.missionComplete();
+                        }
+                    }
+
+                    freeCharacterCollider(robotCollider, go, isChildRobot, "Robot");
                 }
+                
+                
+                freeCharacterCollider(playerCollider, go, isChild, "Player");
+                
                 //if (!wilem.quest.isComplete) SimpleEventManager.TriggerEvent("NorthForest");
                 questManager.checkActiveQuests();
             } 
@@ -193,6 +224,40 @@ public class SelecterMovement : MonoBehaviour
             }
 
             
+        }
+    }
+
+    Vector2 findCenter(Vector3 position) {
+        double x = (double)position.x/18;
+        double y = (double)position.y/18;
+        float xRound = (float)Math.Round(x, 0, MidpointRounding.ToEven)*18f;
+        float yRound = (float)Math.Round(y, 0, MidpointRounding.ToEven)*18f;
+        return new Vector2(xRound, yRound);
+    }
+
+    void characterCollider(Collider2D character, GameObject go, bool isChild, String stringCharacter) {
+        if (character){
+            if (stringCharacter == "Player") 
+                go.GetComponent<MapFeatures>().player = character.gameObject;
+            else if (stringCharacter == "Robot") {
+                go.GetComponent<MapFeatures>().robot = character.gameObject;
+            }
+            character.gameObject.transform.SetParent(go.transform);
+            go.GetComponent<MapMovement>().setPlayerInside(character.gameObject, stringCharacter);
+            isChild = true;
+        }
+    }
+
+    void freeCharacterCollider(Collider2D character, GameObject go, bool isChild, String stringCharacter) {
+        if (isChild == true)
+        {
+            if (stringCharacter == "Player") 
+                go.GetComponent<MapFeatures>().player = null;
+            else if (stringCharacter == "Robot")
+                go.GetComponent<MapFeatures>().robot = null;
+            character.gameObject.transform.SetParent(null);
+            go.GetComponent<MapMovement>().setPlayerInside(null, stringCharacter);
+            isChild = false;
         }
     }
 
@@ -477,6 +542,10 @@ public class SelecterMovement : MonoBehaviour
         }
 
         
+    }
+
+    public Collider2D checkRobot() {
+            return Physics2D.OverlapBox(movePoint.position, new Vector2(offsetMovement, offsetMovement), 0, detectedLayerRobot);
     }
 }
 

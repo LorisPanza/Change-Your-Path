@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class MainMenu : MonoBehaviour
 {
     public Player kvothe;
+    public Robot robot;
     public SelecterMovement selecter;
     public GameObject pauseMenu, settingsMenu, quitMenu, newGameMenu;
     public GameObject menuFirstButton, menuSecondButton, newFirstButton, newClosedButton, settingsFirstButton, settingsClosedButton, quitFirstButton, quitClosedButton;
@@ -74,6 +75,7 @@ public class MainMenu : MonoBehaviour
         kvothe.GetComponent<Animator>().enabled = false;
         
         kvothe.enabled = false;
+        robot.enabled = false;
         selecter.enabled = false;
         pauseMenu.SetActive(true);
         settingsMenu.SetActive(false);
@@ -86,6 +88,7 @@ public class MainMenu : MonoBehaviour
         kvothe.GetComponent<Animator>().enabled = true;
         
         kvothe.enabled = true;
+        robot.enabled = true;
         selecter.enabled = true;
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);

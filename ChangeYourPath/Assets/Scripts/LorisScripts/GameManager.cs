@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject tutorial;
     public GameObject lastSelecterPosition;
     public QuestManager questManager;
+    public Robot robot;
 
 
     // mode = 1: PlayerMode, 2: MapMode
@@ -36,6 +39,7 @@ public class GameManager : MonoBehaviour
         mapCam.SetActive(false);
         playerCam.SetActive(true);
         player.enabled = true;
+        if (SceneManager.GetActiveScene().name == "SpringScene") robot.enabled = true;
         lastSelecterPosition.transform.position = new Vector3(selecter.transform.position.x,
             selecter.transform.position.y, selecter.transform.position.z);
         selecter.SetActive(false);
@@ -66,6 +70,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log(mapCam.activeSelf);
         playerCam.SetActive(false);
         player.enabled = false;
+        if (SceneManager.GetActiveScene().name == "SpringScene") robot.enabled = false;
         selecter.SetActive(true);
         //selecter.GetComponent<SelecterMovement>().activeChoosenMap();
         menu.enabled = false;

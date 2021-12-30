@@ -14,6 +14,8 @@ public class SaveManager : MonoBehaviour
     private SavedMap[] mapPieces;
     public List<GameObject> chapter1;
     public NPC npc;
+    public GameObject saveCanvas;
+
     public GameObject endPrototypeCanvas;
     public GameObject houseForest;
     public GameObject elderNPC;
@@ -319,6 +321,15 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.DeleteAll();
         SaveSettings();
         SaveGame();
+
+        StartCoroutine(SaveDisappear());
+    }
+
+    IEnumerator SaveDisappear()  //  <-  its a standalone method
+    {
+        saveCanvas.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        saveCanvas.SetActive(false);
     }
 
     public void saveForestQuest()
