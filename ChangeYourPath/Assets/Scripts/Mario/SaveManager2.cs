@@ -172,6 +172,10 @@ public class SaveManager2 : MonoBehaviour
         int index = PlayerPrefs.GetInt("Index");
         if (index < 8) tm.GetComponent<TutorialManager>().setIndex(index);
         else tm.GetComponent<TutorialManager>().enabled = false;
+
+        int labIndex = PlayerPrefs.GetInt("LabIndex");
+        if (labIndex < 7) firstLabPiece.GetComponent<Labyrinth>().setIndex(index);
+        else firstLabPiece.GetComponent<Labyrinth>().enabled = false;
     }
 
     //Saves the player data
@@ -212,8 +216,8 @@ public class SaveManager2 : MonoBehaviour
         if (tm.GetComponent<TutorialManager>().enabled) { PlayerPrefs.SetInt("Index", tm.GetComponent<TutorialManager>().getIndex()); }
         else { PlayerPrefs.SetInt("Index", 8); }
 
-        //if (firstLabPiece.GetComponent<Labyrinth>().enabled) { PlayerPrefs.SetInt("LabIndex", firstLabPiece.GetComponent<Labyrinth>().getIndex()); }
-        //else { PlayerPrefs.SetInt("LabIndex", 8); }
+        if (firstLabPiece.GetComponent<Labyrinth>().enabled) { PlayerPrefs.SetInt("LabIndex", firstLabPiece.GetComponent<Labyrinth>().getIndex()); }
+        else { PlayerPrefs.SetInt("LabIndex", 7); }
 
         for (int i = 0; i < numPieces; i++)
         {
