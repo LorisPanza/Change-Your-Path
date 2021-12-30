@@ -1886,7 +1886,7 @@ MonoBehaviour:
   quitClosedButton: {fileID: 374413469}
   saveManager1: {fileID: 0}
   saveManager2: {fileID: 899678081}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 729591978}
 --- !u!114 &214451123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4849,6 +4849,17 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729591976}
   m_Enabled: 1
+--- !u!114 &729591978 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 253949955189680921, guid: ae10150b0a2f147afaf94f8e4e659d5d, type: 3}
+  m_PrefabInstance: {fileID: 729591975}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729591976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fc027ab3c4e4f04a48730fd17dd46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &730612635
 GameObject:
   m_ObjectHideFlags: 0
@@ -5892,8 +5903,8 @@ MonoBehaviour:
           m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
+      - m_Target: {fileID: 899678081}
+        m_TargetAssemblyTypeName: SaveManager2, Assembly-CSharp
         m_MethodName: Save
         m_Mode: 1
         m_Arguments:
@@ -9491,7 +9502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 950871170150821391, guid: bdd7b9358b3f946b787255fbe07b4995, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 950871170771815437, guid: bdd7b9358b3f946b787255fbe07b4995, type: 3}
       propertyPath: m_RootOrder
