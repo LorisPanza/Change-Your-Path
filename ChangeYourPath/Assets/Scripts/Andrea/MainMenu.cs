@@ -75,7 +75,7 @@ public class MainMenu : MonoBehaviour
         kvothe.GetComponent<Animator>().enabled = false;
         
         kvothe.enabled = false;
-        robot.enabled = false;
+        if (SceneManager.GetActiveScene().name == "SpringScene") robot.enabled = false;
         selecter.enabled = false;
         pauseMenu.SetActive(true);
         settingsMenu.SetActive(false);
@@ -88,7 +88,7 @@ public class MainMenu : MonoBehaviour
         kvothe.GetComponent<Animator>().enabled = true;
         
         kvothe.enabled = true;
-        robot.enabled = true;
+        if (SceneManager.GetActiveScene().name == "SpringScene") robot.enabled = true;
         selecter.enabled = true;
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
