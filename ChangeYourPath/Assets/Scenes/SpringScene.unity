@@ -1884,7 +1884,9 @@ MonoBehaviour:
   settingsClosedButton: {fileID: 300783344}
   quitFirstButton: {fileID: 1580707233}
   quitClosedButton: {fileID: 374413469}
-  saveManager: {fileID: 0}
+  saveManager1: {fileID: 0}
+  saveManager2: {fileID: 899678081}
+  gameManager: {fileID: 0}
 --- !u!114 &214451123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5753,7 +5755,7 @@ MonoBehaviour:
   - {fileID: 1659277382}
   robot: {fileID: 1754029865}
   saveCanvas: {fileID: 1734939374}
-  tm: {fileID: 0}
+  tm: {fileID: 127520036}
   firstLabPiece: {fileID: 10991749}
   mapCollectable:
   - {fileID: 10991755}

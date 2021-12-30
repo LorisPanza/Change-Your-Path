@@ -58,6 +58,8 @@ public class SaveManager2 : MonoBehaviour
         }
     }
 
+   
+
     void InitPieces()
     {
         chapter2[0].GetComponent<MapFeatures>().tileMap.up = "Road";
@@ -268,7 +270,9 @@ public class SaveManager2 : MonoBehaviour
             PlayerPrefs.SetString("RobotQuest", "Complete");
             robot.gameObject.SetActive(false);
         }
+        
 
+        saveScene2();
     }
 
     public void Save()
@@ -394,4 +398,9 @@ public class SaveManager2 : MonoBehaviour
 
     //    }
     //}
+    
+    public void saveScene2()
+    {
+        PlayerPrefs.SetString("LastScene","SpringScene");
+    }
 }

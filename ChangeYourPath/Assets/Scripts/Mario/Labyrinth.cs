@@ -233,7 +233,7 @@ public class Labyrinth : MonoBehaviour
 
     private bool crossedUp(GameObject tile)
     {
-        return (kvothe.transform.position.y > tile.transform.position.y + 9);
+        return (kvothe.transform.position.y > tile.transform.position.y + 10.5);
     }
     private bool crossedLeft(GameObject tile)
     {
@@ -245,7 +245,7 @@ public class Labyrinth : MonoBehaviour
     }
     private bool crossedDown(GameObject tile)
     {
-        return (kvothe.transform.position.y < tile.transform.position.y - 9);
+        return (kvothe.transform.position.y < tile.transform.position.y - 8);
     }
 
 

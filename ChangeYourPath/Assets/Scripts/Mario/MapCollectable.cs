@@ -6,9 +6,10 @@ public class MapCollectable : MonoBehaviour
 {
     public GameObject newMapPiece;
     public AudioManager audioManager;
-
+    private bool flag = true;
     private MapFeatures mf;
     private IEnumerator waitForKey;
+   
 
 
     private void Start()
@@ -36,7 +37,7 @@ public class MapCollectable : MonoBehaviour
     IEnumerator Collectable()
     {
         //wait for space to be pressed
-        while (!Input.GetKeyDown(KeyCode.Space))
+        while (!Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.Space) && GameObject.Find("GameManager").GetComponent<GameManager>().getMode()==2))
         {
             yield return null;
         }

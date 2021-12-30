@@ -11,11 +11,13 @@ public class MainMenu : MonoBehaviour
     public SelecterMovement selecter;
     public GameObject pauseMenu, settingsMenu, quitMenu, newGameMenu;
     public GameObject menuFirstButton, menuSecondButton, newFirstButton, newClosedButton, settingsFirstButton, settingsClosedButton, quitFirstButton, quitClosedButton;
-    public SaveManager saveManager;
+    public SaveManager saveManager1;
+    public SaveManager2 saveManager2;
 
     public static bool gameIsPaused = false;
 
     private GameObject selected;
+    public GameManager gameManager;
 
     void Update() 
     {
@@ -31,10 +33,12 @@ public class MainMenu : MonoBehaviour
             {
                 if (gameIsPaused)
                 {
+                   
                     Resume();
                 }
                 else
                 {
+                    
                     Pause();
                 }
             }
@@ -82,6 +86,8 @@ public class MainMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(menuFirstButton);
         selected = menuFirstButton;
         gameIsPaused = true;
+        
+        gameManager.enabled = false;
     }
 
     public void Resume() {
@@ -95,17 +101,19 @@ public class MainMenu : MonoBehaviour
         quitMenu.SetActive(false);
         gameIsPaused = false;
         EventSystem.current.SetSelectedGameObject(null);
+        
+        gameManager.enabled=true;
     }
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(PlayerPrefs.GetString("LastScene"));
     }
 
     public void NewGame()
     {
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("GameScene");
     }
 
     public void ResumeGame() {
@@ -177,12 +185,21 @@ public class MainMenu : MonoBehaviour
     }
 
     public void SaveAndQuit () {
-        saveManager.Save();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        if (SceneManager.GetActiveScene().name == "GameScene")
+        {
+            saveManager1.Save();
+            
+        }else if (SceneManager.GetActiveScene().name == "SpringScene")
+        {
+            saveManager2.Save();
+        }
+        
+        
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Quit () {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void closeQuit ()

@@ -12162,6 +12162,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 253949955189680926, guid: ae10150b0a2f147afaf94f8e4e659d5d, type: 3}
   m_PrefabInstance: {fileID: 6654806218944452275}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1736366014 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 253949955189680921, guid: ae10150b0a2f147afaf94f8e4e659d5d, type: 3}
+  m_PrefabInstance: {fileID: 6654806218944452275}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736366013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fc027ab3c4e4f04a48730fd17dd46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!81 &1736366016
 AudioListener:
   m_ObjectHideFlags: 0
@@ -12265,6 +12276,7 @@ MonoBehaviour:
   quitFirstButton: {fileID: 1805930528}
   quitClosedButton: {fileID: 1554310860}
   saveManager: {fileID: 228980483}
+  gameManager: {fileID: 1736366014}
 --- !u!114 &1766022597
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,8 +9,19 @@ public class SceneSwitch : MonoBehaviour
    {
       if (other.CompareTag("Player"))
       {
+         deletePreviousMemory();
          SceneManager.LoadScene("SpringScene");
+         
       }
 
+   }
+   
+   private void deletePreviousMemory()
+   {
+      PlayerPrefs.DeleteKey("KvotheX");
+      PlayerPrefs.DeleteKey("KvotheY");
+      PlayerPrefs.DeleteKey("Map state");
+      PlayerPrefs.DeleteKey("activeCollectable");
+      
    }
 }

@@ -314,6 +314,7 @@ public class SaveManager : MonoBehaviour
         
         saveForestQuest();
         saveElderQuest();
+        saveScene1();
     }
 
     public void Save()
@@ -438,5 +439,10 @@ public class SaveManager : MonoBehaviour
             
 
         }
+    }
+
+    public void saveScene1()
+    {
+        PlayerPrefs.SetString("LastScene","GameScene");
     }
 }

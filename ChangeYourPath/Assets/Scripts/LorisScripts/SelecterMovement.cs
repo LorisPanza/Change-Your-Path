@@ -58,10 +58,11 @@ public class SelecterMovement : MonoBehaviour
                 //this.GetComponent<Renderer>().material.color = Color.magenta;
 
                 playerCollider = checkPlayer();
-                characterCollider(playerCollider, go, isChild, "Player");
+                isChild=characterCollider(playerCollider, go, isChild, "Player");
+                
                 if (SceneManager.GetActiveScene().name == "SpringScene") {
                     robotCollider = checkRobot();
-                    characterCollider(robotCollider, go, isChildRobot, "Robot");
+                    isChildRobot=characterCollider(robotCollider, go, isChildRobot, "Robot");
                 }
                 
                 /*if (playerCollider)
@@ -116,11 +117,11 @@ public class SelecterMovement : MonoBehaviour
                         }
                     }
 
-                    freeCharacterCollider(robotCollider, go, isChildRobot, "Robot");
+                    isChildRobot=freeCharacterCollider(robotCollider, go, isChildRobot, "Robot");
                 }
                 
                 
-                freeCharacterCollider(playerCollider, go, isChild, "Player");
+                isChild=freeCharacterCollider(playerCollider, go, isChild, "Player");
                 
                 //if (!wilem.quest.isComplete) SimpleEventManager.TriggerEvent("NorthForest");
                 questManager.checkActiveQuests();
@@ -235,8 +236,10 @@ public class SelecterMovement : MonoBehaviour
         return new Vector2(xRound, yRound);
     }
 
-    void characterCollider(Collider2D character, GameObject go, bool isChild, String stringCharacter) {
-        if (character){
+    bool characterCollider(Collider2D character, GameObject go, bool isChild, String stringCharacter) {
+        if (character)
+        {
+            Debug.Log("Ho preso il charcter");
             if (stringCharacter == "Player") 
                 go.GetComponent<MapFeatures>().player = character.gameObject;
             else if (stringCharacter == "Robot") {
@@ -244,21 +247,26 @@ public class SelecterMovement : MonoBehaviour
             }
             character.gameObject.transform.SetParent(go.transform);
             go.GetComponent<MapMovement>().setPlayerInside(character.gameObject, stringCharacter);
-            isChild = true;
+            return true;
         }
+
+        return false;
     }
 
-    void freeCharacterCollider(Collider2D character, GameObject go, bool isChild, String stringCharacter) {
+    bool freeCharacterCollider(Collider2D character, GameObject go, bool isChild, String stringCharacter) {
         if (isChild == true)
         {
+            Debug.Log("Ho rilasciato il charcter");
             if (stringCharacter == "Player") 
                 go.GetComponent<MapFeatures>().player = null;
             else if (stringCharacter == "Robot")
                 go.GetComponent<MapFeatures>().robot = null;
             character.gameObject.transform.SetParent(null);
             go.GetComponent<MapMovement>().setPlayerInside(null, stringCharacter);
-            isChild = false;
+            return false;
         }
+
+        return false;
     }
 
 

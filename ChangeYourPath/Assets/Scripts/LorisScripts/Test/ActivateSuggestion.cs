@@ -30,7 +30,7 @@ public class ActivateSuggestion : MonoBehaviour
 
     public void activateWilemSuggestion()
     {
-        Debug.Log("Finita quest di Elder, chiudo il suggester");
+        //Debug.Log("Attivo suggestion Wilem");
         wilemCanvas.SetActive(true);
         wilemFlag = true;
     }
@@ -39,7 +39,7 @@ public class ActivateSuggestion : MonoBehaviour
     {
         if (wilemFlag == true)
         { 
-            Debug.Log("Finita quest di Wilem, chiudo il suggester");
+            //Debug.Log("Chiudo il suggester di wilem");
             wilemCanvas.SetActive(false); 
             wilemFlag = false; 
         }
@@ -58,6 +58,6 @@ public class ActivateSuggestion : MonoBehaviour
         {
             elderCanvas.SetActive(false);
             elderFlag = true;
-        };
+        }
     }
 }

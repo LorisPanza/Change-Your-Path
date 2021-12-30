@@ -82,7 +82,7 @@ public class NPC : MonoBehaviour
     {
         while (true)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && GameObject.Find("GameManager").GetComponent<GameManager>().getMode()==1)
             {
                 //Debug.Log("Quest: "+quest.isComplete);
                 if (!started)

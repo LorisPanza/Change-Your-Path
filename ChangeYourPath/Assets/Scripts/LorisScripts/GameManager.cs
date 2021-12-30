@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         selecter.SetActive(true);
         //selecter.GetComponent<SelecterMovement>().activeChoosenMap();
         menu.enabled = false;
-
+        
         questManager.activateSuggestions();
         // grey out tab
         tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(4).GetComponent<CanvasRenderer>().SetColor(Color.grey);
@@ -113,6 +113,7 @@ public class GameManager : MonoBehaviour
             if (mode == 1)
             {
                 audioManager.Play("openMap");
+                
                 activateMapMode();
                 //SimpleEventManager.TriggerEvent("PlaceNewMap"); 
             }
@@ -122,6 +123,7 @@ public class GameManager : MonoBehaviour
                 {
                     audioManager.Play("closeMap");
                     activatePlayerMode();
+                  
                 }
 
             }
@@ -151,5 +153,76 @@ public class GameManager : MonoBehaviour
 
         }
 
+    }
+/*
+    public void disableMapAndNPC()
+    {
+        GameObject[] go = GameObject.FindGameObjectsWithTag("MapCollectable");
+        if (go != null)
+        {
+            foreach (GameObject g in go)
+            {
+                Debug.Log("Trovato: "+g.name);
+                g.GetComponent<MapCollectable>().enabled = false;
+            }
+        }
+        
+        GameObject[] npc = GameObject.FindGameObjectsWithTag("NPC");
+        if (npc != null)
+        {
+            foreach (GameObject g in npc)
+            {
+                Debug.Log("Trovato: "+g.name);
+                if (g.GetComponent<NPC>() != null)
+                {
+                    g.GetComponent<NPC>().enabled = false;
+                }
+                Debug.Log("Trovato: "+g.name);
+                if (g.GetComponent<ElderNPC>() != null)
+                {
+                    g.GetComponent<ElderNPC>().enabled = false;
+                }
+               
+            }
+        }
+        
+        
+    }
+    
+    public void enableMapAndNPC()
+    {
+        GameObject[] go = GameObject.FindGameObjectsWithTag("MapCollectable");
+        if (go != null)
+        {
+            foreach (GameObject g in go)
+            {
+                g.GetComponent<MapCollectable>().enabled = true;
+            }
+        }
+        
+        GameObject[] npc = GameObject.FindGameObjectsWithTag("NPC");
+        if (npc != null)
+        {
+            foreach (GameObject g in npc)
+            {
+                if (g.GetComponent<NPC>() != null)
+                {
+                    g.GetComponent<NPC>().enabled = true;
+                }
+                
+                if (g.GetComponent<ElderNPC>() != null)
+                {
+                    g.GetComponent<ElderNPC>().enabled = true;
+                }
+               
+            }
+        }
+        
+    }
+    */
+    
+    public int getMode()
+    {
+        return mode;
     }
 }

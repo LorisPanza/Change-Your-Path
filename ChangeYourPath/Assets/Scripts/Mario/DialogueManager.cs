@@ -24,6 +24,8 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         //Debug.Log("Starting conversation with " + dialogue.name);
+        GameObject.Find("GameManager").GetComponent<GameManager>().enabled = false;
+        
         dialogueEnded = false;
 
         PopOutBox();
@@ -61,6 +63,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        
         //Debug.Log("End of conversation");
         HideBox();
         dialogueEnded = true;
@@ -89,6 +92,7 @@ public class DialogueManager : MonoBehaviour
 
     public void HideBox()
     {
+        GameObject.Find("GameManager").GetComponent<GameManager>().enabled = true;
         nameText.text = "";
         dialogueText.text = "";
         canvas.SetActive(false);
