@@ -222,6 +222,7 @@ public class Labyrinth : MonoBehaviour
         else if (index == 7)
         {
             statusMinigame.SetActive(false);
+            secondPiece.transform.GetChild(1).gameObject.SetActive(true);
 
             playNormMusic();
             this.enabled = false;
