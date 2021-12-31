@@ -9,8 +9,8 @@ public class QuestManager : MonoBehaviour
     public NPC wilem;
     //public GameObject suggestion;
     public ActivateSuggestion activateSuggestion;
-    
 
+    public Robot robot;
     public CircleQuestConditions cqq;
 
     //public Labyrinth labyrinth;
@@ -70,7 +70,16 @@ public class QuestManager : MonoBehaviour
                 Debug.Log("Attivo i suggerimenti per labirinto");
                 activateSuggestion.activateLabyrinthSuggestion();
             }
+            if (robot.robotQuest.isActive && !robot.robotQuest.isComplete)
+            {
+                Debug.Log("Attivo i suggerimenti per robot");
+                activateSuggestion.activateRobotSuggestion();
+            }
+            
+            
         }
+        
+        
         
     }
     
@@ -78,9 +87,18 @@ public class QuestManager : MonoBehaviour
     {
         //suggestion.SetActive(false);
         //Debug.Log("Disattivo i suggerimenti");
-        activateSuggestion.disactivateWilemSuggestion();
-        activateSuggestion.disactivateElderSuggestion();
-        activateSuggestion.disactivateLabyrinthSuggestion();
+        if (SceneManager.GetActiveScene().name == "GameScene")
+        {
+            activateSuggestion.disactivateWilemSuggestion();
+            activateSuggestion.disactivateElderSuggestion();
+        }
+        else if(SceneManager.GetActiveScene().name =="SpringScene")
+        {
+            activateSuggestion.disactivateLabyrinthSuggestion();
+            activateSuggestion.disactivateRobotSuggestion();
+        }
+        
+        
 
     }
     

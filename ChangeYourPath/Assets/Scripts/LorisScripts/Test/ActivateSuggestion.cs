@@ -9,10 +9,12 @@ public class ActivateSuggestion : MonoBehaviour
     public GameObject wilemCanvas;
     public GameObject elderCanvas;
     public GameObject labyrinthCanvas;
+    public GameObject robotCanvas;
     private bool isShowing;
     public bool wilemFlag = false;
     public bool elderFlag = false;
     public bool labyrinthFlag = false;
+    public bool robotFlag = false;
  
     void Update() {
         if (Input.GetKeyDown(KeyCode.H) && wilemFlag) {
@@ -26,6 +28,11 @@ public class ActivateSuggestion : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.H) && labyrinthFlag) {
             labyrinthCanvas.gameObject.SetActive(isShowing);
+            isShowing = !isShowing;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.H) && robotFlag) {
+            robotCanvas.gameObject.SetActive(isShowing);
             isShowing = !isShowing;
         }
     }
@@ -71,7 +78,7 @@ public class ActivateSuggestion : MonoBehaviour
     public void activateLabyrinthSuggestion()
     {
         Debug.Log("Attivo canvas labirinto");
-        labyrinthCanvas.SetActive(true);
+        labyrinthCanvas.gameObject.SetActive(true);
         labyrinthFlag = true;
     }
     
@@ -81,6 +88,22 @@ public class ActivateSuggestion : MonoBehaviour
         {
             labyrinthCanvas.SetActive(false);
             labyrinthFlag = false;
+        }
+    }
+    
+    public void activateRobotSuggestion()
+    {
+        Debug.Log("Attivo canvas robot");
+        robotCanvas.gameObject.SetActive(true);
+        robotFlag = true;
+    }
+    
+    public void disactivateRobotSuggestion()
+    {
+        if (robotFlag == true)
+        {
+            robotCanvas.SetActive(false);
+            robotFlag = false;
         }
     }
 }
