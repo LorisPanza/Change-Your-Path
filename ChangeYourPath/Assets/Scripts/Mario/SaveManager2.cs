@@ -30,7 +30,7 @@ public class SaveManager2 : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name != "MainMenu")
         {
-            //InitPieces();
+            InitPieces();
             if (PlayerPrefs.HasKey("Master volume"))
             {
                 LoadSettings();
@@ -184,7 +184,7 @@ public class SaveManager2 : MonoBehaviour
         else tm.GetComponent<TutorialManager>().enabled = false;
 
         int labIndex = PlayerPrefs.GetInt("LabIndex");
-        if (labIndex < 7) firstLabPiece.GetComponent<Labyrinth>().setIndex(index);
+        if (labIndex < 7) firstLabPiece.GetComponent<Labyrinth>().setIndex(labIndex);
         else firstLabPiece.GetComponent<Labyrinth>().enabled = false;
 
         if (PlayerPrefs.HasKey("RobotQuest"))

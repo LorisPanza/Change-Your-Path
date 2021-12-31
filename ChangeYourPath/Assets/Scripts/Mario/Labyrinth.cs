@@ -11,7 +11,8 @@ public class Labyrinth : MonoBehaviour
     
 
     private int index;
-    private float waitTime = 2f;
+    private float waitTime = 0.5f;
+    private bool saved = false;
 
     // Update is called once per frame
     void Update()
@@ -42,18 +43,29 @@ public class Labyrinth : MonoBehaviour
                 left(secondPiece.transform.GetChild(0));
 
                 index++;
+                saved = false;
                 playLabMusic();
                 Debug.Log(index);
             }
         }
         else if (index == 1) //active - start condition
         {
+            if (saved)
+            {
+                //shows left arrow on piece 1
+                left(this.transform.GetChild(0));
+                //shows left arrow on piece 2
+                left(secondPiece.transform.GetChild(0));
+
+                playLabMusic();
+            }
             // attraversa nel modo sbagliato
             if (crossedDown(this.gameObject) || crossedRight(this.gameObject) || crossedUp(this.gameObject))
             {
                 playNormMusic();
                 resetArrows();
                 index = 0;
+                saved = false;
                 statusMinigame.SetActive(false);
                 Debug.Log("Reset");
             }
@@ -61,6 +73,7 @@ public class Labyrinth : MonoBehaviour
                 playNormMusic();
                 resetArrows();
                 index = 0;
+                saved = false;
                 statusMinigame.SetActive(false);
                 Debug.Log("Reset");
             }
@@ -73,6 +86,7 @@ public class Labyrinth : MonoBehaviour
 
                 //kvothe crossed left on the second piece
                 index++;
+                saved = false;
                 status(index);
                 Debug.Log(index);
             }
@@ -80,12 +94,22 @@ public class Labyrinth : MonoBehaviour
         }
         else if (index == 2) //
         {
+            if (saved)
+            {
+                //shows left arrow on piece 1
+                left(this.transform.GetChild(0));
+                //shows left arrow on piece 2
+                left(secondPiece.transform.GetChild(0));
+
+                status(index);
+            }
             // attraversa nel modo sbagliato
             if (crossedDown(secondPiece) || crossedRight(secondPiece) || crossedUp(secondPiece))
             {
                 playNormMusic();
                 resetArrows();
                 index = 0;
+                saved = false;
                 statusMinigame.SetActive(false);
                 Debug.Log("Reset");
             }
@@ -94,6 +118,7 @@ public class Labyrinth : MonoBehaviour
                 playNormMusic();
                 resetArrows();
                 index = 0;
+                saved = false;
                 statusMinigame.SetActive(false);
                 Debug.Log("Reset");
             }
@@ -106,18 +131,29 @@ public class Labyrinth : MonoBehaviour
 
                 //kvothe crossed left on the first piece
                 index++;
+                saved = false;
                 status(index);
                 Debug.Log(index);
             }
         }
         else if (index == 3) //
         {
+            if (saved)
+            {
+                //shows left arrow on piece 1
+                down(this.transform.GetChild(0));
+                //shows left arrow on piece 2
+                left(secondPiece.transform.GetChild(0));
+
+                status(index);
+            }
             // attraversa nel modo sbagliato
             if (crossedLeft(this.gameObject) || crossedRight(this.gameObject) || crossedUp(this.gameObject))
             {
                 playNormMusic();
                 resetArrows();
                 index = 0;
+                saved = false;
                 statusMinigame.SetActive(false);
                 Debug.Log("Reset");
             }
@@ -126,6 +162,7 @@ public class Labyrinth : MonoBehaviour
                 playNormMusic();
                 resetArrows();
                 index = 0;
+                saved = false;
                 statusMinigame.SetActive(false);
                 Debug.Log("Reset");
             }
@@ -138,6 +175,7 @@ public class Labyrinth : MonoBehaviour
 
                 //kvothe crossed down on the second piece
                 index++;
+                saved = false;
                 status(index);
                 Debug.Log(index);
             }
@@ -145,12 +183,22 @@ public class Labyrinth : MonoBehaviour
         }
         else if (index == 4) //
         {
+            if (saved)
+            {
+                //shows left arrow on piece 1
+                down(this.transform.GetChild(0));
+                //shows left arrow on piece 2
+                down(secondPiece.transform.GetChild(0));
+
+                status(index);
+            }
             // attraversa nel modo sbagliato
             if (crossedLeft(secondPiece) || crossedRight(secondPiece) || crossedUp(secondPiece))
             {
                 playNormMusic();
                 resetArrows();
                 index = 0;
+                saved = false;
                 statusMinigame.SetActive(false);
                 Debug.Log("Reset");
             }
@@ -159,6 +207,7 @@ public class Labyrinth : MonoBehaviour
                 playNormMusic();
                 resetArrows();
                 index = 0;
+                saved = false;
                 statusMinigame.SetActive(false);
                 Debug.Log("Reset");
             }
@@ -171,6 +220,7 @@ public class Labyrinth : MonoBehaviour
 
                 //kvothe crossed down on the first piece
                 index++;
+                saved = false;
                 status(index);
                 Debug.Log(index);
             }
@@ -178,12 +228,22 @@ public class Labyrinth : MonoBehaviour
         }
         else if (index == 5) //
         {
+            if (saved)
+            {
+                //shows left arrow on piece 1
+                up(this.transform.GetChild(0));
+                //shows left arrow on piece 2
+                down(secondPiece.transform.GetChild(0));
+
+                status(index);
+            }
             // attraversa nel modo sbagliato
             if (crossedLeft(this.gameObject) || crossedRight(this.gameObject) || crossedDown(this.gameObject))
             {
                 playNormMusic();
                 resetArrows();
                 index = 0;
+                saved = false;
                 statusMinigame.SetActive(false);
                 Debug.Log("Reset");
             }
@@ -192,6 +252,7 @@ public class Labyrinth : MonoBehaviour
                 playNormMusic();
                 resetArrows();
                 index = 0;
+                saved = false;
                 statusMinigame.SetActive(false);
                 Debug.Log("Reset");
             }
@@ -203,6 +264,7 @@ public class Labyrinth : MonoBehaviour
                 secondPiece.transform.GetChild(0).gameObject.SetActive(false);
                 //kvothe crossed up on the second piece
                 index++;
+                saved = false;
                 status(index);
                 Debug.Log(index);
             }
@@ -210,9 +272,19 @@ public class Labyrinth : MonoBehaviour
         }
         else if (index == 6) //completed
         {
+            if (saved)
+            {
+                //do not show anymore arrows on piece 1
+                this.transform.GetChild(0).gameObject.SetActive(false);
+                //do not show anymore arrows on piece 2
+                secondPiece.transform.GetChild(0).gameObject.SetActive(false);
+                
+                status(index);
+            }
             if(waitTime <= 0)
             {
                 index++;
+                saved = false;
             }
             else
             {
@@ -391,6 +463,8 @@ public class Labyrinth : MonoBehaviour
 
     public void setIndex(int value)
     {
+        saved = true;
         index = value;
+        Debug.Log("Restoring the value ..." + value);
     }
 }
