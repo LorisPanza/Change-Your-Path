@@ -12,6 +12,8 @@ public class QuestManager : MonoBehaviour
     
 
     public CircleQuestConditions cqq;
+
+    //public Labyrinth labyrinth;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,7 @@ public class QuestManager : MonoBehaviour
             }
         }
         
+        
     }
 
     public void activateSuggestions()
@@ -59,6 +62,15 @@ public class QuestManager : MonoBehaviour
                 activateSuggestion.activateElderSuggestion();
             }
         }
+        else if (SceneManager.GetActiveScene().name == "SpringScene")
+        {
+            
+            if (GameObject.Find("MapPieceLab1") && GameObject.Find("MapPieceLab1").GetComponent<Labyrinth>().enabled==true)
+            {
+                Debug.Log("Attivo i suggerimenti per labirinto");
+                activateSuggestion.activateLabyrinthSuggestion();
+            }
+        }
         
     }
     
@@ -68,6 +80,7 @@ public class QuestManager : MonoBehaviour
         //Debug.Log("Disattivo i suggerimenti");
         activateSuggestion.disactivateWilemSuggestion();
         activateSuggestion.disactivateElderSuggestion();
+        activateSuggestion.disactivateLabyrinthSuggestion();
 
     }
     

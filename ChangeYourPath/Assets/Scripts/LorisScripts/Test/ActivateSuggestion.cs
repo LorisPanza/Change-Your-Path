@@ -8,9 +8,11 @@ public class ActivateSuggestion : MonoBehaviour
     // Assign in inspector
     public GameObject wilemCanvas;
     public GameObject elderCanvas;
+    public GameObject labyrinthCanvas;
     private bool isShowing;
     public bool wilemFlag = false;
     public bool elderFlag = false;
+    public bool labyrinthFlag = false;
  
     void Update() {
         if (Input.GetKeyDown(KeyCode.H) && wilemFlag) {
@@ -19,6 +21,11 @@ public class ActivateSuggestion : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.H) && elderFlag) {
             elderCanvas.gameObject.SetActive(isShowing);
+            isShowing = !isShowing;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.H) && labyrinthFlag) {
+            labyrinthCanvas.gameObject.SetActive(isShowing);
             isShowing = !isShowing;
         }
     }
@@ -57,7 +64,23 @@ public class ActivateSuggestion : MonoBehaviour
         if (elderFlag == true)
         {
             elderCanvas.SetActive(false);
-            elderFlag = true;
+            elderFlag = false;
+        }
+    }
+
+    public void activateLabyrinthSuggestion()
+    {
+        Debug.Log("Attivo canvas labirinto");
+        labyrinthCanvas.SetActive(true);
+        labyrinthFlag = true;
+    }
+    
+    public void disactivateLabyrinthSuggestion()
+    {
+        if (labyrinthFlag == true)
+        {
+            labyrinthCanvas.SetActive(false);
+            labyrinthFlag = false;
         }
     }
 }
