@@ -58,6 +58,7 @@ public class Labyrinth : MonoBehaviour
                 left(secondPiece.transform.GetChild(0));
 
                 playLabMusic();
+                saved = false;
             }
             // attraversa nel modo sbagliato
             if (crossedDown(this.gameObject) || crossedRight(this.gameObject) || crossedUp(this.gameObject))
@@ -102,6 +103,8 @@ public class Labyrinth : MonoBehaviour
                 left(secondPiece.transform.GetChild(0));
 
                 status(index);
+                playLabMusic();
+                saved = false;
             }
             // attraversa nel modo sbagliato
             if (crossedDown(secondPiece) || crossedRight(secondPiece) || crossedUp(secondPiece))
@@ -146,6 +149,8 @@ public class Labyrinth : MonoBehaviour
                 left(secondPiece.transform.GetChild(0));
 
                 status(index);
+                playLabMusic();
+                saved = false;
             }
             // attraversa nel modo sbagliato
             if (crossedLeft(this.gameObject) || crossedRight(this.gameObject) || crossedUp(this.gameObject))
@@ -191,6 +196,8 @@ public class Labyrinth : MonoBehaviour
                 down(secondPiece.transform.GetChild(0));
 
                 status(index);
+                playLabMusic();
+                saved = false;
             }
             // attraversa nel modo sbagliato
             if (crossedLeft(secondPiece) || crossedRight(secondPiece) || crossedUp(secondPiece))
@@ -236,6 +243,8 @@ public class Labyrinth : MonoBehaviour
                 down(secondPiece.transform.GetChild(0));
 
                 status(index);
+                playLabMusic();
+                saved = false;
             }
             // attraversa nel modo sbagliato
             if (crossedLeft(this.gameObject) || crossedRight(this.gameObject) || crossedDown(this.gameObject))
@@ -280,6 +289,8 @@ public class Labyrinth : MonoBehaviour
                 secondPiece.transform.GetChild(0).gameObject.SetActive(false);
                 
                 status(index);
+                playLabMusic();
+                saved = false;
             }
             if(waitTime <= 0)
             {

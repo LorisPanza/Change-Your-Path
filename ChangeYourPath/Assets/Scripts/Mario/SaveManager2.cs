@@ -62,15 +62,20 @@ public class SaveManager2 : MonoBehaviour
 
     void InitPieces()
     {
-        chapter2[0].GetComponent<MapFeatures>().tileMap.up = "Road";
-        chapter2[0].GetComponent<MapFeatures>().tileMap.right = "Road";
+        chapter2[0].GetComponent<MapFeatures>().tileMap.up = "Water";
+        chapter2[0].GetComponent<MapFeatures>().tileMap.right = "Water";
         chapter2[0].GetComponent<MapFeatures>().tileMap.left = "Road";
-        chapter2[0].GetComponent<MapFeatures>().tileMap.down = "Road";
+        chapter2[0].GetComponent<MapFeatures>().tileMap.down = "Water";
 
         chapter2[1].GetComponent<MapFeatures>().tileMap.up = "Road";
         chapter2[1].GetComponent<MapFeatures>().tileMap.right = "Road";
         chapter2[1].GetComponent<MapFeatures>().tileMap.left = "Road";
         chapter2[1].GetComponent<MapFeatures>().tileMap.down = "Road";
+
+        chapter2[2].GetComponent<MapFeatures>().tileMap.up = "Road";
+        chapter2[2].GetComponent<MapFeatures>().tileMap.right = "Road";
+        chapter2[2].GetComponent<MapFeatures>().tileMap.left = "Road";
+        chapter2[2].GetComponent<MapFeatures>().tileMap.down = "Road";
 
 
     }
