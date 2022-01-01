@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public GameObject canvas;
     public AudioManager audioManager;
+    public GameObject tutorial;
 
 
     private bool dialogueEnded = false;
@@ -46,6 +47,10 @@ public class DialogueManager : MonoBehaviour
 
 
         DisplayNextSentence();
+        //grey out TAB in minitutorial
+        tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(2).GetComponent<CanvasRenderer>().SetColor(Color.grey);
+        tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(9).GetComponent<CanvasRenderer>().SetColor(Color.grey);
+
     }
 
     public void DisplayNextSentence()
@@ -96,5 +101,8 @@ public class DialogueManager : MonoBehaviour
         nameText.text = "";
         dialogueText.text = "";
         canvas.SetActive(false);
+        //Now can press TAB
+        tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(2).GetComponent<CanvasRenderer>().SetColor(Color.white);
+        tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(9).GetComponent<CanvasRenderer>().SetColor(Color.white);
     }
 }

@@ -39,8 +39,8 @@ public class Labyrinth : MonoBehaviour
             {
                 //shows left arrow on piece 1
                 left(this.transform.GetChild(0));
-                //shows left arrow on piece 2
-                left(secondPiece.transform.GetChild(0));
+                // do not show arrows on piece 2
+                noArrows(secondPiece.transform.GetChild(0));
 
                 index++;
                 saved = false;
@@ -55,7 +55,7 @@ public class Labyrinth : MonoBehaviour
                 //shows left arrow on piece 1
                 left(this.transform.GetChild(0));
                 //shows left arrow on piece 2
-                left(secondPiece.transform.GetChild(0));
+                noArrows(secondPiece.transform.GetChild(0));
 
                 playLabMusic();
                 saved = false;
@@ -87,6 +87,7 @@ public class Labyrinth : MonoBehaviour
 
                 //kvothe crossed left on the second piece
                 index++;
+                audioManager.Play("QuestCompleted");
                 saved = false;
                 status(index);
                 Debug.Log(index);
@@ -134,6 +135,7 @@ public class Labyrinth : MonoBehaviour
 
                 //kvothe crossed left on the first piece
                 index++;
+                audioManager.Play("QuestCompleted");
                 saved = false;
                 status(index);
                 Debug.Log(index);
@@ -180,6 +182,7 @@ public class Labyrinth : MonoBehaviour
 
                 //kvothe crossed down on the second piece
                 index++;
+                audioManager.Play("QuestCompleted");
                 saved = false;
                 status(index);
                 Debug.Log(index);
@@ -227,6 +230,7 @@ public class Labyrinth : MonoBehaviour
 
                 //kvothe crossed down on the first piece
                 index++;
+                audioManager.Play("QuestCompleted");
                 saved = false;
                 status(index);
                 Debug.Log(index);
@@ -273,6 +277,7 @@ public class Labyrinth : MonoBehaviour
                 secondPiece.transform.GetChild(0).gameObject.SetActive(false);
                 //kvothe crossed up on the second piece
                 index++;
+                audioManager.Play("QuestCompleted");
                 saved = false;
                 status(index);
                 Debug.Log(index);
@@ -394,13 +399,20 @@ public class Labyrinth : MonoBehaviour
         arrows.transform.GetChild(2).gameObject.SetActive(false); //right
         arrows.transform.GetChild(3).gameObject.SetActive(false); //down
     }
+    private void noArrows(Transform arrows)
+    {
+        arrows.transform.GetChild(1).gameObject.SetActive(false); //left
+        arrows.transform.GetChild(0).gameObject.SetActive(false); //up
+        arrows.transform.GetChild(2).gameObject.SetActive(false); //right
+        arrows.transform.GetChild(3).gameObject.SetActive(false); //down
+    }
 
     private void resetArrows()
     {
         //shows left arrow on piece 1
         left(this.transform.GetChild(0));
-        //shows left arrow on piece 2
-        left(secondPiece.transform.GetChild(0));
+        //do not show arrows on piece 2
+        noArrows(secondPiece.transform.GetChild(0));
     }
 
     private void status(int status)
