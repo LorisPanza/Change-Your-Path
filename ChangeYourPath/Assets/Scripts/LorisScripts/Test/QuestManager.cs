@@ -12,6 +12,7 @@ public class QuestManager : MonoBehaviour
 
     public Robot robot;
     public CircleQuestConditions cqq;
+    public SignQuest signQuest;
 
     //public Labyrinth labyrinth;
     // Start is called before the first frame update
@@ -40,7 +41,18 @@ public class QuestManager : MonoBehaviour
                 //Debug.Log("Ho posizionato e controllo");
                 SimpleEventManager.TriggerEvent("CircleQuest");
             }
+
+           
         }
+        else if (SceneManager.GetActiveScene().name == "SpringScene")
+        {
+            if (signQuest.isActive)
+            {
+                Debug.Log("Ho messo un pezzo, invio la condizione per sign");
+                SimpleEventManager.TriggerEvent("CheckSignQuest");
+            }
+        }
+        
         
         
     }
