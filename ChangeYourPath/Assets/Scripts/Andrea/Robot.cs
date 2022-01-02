@@ -27,11 +27,20 @@ public class Robot : MonoBehaviour
     public TMP_Text countdownDisplay, titleCanvas, subtitleCanvas;
     public AudioManager audioManager;
     public GameObject mp1;
+
+    public GameObject mapCollectable;
     // Start is called before the first frame update
     void Start()
     {   
         boxCollider = movePoint.GetComponent<BoxCollider2D>();
         rb = this.GetComponent<Rigidbody2D>();
+        Debug.Log("ROBOT SVEGLIO");
+
+        if (!robotQuest.isComplete)
+        {
+            this.gameObject.transform.position = new Vector3(mp1.transform.position.x, mp1.transform.position.y + 6, 0);
+        }
+
     }
 
     // Update is called once per frame
@@ -158,11 +167,11 @@ public class Robot : MonoBehaviour
         gameOverCanvas.SetActive(true);
         AudioSource robotGame = audioManager.GetSound("RobotGame").source;
         robotGame.Stop();
-        rb.transform.position = new Vector3(mp1.transform.position.x - 0.4f, mp1.transform.position.y - 6.2f, 0);
+        rb.transform.position = new Vector3(mp1.transform.position.x, mp1.transform.position.y + 6, 0);
         moveSpeed = 0f;
         started = false;
         robotQuest.isActive = false;
-        Kvothe.position = new Vector3(mp1.transform.position.x + 0.9f, mp1.transform.position.y - 6.9f, 0);
+        Kvothe.position = new Vector3(mp1.transform.position.x, mp1.transform.position.y + 1, 0);
         audioManager.Play("Lose");
         StartCoroutine(GameOverDisappear(false));
     }
@@ -201,6 +210,7 @@ public class Robot : MonoBehaviour
 
     public void missionComplete() {
         robotQuest.Complete();
+        mapCollectable.SetActive(true);
         titleCanvas.text = "YOU WIN!";
         AudioSource robotGame = audioManager.GetSound("RobotGame").source;
         robotGame.Stop();

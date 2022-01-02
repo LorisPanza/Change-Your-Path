@@ -516,7 +516,12 @@ public class MapMovement : MonoBehaviour
         if (character == "Player")
             player = p;
         else if (character == "Robot")
+        {
             robot = p;
+            Debug.Log("Set robot inside...");
+        }
+            
+          
     }
 
     public void checkPositionPlayer(GameObject p)

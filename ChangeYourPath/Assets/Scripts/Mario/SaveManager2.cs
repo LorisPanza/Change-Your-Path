@@ -78,6 +78,33 @@ public class SaveManager2 : MonoBehaviour
         chapter2[2].GetComponent<MapFeatures>().tileMap.left = "Road";
         chapter2[2].GetComponent<MapFeatures>().tileMap.down = "Road";
 
+        chapter2[3].GetComponent<MapFeatures>().tileMap.up = "Grass";
+        chapter2[3].GetComponent<MapFeatures>().tileMap.right = "Road";
+        chapter2[3].GetComponent<MapFeatures>().tileMap.left = "Road";
+        chapter2[3].GetComponent<MapFeatures>().tileMap.down = "Grass";
+
+        chapter2[4].GetComponent<MapFeatures>().tileMap.up = "Grass";
+        chapter2[4].GetComponent<MapFeatures>().tileMap.right = "Grass";
+        chapter2[4].GetComponent<MapFeatures>().tileMap.left = "Grass";
+        chapter2[4].GetComponent<MapFeatures>().tileMap.down = "Grass";
+
+        chapter2[5].GetComponent<MapFeatures>().tileMap.up = "Grass";
+        chapter2[5].GetComponent<MapFeatures>().tileMap.right = "Road";
+        chapter2[5].GetComponent<MapFeatures>().tileMap.left = "Road";
+        chapter2[5].GetComponent<MapFeatures>().tileMap.down = "Grass";
+
+        chapter2[6].GetComponent<MapFeatures>().tileMap.up = "Road";
+        chapter2[6].GetComponent<MapFeatures>().tileMap.right = "Grass";
+        chapter2[6].GetComponent<MapFeatures>().tileMap.left = "Grass";
+        chapter2[6].GetComponent<MapFeatures>().tileMap.down = "Road";
+
+        chapter2[7].GetComponent<MapFeatures>().tileMap.up = "Grass";
+        chapter2[7].GetComponent<MapFeatures>().tileMap.right = "Road";
+        chapter2[7].GetComponent<MapFeatures>().tileMap.left = "Grass";
+        chapter2[7].GetComponent<MapFeatures>().tileMap.down = "Grass";
+
+
+
         //Map Piece Sign
         /*
         chapter2[3].GetComponent<MapFeatures>().tileMap.up = "Grass";
