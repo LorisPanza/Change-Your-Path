@@ -56,6 +56,7 @@ public class NPC : MonoBehaviour
         {
             //whoAreYouCanvas.SetActive(false);
             StopCoroutine(talk);
+            StopCoroutine(Talk());
             started = false;
             FindObjectOfType<DialogueManager>().HideBox();
 

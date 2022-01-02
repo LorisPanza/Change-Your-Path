@@ -59,12 +59,22 @@ public class SelecterMovement : MonoBehaviour
 
                 playerCollider = checkPlayer();
                 isChild=characterCollider(playerCollider, go, isChild, "Player");
+                if (isChild)
+                {
+                    chosenMapCollider.GetComponent<MapMovement>().checkPositionPlayer(playerCollider.gameObject);
+                }
                 
                 if (SceneManager.GetActiveScene().name == "SpringScene") {
                     robotCollider = checkRobot();
                     isChildRobot=characterCollider(robotCollider, go, isChildRobot, "Robot");
+
+                    if (isChildRobot)
+                    {
+                        chosenMapCollider.GetComponent<MapMovement>().checkPositionPlayer(robotCollider.gameObject);
+                    }
                 }
                 
+
                 /*if (playerCollider)
                 {
                     go.GetComponent<MapFeatures>().player = playerCollider.gameObject;

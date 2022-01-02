@@ -41,6 +41,7 @@ public class ElderNPC : MonoBehaviour
         {
             //whoAreYouCanvas.SetActive(false);
             StopCoroutine(talk);
+            StopCoroutine(Talk());
             started = false;
             FindObjectOfType<DialogueManager>().HideBox();
 

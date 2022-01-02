@@ -16,7 +16,6 @@ public class Robot : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     public GameObject gameOverCanvas;
-    public GameObject robotDialogueCanvas;
     public Dialogue dialogue;
     private Coroutine talk, countdown;
     private bool started = false, startedGame = false;
@@ -26,11 +25,18 @@ public class Robot : MonoBehaviour
     public TMP_Text countdownDisplay, titleCanvas, subtitleCanvas;
     public AudioManager audioManager;
     public GameObject mp1;
+
+    public GameObject mapCollectable;
     // Start is called before the first frame update
     void Start()
     {   
         boxCollider = movePoint.GetComponent<BoxCollider2D>();
         rb = this.GetComponent<Rigidbody2D>();
+
+        if (!robotQuest.isComplete)
+        {
+            this.gameObject.transform.position = new Vector3(mp1.transform.position.x, mp1.transform.position.y + 6, 0);
+        }
     }
 
     // Update is called once per frame
@@ -43,13 +49,25 @@ public class Robot : MonoBehaviour
     private void FixedUpdate() {
         if (moveSpeed != 0) {
             Vector2 coordinates = getNormalizedMovement(movement);
-            moveCharacter(coordinates);
+            //moveCharacter(coordinates);
 
             float x = movement.x;
             float y = movement.y;
             //Reset Move Delta
             moveDelta = Vector3.zero;
             moveDelta = new Vector3(x, y, 0);
+
+            hit = Physics2D.BoxCast(movePoint.transform.position, boxCollider.size/3f, 0,
+            new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime * moveSpeed), LayerMask.GetMask("Obstacle"));
+
+            if (hit.collider == null)
+                transform.Translate(0, moveDelta.y * Time.deltaTime * moveSpeed, 0);
+
+            hit = Physics2D.BoxCast(movePoint.transform.position, boxCollider.size/3f, 0,
+                new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x * Time.deltaTime * moveSpeed), LayerMask.GetMask("Obstacle"));
+
+            if (hit.collider == null)
+                transform.Translate(moveDelta.x * Time.deltaTime * moveSpeed, 0, 0);
 
             animator.SetFloat("Horizontal", x);
             animator.SetFloat("Vertical", y);
@@ -59,6 +77,10 @@ public class Robot : MonoBehaviour
             animator.SetFloat("Vertical", 0);
             animator.SetFloat("Speed", 0);
         }
+         ///////////////////////////////////////
+
+        
+
     }
 
     Vector2 getNormalizedMovement(Vector2 movement){
@@ -81,7 +103,6 @@ public class Robot : MonoBehaviour
         if (other.CompareTag("Player")) {
             if (!robotQuest.isActive && !startedGame) {
                 talk = StartCoroutine(Talk());
-                robotDialogueCanvas.SetActive(true);
                 //Debug.Log(name);
                 SimpleEventManager.StartListening("StartQuest", StartQuest);
             }
@@ -105,8 +126,8 @@ public class Robot : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            robotDialogueCanvas.SetActive(false);
             StopCoroutine(talk);
+            StopCoroutine(Talk());
             started = false;
             FindObjectOfType<DialogueManager>().HideBox();
 
@@ -124,11 +145,10 @@ public class Robot : MonoBehaviour
     {
         while (true)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && !startedGame)
+            if (Input.GetKeyDown(KeyCode.Space) && !startedGame && GameObject.Find("GameManager").GetComponent<GameManager>().getMode() == 1)
             {
                 if (!started)
                 {
-                    robotDialogueCanvas.SetActive(false);
                     TriggerDialogue();
                     started = true;
                 }
@@ -151,7 +171,11 @@ public class Robot : MonoBehaviour
         background.Stop();
         background = audioManager.GetSound("DialogueBackground").source;
         background.Stop();
-        StartCoroutine(CountdownToStart());
+        if (countdown != null)
+        {
+            StopCoroutine(countdown);
+        }
+        countdown = StartCoroutine(CountdownToStart());
     }
 
     public void RestartMiniGame() {
@@ -162,11 +186,11 @@ public class Robot : MonoBehaviour
         gameOverCanvas.SetActive(true);
         AudioSource robotGame = audioManager.GetSound("RobotGame").source;
         robotGame.Stop();
-        rb.transform.position = new Vector3(mp1.transform.position.x - 0.4f, mp1.transform.position.y - 6.2f, 0);
+        rb.transform.position = new Vector3(mp1.transform.position.x, mp1.transform.position.y + 6, 0);
         moveSpeed = 0f;
         started = false;
         robotQuest.isActive = false;
-        Kvothe.position = new Vector3(mp1.transform.position.x + 0.9f, mp1.transform.position.y - 6.9f, 0);
+        Kvothe.position = new Vector3(mp1.transform.position.x, mp1.transform.position.y +1, 0);
         audioManager.Play("Lose");
         StartCoroutine(GameOverDisappear(false));
     }
@@ -207,6 +231,7 @@ public class Robot : MonoBehaviour
 
     public void missionComplete() {
         robotQuest.Complete();
+        mapCollectable.SetActive(true);
         titleCanvas.text = "YOU WIN!";
         AudioSource robotGame = audioManager.GetSound("RobotGame").source;
         robotGame.Stop();
