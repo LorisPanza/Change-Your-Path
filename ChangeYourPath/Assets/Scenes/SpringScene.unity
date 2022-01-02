@@ -14971,6 +14971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c6304241ba242eead2b2263b652213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  signQuest: {fileID: 1654986767}
   controller: {fileID: 1194437435}
   audioManager: {fileID: 122610674}
   kvothe: {fileID: 367067156}
@@ -21319,6 +21320,10 @@ PrefabInstance:
     - target: {fileID: 7194202370620000501, guid: 3cf641cee217d4ca489ae224bc8051db, type: 3}
       propertyPath: m_Name
       value: Sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194202370620000501, guid: 3cf641cee217d4ca489ae224bc8051db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7194202370620000505, guid: 3cf641cee217d4ca489ae224bc8051db, type: 3}
       propertyPath: m_RootOrder
