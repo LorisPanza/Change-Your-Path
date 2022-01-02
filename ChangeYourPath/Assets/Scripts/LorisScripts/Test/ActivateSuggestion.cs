@@ -10,11 +10,13 @@ public class ActivateSuggestion : MonoBehaviour
     public GameObject elderCanvas;
     public GameObject labyrinthCanvas;
     public GameObject robotCanvas;
+    public GameObject signCanvas;
     private bool isShowing;
     public bool wilemFlag = false;
     public bool elderFlag = false;
     public bool labyrinthFlag = false;
     public bool robotFlag = false;
+    public bool signFlag = false;
  
     void Update() {
         if (Input.GetKeyDown(KeyCode.H) && wilemFlag) {
@@ -33,6 +35,11 @@ public class ActivateSuggestion : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.H) && robotFlag) {
             robotCanvas.gameObject.SetActive(isShowing);
+            isShowing = !isShowing;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.H) && signFlag) {
+            signCanvas.gameObject.SetActive(isShowing);
             isShowing = !isShowing;
         }
     }
@@ -56,6 +63,7 @@ public class ActivateSuggestion : MonoBehaviour
             //Debug.Log("Chiudo il suggester di wilem");
             wilemCanvas.SetActive(false); 
             wilemFlag = false; 
+            isShowing = false;
         }
         
     }
@@ -64,6 +72,7 @@ public class ActivateSuggestion : MonoBehaviour
     {
         elderCanvas.SetActive(true);
         elderFlag = true;
+        
     }
     
     public void disactivateElderSuggestion()
@@ -72,6 +81,7 @@ public class ActivateSuggestion : MonoBehaviour
         {
             elderCanvas.SetActive(false);
             elderFlag = false;
+            isShowing = false;
         }
     }
 
@@ -88,12 +98,13 @@ public class ActivateSuggestion : MonoBehaviour
         {
             labyrinthCanvas.SetActive(false);
             labyrinthFlag = false;
+            isShowing = false;
         }
     }
     
     public void activateRobotSuggestion()
     {
-        Debug.Log("Attivo canvas robot");
+        //Debug.Log("Attivo canvas robot");
         robotCanvas.gameObject.SetActive(true);
         robotFlag = true;
     }
@@ -104,6 +115,24 @@ public class ActivateSuggestion : MonoBehaviour
         {
             robotCanvas.SetActive(false);
             robotFlag = false;
+            isShowing = false;
+        }
+    }
+    
+    public void activateSignSuggestion()
+    {
+        Debug.Log("Attivo canvas sign");
+        signCanvas.gameObject.SetActive(true);
+        signFlag = true;
+    }
+    
+    public void disactivateSignSuggestion()
+    {
+        if (signFlag == true)
+        {
+            signCanvas.SetActive(false);
+            signFlag = false;
+            isShowing = false;
         }
     }
 }

@@ -87,7 +87,11 @@ public class QuestManager : MonoBehaviour
                 Debug.Log("Attivo i suggerimenti per robot");
                 activateSuggestion.activateRobotSuggestion();
             }
-            
+            if (signQuest.isActive && !signQuest.isCompleted)
+            {
+                Debug.Log("Attivo suggerimenti per il sign");
+                activateSuggestion.activateSignSuggestion();
+            }
             
         }
         
@@ -108,6 +112,7 @@ public class QuestManager : MonoBehaviour
         {
             activateSuggestion.disactivateLabyrinthSuggestion();
             activateSuggestion.disactivateRobotSuggestion();
+            activateSuggestion.disactivateSignSuggestion();
         }
         
         

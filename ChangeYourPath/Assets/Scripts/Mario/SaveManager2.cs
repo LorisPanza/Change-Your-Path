@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class SaveManager2 : MonoBehaviour
 {
+    public SignQuest signQuest;
     public Image controller;
     public AudioManager audioManager;
     public GameObject kvothe;
@@ -58,7 +59,7 @@ public class SaveManager2 : MonoBehaviour
         }
     }
 
-   
+
 
     void InitPieces()
     {
@@ -76,12 +77,14 @@ public class SaveManager2 : MonoBehaviour
         chapter2[2].GetComponent<MapFeatures>().tileMap.right = "Road";
         chapter2[2].GetComponent<MapFeatures>().tileMap.left = "Road";
         chapter2[2].GetComponent<MapFeatures>().tileMap.down = "Road";
-        
-       //Map Piece Sign
+
+        //Map Piece Sign
+        /*
         chapter2[3].GetComponent<MapFeatures>().tileMap.up = "Grass";
         chapter2[3].GetComponent<MapFeatures>().tileMap.right = "Road";
         chapter2[3].GetComponent<MapFeatures>().tileMap.left = "Grass";
         chapter2[3].GetComponent<MapFeatures>().tileMap.down = "Grass";
+        */
 
 
     }
@@ -110,7 +113,7 @@ public class SaveManager2 : MonoBehaviour
             i = 0.25 - (brightness - 0.25);
         else if (brightness < 0.25)
             i = 0.25 + (0.25 - brightness);
-        controller.color = new Color(0, 0, 0, (float)i);
+        controller.color = new Color(0, 0, 0, (float) i);
         audioManager.brightnessLevel.value = brightness;
     }
 
@@ -137,6 +140,7 @@ public class SaveManager2 : MonoBehaviour
                 if (go.name == title) piece = go;
 
             }
+
             piece.SetActive(true);
             piece.transform.position = new Vector3(item.mapPositionX, item.mapPositionY, 0);
             piece.transform.Find("UpBoundary").gameObject.SetActive(item.upBoundary);
@@ -203,6 +207,7 @@ public class SaveManager2 : MonoBehaviour
             robot.robotQuest.isComplete = true;
             robot.gameObject.SetActive(false);
         }
+        loadSignQuest();
     }
 
     //Saves the player data
@@ -240,11 +245,23 @@ public class SaveManager2 : MonoBehaviour
         mapPieces = new SavedMap[numPieces];
         maps = GameObject.FindGameObjectsWithTag("MapPiece");
 
-        if (tm.GetComponent<TutorialManager>().enabled) { PlayerPrefs.SetInt("Index", tm.GetComponent<TutorialManager>().getIndex()); }
-        else { PlayerPrefs.SetInt("Index", 8); }
+        if (tm.GetComponent<TutorialManager>().enabled)
+        {
+            PlayerPrefs.SetInt("Index", tm.GetComponent<TutorialManager>().getIndex());
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Index", 8);
+        }
 
-        if (firstLabPiece.GetComponent<Labyrinth>().enabled) { PlayerPrefs.SetInt("LabIndex", firstLabPiece.GetComponent<Labyrinth>().getIndex()); }
-        else { PlayerPrefs.SetInt("LabIndex", 7); }
+        if (firstLabPiece.GetComponent<Labyrinth>().enabled)
+        {
+            PlayerPrefs.SetInt("LabIndex", firstLabPiece.GetComponent<Labyrinth>().getIndex());
+        }
+        else
+        {
+            PlayerPrefs.SetInt("LabIndex", 7);
+        }
 
         for (int i = 0; i < numPieces; i++)
         {
@@ -277,12 +294,14 @@ public class SaveManager2 : MonoBehaviour
             //Debug.Log(mapCollectableSave[0].name);
         }
 
-        if(robot.robotQuest.isComplete) {
+        if (robot.robotQuest.isComplete)
+        {
             PlayerPrefs.SetString("RobotQuest", "Complete");
             robot.gameObject.SetActive(false);
         }
-        
 
+
+        saveSignQuest();
         saveScene2();
     }
 
@@ -295,7 +314,7 @@ public class SaveManager2 : MonoBehaviour
         StartCoroutine(SaveDisappear());
     }
 
-    IEnumerator SaveDisappear()  //  <-  its a standalone method
+    IEnumerator SaveDisappear() //  <-  its a standalone method
     {
         saveCanvas.SetActive(true);
         yield return new WaitForSeconds(1f);
@@ -409,9 +428,54 @@ public class SaveManager2 : MonoBehaviour
 
     //    }
     //}
-    
+
     public void saveScene2()
     {
-        PlayerPrefs.SetString("LastScene","SpringScene");
+        PlayerPrefs.SetString("LastScene", "SpringScene");
     }
+
+    public void saveSignQuest()
+    {
+        if (signQuest.isCompleted)
+        {
+            Debug.Log("Salvo la quest completa sign");
+            PlayerPrefs.SetString("SignQuestCompleted", "Completed");
+            PlayerPrefs.SetString("isActiveSign", "False");
+        }
+        else
+        {
+            if (signQuest.isActive)
+            {
+                Debug.Log("La quest sign è attiva ma non completa");
+                PlayerPrefs.SetString("isActiveSign", "True");
+            }
+            else
+            {
+                Debug.Log("La quest non è attva");
+                PlayerPrefs.SetString("isActiveSign", "False");
+            }
+        }
+    }
+    
+    
+    
+    public void loadSignQuest()
+    {
+        if (PlayerPrefs.HasKey("SignQuestCompleted") && PlayerPrefs.GetString("isActiveSign") == "False")
+        {
+            Debug.Log("Carico quest completa sign");
+            signQuest.isActive = false;
+            signQuest.isCompleted = true;
+            
+        }
+        
+        if (PlayerPrefs.GetString("isActiveSign") == "True")
+        {
+            Debug.Log("Carico quest sign attiva ma non completa");
+            signQuest.isCompleted = false;
+            signQuest.isActive = true;
+
+        }
+    }
+    
 }
