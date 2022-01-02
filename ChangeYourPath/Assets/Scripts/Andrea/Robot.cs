@@ -18,29 +18,19 @@ public class Robot : MonoBehaviour
     public GameObject gameOverCanvas;
     public GameObject robotDialogueCanvas;
     public Dialogue dialogue;
-    private Coroutine talk;
-    private bool started = false;
+    private Coroutine talk, countdown;
+    private bool started = false, startedGame = false;
     public bool isQuestGiver;
     public RobotQuest robotQuest;
-    public int countdownTime;
     public GameObject countdownCanvas;
     public TMP_Text countdownDisplay, titleCanvas, subtitleCanvas;
     public AudioManager audioManager;
     public GameObject mp1;
-
-    public GameObject mapCollectable;
     // Start is called before the first frame update
     void Start()
     {   
         boxCollider = movePoint.GetComponent<BoxCollider2D>();
         rb = this.GetComponent<Rigidbody2D>();
-        Debug.Log("ROBOT SVEGLIO");
-
-        if (!robotQuest.isComplete)
-        {
-            this.gameObject.transform.position = new Vector3(mp1.transform.position.x, mp1.transform.position.y + 6, 0);
-        }
-
     }
 
     // Update is called once per frame
@@ -89,16 +79,14 @@ public class Robot : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         //Debug.Log(other.CompareTag("Player"));
         if (other.CompareTag("Player")) {
-            if (!robotQuest.isActive) {
+            if (!robotQuest.isActive && !startedGame) {
                 talk = StartCoroutine(Talk());
                 robotDialogueCanvas.SetActive(true);
                 //Debug.Log(name);
                 SimpleEventManager.StartListening("StartQuest", StartQuest);
-            } else {
-                RestartMiniGame();
             }
         }
-        Debug.Log(other);
+        //Debug.Log(other);
     }
 
     void StartQuest()
@@ -136,7 +124,7 @@ public class Robot : MonoBehaviour
     {
         while (true)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && !startedGame)
             {
                 if (!started)
                 {
@@ -155,6 +143,9 @@ public class Robot : MonoBehaviour
     }
 
     void startMiniGame() {
+        startedGame = true;
+        StopCoroutine(talk);
+        started = false;
         countdownCanvas.SetActive(true);
         AudioSource background = audioManager.GetSound("Background").source;
         background.Stop();
@@ -163,21 +154,27 @@ public class Robot : MonoBehaviour
         StartCoroutine(CountdownToStart());
     }
 
-    void RestartMiniGame() {
+    public void RestartMiniGame() {
+        startedGame = false;
+        StopCoroutine(CountdownToStart());
+        countdownDisplay.text = "3";
+        countdownCanvas.SetActive(false);
         gameOverCanvas.SetActive(true);
         AudioSource robotGame = audioManager.GetSound("RobotGame").source;
         robotGame.Stop();
-        rb.transform.position = new Vector3(mp1.transform.position.x, mp1.transform.position.y + 6, 0);
+        rb.transform.position = new Vector3(mp1.transform.position.x - 0.4f, mp1.transform.position.y - 6.2f, 0);
         moveSpeed = 0f;
         started = false;
         robotQuest.isActive = false;
-        Kvothe.position = new Vector3(mp1.transform.position.x, mp1.transform.position.y + 1, 0);
+        Kvothe.position = new Vector3(mp1.transform.position.x + 0.9f, mp1.transform.position.y - 6.9f, 0);
         audioManager.Play("Lose");
         StartCoroutine(GameOverDisappear(false));
     }
 
     IEnumerator CountdownToStart() {
+        int countdownTime = 3;
         while (countdownTime > 0) {
+            Debug.Log(countdownTime);
             countdownDisplay.text = countdownTime.ToString();
 
             yield return new WaitForSeconds(1f);
@@ -186,6 +183,7 @@ public class Robot : MonoBehaviour
             audioManager.Play("Countdown");
             countdownTime--;
         }
+        //Debug.Log(countdownTime);
 
         countdownDisplay.text = "GO!";
         audioManager.Play("RobotGame");
@@ -193,7 +191,6 @@ public class Robot : MonoBehaviour
         countdownTime = 3;
         moveSpeed = 2f;
 
-        //GameController.instance.BeginGame();
         yield return new WaitForSeconds(1f);
         countdownCanvas.SetActive(false);
     }
@@ -210,7 +207,6 @@ public class Robot : MonoBehaviour
 
     public void missionComplete() {
         robotQuest.Complete();
-        mapCollectable.SetActive(true);
         titleCanvas.text = "YOU WIN!";
         AudioSource robotGame = audioManager.GetSound("RobotGame").source;
         robotGame.Stop();
