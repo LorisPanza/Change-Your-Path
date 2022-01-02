@@ -17002,6 +17002,7 @@ GameObject:
   - component: {fileID: 1194437434}
   - component: {fileID: 1194437436}
   - component: {fileID: 1194437435}
+  - component: {fileID: 1194437437}
   m_Layer: 5
   m_Name: BrightnessController
   m_TagString: Untagged
@@ -17066,6 +17067,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194437433}
   m_CullTransparentMesh: 1
+--- !u!223 &1194437437
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194437433}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 10
+  m_TargetDisplay: 0
 --- !u!1 &1225933153
 GameObject:
   m_ObjectHideFlags: 0
@@ -18674,6 +18696,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 291826468}
     m_Modifications:
+    - target: {fileID: 3429377606870745139, guid: 169e6ee8c498a432fa79d74ccae99345, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 122610674}
     - target: {fileID: 3429377606870745150, guid: 169e6ee8c498a432fa79d74ccae99345, type: 3}
       propertyPath: m_Name
       value: MapPieceSign

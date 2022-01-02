@@ -35,7 +35,7 @@ public class SaveManager2 : MonoBehaviour
             if (PlayerPrefs.HasKey("Master volume"))
             {
                 LoadSettings();
-                if (PlayerPrefs.HasKey("KvotheX"))
+                if (PlayerPrefs.HasKey("LastScene"))
                 {
                     LoadGame();
                 }

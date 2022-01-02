@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class MainMenu : MonoBehaviour
     public GameObject menuFirstButton, menuSecondButton, newFirstButton, newClosedButton, settingsFirstButton, settingsClosedButton, quitFirstButton, quitClosedButton;
     public SaveManager saveManager1;
     public SaveManager2 saveManager2;
-
+    public Button quitButton, newGameButton;
     public static bool gameIsPaused = false;
 
     private GameObject selected;
@@ -63,11 +64,19 @@ public class MainMenu : MonoBehaviour
         Cursor.visible = false;
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            if (!PlayerPrefs.HasKey("KvotheX"))
+            if (!PlayerPrefs.HasKey("LastScene"))
             {
                 menuFirstButton.SetActive(false);
                 EventSystem.current.SetSelectedGameObject(menuSecondButton);
                 selected = menuSecondButton;
+                
+                Navigation navigation = newGameButton.navigation;
+                navigation.selectOnUp = quitButton;
+                newGameButton.navigation = navigation;
+
+                navigation = quitButton.navigation;
+                navigation.selectOnDown = newGameButton;
+                quitButton.navigation = navigation;
             } else {
                 selected = menuFirstButton;
             }
@@ -124,6 +133,15 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    public void PlayNewGame() {
+        if (PlayerPrefs.HasKey("LastScene"))
+        {
+            openNew();
+        } else {
+            NewGame();
+        }
     }
 
     public void openNew()

@@ -75,18 +75,24 @@ public class AudioManager : MonoBehaviour
     }
     
     public void SetMusicVolume (float vol)
-    {   
-        Sound s = GetSound("Background");
-        if (s == null) {
-            Debug.LogWarning("Sound: Background not found!");
-            return;
+    {   Sound[] s = new Sound[4];
+        s[0] = GetSound("Background");
+        s[1] = GetSound("DialogueBackground");
+        s[2] = GetSound("Labyrinth");
+        s[3] = GetSound("RobotGame");
+        //Sound s = GetSound("Background");
+        for (var i=0; i<s.Length; i++) {
+            if (s[i] == null) {
+                Debug.LogWarning("Sound: Music #" + i +" not found!");
+                return;
+            }
+            s[i].source.volume = vol;
         }
-        s.source.volume = vol;
     }
 
     public void SetControlVolume (float vol)
     {   
-        Sound[] s = new Sound[8];
+        Sound[] s = new Sound[12];
         s[0] = GetSound("Click");
         s[1] = GetSound("openMap");
         s[2] = GetSound("closeMap");
@@ -95,6 +101,11 @@ public class AudioManager : MonoBehaviour
         s[5] = GetSound("mapSelection");
         s[6] = GetSound("mapChoice");
         s[7] = GetSound("mapDenied");
+        s[8] = GetSound("QuestCompleted");
+        s[9] = GetSound("Victory");
+        s[10] = GetSound("Countdown");
+        s[11] = GetSound("Lose");
+
         for (var i=0; i<s.Length; i++) {
             if (s[i] == null) {
                 Debug.LogWarning("Sound: Control #" + i +" not found!");
