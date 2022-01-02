@@ -1031,8 +1031,10 @@ MonoBehaviour:
   settingsClosedButton: {fileID: 1686103548}
   quitFirstButton: {fileID: 0}
   quitClosedButton: {fileID: 0}
-  saveManager1: {fileID: 0}
+  saveManager1: {fileID: 787443636}
   saveManager2: {fileID: 0}
+  quitButton: {fileID: 1980668451}
+  newGameButton: {fileID: 1375498220}
   gameManager: {fileID: 0}
 --- !u!1 &200690407
 GameObject:
