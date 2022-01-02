@@ -6,7 +6,7 @@ public class SignQuest : MonoBehaviour
 {
     public bool isActive;
     public bool isCompleted;
-    public MapMovement[] maps;
+    //public MapMovement[] maps;
     public Transform startingPos;
     
     

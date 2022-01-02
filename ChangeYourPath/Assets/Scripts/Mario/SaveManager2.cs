@@ -76,6 +76,12 @@ public class SaveManager2 : MonoBehaviour
         chapter2[2].GetComponent<MapFeatures>().tileMap.right = "Road";
         chapter2[2].GetComponent<MapFeatures>().tileMap.left = "Road";
         chapter2[2].GetComponent<MapFeatures>().tileMap.down = "Road";
+        
+       //Map Piece Sign
+        chapter2[3].GetComponent<MapFeatures>().tileMap.up = "Grass";
+        chapter2[3].GetComponent<MapFeatures>().tileMap.right = "Road";
+        chapter2[3].GetComponent<MapFeatures>().tileMap.left = "Grass";
+        chapter2[3].GetComponent<MapFeatures>().tileMap.down = "Grass";
 
 
     }
