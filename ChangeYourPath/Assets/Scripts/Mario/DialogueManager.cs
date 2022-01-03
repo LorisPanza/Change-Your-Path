@@ -92,11 +92,11 @@ public class DialogueManager : MonoBehaviour
         //AudioSource background = audioManager.GetSound("Background").source;
         //background.Play();
 
-        AudioSource voiceSrc = audioManager.GetSound("RobotVoice").source;
-        voiceSrc.Stop();
+        AudioSource voiceSrc1 = audioManager.GetSound("RobotVoice").source;
+        voiceSrc1.Stop();
 
-        voiceSrc = audioManager.GetSound("Voice").source;
-        voiceSrc.Stop();
+        AudioSource voiceSrc2 = audioManager.GetSound("Voice").source;
+        voiceSrc2.Stop();
         
 
         
