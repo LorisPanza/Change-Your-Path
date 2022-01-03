@@ -158,7 +158,7 @@ public class Robot : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("Sto parlando");
+            //Debug.Log("Sto parlando");
             if (Input.GetKeyDown(KeyCode.Space) && !startedGame && GameObject.Find("GameManager").GetComponent<GameManager>().getMode() == 1)
             {
                 if (!started)
