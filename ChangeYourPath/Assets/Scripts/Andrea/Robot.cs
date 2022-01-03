@@ -175,6 +175,7 @@ public class Robot : MonoBehaviour
     void startMiniGame() {
         startedGame = true;
         StopCoroutine(talk);
+        StopCoroutine(Talk());
         started = false;
         countdownCanvas.SetActive(true);
         AudioSource background = audioManager.GetSound("Background").source;
@@ -184,12 +185,14 @@ public class Robot : MonoBehaviour
         if (countdown != null)
         {
             StopCoroutine(countdown);
+            StopCoroutine(CountdownToStart());
         }
         countdown = StartCoroutine(CountdownToStart());
     }
 
     public void RestartMiniGame() {
         startedGame = false;
+        StopCoroutine(countdown);
         StopCoroutine(CountdownToStart());
         countdownDisplay.text = "3";
         countdownCanvas.SetActive(false);

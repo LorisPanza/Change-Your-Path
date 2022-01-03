@@ -98,7 +98,8 @@ public class NPC : MonoBehaviour
                     }
                     else
                     {
-                        TriggerDialogue1();  
+                        TriggerDialogue1();
+                        Debug.Log("I'm a routine...");
                     }
                     
                     started = true;
