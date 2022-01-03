@@ -21860,9 +21860,11 @@ MonoBehaviour:
   dialogue:
     name: Robot
     sentences:
-    - Ciao
-    - Sono
-    - Il robot
+    - Sighted subject in critical area!
+    - I have been programmed to eliminate anyone who gets too close to the limit
+      of the forest.
+    - Laboratory subjects shouldn't see what's beyond the labyrinth otherwise the
+      experiment will fail!
   isQuestGiver: 1
   robotQuest:
     isActive: 0

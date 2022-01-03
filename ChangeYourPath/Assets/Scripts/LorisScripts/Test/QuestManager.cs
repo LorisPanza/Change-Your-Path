@@ -77,7 +77,7 @@ public class QuestManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "SpringScene")
         {
             
-            if (GameObject.Find("MapPieceLab1") && GameObject.Find("MapPieceLab1").GetComponent<Labyrinth>().enabled==true)
+            if (GameObject.Find("MapPieceLab1") && GameObject.Find("MapPieceLab2") && GameObject.Find("MapPieceLab1").GetComponent<Labyrinth>().enabled==true)
             {
                 Debug.Log("Attivo i suggerimenti per labirinto");
                 activateSuggestion.activateLabyrinthSuggestion();

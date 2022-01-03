@@ -177,15 +177,16 @@ public class Robot : MonoBehaviour
     }
 
     void startMiniGame() {
+        AudioSource background = audioManager.GetSound("Background").source;
+        background.Stop();
+        background = audioManager.GetSound("DialogueBackground").source;
+        background.Stop();
         startedGame = true;
         StopCoroutine(talk);
         StopCoroutine(Talk());
         started = false;
         countdownCanvas.SetActive(true);
-        AudioSource background = audioManager.GetSound("Background").source;
-        background.Stop();
-        background = audioManager.GetSound("DialogueBackground").source;
-        background.Stop();
+        
         if (countdown != null)
         {
             StopCoroutine(countdown);
@@ -250,6 +251,7 @@ public class Robot : MonoBehaviour
         robotQuest.Complete();
         mapCollectable.SetActive(true);
         titleCanvas.text = "YOU WIN!";
+        SimpleEventManager.TriggerEvent("RobotQuestCompleted");
         AudioSource robotGame = audioManager.GetSound("RobotGame").source;
         robotGame.Stop();
         audioManager.Play("Victory");

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ActivateSuggestion : MonoBehaviour
 {                           
@@ -48,7 +49,16 @@ public class ActivateSuggestion : MonoBehaviour
     private void Start()
     {
         isShowing = false;
-        SimpleEventManager.StartListening("QuestForestCompleted",newWilemCanvas);
+        if (SceneManager.GetActiveScene().name == "GameScene")
+        {
+            SimpleEventManager.StartListening("QuestForestCompleted",newWilemCanvas);
+        }
+        else if (SceneManager.GetActiveScene().name== "SpringScene")
+        {
+            SimpleEventManager.StartListening("RobotQuestCompleted",closeRobotCanvas);
+        }
+
+        
     }
 
     public void activateWilemSuggestion()
@@ -143,5 +153,12 @@ public class ActivateSuggestion : MonoBehaviour
         wilemCanvas.SetActive(false);
         wilemCanvas = winningWilemCanvas;
         wilemCanvas.SetActive(true);
+    }
+
+    public void closeRobotCanvas()
+    {
+        robotCanvas.SetActive(false);
+        robotFlag = false;
+        isShowing = false;
     }
 }
