@@ -1311,7 +1311,7 @@ PrefabInstance:
       objectReference: {fileID: 363030479}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.size
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[0].pitch
@@ -1406,12 +1406,20 @@ PrefabInstance:
       value: Lose
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
+      propertyPath: sounds.Array.data[19].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b3c95ca782fb4444fb5387bdaf114feb, type: 3}
+    - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
+      propertyPath: sounds.Array.data[19].name
+      value: RobotVoice
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[10].pitch
       value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[11].pitch
-      value: 2
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[12].pitch
@@ -1427,7 +1435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[15].pitch
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[16].pitch
@@ -1440,6 +1448,10 @@ PrefabInstance:
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[18].pitch
       value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
+      propertyPath: sounds.Array.data[19].pitch
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[10].volume
@@ -1475,6 +1487,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[18].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
+      propertyPath: sounds.Array.data[19].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649217, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
@@ -1969,6 +1985,8 @@ MonoBehaviour:
   quitClosedButton: {fileID: 374413469}
   saveManager1: {fileID: 0}
   saveManager2: {fileID: 899678081}
+  quitButton: {fileID: 0}
+  newGameButton: {fileID: 0}
   gameManager: {fileID: 729591978}
 --- !u!114 &214451123
 MonoBehaviour:

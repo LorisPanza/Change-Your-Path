@@ -40,8 +40,9 @@ public class DialogueManager : MonoBehaviour
 
         AudioSource background = audioManager.GetSound("Background").source;
         background.Stop();
-        
         audioManager.Play("DialogueBackground");
+        
+        
         AudioSource voiceSrc = audioManager.GetSound("Voice").source;
         voiceSrc.Play();
 
