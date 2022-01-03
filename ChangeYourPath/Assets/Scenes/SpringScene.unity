@@ -2064,6 +2064,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 291826468}
     m_Modifications:
+    - target: {fileID: 3238442420446789158, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238442420446789158, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238442420612494693, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238442420612494693, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238442420861400252, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238442420861400252, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.92
+      objectReference: {fileID: 0}
     - target: {fileID: 3316817024549844282, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
       propertyPath: m_Name
       value: MapCollectable2_3
@@ -2136,6 +2160,26 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 122610674}
+    - target: {fileID: 5171498037292394976, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171498037292394976, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171498037877813055, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171498037877813055, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171498038540334562, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
 --- !u!1 &224456341 stripped
