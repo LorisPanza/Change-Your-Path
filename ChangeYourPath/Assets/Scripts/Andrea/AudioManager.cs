@@ -117,9 +117,10 @@ public class AudioManager : MonoBehaviour
 
     public void SetAmbientVolume (float vol)
     {
-        Sound[] s = new Sound[2];
+        Sound[] s = new Sound[3];
         s[0] = GetSound("Walk");
         s[1] = GetSound("Voice");
+        s[2] = GetSound("RobotVoice");
         for (var i = 0; i < s.Length; i++)
         {
             if (s[i] == null)

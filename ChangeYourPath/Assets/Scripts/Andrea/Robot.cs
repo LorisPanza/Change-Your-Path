@@ -134,7 +134,7 @@ public class Robot : MonoBehaviour
                 AudioSource dialoguebackground = audioManager.GetSound("DialogueBackground").source;
                 dialoguebackground.Stop();
                 //audioManager.Play("Background");
-                AudioSource voiceSrc = audioManager.GetSound("Voice").source;
+                AudioSource voiceSrc = audioManager.GetSound("RobotVoice").source;
                 voiceSrc.Stop();
             }
             StopCoroutine(talk);

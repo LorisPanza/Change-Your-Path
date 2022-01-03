@@ -42,9 +42,16 @@ public class DialogueManager : MonoBehaviour
         background.Stop();
         audioManager.Play("DialogueBackground");
         
+        if (dialogue.name == "Robot") {
+            audioManager.Play("RobotVoice");
+            //AudioSource voiceSrc = audioManager.GetSound("RobotVoice").source;
+            //voiceSrc.Play();
+        } else {
+            audioManager.Play("Voice");
+            //AudioSource voiceSrc = audioManager.GetSound("Voice").source;
+            //voiceSrc.Play();
+        }
         
-        AudioSource voiceSrc = audioManager.GetSound("Voice").source;
-        voiceSrc.Play();
 
 
         DisplayNextSentence();
@@ -85,8 +92,14 @@ public class DialogueManager : MonoBehaviour
         //AudioSource background = audioManager.GetSound("Background").source;
         //background.Play();
 
-        AudioSource voiceSrc = audioManager.GetSound("Voice").source;
+        AudioSource voiceSrc = audioManager.GetSound("RobotVoice").source;
         voiceSrc.Stop();
+
+        voiceSrc = audioManager.GetSound("Voice").source;
+        voiceSrc.Stop();
+        
+
+        
     }
 
     public bool DialogueEnded()
