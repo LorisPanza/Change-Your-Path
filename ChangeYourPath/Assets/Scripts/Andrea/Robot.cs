@@ -6,6 +6,7 @@ using TMPro;
 
 public class Robot : MonoBehaviour
 {
+    private bool flag=true;
     public Animator animator;
     private BoxCollider2D boxCollider;
     public GameObject movePoint;
@@ -101,9 +102,10 @@ public class Robot : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         //Debug.Log(other.CompareTag("Player"));
         if (other.CompareTag("Player")) {
-            if (!robotQuest.isActive && !startedGame) {
+            if (!robotQuest.isActive && !startedGame && flag) {
                 talk = StartCoroutine(Talk());
-                //Debug.Log(name);
+                flag = false;
+                Debug.Log(name);
                 SimpleEventManager.StartListening("StartQuest", StartQuest);
             }
         }
@@ -141,8 +143,9 @@ public class Robot : MonoBehaviour
             StopCoroutine(Talk());
             started = false;
             FindObjectOfType<DialogueManager>().HideBox();
+            flag = true;
 
-          
+
         }
     }
 
@@ -155,6 +158,7 @@ public class Robot : MonoBehaviour
     {
         while (true)
         {
+            Debug.Log("Sto parlando");
             if (Input.GetKeyDown(KeyCode.Space) && !startedGame && GameObject.Find("GameManager").GetComponent<GameManager>().getMode() == 1)
             {
                 if (!started)
