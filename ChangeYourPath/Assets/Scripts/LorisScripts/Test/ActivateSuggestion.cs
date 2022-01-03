@@ -11,6 +11,7 @@ public class ActivateSuggestion : MonoBehaviour
     public GameObject labyrinthCanvas;
     public GameObject robotCanvas;
     public GameObject signCanvas;
+    public GameObject winningWilemCanvas;
     private bool isShowing;
     public bool wilemFlag = false;
     public bool elderFlag = false;
@@ -47,6 +48,7 @@ public class ActivateSuggestion : MonoBehaviour
     private void Start()
     {
         isShowing = false;
+        SimpleEventManager.StartListening("QuestForestCompleted",newWilemCanvas);
     }
 
     public void activateWilemSuggestion()
@@ -134,5 +136,12 @@ public class ActivateSuggestion : MonoBehaviour
             signFlag = false;
             isShowing = false;
         }
+    }
+
+    public void newWilemCanvas()
+    {
+        wilemCanvas.SetActive(false);
+        wilemCanvas = winningWilemCanvas;
+        wilemCanvas.SetActive(true);
     }
 }

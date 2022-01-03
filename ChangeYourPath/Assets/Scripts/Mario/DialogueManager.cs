@@ -77,9 +77,12 @@ public class DialogueManager : MonoBehaviour
         //SimpleEventManager.TriggerEvent("EndElderQuest");
         
         
-        AudioSource background = audioManager.GetSound("DialogueBackground").source;
-        background.Stop();
+        AudioSource diabackground = audioManager.GetSound("DialogueBackground").source;
+        diabackground.Stop();
         audioManager.Play("Background");
+
+        //AudioSource background = audioManager.GetSound("Background").source;
+        //background.Play();
 
         AudioSource voiceSrc = audioManager.GetSound("Voice").source;
         voiceSrc.Stop();

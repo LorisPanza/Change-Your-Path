@@ -39,18 +39,23 @@ public class ElderNPC : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            if (started)
+            {
+                AudioSource background=audioManager.GetSound("Background").source;
+                background.Play();
+                AudioSource dialoguebackground = audioManager.GetSound("DialogueBackground").source;
+                dialoguebackground.Stop();
+                //audioManager.Play("Background");
+                AudioSource voiceSrc = audioManager.GetSound("Voice").source;
+                voiceSrc.Stop();
+            }
+            
             //whoAreYouCanvas.SetActive(false);
             StopCoroutine(talk);
             StopCoroutine(Talk());
             started = false;
             FindObjectOfType<DialogueManager>().HideBox();
-
             
-            AudioSource dialoguebackground = audioManager.GetSound("DialogueBackground").source;
-            dialoguebackground.Stop();
-            audioManager.Play("Background");
-            AudioSource voiceSrc = audioManager.GetSound("Voice").source;
-            voiceSrc.Stop();
         }
     }
     

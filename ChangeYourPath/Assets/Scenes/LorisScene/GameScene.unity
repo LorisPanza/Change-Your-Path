@@ -5525,6 +5525,11 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
+--- !u!1 &715309019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5735661894793484978, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+  m_PrefabInstance: {fileID: 1811730894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &721528281
 GameObject:
   m_ObjectHideFlags: 0
@@ -17992,6 +17997,8 @@ MonoBehaviour:
   quitClosedButton: {fileID: 1554310860}
   saveManager1: {fileID: 228980483}
   saveManager2: {fileID: 0}
+  quitButton: {fileID: 0}
+  newGameButton: {fileID: 0}
   gameManager: {fileID: 1736366014}
 --- !u!114 &1766022597
 MonoBehaviour:
@@ -18426,6 +18433,111 @@ RectTransform:
   m_AnchoredPosition: {x: -355, y: -139}
   m_SizeDelta: {x: 189.9925, y: 66.331}
   m_Pivot: {x: 0.5, y: 0.5000001}
+--- !u!1001 &1811730894
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5735661894165386226, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_Text
+      value: Good job...We show Wilem the way to his house!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484942, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484978, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_Name
+      value: WilemSuggestionWinning
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735661894793484978, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8dd3e5cb6f86347d1968eff4a5213ce0, type: 3}
 --- !u!1 &1821362328
 GameObject:
   m_ObjectHideFlags: 0
@@ -30497,6 +30609,10 @@ PrefabInstance:
       propertyPath: wilemCanvas
       value: 
       objectReference: {fileID: 2089543900}
+    - target: {fileID: 7358030335085395107, guid: a6d841fd97d344fd6ab99e7725eeef8d, type: 3}
+      propertyPath: winningWilemCanvas
+      value: 
+      objectReference: {fileID: 715309019}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6d841fd97d344fd6ab99e7725eeef8d, type: 3}
 --- !u!1001 &7507727758477383439

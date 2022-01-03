@@ -54,18 +54,21 @@ public class NPC : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            if (started)
+            {
+                AudioSource dialoguebackground = audioManager.GetSound("DialogueBackground").source;
+                dialoguebackground.Stop();
+                AudioSource background=audioManager.GetSound("Background").source;
+                background.Play();
+                AudioSource voiceSrc = audioManager.GetSound("Voice").source;
+                voiceSrc.Stop();
+            }
             //whoAreYouCanvas.SetActive(false);
             StopCoroutine(talk);
             StopCoroutine(Talk());
             started = false;
             FindObjectOfType<DialogueManager>().HideBox();
-
             
-            AudioSource background = audioManager.GetSound("DialogueBackground").source;
-            background.Stop();
-            audioManager.Play("Background");
-            AudioSource voiceSrc = audioManager.GetSound("Voice").source;
-            voiceSrc.Stop();
         }
     }
 

@@ -29,11 +29,12 @@ public class Quest
         isActive = false;
         isComplete = true;
         AudioSource background = audioManager.GetSound("Background").source;
-        background.Stop();
+        background.Pause();
         audioManager.Play("QuestCompleted");
         audioManager.Play("Background");
         hiddenHouse.SetActive(true);
         mapPiece10.gameObject.SetActive(true);
+        SimpleEventManager.TriggerEvent("QuestForestCompleted");
         //endPrototype.SetActive(true);
     }
 
