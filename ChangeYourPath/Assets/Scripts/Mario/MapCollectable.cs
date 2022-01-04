@@ -10,12 +10,19 @@ public class MapCollectable : MonoBehaviour
     private MapFeatures mf;
     private IEnumerator waitForKey;
    
+    public Animator mapAnimator;
 
 
     private void Start()
     {
         //Debug.Log("Passo dallo start");
         waitForKey = Collectable();
+    }
+
+    private void Update() {
+        if(mapAnimator.GetCurrentAnimatorStateInfo(0).IsName("MapEnd")) {
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -45,9 +52,9 @@ public class MapCollectable : MonoBehaviour
         mf = newMapPiece.GetComponent<MapFeatures>();
         SimpleEventManager.StartListening("PlaceNewMap", Place);
         SimpleEventManager.TriggerEvent("PlaceNewMap");
-  
-        gameObject.SetActive(false);
         audioManager.Play("mapChoice");
+        mapAnimator.SetBool("collected", true);
+
         yield return null;
     }
 

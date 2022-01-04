@@ -341,7 +341,7 @@ MonoBehaviour:
   settingsMenu: {fileID: 0}
   quitMenu: {fileID: 0}
   newGameMenu: {fileID: 0}
-  menuFirstButton: {fileID: 0}
+  menuFirstButton: {fileID: 1586579413}
   menuSecondButton: {fileID: 0}
   newFirstButton: {fileID: 0}
   newClosedButton: {fileID: 0}
@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1586579413}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!1 &1586579413

@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour
             selected = EventSystem.current.currentSelectedGameObject;
         }
 
-        if (SceneManager.GetActiveScene().name != "MainMenu")
+        if (SceneManager.GetActiveScene().name != "MainMenu" && SceneManager.GetActiveScene().name != "FinalScene")
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {

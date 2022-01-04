@@ -306,6 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 1446953376}
   audioManager: {fileID: 938604305}
+  mapAnimator: {fileID: 8606136}
 --- !u!95 &8606136
 Animator:
   serializedVersion: 3
@@ -316,7 +317,7 @@ Animator:
   m_GameObject: {fileID: 8606134}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4485,6 +4486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 894436057}
   audioManager: {fileID: 938604305}
+  mapAnimator: {fileID: 497910363}
 --- !u!95 &497910363
 Animator:
   serializedVersion: 3
@@ -4495,7 +4497,7 @@ Animator:
   m_GameObject: {fileID: 497910361}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4653,6 +4655,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1129855797}
     m_Modifications:
+    - target: {fileID: 7602399437264333958, guid: bc4d6ac802b254e26a7f10d045577457, type: 3}
+      propertyPath: mapAnimator
+      value: 
+      objectReference: {fileID: 2041322803}
     - target: {fileID: 7602399437264333958, guid: bc4d6ac802b254e26a7f10d045577457, type: 3}
       propertyPath: newMapPiece
       value: 
@@ -12147,6 +12153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 2043715522}
   audioManager: {fileID: 938604305}
+  mapAnimator: {fileID: 882633404}
 --- !u!95 &882633404
 Animator:
   serializedVersion: 3
@@ -12157,7 +12164,7 @@ Animator:
   m_GameObject: {fileID: 882633402}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -12549,7 +12556,7 @@ Animator:
   m_GameObject: {fileID: 924856851}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14135,6 +14142,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 352985446}
     m_Modifications:
     - target: {fileID: 398417799610715401, guid: dae0bfd53db31452ead30035fd14ed43, type: 3}
+      propertyPath: mapAnimator
+      value: 
+      objectReference: {fileID: 924856852}
+    - target: {fileID: 398417799610715401, guid: dae0bfd53db31452ead30035fd14ed43, type: 3}
       propertyPath: newMapPiece
       value: 
       objectReference: {fileID: 1129855798}
@@ -14520,18 +14531,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7602399437264333959, guid: bc4d6ac802b254e26a7f10d045577457, type: 3}
   m_PrefabInstance: {fileID: 1033704680}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1282401999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1282401997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcf64ae7b19c84b3e81e111f13279ce6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1282402000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14546,6 +14545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 1531687576}
   audioManager: {fileID: 938604305}
+  mapAnimator: {fileID: 1282402001}
 --- !u!95 &1282402001
 Animator:
   serializedVersion: 3
@@ -14556,7 +14556,7 @@ Animator:
   m_GameObject: {fileID: 1282401997}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -15361,6 +15361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 2130267727}
   audioManager: {fileID: 938604305}
+  mapAnimator: {fileID: 1459121332}
 --- !u!95 &1459121332
 Animator:
   serializedVersion: 3
@@ -15371,7 +15372,7 @@ Animator:
   m_GameObject: {fileID: 1459121330}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -17064,6 +17065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 106591328}
   audioManager: {fileID: 938604305}
+  mapAnimator: {fileID: 1657254348}
 --- !u!95 &1657254348
 Animator:
   serializedVersion: 3
@@ -17074,7 +17076,7 @@ Animator:
   m_GameObject: {fileID: 1657254346}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -17839,6 +17841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 1003801315}
   audioManager: {fileID: 938604305}
+  mapAnimator: {fileID: 1729355875}
 --- !u!95 &1729355875
 Animator:
   serializedVersion: 3
@@ -17849,7 +17852,7 @@ Animator:
   m_GameObject: {fileID: 1729355873}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -17902,7 +17905,7 @@ Animator:
   m_GameObject: {fileID: 1749536058}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -17925,6 +17928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 1275053130}
   audioManager: {fileID: 938604305}
+  mapAnimator: {fileID: 1749536060}
 --- !u!1 &1766022594
 GameObject:
   m_ObjectHideFlags: 0
@@ -19261,7 +19265,7 @@ Animator:
   m_GameObject: {fileID: 1889475413}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -19284,6 +19288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 1027077940}
   audioManager: {fileID: 938604305}
+  mapAnimator: {fileID: 1889475415}
 --- !u!1 &1895214013
 GameObject:
   m_ObjectHideFlags: 0
@@ -20013,7 +20018,7 @@ Animator:
   m_GameObject: {fileID: 2041322802}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -20220,6 +20225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 219923516}
   audioManager: {fileID: 938604305}
+  mapAnimator: {fileID: 2065247465}
 --- !u!95 &2065247465
 Animator:
   serializedVersion: 3
@@ -20230,7 +20236,7 @@ Animator:
   m_GameObject: {fileID: 2065247463}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

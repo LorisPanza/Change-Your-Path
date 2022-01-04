@@ -504,6 +504,10 @@ PrefabInstance:
       value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5421308950340047442, guid: 6c9f9404f4058429391dd9fe2d874c32, type: 3}
+      propertyPath: mapAnimator
+      value: 
+      objectReference: {fileID: 10991756}
+    - target: {fileID: 5421308950340047442, guid: 6c9f9404f4058429391dd9fe2d874c32, type: 3}
       propertyPath: newMapPiece
       value: 
       objectReference: {fileID: 1659277382}
@@ -582,7 +586,7 @@ Animator:
   m_GameObject: {fileID: 10991755}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -764,7 +768,7 @@ Animator:
   m_GameObject: {fileID: 62991009}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2391,6 +2395,30 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &219582307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7950236380725275616, guid: 20dde482d62814773a443559f83d5afd, type: 3}
+  m_PrefabInstance: {fileID: 8300770782970593485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &219582308
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219582307}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99bccc5e318fe3b4494fc687ed34b67a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &224456340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2486,6 +2514,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5153971203552467885, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
+      propertyPath: mapAnimator
+      value: 
+      objectReference: {fileID: 1870898508}
     - target: {fileID: 5153971203552467885, guid: 51e7a8ba774e040fc8696f3f5a2b6c3b, type: 3}
       propertyPath: newMapPiece
       value: 
@@ -16884,6 +16916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 224456341}
   audioManager: {fileID: 122610674}
+  mapAnimator: {fileID: 837106735}
 --- !u!95 &837106735
 Animator:
   serializedVersion: 3
@@ -16894,7 +16927,7 @@ Animator:
   m_GameObject: {fileID: 837106732}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -18039,6 +18072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 1488778867}
   audioManager: {fileID: 122610674}
+  mapAnimator: {fileID: 1134499862}
 --- !u!95 &1134499862
 Animator:
   serializedVersion: 3
@@ -18049,7 +18083,7 @@ Animator:
   m_GameObject: {fileID: 1134499859}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -23838,6 +23872,10 @@ PrefabInstance:
       value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 684200440359469340, guid: bdd7b9358b3f946b787255fbe07b4995, type: 3}
+      propertyPath: mapAnimator
+      value: 
+      objectReference: {fileID: 1989304908}
+    - target: {fileID: 684200440359469340, guid: bdd7b9358b3f946b787255fbe07b4995, type: 3}
       propertyPath: newMapPiece
       value: 
       objectReference: {fileID: 1666070911}
@@ -24156,6 +24194,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5503500269147170394, guid: 1601849f22c1841f29e379158e37cfaf, type: 3}
+      propertyPath: mapAnimator
+      value: 
+      objectReference: {fileID: 62991010}
     - target: {fileID: 5503500269147170394, guid: 1601849f22c1841f29e379158e37cfaf, type: 3}
       propertyPath: newMapPiece
       value: 
@@ -25488,7 +25530,31 @@ Animator:
   m_GameObject: {fileID: 1870898507}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1875432853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4974633277673345436, guid: 20dde482d62814773a443559f83d5afd, type: 3}
+  m_PrefabInstance: {fileID: 8300770782970593485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1875432854
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875432853}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3814de9119571c84eb74cc135af6cba3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -25548,7 +25614,7 @@ Animator:
   m_GameObject: {fileID: 1989304907}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -25735,6 +25801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newMapPiece: {fileID: 10991749}
   audioManager: {fileID: 122610674}
+  mapAnimator: {fileID: 2000146737}
 --- !u!95 &2000146737
 Animator:
   serializedVersion: 3
@@ -25745,7 +25812,7 @@ Animator:
   m_GameObject: {fileID: 2000146735}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 630302346c6e761449ea9312a3066114, type: 2}
+  m_Controller: {fileID: 9100000, guid: 731c732e9075df04e82cff499bc89801, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -26572,7 +26639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2279885405080429639, guid: 20dde482d62814773a443559f83d5afd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2279885405080429640, guid: 20dde482d62814773a443559f83d5afd, type: 3}
       propertyPath: tileMap
