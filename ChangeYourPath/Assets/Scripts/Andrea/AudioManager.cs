@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
         if (kvothe != null){
             velocity = kvothe.GetMoveDelta();
             AudioSource walkSrc = GetSound("Walk").source;
-            if ((velocity.x != 0 || velocity.y != 0) && kvothe.velocity != 0)
+            if ((velocity.x != 0 || velocity.y != 0) && kvothe.velocity != 0  && kvothe.enabled)
             {
                 isMoving = true;
             }

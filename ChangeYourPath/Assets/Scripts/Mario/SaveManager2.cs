@@ -205,13 +205,14 @@ public class SaveManager2 : MonoBehaviour
                 if (coll.name == PlayerPrefs.GetString("activeCollectable"))
                 {
 
-                    Debug.Log(coll.name);
+                    //Debug.Log(coll.name);
                     coll.SetActive(true);
                 }
                 else
                 {
                     if (coll.transform.parent.gameObject.activeSelf)
                     {
+                        Debug.Log(coll.name);
                         coll.SetActive(false);
                     }
                 }
@@ -506,6 +507,9 @@ public class SaveManager2 : MonoBehaviour
             Debug.Log("Carico quest sign attiva ma non completa");
             signQuest.isCompleted = false;
             signQuest.isActive = true;
+            AudioSource src = audioManager.GetSound("Background").source;
+            src.Stop();
+            audioManager.Play("SignQuest");
 
         }
     }

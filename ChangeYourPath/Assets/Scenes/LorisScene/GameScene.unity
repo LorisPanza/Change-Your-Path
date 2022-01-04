@@ -17999,6 +17999,7 @@ MonoBehaviour:
   saveManager2: {fileID: 0}
   quitButton: {fileID: 0}
   newGameButton: {fileID: 0}
+  audioManager: {fileID: 938604305}
   gameManager: {fileID: 1736366014}
 --- !u!114 &1766022597
 MonoBehaviour:

@@ -13,6 +13,7 @@ public class ActivateSuggestion : MonoBehaviour
     public GameObject robotCanvas;
     public GameObject signCanvas;
     public GameObject winningWilemCanvas;
+    public GameObject winningSignCanvas;
     private bool isShowing;
     public bool wilemFlag = false;
     public bool elderFlag = false;
@@ -56,6 +57,7 @@ public class ActivateSuggestion : MonoBehaviour
         else if (SceneManager.GetActiveScene().name== "SpringScene")
         {
             SimpleEventManager.StartListening("RobotQuestCompleted",closeRobotCanvas);
+            SimpleEventManager.StartListening("SignQuestCompleted",newSignCanvas);
         }
 
         
@@ -160,5 +162,12 @@ public class ActivateSuggestion : MonoBehaviour
         robotCanvas.SetActive(false);
         robotFlag = false;
         isShowing = false;
+    }
+
+    public void newSignCanvas()
+    {
+        signCanvas.SetActive(false);
+        signCanvas = winningSignCanvas;
+        signCanvas.SetActive(true);
     }
 }

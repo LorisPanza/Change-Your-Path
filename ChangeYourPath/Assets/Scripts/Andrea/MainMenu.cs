@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     public SaveManager2 saveManager2;
     public Button quitButton, newGameButton;
     public static bool gameIsPaused = false;
+    public AudioManager audioManager;
 
     private GameObject selected;
     public GameManager gameManager;
@@ -86,6 +87,9 @@ public class MainMenu : MonoBehaviour
     void Pause() {
         
         kvothe.GetComponent<Animator>().enabled = false;
+        AudioSource steps = audioManager.GetSound("Walk").source;
+        steps.Stop();
+        //Debug.Log(steps);
         
         kvothe.enabled = false;
         if (SceneManager.GetActiveScene().name == "SpringScene") robot.enabled = false;

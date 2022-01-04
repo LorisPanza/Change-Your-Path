@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviour
     public void activateMapMode()
     {
         player.GetComponent<Animator>().enabled = false;
+        AudioSource steps = audioManager.GetSound("Walk").source;
+        steps.Stop();
 
         mode = 2;
         mapCam.SetActive(true);
