@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
@@ -92,8 +93,12 @@ public class DialogueManager : MonoBehaviour
         //AudioSource background = audioManager.GetSound("Background").source;
         //background.Play();
 
-        AudioSource voiceSrc1 = audioManager.GetSound("RobotVoice").source;
-        voiceSrc1.Stop();
+        if (SceneManager.GetActiveScene().name == "SpringScene")
+        {
+            AudioSource voiceSrc1 = audioManager.GetSound("RobotVoice").source;
+            voiceSrc1.Stop();
+        }
+        
 
         AudioSource voiceSrc2 = audioManager.GetSound("Voice").source;
         voiceSrc2.Stop();
