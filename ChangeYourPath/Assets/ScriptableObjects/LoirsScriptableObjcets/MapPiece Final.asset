@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3414d1756bbfc45afba9caf7ed45005f, type: 3}
   m_Name: MapPiece Final
   m_EditorClassIdentifier: 
-  up: 
-  right: 
-  down: 
-  left: 
+  up: Road
+  right: Road
+  down: Road
+  left: Road
