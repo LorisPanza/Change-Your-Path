@@ -157,18 +157,25 @@ public class SignQuest : MonoBehaviour
         if (left)
         {
             GameObject.Find("Selecter").transform.position = new Vector3(startingPos.position.x-72,startingPos.position.y,startingPos.position.z);
+            GameObject.Find("LastSelecterPosition").transform.position = new Vector3(startingPos.position.x-72,startingPos.position.y,startingPos.position.z);
         }
         else if (right)
         { 
             GameObject.Find("Selecter").transform.position = new Vector3(startingPos.position.x+72,startingPos.position.y,startingPos.position.z);
+            GameObject.Find("LastSelecterPosition").transform.position = new Vector3(startingPos.position.x+72,startingPos.position.y,startingPos.position.z);
         }
         else if (up)
         {
             GameObject.Find("Selecter").transform.position = new Vector3(startingPos.position.x,startingPos.position.y+72,startingPos.position.z);
+            GameObject.Find("LastSelecterPosition").transform.position = new Vector3(startingPos.position.x,startingPos.position.y+72,startingPos.position.z);
         }
         else if (down)
         {
             GameObject.Find("Selecter").transform.position = new Vector3(startingPos.position.x,startingPos.position.y-72,startingPos.position.z);
+            GameObject.Find("LastSelecterPosition").transform.position = new Vector3(startingPos.position.x,startingPos.position.y-72,startingPos.position.z);
         }
+        newMap.GetComponent<MapFeatures>().placeNewMap();
+        newMap.SetActive(true);
     }
 }
+
