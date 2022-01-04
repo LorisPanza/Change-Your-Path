@@ -19466,6 +19466,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2203715991682595615, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_Text
+      value: Robot
+      objectReference: {fileID: 0}
     - target: {fileID: 2203715992038786264, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
       propertyPath: m_Name
       value: RobotSuggestion
@@ -19557,6 +19561,14 @@ PrefabInstance:
     - target: {fileID: 2203715992038786276, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992514947867, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992514947867, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2203715992599776664, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
       propertyPath: m_Text
@@ -23341,6 +23353,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7140494997454557288, guid: 92836325cc9094e74be77cffed3eeb21, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140494997454557288, guid: 92836325cc9094e74be77cffed3eeb21, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7140494997539337963, guid: 92836325cc9094e74be77cffed3eeb21, type: 3}
       propertyPath: m_Text
       value: Someone needs help at the end of straight roads...wait... look at the
@@ -23544,10 +23564,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2203715992514947866, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 158.1315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992514947866, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 9.972
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992514947866, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992514947866, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -91.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992514947867, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992514947867, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992575819057, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 359.7473
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992575819057, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 105.6434
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992575819057, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 216.12636
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992575819057, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 150.1133
+      objectReference: {fileID: 0}
     - target: {fileID: 2203715992599776664, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
       propertyPath: m_Text
-      value: Look the flowers... it seems they indicate a direction...I should use
-        the two identical map piece to find the path...mmh...
+      value: "Look the flowers... it seems they indicate a direction like an arrow...
+        \nI should use the two identical map piece to create the path..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992599776664, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992599776671, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -51.5464
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992599776671, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 63.754
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992599776671, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.6172943
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203715992599776671, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.4259
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14ffd36fc2bab477ebb00c7d98f6f758, type: 3}

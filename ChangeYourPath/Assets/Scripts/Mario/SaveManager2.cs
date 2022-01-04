@@ -37,6 +37,11 @@ public class SaveManager2 : MonoBehaviour
                 LoadSettings();
                 if (PlayerPrefs.HasKey("LastScene"))
                 {
+                    //SaveGame();
+                    if (!PlayerPrefs.HasKey("Map state"))
+                    {
+                        SaveGame();
+                    }
                     LoadGame();
                 }
             }
