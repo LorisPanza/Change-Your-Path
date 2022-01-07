@@ -8,7 +8,8 @@ public class Sign : MonoBehaviour
     private bool isInRange;
     public bool flag=true;
 
-    public GameObject signCanvas;
+    public GameObject signCanvas,spaceCanvas;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +34,13 @@ public class Sign : MonoBehaviour
             else
             {
                 signCanvas.SetActive(true);
+                spaceCanvas.SetActive(false);
             }
+        }
+        
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().getMode()==2) {
+            spaceCanvas.SetActive(false);
+            signCanvas.SetActive(false);
         }
     }
 
@@ -42,6 +49,7 @@ public class Sign : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInRange = true;
+            spaceCanvas.SetActive(true);
         }
     }
     
@@ -51,6 +59,7 @@ public class Sign : MonoBehaviour
         {
             isInRange = false;
             signCanvas.SetActive(false);
+            spaceCanvas.SetActive(false);
         }
     }
 }

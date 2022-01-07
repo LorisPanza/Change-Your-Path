@@ -499,6 +499,9 @@ public class SaveManager2 : MonoBehaviour
             Debug.Log("Carico quest completa sign");
             signQuest.isActive = false;
             signQuest.isCompleted = true;
+            AudioSource src = audioManager.GetSound("Background").source;
+            src.Stop();
+            audioManager.Play("SignQuest");
             
         }
         

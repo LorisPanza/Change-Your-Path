@@ -52,9 +52,8 @@ public class DialogueManager : MonoBehaviour
             //AudioSource voiceSrc = audioManager.GetSound("Voice").source;
             //voiceSrc.Play();
         }
+
         
-
-
         DisplayNextSentence();
         //grey out TAB in minitutorial
         tutorial.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(2).GetComponent<CanvasRenderer>().SetColor(Color.grey);

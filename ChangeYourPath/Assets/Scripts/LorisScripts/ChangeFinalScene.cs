@@ -10,6 +10,7 @@ public class ChangeFinalScene : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //deletePreviousMemory();
+            GameObject.Find("SaveManager").GetComponent<SaveManager2>().Save();
             SceneManager.LoadScene("FinalScene");
          
         }
