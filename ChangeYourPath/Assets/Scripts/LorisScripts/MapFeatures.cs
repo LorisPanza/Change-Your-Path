@@ -19,9 +19,14 @@ public class MapFeatures : MonoBehaviour
         if (!Physics2D.OverlapCircle(position.position, .2f, detectedLayerMap))
         {
             MapMovement mv = this.GetComponent<MapMovement>();
-            if (mv.matchingAllSides(position)) //& !mv.getIsMatchingDown() & !mv.getIsMatchingLeft() &
-                //!mv.getIsMatchingRight() & !mv.getIsMatchingUp())
+            if ((mv.matchingAllSides(position) & !mv.getIsMatchingDown() & !mv.getIsMatchingLeft() &
+                !mv.getIsMatchingRight() & !mv.getIsMatchingUp()) || mv.name=="MapPieceFinal")
             {
+                if (mv.name == "MapPieceFinal")
+                {
+                    Debug.Log("Piazzo ultimo pezzo");
+                }
+                //GameObject.Find("Selecter").GetComponent<SelecterMovement>().enableSelectionMapCondition(mv);
                 return true;
             }
             else

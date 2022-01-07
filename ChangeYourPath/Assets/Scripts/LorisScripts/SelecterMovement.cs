@@ -84,14 +84,18 @@ public class SelecterMovement : MonoBehaviour
                 }*/
                 GrabColorSelecter(new Vector3(0,0,0),Color.yellow, this.GetComponent<Tilemap>());
                 audioManager.Play("mapSelection");
-                enableSelectionMapCondition();
+                MapMovement chosenMapMov = chosenMapCollider.gameObject.GetComponent<MapMovement>();
+                GameObject map = chosenMapCollider.gameObject;
+                enableSelectionMapCondition(chosenMapMov,map);
             }
 
         }
         else if (Input.GetKeyDown(KeyCode.Space) && choosen == true)
         {
             GameObject go = chosenMapCollider.gameObject;
-            if (disableSelectionMapCondition() && go.transform.position.x%offsetMovement==0 && go.transform.position.y%offsetMovement==0)
+            GameObject chosenMap= chosenMapCollider.gameObject;
+            
+            if (disableSelectionMapCondition(go,chosenMap) && go.transform.position.x%offsetMovement==0 && go.transform.position.y%offsetMovement==0)
             {
                 
                 audioManager.Play("mapChoice");
@@ -280,18 +284,19 @@ public class SelecterMovement : MonoBehaviour
     }
 
 
-    public void enableSelectionMapCondition()
+    public void enableSelectionMapCondition(MapMovement chosenMapMov,GameObject map)
     {
-        MapMovement chosenMapMov = chosenMapCollider.gameObject.GetComponent<MapMovement>();
+        //MapMovement chosenMapMov = chosenMapCollider.gameObject.GetComponent<MapMovement>();
         
         chosenMapMov.matchingAllSides(chosenMapMov.movePoint);
-        
+        //GameObject map = chosenMapCollider.gameObject;
         if (chosenMapMov.getIsMatchingLeft())
         {
             GameObject leftDetectedMap=chosenMapMov.matchingLeft(chosenMapMov.movePoint);
+            Debug.Log("A sinistra ho:"+leftDetectedMap.name);
             if (leftDetectedMap != null)
             { 
-                modifyLeftBoundaryColliders(leftDetectedMap,true);
+                modifyLeftBoundaryColliders(leftDetectedMap,true,map);
             }
                 
         }
@@ -303,7 +308,7 @@ public class SelecterMovement : MonoBehaviour
             GameObject rightDetectedMap = chosenMapMov.matchingRight(chosenMapMov.movePoint);
             if (rightDetectedMap!=null)
             {
-                modifyRightBoundaryColliders(rightDetectedMap,true);
+                modifyRightBoundaryColliders(rightDetectedMap,true,map);
             }
         }
 
@@ -312,7 +317,7 @@ public class SelecterMovement : MonoBehaviour
             GameObject upDetectedMap = chosenMapMov.matchingUp(chosenMapMov.movePoint);
             if (upDetectedMap != null)
             {
-                modifyUpBoundaryColliders(upDetectedMap,true);
+                modifyUpBoundaryColliders(upDetectedMap,true,map);
             }
         }
             
@@ -321,22 +326,24 @@ public class SelecterMovement : MonoBehaviour
             GameObject downDetectedMap = chosenMapMov.matchingDown(chosenMapMov.movePoint);
             if (downDetectedMap != null)
             {
-                modifyDownBoundaryColliders(downDetectedMap,true);
+                modifyDownBoundaryColliders(downDetectedMap,true,map);
             }
         }
     }
 
-    public bool disableSelectionMapCondition()
+    public bool disableSelectionMapCondition(GameObject map,GameObject chosenMap)
     {
-        MapMovement chosenMapMov = chosenMapCollider.gameObject.GetComponent<MapMovement>();
+        //MapMovement chosenMapMov = chosenMapCollider.gameObject.GetComponent<MapMovement>();
+        MapMovement chosenMapMov = chosenMap.GetComponent<MapMovement>();
         if (chosenMapMov.matchingAllSides(chosenMapMov.movePoint))
         {
+            //GameObject map=chosenMapCollider.gameObject;
             if (chosenMapMov.getIsMatchingLeft())
             {
                 GameObject leftDetectedMap=chosenMapMov.matchingLeft(chosenMapMov.movePoint);
                 if (leftDetectedMap != null)
                 { 
-                    modifyLeftBoundaryColliders(leftDetectedMap,false);
+                    modifyLeftBoundaryColliders(leftDetectedMap,false,map);
                 }
                 
             }
@@ -347,7 +354,7 @@ public class SelecterMovement : MonoBehaviour
                 GameObject rightDetectedMap = chosenMapMov.matchingRight(chosenMapMov.movePoint);
                 if (rightDetectedMap!=null)
                 {
-                    modifyRightBoundaryColliders(rightDetectedMap,false);
+                    modifyRightBoundaryColliders(rightDetectedMap,false,map);
                 }
             }
             
@@ -357,7 +364,7 @@ public class SelecterMovement : MonoBehaviour
                 GameObject upDetectedMap = chosenMapMov.matchingUp(chosenMapMov.movePoint);
                 if (upDetectedMap != null)
                 {
-                    modifyUpBoundaryColliders(upDetectedMap,false);
+                    modifyUpBoundaryColliders(upDetectedMap,false,map);
                 }
             }
             
@@ -367,7 +374,7 @@ public class SelecterMovement : MonoBehaviour
                 GameObject downDetectedMap = chosenMapMov.matchingDown(chosenMapMov.movePoint);
                 if (downDetectedMap != null)
                 {
-                    modifyDownBoundaryColliders(downDetectedMap,false);
+                    modifyDownBoundaryColliders(downDetectedMap,false,map);
                 }
             }
           
@@ -408,9 +415,9 @@ public class SelecterMovement : MonoBehaviour
     
     }
     
-    public void modifyLeftBoundaryColliders(GameObject leftMap,bool activate)
+    public void modifyLeftBoundaryColliders(GameObject leftMap,bool activate,GameObject thisMap)
     {
-        GameObject thisMap=chosenMapCollider.gameObject;
+        //GameObject thisMap=chosenMapCollider.gameObject;
         GameObject leftBoundary = thisMap.transform.Find("LeftBoundary").gameObject;
         GameObject rightBoundary = leftMap.transform.Find(("RightBoundary")).gameObject;
         if (activate)
@@ -425,9 +432,9 @@ public class SelecterMovement : MonoBehaviour
         }
     }
 
-    public void modifyRightBoundaryColliders(GameObject rightMap,bool activate)
+    public void modifyRightBoundaryColliders(GameObject rightMap,bool activate,GameObject thisMap)
     {
-        GameObject thisMap=chosenMapCollider.gameObject;
+        //GameObject thisMap=chosenMapCollider.gameObject;
         GameObject rightBoundary = thisMap.transform.Find("RightBoundary").gameObject;
         GameObject leftBoundary = rightMap.transform.Find(("LeftBoundary")).gameObject;
         if (activate)
@@ -443,9 +450,9 @@ public class SelecterMovement : MonoBehaviour
         
     }
     
-    public void modifyUpBoundaryColliders(GameObject upMap,bool activate)
+    public void modifyUpBoundaryColliders(GameObject upMap,bool activate,GameObject thisMap)
     {
-        GameObject thisMap=chosenMapCollider.gameObject;
+        //GameObject thisMap=chosenMapCollider.gameObject;
         GameObject upBoundary = thisMap.transform.Find("UpBoundary").gameObject;
         GameObject downBoundary = upMap.transform.Find(("DownBoundary")).gameObject;
         if (activate)
@@ -462,9 +469,9 @@ public class SelecterMovement : MonoBehaviour
         }
     }
     
-    public void modifyDownBoundaryColliders(GameObject downMap,bool activate)
+    public void modifyDownBoundaryColliders(GameObject downMap,bool activate,GameObject thisMap)
     {
-        GameObject thisMap=chosenMapCollider.gameObject;
+        //GameObject thisMap=chosenMapCollider.gameObject;
         GameObject downBoundary = thisMap.transform.Find("DownBoundary").gameObject;
         GameObject upBoundary = downMap.transform.Find(("UpBoundary")).gameObject;
         if (activate)

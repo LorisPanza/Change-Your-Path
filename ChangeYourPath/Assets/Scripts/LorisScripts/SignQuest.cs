@@ -30,7 +30,7 @@ public class SignQuest : MonoBehaviour
     {
         if (!isCompleted && !isActive)
         {
-            Debug.Log("Quest sign attivata");
+            //Debug.Log("Quest sign attivata");
             AudioSource audioSource= audioManager.GetSound("Background").source;
             audioSource.Stop();
             
@@ -50,8 +50,8 @@ public class SignQuest : MonoBehaviour
         int x = (int)startingPos.position.x;
         int y = (int)startingPos.position.y;
         float z = startingPos.rotation.z;
-        Debug.Log("Starting Tile x:"+x);
-        Debug.Log("Starting Tile z:"+z);
+        //Debug.Log("Starting Tile x:"+x);
+        //Debug.Log("Starting Tile z:"+z);
 
         if (startingMap.tileMap.getLeft()=="Road" && 
             Physics2D.OverlapCircle(new Vector2(x-72,y), .2f,LayerMask.GetMask("Map"))==null)
@@ -66,7 +66,7 @@ public class SignQuest : MonoBehaviour
                     MapFeatures mf = detectdeMap.GetComponent<MapFeatures>();
                     if (mf.tileMap.getRight() == "Road" && mf.tileMap.getLeft() == "Road" && mf.tileMap.getUp()!="Road" && mf.tileMap.getDown()!="Road")
                     {
-                        Debug.Log("Trovato sulla sinistra un pezzo che rispetta la condizione");
+                        //Debug.Log("Trovato sulla sinistra un pezzo che rispetta la condizione");
                         counter++;
                     }
 
@@ -87,7 +87,7 @@ public class SignQuest : MonoBehaviour
                     MapFeatures mf = detectdeMap.GetComponent<MapFeatures>();
                     if (mf.tileMap.getRight() == "Road" && mf.tileMap.getLeft() == "Road" && mf.tileMap.getUp()!="Road" && mf.tileMap.getDown()!="Road")
                     {
-                        Debug.Log("Trovato sulla destra un pezzo che rispetta la condizione");
+                        //Debug.Log("Trovato sulla destra un pezzo che rispetta la condizione");
                         counter++;
                     }
 
@@ -107,7 +107,7 @@ public class SignQuest : MonoBehaviour
                     MapFeatures mf = detectdeMap.GetComponent<MapFeatures>();
                     if (mf.tileMap.getUp() == "Road" && mf.tileMap.getDown() == "Road" && mf.tileMap.getRight()!="Road" && mf.tileMap.getLeft()!="Road")
                     {
-                        Debug.Log("Trovato sopra un pezzo che rispetta la condizione");
+                        //Debug.Log("Trovato sopra un pezzo che rispetta la condizione");
                         counter++;
                     }
 
@@ -129,7 +129,7 @@ public class SignQuest : MonoBehaviour
                     MapFeatures mf = detectdeMap.GetComponent<MapFeatures>();
                     if (mf.tileMap.getUp() == "Road" && mf.tileMap.getDown() == "Road" && mf.tileMap.getRight()!="Road" && mf.tileMap.getLeft()!="Road")
                     {
-                        Debug.Log("Trovato sotto un pezzo che rispetta la condizione");
+                        //Debug.Log("Trovato sotto un pezzo che rispetta la condizione");
                         counter++;
                     }
 
@@ -139,7 +139,7 @@ public class SignQuest : MonoBehaviour
 
         if (counter == 3)
         {
-            Debug.Log("Quest compeltata");
+            //Debug.Log("Quest compeltata");
             isCompleted = true;
             isActive = false;
             insertNewMap();
@@ -175,7 +175,10 @@ public class SignQuest : MonoBehaviour
             GameObject.Find("LastSelecterPosition").transform.position = new Vector3(startingPos.position.x,startingPos.position.y-72,startingPos.position.z);
         }
         newMap.GetComponent<MapFeatures>().placeNewMap();
+        
         newMap.SetActive(true);
+        //MapMovement mv = newMap.GetComponent<MapMovement>();
+        GameObject.Find("Selecter").GetComponent<SelecterMovement>().disableSelectionMapCondition(newMap,newMap);
     }
 }
 
