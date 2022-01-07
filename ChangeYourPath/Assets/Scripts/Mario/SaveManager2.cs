@@ -496,12 +496,14 @@ public class SaveManager2 : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("SignQuestCompleted") && PlayerPrefs.GetString("isActiveSign") == "False")
         {
-            Debug.Log("Carico quest completa sign");
+            //Debug.Log("Carico quest completa sign");
             signQuest.isActive = false;
             signQuest.isCompleted = true;
             AudioSource src = audioManager.GetSound("Background").source;
             src.Stop();
-            audioManager.Play("SignQuest");
+            audioManager.Play("Ending");
+            SimpleEventManager.TriggerEvent("EndGame");
+            Debug.Log("Triggero");
             
         }
         

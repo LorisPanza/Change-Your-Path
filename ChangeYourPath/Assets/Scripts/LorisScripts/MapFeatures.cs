@@ -24,7 +24,7 @@ public class MapFeatures : MonoBehaviour
             {
                 if (mv.name == "MapPieceFinal")
                 {
-                    Debug.Log("Piazzo ultimo pezzo");
+                    //Debug.Log("Piazzo ultimo pezzo");
                 }
                 //GameObject.Find("Selecter").GetComponent<SelecterMovement>().enableSelectionMapCondition(mv);
                 return true;
@@ -111,7 +111,7 @@ public class MapFeatures : MonoBehaviour
         if (placed) this.transform.position = checkHere.position;
         else
         {
-            Debug.Log("Unable to place the tile with the complex method");
+           // Debug.Log("Unable to place the tile with the complex method");
             this.transform.position = new Vector3(checkHere.position.x + 36,
             checkHere.position.y + 36, checkHere.position.z);
             placed = true;

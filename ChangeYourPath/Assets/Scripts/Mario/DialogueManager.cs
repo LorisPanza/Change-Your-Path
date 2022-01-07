@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,12 +16,28 @@ public class DialogueManager : MonoBehaviour
 
     private bool dialogueEnded = false;
     private Queue<string> sentences;
+    private bool flag=false;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log("Inizio dialog manager");
         sentences = new Queue<string>();
+        //SimpleEventManager.StartListening("EndGame",flagChange);
 
+    }
+
+    private void Awake()
+    {
+        Debug.Log("Inizio dialog manager");
+        SimpleEventManager.StartListening("EndGame",flagChange);
+    }
+
+    public void flagChange()
+    {
+        Debug.Log("Ho ascoltato");
+        flag = true;
+        //SimpleEventManager.StopListening("EndGame",flagChange);
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -39,9 +56,13 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        AudioSource background = audioManager.GetSound("Background").source;
-        background.Stop();
-        audioManager.Play("DialogueBackground");
+        if (!flag)
+        {
+            AudioSource background = audioManager.GetSound("Background").source;
+            background.Stop();
+            audioManager.Play("DialogueBackground"); 
+        }
+        
         
         if (dialogue.name == "Robot") {
             audioManager.Play("RobotVoice");
@@ -83,11 +104,14 @@ public class DialogueManager : MonoBehaviour
         //Quest di Wilem
         SimpleEventManager.TriggerEvent("StartQuest");
         //SimpleEventManager.TriggerEvent("EndElderQuest");
+
+        if (!flag)
+        {
+            AudioSource diabackground = audioManager.GetSound("DialogueBackground").source;
+            diabackground.Stop();
+            audioManager.Play("Background");
+        }
         
-        
-        AudioSource diabackground = audioManager.GetSound("DialogueBackground").source;
-        diabackground.Stop();
-        audioManager.Play("Background");
 
         //AudioSource background = audioManager.GetSound("Background").source;
         //background.Play();

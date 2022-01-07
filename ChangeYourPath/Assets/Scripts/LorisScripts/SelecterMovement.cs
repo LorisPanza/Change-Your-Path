@@ -253,7 +253,7 @@ public class SelecterMovement : MonoBehaviour
     bool characterCollider(Collider2D character, GameObject go, bool isChild, String stringCharacter) {
         if (character)
         {
-            Debug.Log("Ho preso il charcter");
+            //Debug.Log("Ho preso il charcter");
             if (stringCharacter == "Player") 
                 go.GetComponent<MapFeatures>().player = character.gameObject;
             else if (stringCharacter == "Robot") {
@@ -270,7 +270,7 @@ public class SelecterMovement : MonoBehaviour
     bool freeCharacterCollider(Collider2D character, GameObject go, bool isChild, String stringCharacter) {
         if (isChild == true)
         {
-            Debug.Log("Ho rilasciato il charcter");
+            //Debug.Log("Ho rilasciato il charcter");
             if (stringCharacter == "Player") 
                 go.GetComponent<MapFeatures>().player = null;
             else if (stringCharacter == "Robot")
@@ -293,7 +293,7 @@ public class SelecterMovement : MonoBehaviour
         if (chosenMapMov.getIsMatchingLeft())
         {
             GameObject leftDetectedMap=chosenMapMov.matchingLeft(chosenMapMov.movePoint);
-            Debug.Log("A sinistra ho:"+leftDetectedMap.name);
+            //Debug.Log("A sinistra ho:"+leftDetectedMap.name);
             if (leftDetectedMap != null)
             { 
                 modifyLeftBoundaryColliders(leftDetectedMap,true,map);

@@ -41,10 +41,11 @@ public class DennaNPC : MonoBehaviour
         {
             if (started)
             {
-                AudioSource background=audioManager.GetSound("Background").source;
-                background.Play();
-                AudioSource dialoguebackground = audioManager.GetSound("DialogueBackground").source;
-                dialoguebackground.Stop();
+                //AudioSource background=audioManager.GetSound("Background").source;
+                //background.Play();
+                //audioManager.Play("SignQuest");
+                //AudioSource dialoguebackground = audioManager.GetSound("DialogueBackground").source;
+                //dialoguebackground.Stop();
                 //audioManager.Play("Background");
                 AudioSource voiceSrc = audioManager.GetSound("Voice").source;
                 voiceSrc.Stop();

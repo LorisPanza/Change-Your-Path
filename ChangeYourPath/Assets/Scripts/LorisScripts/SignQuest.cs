@@ -148,7 +148,8 @@ public class SignQuest : MonoBehaviour
             audioManager.Play("QuestCompleted");
             AudioSource audioSource= audioManager.GetSound("SignQuest").source;
             audioSource.Stop();
-            audioManager.Play("Background");
+            audioManager.Play("Ending");
+            SimpleEventManager.TriggerEvent("EndGame");
         }
     }
 

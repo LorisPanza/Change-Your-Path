@@ -6,11 +6,13 @@ public class TriggerFinalScene : MonoBehaviour
 {
     // Start is called before the first frame update
     private int i = 0;
+    
+    private int j =0;
     public GameObject changeScene;
     void Start()
     {
-        SimpleEventManager.StartListening("DennaTalk",checkCondition);
-        SimpleEventManager.StartListening("AbenthyTalk",checkCondition);
+        SimpleEventManager.StartListening("DennaTalk",checkCondition1);
+        SimpleEventManager.StartListening("AbenthyTalk",checkCondition2);
     }
 
     // Update is called once per frame
@@ -19,16 +21,24 @@ public class TriggerFinalScene : MonoBehaviour
         
     }
 
-    public void checkCondition()
+    public void checkCondition1()
     {
         i++;
+        SimpleEventManager.StopListening("DennaTalk",checkCondition1);
+        checkCondition();
+    }
+    public void checkCondition2()
+    {
+        j++;
+        SimpleEventManager.StopListening("AbenthyTalk",checkCondition2);
+        checkCondition();
+    }
 
-        if (i == 2)
+    public void checkCondition()
+    {
+        if (i + j == 2)
         {
-            Debug.Log("Ho parlato con i due");
             changeScene.SetActive(true);
-            SimpleEventManager.StopListening("DennaTalk",checkCondition);
-            SimpleEventManager.StopListening("AbenthyTalk",checkCondition);
         }
     }
 }
