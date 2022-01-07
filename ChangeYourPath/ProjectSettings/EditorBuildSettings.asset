@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpringScene.unity
     guid: d3ca5c38b28634fae885d32e3490827d
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: 740c22eaa718e4f4fad26baa8b6c59b6
   m_configObjects: {}
