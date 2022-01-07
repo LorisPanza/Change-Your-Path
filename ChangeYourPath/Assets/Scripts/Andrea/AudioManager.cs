@@ -75,11 +75,14 @@ public class AudioManager : MonoBehaviour
     }
     
     public void SetMusicVolume (float vol)
-    {   Sound[] s = new Sound[4];
+    {   Sound[] s = new Sound[6];
         s[0] = GetSound("Background");
         s[1] = GetSound("DialogueBackground");
         s[2] = GetSound("Labyrinth");
         s[3] = GetSound("RobotGame");
+        s[4] = GetSound("SignQuest");
+        s[5] = GetSound("Ending");
+        
         //Sound s = GetSound("Background");
         for (var i=0; i<s.Length; i++) {
             if (s[i] == null) {

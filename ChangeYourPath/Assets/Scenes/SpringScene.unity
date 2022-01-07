@@ -1636,7 +1636,7 @@ PrefabInstance:
       objectReference: {fileID: 363030479}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.size
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[0].clip
@@ -1745,10 +1745,18 @@ PrefabInstance:
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[20].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 11be31bf4f75945c38cea034ff5f815a, type: 3}
+      objectReference: {fileID: 8300000, guid: e082e647c60a64e67aabf6ba2e76bf5a, type: 3}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[20].name
       value: SignQuest
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
+      propertyPath: sounds.Array.data[21].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 11be31bf4f75945c38cea034ff5f815a, type: 3}
+    - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
+      propertyPath: sounds.Array.data[21].name
+      value: Ending
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[10].pitch
@@ -1795,6 +1803,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
+      propertyPath: sounds.Array.data[21].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[10].volume
       value: 0.407
       objectReference: {fileID: 0}
@@ -1836,7 +1848,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[20].volume
-      value: 1
+      value: 0.757
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
+      propertyPath: sounds.Array.data[21].volume
+      value: 0.504
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649217, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: m_Name
@@ -4177,6 +4193,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 127520036}
     - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
+      propertyPath: velocity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307249760892291826, guid: 8dedaae01e6de4dfc872b0bb1a3076d8, type: 3}
       propertyPath: tutorial.name
       value: Kvothe
       objectReference: {fileID: 0}
@@ -4675,9 +4695,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 381879105
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4714,7 +4734,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17515087, y: 4.1306944}
+  m_Offset: {x: 0.21181834, y: 4.3140306}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4725,7 +4745,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6816864, y: 8.492519}
+  m_Size: {x: 4.588381, y: 8.859192}
   m_EdgeRadius: 0
 --- !u!1 &382853392
 GameObject:
@@ -18193,9 +18213,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 381879105
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -18232,7 +18252,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.46357948, y: 4.3408475}
+  m_Offset: {x: 0.3940072, y: 4.4336095}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -18243,7 +18263,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.3771467, y: 9.59426}
+  m_Size: {x: 6.8353415, y: 9.779784}
   m_EdgeRadius: 0
 --- !u!1 &1068460005
 GameObject:
