@@ -1747,6 +1747,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: e082e647c60a64e67aabf6ba2e76bf5a, type: 3}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
+      propertyPath: sounds.Array.data[20].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[20].name
       value: SignQuest
       objectReference: {fileID: 0}
@@ -1754,6 +1758,10 @@ PrefabInstance:
       propertyPath: sounds.Array.data[21].clip
       value: 
       objectReference: {fileID: 8300000, guid: 11be31bf4f75945c38cea034ff5f815a, type: 3}
+    - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
+      propertyPath: sounds.Array.data[21].loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[21].name
       value: Ending
@@ -1852,7 +1860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649216, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: sounds.Array.data[21].volume
-      value: 0.504
+      value: 0.348
       objectReference: {fileID: 0}
     - target: {fileID: 2030966709769649217, guid: acfb46bf0269b4d2389797bb29b7afcd, type: 3}
       propertyPath: m_Name
@@ -2568,7 +2576,23 @@ MonoBehaviour:
   dialogue1:
     name: Denna
     sentences:
-    - Hello
+    - "Hi, you find us! We remain stuck here and so we write an help message hoping
+      that someone could \nsave us."
+    - I'm Denna, many years ago me and my husband  ran away from the village, hiding
+      us in the heart of the forest.
+    - Behind the village and the sorrounding natural maze, there is a terrbile secret...
+    - When we discovered that secret, they started chasing us and the only place
+      we could not get caught was the forest..
+    - To prevent my son and brother Wilem from getting involved in all this, we left
+      the village secretly without saying anything.
+    - My poor son...Kvothe...., he must have grown up after all these years.
+    - 'Wait...Your name is Kvothe... Oh my Gosh!! '
+    - 'Dear son, sorry for what we''ve done.
+
+      I spent every moment thinking
+      about all the time we could have used to be happy together...'
+    - Now we are together, but there is a threat chasing us. Talk to Abenthy, he
+      will explain you the situation.
   audioManager: {fileID: 122610674}
 --- !u!58 &219582312
 CircleCollider2D:
@@ -2771,8 +2795,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.537506, y: -53.8391}
-  m_SizeDelta: {x: -41.0692, y: 66.6918}
+  m_AnchoredPosition: {x: 2.537506, y: -57.086}
+  m_SizeDelta: {x: -41.0692, y: 64.804}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236553998
 MonoBehaviour:
@@ -3517,8 +3541,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29.037506, y: -156.13304}
-  m_SizeDelta: {x: 314.7635, y: 98.4387}
+  m_AnchoredPosition: {x: 31.7241, y: -152.2951}
+  m_SizeDelta: {x: 320.1366, y: 106.1145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321757499
 MonoBehaviour:
@@ -26317,7 +26341,36 @@ MonoBehaviour:
   dialogue1:
     name: Abenthy
     sentences:
-    - Hello
+    - Hi, my name is Abenthy and I'm a scientist.
+    - You won't believe me but I don't come from the village but from the outside
+      world beyond the labyrinth.
+    - Me and Denna are chased because of the secret we know...
+    - It's the moment to reveal the truth behind this place.
+    - 'In a remote past, a group of scientists was carrying out a study on the adaptive
+      characteristics of humans: '
+    - A labyrinth of artificial vegetation was built and a village was founded in
+      the center of it.
+    - 'A series of orphans was sent in and kept under observation: from that small
+      group of individuals a real community developed. '
+    - Unaware of everything, these people are actually blocked inside the forest
+      thinking that the edges of the world are the edges of the forest.
+    - I was a scientist who has the task of monitoring the evolution of the community
+      but I fell in love with a woman inside of it, Denna.
+    - My role makes any kind of contact impossible but I managed to fool the other
+      members of the scientific committee...
+    - 'I proposes to integrate myself into the village to be able to observe the
+      data of interest more accurately.. '
+    - 'I had to respect only one condition: not to reveal the nature of the experiment
+      for any reason.'
+    - 'Engaged by my feelings,I described to Denna the freedom outside the village
+      and the beauty of a whole world to explore. '
+    - Fooled by me, the scientists set out to capture us!
+    - 'I understood the intention of the scientists and I ran away with Denna in
+      the only place where they would never have found us: the labyrinth...'
+    - Do you notice the robot near the limit of the maze? It has been programmed
+      to avoid that someone could escape the area...
+    - This is the curse that plagues this place and that has not allowed me to see
+      my son grow up...
   audioManager: {fileID: 122610674}
 --- !u!58 &1875432858
 CircleCollider2D:
@@ -27484,7 +27537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2279885405080429639, guid: 20dde482d62814773a443559f83d5afd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2279885405080429640, guid: 20dde482d62814773a443559f83d5afd, type: 3}
       propertyPath: tileMap
