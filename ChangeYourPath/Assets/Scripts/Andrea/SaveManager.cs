@@ -231,7 +231,10 @@ public class SaveManager : MonoBehaviour
         {
             foreach (GameObject coll in mapCollectable)
             {
-                coll.SetActive(false);
+                if (coll.transform.parent.gameObject.activeSelf)
+                {
+                    coll.SetActive(false);
+                }
             }
         }
 

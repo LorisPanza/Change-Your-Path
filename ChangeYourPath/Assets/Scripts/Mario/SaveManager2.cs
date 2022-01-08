@@ -222,10 +222,14 @@ public class SaveManager2 : MonoBehaviour
         {
             foreach (GameObject coll in mapCollectable)
             {
-                coll.SetActive(false);
+                if (coll.transform.parent.gameObject.activeSelf)
+                {
+                    //Debug.Log(coll.name);
+                    coll.SetActive(false);
+                }
             }
         }
-
+        //Debug.Log(PlayerPrefs.GetInt("LabIndex"));
 
         int index = PlayerPrefs.GetInt("Index");
         if (index < 8) tm.GetComponent<TutorialManager>().setIndex(index);

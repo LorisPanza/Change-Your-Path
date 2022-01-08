@@ -92,7 +92,10 @@ public class MainMenu : MonoBehaviour
         //Debug.Log(steps);
         
         kvothe.enabled = false;
-        if (SceneManager.GetActiveScene().name == "SpringScene") robot.enabled = false;
+        if (SceneManager.GetActiveScene().name == "SpringScene") {
+            robot.enabled = false; 
+            robot.GetComponent<Animator>().enabled = false;   
+        }
         selecter.enabled = false;
         pauseMenu.SetActive(true);
         settingsMenu.SetActive(false);
@@ -107,7 +110,10 @@ public class MainMenu : MonoBehaviour
         kvothe.GetComponent<Animator>().enabled = true;
         
         kvothe.enabled = true;
-        if (SceneManager.GetActiveScene().name == "SpringScene") robot.enabled = true;
+        if (SceneManager.GetActiveScene().name == "SpringScene") {
+            robot.enabled = true;
+            robot.GetComponent<Animator>().enabled = true;
+        } 
         selecter.enabled = true;
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);

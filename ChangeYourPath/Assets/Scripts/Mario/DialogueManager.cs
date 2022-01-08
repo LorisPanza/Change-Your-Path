@@ -37,7 +37,7 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("Ho ascoltato");
         flag = true;
-        //SimpleEventManager.StopListening("EndGame",flagChange);
+        //SimpleEventManager.StopListening("EndGame",flag);
     }
 
     public void StartDialogue(Dialogue dialogue)

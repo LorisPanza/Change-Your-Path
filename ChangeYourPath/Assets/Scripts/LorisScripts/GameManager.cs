@@ -39,7 +39,10 @@ public class GameManager : MonoBehaviour
         mapCam.SetActive(false);
         playerCam.SetActive(true);
         player.enabled = true;
-        if (SceneManager.GetActiveScene().name == "SpringScene") robot.enabled = true;
+        if (SceneManager.GetActiveScene().name == "SpringScene") {
+            robot.enabled = true;
+            robot.GetComponent<Animator>().enabled = true;
+        } 
         lastSelecterPosition.transform.position = new Vector3(selecter.transform.position.x,
             selecter.transform.position.y, selecter.transform.position.z);
         selecter.SetActive(false);
@@ -72,7 +75,10 @@ public class GameManager : MonoBehaviour
         //Debug.Log(mapCam.activeSelf);
         playerCam.SetActive(false);
         player.enabled = false;
-        if (SceneManager.GetActiveScene().name == "SpringScene") robot.enabled = false;
+        if (SceneManager.GetActiveScene().name == "SpringScene") {
+            robot.enabled = false;
+            robot.GetComponent<Animator>().enabled = false;
+        } 
         selecter.SetActive(true);
         //selecter.GetComponent<SelecterMovement>().activeChoosenMap();
         menu.enabled = false;
