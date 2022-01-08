@@ -10,6 +10,7 @@ public class SceneSwitch : MonoBehaviour
       if (other.CompareTag("Player"))
       {
          deletePreviousMemory();
+         GameObject.Find("SaveManager").GetComponent<SaveManager>().SaveSettings();
          SceneManager.LoadScene("SpringScene");
          
       }
