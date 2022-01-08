@@ -20,7 +20,7 @@ public class MapFeatures : MonoBehaviour
         {
             MapMovement mv = this.GetComponent<MapMovement>();
             if ((mv.matchingAllSides(position) & !mv.getIsMatchingDown() & !mv.getIsMatchingLeft() &
-                !mv.getIsMatchingRight() & !mv.getIsMatchingUp()) || mv.name=="MapPieceFinal")
+                !mv.getIsMatchingRight() & !mv.getIsMatchingUp()) || (mv.name=="MapPieceFinal" && mv.matchingAllSides(position)))
             {
                 if (mv.name == "MapPieceFinal")
                 {
