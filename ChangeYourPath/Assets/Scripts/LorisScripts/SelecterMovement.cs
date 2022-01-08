@@ -48,6 +48,8 @@ public class SelecterMovement : MonoBehaviour
             {
 
                 GameObject go = chosenMapCollider.gameObject;
+                go.transform.position = this.transform.position;
+                Debug.Log(go.transform.position);
 
                 grid = go.transform.parent.gameObject;
                 go.transform.SetParent(this.transform);
