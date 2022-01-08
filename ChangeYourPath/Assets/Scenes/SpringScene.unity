@@ -27537,12 +27537,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2279885405080429639, guid: 20dde482d62814773a443559f83d5afd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2279885405080429640, guid: 20dde482d62814773a443559f83d5afd, type: 3}
       propertyPath: tileMap
       value: 
       objectReference: {fileID: 11400000, guid: ad4237bceed6044de818667f869085e0, type: 2}
+    - target: {fileID: 2279885405080429640, guid: 20dde482d62814773a443559f83d5afd, type: 3}
+      propertyPath: enviromentalElements.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279885405080429640, guid: 20dde482d62814773a443559f83d5afd, type: 3}
+      propertyPath: enviromentalElements.Array.data[12]
+      value: 
+      objectReference: {fileID: 1020818664}
     - target: {fileID: 2279885405080429642, guid: 20dde482d62814773a443559f83d5afd, type: 3}
       propertyPath: audioManager
       value: 
