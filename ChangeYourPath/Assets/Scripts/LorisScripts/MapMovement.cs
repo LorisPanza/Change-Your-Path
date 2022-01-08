@@ -575,7 +575,7 @@ public class MapMovement : MonoBehaviour
         Tile tile = tileMap.GetTile<Tile>(tilePos);
 
         //Debug.Log(tile.name);
-        if (tile.name == "map piece ocean" || tile.name=="map piece snow ocean")
+        if (tile.name == "map piece ocean" || tile.name=="map piece snow ocean" || tile.name=="WATER" || tile.name== "WATER GRASS" || tile.name=="WATER GRASS 2")
         {
             if (tileMap.name == "MapPiece10" || tileMap.name == "MapPiece11" || tileMap.name == "MapPiece12" ||
                 tileMap.name == "MapPiece13")
