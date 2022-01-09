@@ -23,16 +23,17 @@ public class Sign : MonoBehaviour
         {
             if (signCanvas.activeInHierarchy)
             {
+              
+                signCanvas.SetActive(false);
+            }
+            else
+            {
                 if (flag)
                 {
                     Debug.Log("Triggero inizio evento sign");
                     SimpleEventManager.TriggerEvent("SignQuest");
                     flag = false;
                 }
-                signCanvas.SetActive(false);
-            }
-            else
-            {
                 signCanvas.SetActive(true);
                 spaceCanvas.SetActive(false);
             }
