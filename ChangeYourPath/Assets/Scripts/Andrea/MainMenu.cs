@@ -229,6 +229,9 @@ public class MainMenu : MonoBehaviour
     public void Quit () {
         SceneManager.LoadScene("MainMenu");
     }
+    public void ClearPlayerprefs() {
+        PlayerPrefs.DeleteAll();
+    }
 
     public void closeQuit ()
     {
