@@ -2,6 +2,7 @@ using UnityEngine.Audio;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -28,7 +29,14 @@ public class AudioManager : MonoBehaviour
     }
 
     void Start () {
-        Play("Background");
+        if (SceneManager.GetActiveScene().name == "SpringScene") {
+            if (!(PlayerPrefs.HasKey("SignQuestCompleted") && PlayerPrefs.GetString("isActiveSign") == "False") && !(PlayerPrefs.GetString("isActiveSign") == "True")) {
+                Play("Background");
+            }
+        } else {
+            Play("Background");
+        }
+        
     }
 
 
