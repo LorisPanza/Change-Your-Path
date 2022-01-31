@@ -109,15 +109,14 @@ The environment around kvothe could be a narrative device: the protagonist will 
 
 ## World
 ### Rules
-This chapter must be detailed better.
 
 There is no fixed world. The player builds one.
-He can do it by fitting together different map pieces (we could call them “tiles”) respecting a very simple rule: continue the landscape.
+He can do it by fitting together different map pieces (synonyms: “tiles”, "squares") respecting a very simple rule: continue the landscape.
 Each tile has a type on each side.
 
-Types can be: grass, water, snow, ice…. (to decide. The idea is: different types, say 5)
+Types are: water, snow, white forest, grass, green forest. 
  
-The player can fit together only tiles that have the same type on the side on which you are fitting them.For example, you cannot put a grass piece near to a water one:
+The player can fit together only tiles that have the same type on the side on which you are fitting them. For example, you cannot put a grass piece near to a water one:
 
 ![nope](images/rules/no1.jpeg)
 ![yep](images/rules/yes1.jpeg)
@@ -178,7 +177,7 @@ We don’t need to consider all the possible combinations because we will build 
 * Save and restore the "index" variable of Tutorial Manager.
 * Disable tutorial manager script if index > 8 when load -> MARIO;
 
-deadline 20
+deadline 20 -> respected
 
 
 ## Sprites we need:
