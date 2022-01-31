@@ -17,7 +17,7 @@ The objective of the game is to find new pieces of map, solve the map puzzle and
 ### Audience
 The intended audience is primarily for both casual and non casual gamers since the mechanic is very simple even if it requires reasoning and effort to solve the puzzle. The game does not involve violence or other malicious actions and so it can be played by kids.
 ### Look and feel
-This game should be able to make light-heart a difficult life situation like the one of Kvothe. This is not a perfect and wonderful world made of cheerful colors, fluttering happy little birds and people who are just waiting to help you. However, this is a world full of hope, curiosity and desire to discover what's beyond what you know. The context in which Kvothe is, most of the time should be calm and serene making the player feel like they have plenty of time to solve the next puzzle. Whoever plays is in control of the situation. They must feel free to explore, think, listen and solve.
+This game should be able to make light-heart a difficult life situation like the one of Kvothe. This is not a perfect and wonderful world made of cheerful colors, fluttering happy little birds and people who are just waiting to help you. However, this is a world full of hope, curiosity and desire to discover what's beyond what you know. The context in which Kvothe is, most of the time should be calm and serene making the player feel like they have plenty of time to solve the next puzzle. Whoever plays must have the control over the situation. They must feel free to explore, think, listen and solve.
 ## Gameplay
 ### Overview
 The gameplay will consist of exploring the world, finding new map pieces, composing the map and moving in new areas.
