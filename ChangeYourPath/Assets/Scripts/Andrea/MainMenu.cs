@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     public Robot robot;
     public SelecterMovement selecter;
     public GameObject pauseMenu, settingsMenu, quitMenu, newGameMenu;
-    public GameObject menuFirstButton, menuSecondButton, newFirstButton, newClosedButton, settingsFirstButton, settingsClosedButton, quitFirstButton, quitClosedButton;
+    public GameObject menuFirstButton, menuSecondButton, newFirstButton, newClosedButton, settingsFirstButton, settingsClosedButton, quitFirstButton, quitClosedButton,  creditsFirstButton, creditsClosedButton;
     public SaveManager saveManager1;
     public SaveManager2 saveManager2;
     public Button quitButton, newGameButton;
@@ -20,6 +20,8 @@ public class MainMenu : MonoBehaviour
 
     private GameObject selected;
     public GameManager gameManager;
+
+   
 
     void Update() 
     {
@@ -198,6 +200,22 @@ public class MainMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         //set a new selected object
         EventSystem.current.SetSelectedGameObject(settingsClosedButton);
+    }
+
+    public void openCredits()
+    {
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //set a new selected object
+        EventSystem.current.SetSelectedGameObject(creditsFirstButton);
+    }
+
+    public void closeCredits()
+    {
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //set a new selected object
+        EventSystem.current.SetSelectedGameObject(creditsClosedButton);
     }
 
     public void openQuit ()
