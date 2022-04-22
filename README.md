@@ -25,3 +25,11 @@ Player Mode
 ## Team
 Game Developers
 
+* Loris Panza
+* Mario Roca
+* Andrea Razza
+
+2D Artist
+
+* Xuyan Jiang
+
