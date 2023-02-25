@@ -131,62 +131,7 @@ Obviously there will be pieces with different types on different sides.
 We don’t need to consider all the possible combinations because we will build the tiles we need to make the levels. The player can build all he wants, at the end of the story only when he respects the constraints of the levels is important.
 
 
-### Key locations and style
 
-## Media List
-### Interface assets
-### Environments
-#### Tiles
-* Grass
-* Forest grass
-* Water/Grass
-* Forest/Grass
-* Path/Grass
-### Characters
-* Dialogues
-### Animation
-* Kvothe
-* Enviromental elements
-* Simple animation for the NPCS 
-### Music and sound effects
-* Background 
-* Steps
-* When talking to NPCs
-* Interactable object (map pieces on the ground)
-
-
-## Fixing Bug
-* Map movement LORIS --> SOLVED
-* Kvothe animation adjustment XUYAN
-* Tutorial MARIO --> SOLVED
-* Player outside the map LORIS --> Partially SOLVED
-* Mouse disappearing ANDREA
-* Comprenetation of the sprites (Kvothe with NPC and bushes) LORIS --> SOLVED
-* When you walk with kvothe and open the Menu, kvothe is still moving MARIO --> SOLVED
-* Stop the conversation sound when Kvothe walk away the NPC (not only when the dialogue ends) ANDREA
-* Fix Map Piece3 Colliders
-* When you are in map mode, space should be disabled
-
-
-## To do
-* NPC and enivromental animation (XUYAN -> MARIO)
-* Better Camer Movement and Introduction of MaxiCollider LORIS --> SOLVED
-* Chaneg "New Game" and "Play" ANDREA
-* Different colors for the selecter: normal mode, grab mode LORIS --> SOLVED
-* Highligths non matchable sides LORIS -->SOLVED
-* Save and restore the "index" variable of Tutorial Manager.
-* Disable tutorial manager script if index > 8 when load -> MARIO;
-
-deadline 20 -> respected
-
-
-## Sprites we need:
-* Little blue collectable map animation 
-* Grass
-* Forest grass
-* Water/Grass
-* Forest/Grass
-* Path/Grass
 
 
 
