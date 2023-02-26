@@ -1,4 +1,7 @@
-# Change-Your-Path
+# Change-Your-Path - Videogame design and programming
+
+The videogame is published on [itch.io](https://polimi-game-collective.itch.io/change-your-path).
+
 ## Polimi course description A.Y. 2021/2022
 
 Videogame design and programming is one of the most exciting and challenging disciplines in Computer Science as it attempts to combine, in real-time, concepts in computer graphics, human computer interaction, networking, artificial intelligence, computer aided instruction, computer architecture, etc. In this course students will learn the basics of videogame design and the basics of videogame programming, attend specific seminars from field experts, and form project groups to design, build and demonstrate a simple video game. The course is structured as a series of lecture by the instructors and a series of invited seminars.
